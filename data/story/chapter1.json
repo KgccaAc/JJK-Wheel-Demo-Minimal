@@ -1,0 +1,513 @@
+{
+  "chapterId": "chapter1",
+  "title": "第一章·仙台的异乡人",
+  "sourcePeriod": "剧情开始时期",
+  "mapNodes": [
+    {"button":"NodeTypeStory","node":"chapter1_clue","requires":"chapter1_selection","available":true},
+    {"button":"NodeTypeFight","node":"chapter1_battle","requires":"chapter1_clue","available":true},
+    {"button":"NodeTypeRandom","node":"chapter1_optional_event","requires":"chapter1_clue","available":true},
+    {"button":"NodeTypeBranch","node":"chapter1_branch","requires":"chapter1_optional_event","available":true},
+    {"button":"NodeTypeDangerous","node":"chapter1_danger","requires":"chapter1_branch","available":true},
+    {"button":"NodeTypeDone","node":"core_join_high_school","requiresAny":["chapter1_battle","chapter1_danger"],"available":true}
+  ],
+  "nodes": [
+    {"id":"chapter1_intro","type":"rpg","title":"签名会后的断片","scene":"res://scenes/story/RPG.tscn","next":"chapter1_selection","backgroundSequence":["res://art/Story/RPG/初始背景/1.png","res://art/Story/RPG/初始背景/2.png","res://art/Story/RPG/初始背景/3.png","res://art/Story/RPG/初始背景/4.png","res://art/Story/RPG/初始背景/5.png","res://art/Story/RPG/初始背景/6.png"],
+      "choices":[
+        {"id":"accept","value":"接受陌生世界","label":"接受陌生世界","next":"chapter1_selection","text":"你暂时放下追问，决定先活下来，再找回记忆。"},
+        {"id":"hide","value":"先隐藏身份","label":"先隐藏身份","next":"chapter1_selection","text":"你合上签名本，把异常藏进衣袋，决定先观察这座城市。","resources":{"stability":2},"growth":{"悟性":1}}
+      ]},
+    {
+      "id":"chapter1_selection", "type":"selection", "title":"初来乍到", "scene":"res://scenes/story/Selection.tscn", "next":"chapter1_map", "backgrounds":{"早上":"res://art/Story/RPG/第一章/仙台街道_清晨.png","中午":"res://art/Story/RPG/第一章/仙台街道_正午.png","下午":"res://art/Story/RPG/第一章/仙台街道_黄昏.png","晚上":"res://art/Story/RPG/第一章/仙台街道_夜.png"},
+      "timeSlots":["早上","中午","下午","晚上"],
+      "actions":{
+        "观察":{"detail":"放慢脚步观察街道、人群与倒影，确认自己所处的时代。","outcomes":{
+          "早上":{"text":"晨光落在便利店玻璃上。所有倒影都随行人移动，只有角落里的一道黑影慢了半拍。你记住了它消失的方向。","resources":{"xp":4,"stability":-1},"growth":{"悟性":1}},
+          "中午":{"text":"午间人流遮住了残秽，你借橱窗反光重新锁定它。黑影正向河岸移动。","resources":{"xp":5,"stability":-1},"growth":{"咒力操纵":1}},
+          "下午":{"text":"夕光拉长电线杆的影子，其中一条影子没有主人。你确认那并非错觉。","resources":{"xp":6,"stability":-2},"growth":{"悟性":1}},
+          "晚上":{"text":"路灯依次亮起，黑影却避开灯光聚向河岸。你找到了异常最浓的位置。","resources":{"xp":8,"stability":-2},"growth":{"悟性":1}}}},
+        "交谈":{"detail":"向路人与店员打听日期、地点，以及附近发生的怪事。","outcomes":{
+          "早上":{"text":"店员告诉你今天的日期，又提到最近总有人在河边无故昏倒。你买了瓶水掩饰自己的慌乱。","resources":{"money":-5,"xp":3,"stability":2},"growth":{"咒力操纵":1}},
+          "中午":{"text":"午休的学生说河堤下常传来抓挠声，但靠近后什么也看不见。","resources":{"money":-3,"xp":5},"growth":{"悟性":1}},
+          "下午":{"text":"一名遛狗老人指向封闭步道：他的狗每次经过那里都会发抖。你还注意到一名初级术师在远处记录残秽；他没有阻止你，只是记下了你的选择。","resources":{"xp":6},"growth":{"悟性":1},"relationshipDelta":{"junior_sorcerer":{"affection":5,"respect":1}}},
+          "晚上":{"text":"便利店夜班员看见你手中的签名本，提醒你别去河边——昨夜监控里只有影子，没有人。","resources":{"money":-5,"xp":7,"stability":-1},"growth":{"咒力操纵":1}}}},
+        "搜索":{"detail":"主动调动咒力，沿街搜寻残秽、结界或术师留下的痕迹。","outcomes":{
+          "早上":{"text":"你第一次主动放出咒力。感知很粗糙，却在电线杆背面捕捉到湿冷残秽。","resources":{"ce":-6,"xp":6,"stability":-2},"growth":{"咒力操纵":1}},
+          "中午":{"text":"残秽在人群中断断续续。你压低咒力波动，避免惊动藏在暗处的东西。","resources":{"ce":-7,"xp":7},"growth":{"咒力效率":1}},
+          "下午":{"text":"你在封闭步道旁找到被爪痕覆盖的护栏，残秽朝河岸下方延伸。","resources":{"ce":-8,"xp":9,"stability":-2},"growth":{"悟性":1,"咒力效率":1}},
+          "晚上":{"text":"夜色让残秽清晰起来。你追到河堤入口，也察觉黑影已经注意到你。那名初级术师从暗处现身，提醒你不要独自追入；你压低咒力回应，暂时获得了他的信任。","resources":{"ce":-10,"xp":11,"stability":-3},"growth":{"咒力操纵":1,"咒力效率":1},"relationshipDelta":{"junior_sorcerer":{"affection":8,"trust":1}},"npcFlags":{"junior_sorcerer":{"junior_personal_event_done":true}}}}},
+        "休息":{"detail":"暂时停下，恢复体力与咒力，并整理签名本带来的记忆断片。","outcomes":{
+          "早上":{"text":"你在长椅上调整呼吸。陌生城市带来的眩晕稍稍退去。","resources":{"hp":5,"ce":5,"stability":4},"growth":{"体质":1}},
+          "中午":{"text":"热食和短暂休息让身体恢复，但想到签名会时，额头仍传来刺痛。","resources":{"money":-8,"hp":6,"ce":6,"stability":3},"growth":{"体质":1}},
+          "下午":{"text":"你尝试用咒力缓解头痛，意外摸索出更省力的循环方式。","resources":{"ce":8,"stability":4},"growth":{"咒力效率":1}},
+          "晚上":{"text":"你在出发前完成最后一次调息。河岸方向的恶意已经无法忽视。","resources":{"hp":8,"ce":10,"stability":5},"growth":{"体质":1}}}}
+      }
+    },
+    {"id":"chapter1_map","type":"map","title":"仙台异常调查","scene":"res://scenes/story/Map.tscn","next":"chapter1_clue"},
+    {"id":"chapter1_clue","type":"rpg","nodeKind":"story","title":"残秽与黑影","scene":"res://scenes/story/RPG.tscn","next":"chapter1_battle","background":"res://art/Story/RPG/第一章/河岸入口.png","critical":false,"sourceRole":"preset_bridge",
+      "rpgLines":[
+        {"speaker":"旁白","text":"夜色压在仙台郊外。签名本的纸页无风自动翻动。"},
+        {"speaker":"旁白","text":"河岸方向传来一声短促的撞击，残秽像潮水一样贴着路面退去。"},
+        {"speaker":"？？？","text":"如果你能看见它，就别再往前走了。"},
+        {"speaker":"旁白","text":"黑影从护栏下抬起头。你必须决定：追上去，还是先确认自己的力量。"}
+      ],
+      "choices":[
+        {"id":"pursue","value":"追入河岸","label":"追入河岸","next":"chapter1_battle","text":"你压低身体追入河岸，抢在黑影彻底成形前锁定了它。初级术师认可你的果断。","resources":{"ce":-5,"stability":-2},"growth":{"悟性":1},"relationshipDelta":{"junior_sorcerer":{"affection":4,"respect":1}}},
+        {"id":"prepare","value":"先调息备战","label":"先调息备战","next":"chapter1_battle","text":"你没有贸然追击。短暂调息后，咒力沿四肢稳定运转；初级术师对你的谨慎稍微放下戒心。","resources":{"ce":8,"stability":2},"growth":{"咒力效率":1},"relationshipDelta":{"junior_sorcerer":{"affection":5,"trust":1}}}
+      ]},
+    {
+      "id":"chapter1_optional_event", "type":"random", "nodeKind":"random", "title":"河岸旁的偶遇", "scene":"res://scenes/story/RPG.tscn", "background":"res://art/Story/RPG/第一章/河岸桥下.png", "next":"chapter1_branch", "critical":false, "resolution":"hidden_wheel",
+      "rpgLines":[
+        {"speaker":"旁白", "text":"你准备离开河堤时，签名本的纸页忽然向左翻动。三种气息同时从街角、桥下和便利店后门传来。"},
+        {"speaker":"系统记录", "text":"这是普通事件。结果由本地隐式转盘决定，不会改写原剧情盘的核心节点。"},
+        {"speaker":"系统记录", "text":"确认后将抽取一项遭遇，并把结果带入下一次手动选择。"}
+      ],
+      "choices":[{"id":"roll", "value":"隐式转盘", "label":"抽取遭遇", "next":"chapter1_branch"}],
+       "outcomes":[
+         {"id":"witness","weight":45,"title":"目击者求助","text":"桥下的目击者拦住你，说昨晚有人被黑影拖进水道。你没有把他丢在原地。","resources":{"money":10,"xp":8,"stability":2},"growth":{"悟性":1},"relationshipDelta":{"junior_sorcerer":{"respect":1}},"storyFlags":{"river_witness_found":true}},
+         {"id":"trader","weight":30,"title":"咒具商人的试探","text":"便利店后门站着一名咒具商人。他用低价卖给你一枚粗糙护符，并提醒你河岸下有第二层残秽。","resources":{"money":-15,"ce":6,"xp":9},"growth":{"咒力效率":1},"inventoryDelta":{"river_protective_talisman":1},"npcFlags":{"cursed_tool_trader":{"trader_met":true}},"storyFlags":{"river_tool_obtained":true}},
+         {"id":"junior","weight":25,"title":"初级术师的观察","text":"初级术师没有现身，只在远处留下一个安全标记。你意识到有人在评估你是否值得并肩作战。","resources":{"xp":6,"stability":3},"growth":{"咒力操纵":1},"relationshipDelta":{"junior_sorcerer":{"affection":3,"trust":1}},"storyFlags":{"river_safe_mark_seen":true}}
+        ]
+    },
+    {
+      "id":"chapter1_branch", "type":"branch", "nodeKind":"branch", "title":"你要把谁带出河岸", "scene":"res://scenes/story/RPG.tscn", "background":"res://art/Story/RPG/第一章/便利店后门.png", "npcDialogue":"junior_sorcerer", "next":"chapter1_danger", "critical":false,
+      "rpgLines":[
+        {"speaker":"旁白", "text":"偶遇留下的线索把你带到封闭步道。黑影在河岸下方移动，目击者和咒具商人都还没有离开。"},
+        {"speaker":"系统记录", "text":"这是手动分支。你的选择会决定高危战斗的初始资源与关系状态。"},
+        {"speaker":"系统记录", "text":"本节点不使用随机结果，玩家可以明确选择行动方向。"}
+      ],
+      "choices":[
+        {"id":"protect","value":"保护目击者", "label":"先护送目击者离开", "requiresFlags":["river_witness_found"],"next":"chapter1_danger","text":"你把目击者送到路灯下，再回头面对河岸深处的残秽。","resources":{"hp":-5,"stability":4,"xp":7},"growth":{"体质":1},"relationshipDelta":{"junior_sorcerer":{"affection":4,"respect":1}}},
+        {"id":"tool","value":"追查咒具", "label":"带着咒具追查残秽", "requiresFlags":["river_tool_obtained"],"next":"chapter1_danger","text":"你握紧粗糙护符追入河岸，咒具的反应让残秽提前锁定了你。","resources":{"ce":-8,"stability":-4,"xp":11},"growth":{"咒力操纵":1},"npcFlags":{"cursed_tool_trader":{"tool_tested":true}}},
+        {"id":"follow_mark","value":"跟随安全标记", "label":"沿术师标记潜入", "requiresFlags":["river_safe_mark_seen"],"next":"chapter1_danger","text":"你沿着初级术师留下的安全标记潜入河岸，避开第一轮伏击，也用行动回应了他的试探。","resources":{"ce":-4,"xp":9,"stability":2},"growth":{"咒力效率":1},"relationshipDelta":{"junior_sorcerer":{"affection":5,"trust":1}}},
+        {"id":"junior_commitment", "value":"回应术师的承诺", "label":"回应术师的承诺", "requiresFlags":["river_safe_mark_seen"], "minResources":{"xp":10}, "next":"chapter1_danger", "text":"你没有把安全标记当成免费的保护，而是在河岸入口停下，明确告诉初级术师：如果他愿意并肩，你也会在最危险的时候回头。暗处的人终于走出来，接受了这份承诺。", "resources":{"stability":5,"xp":12}, "growth":{"悟性":1}, "relationshipDelta":{"junior_sorcerer":{"affection":60,"trust":3,"respect":2}}, "npcFlags":{"junior_sorcerer":{"junior_personal_event_done":true}}, "storyFlags":{"junior_recruitment_event":true}},
+        {"id":"withdraw","value":"稳妥撤离", "label":"先撤离再正面迎战", "next":"chapter1_danger","text":"你没有追逐眼前的诱饵，而是退回开阔地带，迫使深层残秽主动暴露。","resources":{"hp":3,"ce":4,"xp":5,"stability":5},"growth":{"悟性":1}}
+      ]
+    },
+    {"id":"chapter1_danger","type":"battle","nodeKind":"dangerous","title":"高危·河岸深层残秽","scene":"res://scenes/battle/battle_scene.tscn","next":"chapter1_end","critical":false,"sourceRole":"optional_danger","battleProfile":"river_deep_curse","battleRules":{"victory":{"xp":20,"stability":-4,"growth":{"体术":2,"体质":1}},"retreat":{"xp":7,"stability":-9,"growth":{"体质":1}},"defeat":{"xp":3,"stability":-12,"growth":{"体质":1}}}},
+    {"id":"chapter1_battle","type":"battle","nodeKind":"battle","title":"河岸的低级咒灵","scene":"res://scenes/battle/battle_scene.tscn","next":"chapter1_end","critical":false,"sourceRole":"tutorial_battle","battleRules":{"victory":{"xp":16,"stability":-3,"growth":{"体术":2,"体质":1}},"retreat":{"xp":6,"stability":-8,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-10,"growth":{"体质":1}}}},
+    {"id":"chapter1_settlement","type":"settlement","title":"第一章节点结算","scene":"res://scenes/story/settlement.tscn","next":"chapter1_end"},
+    {"id":"chapter1_end","type":"end","title":"第一章完成","scene":"res://scenes/story/Map.tscn","next":"core_join_high_school","nextCore":{"nodeId":"joinHighSchool","wheelId":145,"title":"是否加入高专"}},
+    {
+      "id":"core_join_high_school", "type":"rpg", "title":"是否加入高专", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":145, "aiMayResolve":false, "next":"core_high_school_campus",
+      "sectionTitle":"核心剧情盘·W145", "rpgLines":[
+        {"speaker":"旁白", "text":"河岸的异常暂时平息。你拿出签名本，纸页上浮出一行与这个世界相连的字：是否加入高专。"},
+        {"speaker":"？？？", "text":"在日本、且仍保有人类形态的术师，可以得到高专的庇护。选择会改变你之后遇见的人与能进入的剧情。"},
+        {"speaker":"系统记录", "text":"核心节点 W145：结果由玩家在有限选项中确认；AI不能替你决定。"}
+      ],
+      "choices":[
+        {"id":"join", "value":"是", "label":"加入高专", "next":"core_high_school_campus", "text":"你决定接受高专的庇护。纸页上的墨迹稳定下来，下一项核心节点指向 W171「高专在哪个校」。","storyFlags":{"joined_high_school":true}},
+        {"id":"decline", "value":"否", "label":"不加入高专", "next":"core_junpei_participation", "text":"你决定暂不加入高专。你保留独自行动的自由，后续跳过高专专属节点，按原剧情盘继续推进。","storyFlags":{"joined_high_school":false}}
+      ]
+    },
+    {
+      "id":"core_high_school_campus", "type":"rpg", "title":"W171·高专在哪个校", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":171, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W171：加入高专后，所属校区将决定你最先接触的术师网络与后续支线。"},
+        {"speaker":"？？？", "text":"东京、京都，或者远离主流视线的福冈。校区不是装饰，它会改变你能得到的训练与情报。"},
+        {"speaker":"系统记录", "text":"结果必须由玩家从原始转盘选项中确认；AI不能代替选择。"}
+      ],
+      "choices":[
+        {"id":"tokyo", "value":"东京", "label":"东京校", "next":"core_high_school_status", "text":"你选择东京校。主线人物与高专核心情报会更早进入你的视野。"},
+        {"id":"kyoto", "value":"京都", "label":"京都校", "next":"core_high_school_status", "text":"你选择京都校。传统派系与保守术师的影响会更直接地塑造你的路线。"},
+        {"id":"fukuoka", "value":"福冈", "label":"福冈校", "next":"core_high_school_status", "text":"你选择福冈校。远离东京与京都的视线，你会先以地方任务积累实力。"}
+      ]
+    },
+    {
+      "id":"core_high_school_status", "type":"rpg", "title":"W172·高专地位", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":172, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W172：你在高专中的身份将决定是否进入学生主角小队相关节点。"},
+        {"speaker":"？？？", "text":"你可以成为学生、老师、校长，甚至被老资格术师视为只会添乱的‘老登’。身份决定责任，也决定你能站在哪条战线上。"},
+        {"speaker":"系统记录", "text":"四个选项均来自原始 W172 转盘；本节点不允许 AI 自动裁决。"}
+      ],
+      "choices":[
+        {"id":"old_guard", "value":"老登", "label":"老登", "next":"core_exchange_participation", "text":"你以老资格术师的身份留在高专，掌握经验，却很难直接进入学生主角小队。"},
+        {"id":"principal", "value":"校长", "label":"校长", "next":"core_exchange_participation", "text":"你成为校长级别的决策者，后续会更多通过资源与命令影响事件。"},
+        {"id":"teacher", "value":"老师", "label":"老师", "next":"core_exchange_participation", "text":"你选择成为老师，训练与保护学生会成为之后节点的重要责任。"},
+        {"id":"student", "value":"学生", "label":"学生", "next":"core_join_main_team", "text":"你以学生身份进入高专，获得加入剧情开始时期主角小队的资格。"}
+      ]
+    },
+    {
+      "id":"core_join_main_team", "type":"rpg", "title":"W36·是否加入主角小队", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":36, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W36：学生身份可以选择是否加入剧情开始时期的主角小队。"},
+        {"speaker":"虎杖悠仁（记忆中的名字）", "text":"一起行动的话，任务会更危险，但你不会独自面对这个时代的咒灵。"},
+        {"speaker":"系统记录", "text":"选项来自原始 W36 转盘；这是组织与伙伴关系的关键节点。"}
+      ],
+      "choices":[
+        {"id":"join", "value":"是", "label":"加入主角小队", "next":"core_exchange_participation", "text":"你决定加入主角小队。虎杖、伏黑与钉崎的名字被记录进你的主线关系网。"},
+        {"id":"decline", "value":"否", "label":"暂不加入", "next":"core_exchange_participation", "text":"你选择暂不加入主角小队，保留独立行动空间，但之后必须独自承担更多风险。"}
+      ]
+    },
+    {
+      "id":"core_exchange_participation", "type":"rpg", "title":"W170·是否参加交流会", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":170, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W170：交流会是高专方的重要公开事件，参加与否会改变你接触敌方和同阵营角色的机会。"},
+        {"speaker":"旁白", "text":"训练场的邀请函落在桌面上。它看起来像一场比赛，也像一次提前安排好的试探。"},
+        {"speaker":"系统记录", "text":"结果必须由玩家手动确认；未参加时将跳过 W93 交流会结果节点。"}
+      ],
+      "choices":[
+        {"id":"participate", "value":"是", "label":"参加交流会", "next":"core_exchange_result", "text":"你接受邀请。交流会的胜负与伤势将继续由 W93 决定。"},
+        {"id":"decline", "value":"否", "label":"不参加", "next":"core_junpei_participation", "text":"你拒绝参加交流会，避开公开冲突，剧情直接推进到幼鱼与逆罚的前置节点。"}
+      ]
+    },
+    {
+      "id":"core_exchange_result", "type":"rpg", "title":"W93·交流会结果", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":93, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W93：交流会结果影响伤势，并可能决定你是否能正常参与后续涩谷事变。"},
+        {"speaker":"旁白", "text":"结界落下。你在混乱中看见同伴的身影，也看见敌人把这场交流会当成真正的猎场。"},
+        {"speaker":"系统记录", "text":"原始轮盘保留两项结果：无伤大雅，或重伤并无法参与涩谷事变。"}
+      ],
+      "choices":[
+        {"id":"minor", "value":"无伤大雅", "label":"无伤大雅", "next":"core_junpei_participation", "text":"交流会的冲突没有留下严重伤势，你仍能进入后续主线。", "resources":{"hp":-8,"ce":-6,"xp":12}, "storyFlags":{"shibuya_participation_blocked":false}},
+        {"id":"severe", "value":"重伤（无法参与涩谷事变）", "label":"重伤·无法参与涩谷", "next":"core_junpei_participation", "text":"你在交流会中重伤，之后的涩谷事变将记录为无法直接参与。", "resources":{"hp":-55,"ce":-30,"stability":-20,"xp":20}, "storyFlags":{"shibuya_participation_blocked":true}}
+      ]
+    },
+    {
+      "id":"core_junpei_participation", "type":"rpg", "title":"W95·参与幼鱼与逆罚", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":95, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W95：幼鱼与逆罚是剧情开始时期的重要分流，结果会决定你站在高专方、真人方，还是完全不参与。"},
+        {"speaker":"旁白", "text":"关于顺平的记录被翻到签名本中央。你可以介入，也可以让这段事件从身边经过。"},
+        {"speaker":"系统记录", "text":"三项结果均来自原始 W95 转盘。"}
+      ],
+      "choices":[
+        {"id":"none", "value":"未参与", "label":"未参与", "next":"core_shibuya_participation", "text":"你没有参与幼鱼与逆罚，事件结果交由原著线自行发展。"},
+        {"id":"yuji", "value":"和虎杖被一同派遣处理", "label":"与虎杖一同处理", "next":"core_junpei_high_school", "text":"你与虎杖一同被派遣处理事件，下一节点进入高专方结果。"},
+        {"id":"mahito", "value":"同顺平被真人蛊惑", "label":"与顺平一同被蛊惑", "next":"core_junpei_mahito", "text":"你与顺平一同被真人盯上，下一节点进入真人方结果。"}
+      ]
+    },
+    {
+      "id":"core_junpei_high_school", "type":"rpg", "title":"W96·幼鱼与逆罚（高专方）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":96, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W96：你站在高专方，顺平的命运会影响你对真人与咒术界的判断。"},
+        {"speaker":"旁白", "text":"战斗开始前，你意识到这不是一次普通任务。顺平仍有机会被带回来，但每一步都要付出代价。"},
+        {"speaker":"系统记录", "text":"结果来自原始 W96 转盘，核心节点必须由玩家手动选择。"}
+      ],
+      "choices":[
+        {"id":"canon_injury", "value":"原著结局，重伤", "label":"原著结局·重伤", "next":"core_shibuya_participation", "text":"顺平仍未能逃过原著结局，你也在战斗中重伤。"},
+        {"id":"mahito_near_death", "value":"原著结局，但真人被打濒临死亡", "label":"真人濒临死亡", "next":"core_shibuya_participation", "text":"顺平的结局没有改变，但真人被打到濒临死亡，后续咒灵阵营受到削弱。"},
+        {"id":"save_junpei", "value":"成功拯救顺平", "label":"成功拯救顺平", "next":"core_shibuya_participation", "text":"你在无为转变完成前介入，顺平活了下来，主线关系网被彻底改写。"}
+      ]
+    },
+    {
+      "id":"core_junpei_mahito", "type":"rpg", "title":"W97·幼鱼与逆罚（真人方）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":97, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W97：你与真人同流或反目，会决定涩谷前咒灵方的初始力量。"},
+        {"speaker":"真人", "text":"你可以和我一起见证人类的形状，也可以在最后一刻背叛我。顺平会替你记住答案。"},
+        {"speaker":"系统记录", "text":"四项结果均来自原始 W97 转盘，AI不能代替核心选择。"}
+      ],
+      "choices":[
+        {"id":"canon_transfigured", "value":"原著结局，被无为转变", "label":"被无为转变", "next":"core_shibuya_participation", "text":"你与顺平一起遭到无为转变，真人方获得了新的实验样本。"},
+        {"id":"saved_by_mahito", "value":"原著结局，但至少你被拯救了", "label":"至少我被拯救", "next":"core_shibuya_participation", "text":"顺平仍失去人类生活，但真人留下了你的意识。你欠下了一笔无法偿还的债。"},
+        {"id":"join_mahito", "value":"原著结局，但你与真人同流合污", "label":"与真人同流合污", "next":"core_shibuya_participation", "text":"你主动接受真人的理念，成为咒灵方的行动者。"},
+        {"id":"save_junpei", "value":"中途突然醒悟成功拯救顺平且对真人进行四打一", "label":"醒悟并救下顺平", "next":"core_shibuya_participation", "text":"你在最后一刻倒戈，与虎杖等人一起围攻真人，成功救下顺平。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_participation", "type":"rpg", "title":"W143·是否参加涩谷事变", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":143, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W143：涩谷事变是主线世界线的关键门槛。参加与否必须由玩家明确确认。"},
+        {"speaker":"旁白", "text":"签名本最后一页被黑色残秽覆盖。东京的地铁图、封锁线和一座即将落下的帐同时浮现。"},
+        {"speaker":"系统记录", "text":"选择参加后进入阵营节点 W132；选择不参加则直接记录涩谷后的世界状态。"}
+      ],
+      "choices":[
+        {"id":"participate", "value":"是", "label":"参加涩谷事变", "excludesFlags":["shibuya_participation_blocked"], "next":"core_shibuya_faction", "text":"你决定进入涩谷。所有普通事件与关系积累将在这里转化为真实风险。", "storyFlags":{"participates_shibuya":true}},
+        {"id":"avoid", "value":"否", "label":"不参加", "next":"core_shibuya_after_state", "text":"你没有进入涩谷，但世界不会因为你的缺席而停止变化。", "storyFlags":{"participates_shibuya":false}}
+      ]
+    },
+    {
+      "id":"core_shibuya_faction", "type":"rpg", "title":"W132·涩谷事变阵营", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":132, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W132：阵营决定你在涩谷事变中使用哪一套开场节点。"},
+        {"speaker":"旁白", "text":"帐内的灯光把人影切成三种颜色。高专、羂索方、第三方诅咒师，都在等待你表态。"},
+        {"speaker":"系统记录", "text":"这是阵营确认节点，AI不能替你决定立场。"}
+      ],
+      "choices":[
+        {"id":"high_school", "value":"高专（抽中之后默认高专）", "label":"高专方", "next":"core_shibuya_high_school_opening", "text":"你站到高专一侧，准备从结界边缘切入。", "storyFlags":{"faction_high_school":true,"faction":"高专方"}},
+        {"id":"kenjaku", "value":"羂索方", "label":"羂索方", "next":"core_shibuya_non_high_school", "text":"你接受羂索方的条件，涩谷的目标从救援变成利用混乱。", "storyFlags":{"faction_kenjaku":true,"faction":"羂索方"}},
+        {"id":"third_party", "value":"第三方诅咒师", "label":"第三方诅咒师", "next":"core_shibuya_non_high_school", "text":"你拒绝加入两方，作为第三方诅咒师进入涩谷，目标由自己定义。", "storyFlags":{"faction_third_party":true,"faction":"第三方诅咒师"}}
+      ]
+    },
+    {
+      "id":"core_shibuya_high_school_opening", "type":"rpg", "title":"W149·涩谷事变经过·开场（高专）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":149, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W149：高专方首先决定进入涩谷的方式。"},
+        {"speaker":"旁白", "text":"帐已经落下。你手里的地图同时标出地下、外围和五条悟所在的方向。"},
+        {"speaker":"系统记录", "text":"四项行动均来自原始 W149 转盘。"}
+      ],
+      "choices":[
+        {"id":"gojo_direct", "value":"直奔主题救五条", "label":"直奔救五条", "next":"core_shibuya_high_school_impact", "text":"你直接冲向五条悟所在位置，把救援放在一切之前。"},
+        {"id":"with_yuji", "value":"跟着虎杖一起出发", "label":"跟虎杖一起出发", "next":"core_shibuya_high_school_impact", "text":"你跟随虎杖进入结界，准备先处理眼前的咒灵与伤员。"},
+        {"id":"outer_support", "value":"结界最外层随时支援", "label":"外围支援", "next":"core_shibuya_high_school_impact", "text":"你驻守结界最外层，等待任何一条需要支援的求救信号。"},
+        {"id":"wander", "value":"进入结界游走", "label":"进入结界游走", "next":"core_shibuya_high_school_impact", "text":"你独自进入结界，在混乱中寻找改变局势的机会。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_high_school_impact", "type":"rpg", "title":"W148·对涩谷事变的影响（高专方）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":148, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W148：你在涩谷的直接行动会决定进入哪一条结果节点。"},
+        {"speaker":"旁白", "text":"每一次选择都在缩短救援窗口。你只能把力量投入一个方向。"},
+        {"speaker":"系统记录", "text":"六项行动均来自原始 W148 转盘。"}
+      ],
+      "choices":[
+        {"id":"rescue_people", "value":"救下七海、蔷薇和外围人员", "label":"救下七海与外围人员", "next":"core_shibuya_gojo_rescue", "text":"你优先救援伤员，保住了更多人的生还机会。"},
+        {"id":"get_prison_realm", "value":"直奔地下抢到五条盒", "label":"地下夺取狱门疆", "next":"core_shibuya_gojo_rescue", "text":"你冲入地下，试图先夺取封印五条的狱门疆。"},
+        {"id":"fail_seal", "value":"快人一步五条封印失败", "label":"让五条封印失败", "next":"core_shibuya_seal_failure", "text":"你判断封印即将完成，决定强行破坏计划。"},
+        {"id":"fight_sukuna", "value":"来晚一步，对战宿傩", "label":"对战宿傩", "next":"core_shibuya_sukuna_line", "battleNode":"core_battle_shibuya_sukuna", "text":"你赶到时已经太晚，只能面对完全苏醒的宿傩。"},
+        {"id":"fight_dagon", "value":"对战陀艮和漏壶救下众人", "label":"对战陀艮与漏壶", "next":"core_shibuya_gojo_rescue", "battleNode":"core_battle_shibuya_dagon", "text":"你加入领域内的苦战，争取把众人从陀艮与漏壶手中救出来。"},
+        {"id":"fight_choso", "value":"和虎杖一起走，对战胀相", "label":"与虎杖对战胀相", "next":"core_shibuya_gojo_rescue", "battleNode":"core_battle_shibuya_choso", "text":"你和虎杖并肩面对胀相，先把眼前的战斗打完。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_gojo_rescue", "type":"rpg", "title":"W150·事件结果·救五条（高专）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":150, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W150：你尝试救五条或夺取狱门疆后的直接结果。"},
+        {"speaker":"旁白", "text":"地下的空气几乎凝固。你只有一次机会判断封印、狱门疆和羂索之间的先后。"},
+        {"speaker":"系统记录", "text":"三项结果来自原始 W150 转盘。"}
+      ],
+      "choices":[
+        {"id":"seal_fail", "value":"行动迅速，五条封印失败", "label":"行动迅速·封印失败", "next":"core_shibuya_seal_failure", "text":"你的介入打乱了封印步骤，五条悟没有被完整封入狱门疆。"},
+        {"id":"prison_realm", "value":"五条封印，但抢到狱门疆", "label":"抢到狱门疆", "next":"core_shibuya_gojo_state_bridge", "text":"封印仍然完成，但狱门疆落入你的手中，世界线获得了新的破局可能。"},
+        {"id":"retreat", "value":"不敌羂索退走，按原著发展", "label":"不敌羂索·退走", "next":"core_shibuya_after_state", "text":"你无法突破羂索，只能退走，涩谷按原著方向继续坠落。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_seal_failure", "type":"rpg", "title":"W151·事件结果·封印失败（高专）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":151, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W151：五条封印失败后，天灾与羂索的后续由本节点确认。"},
+        {"speaker":"旁白", "text":"狱门疆失去目标，咒灵方的计划被迫改写。你必须决定这次机会能否换来真正的捕获。"},
+        {"speaker":"系统记录", "text":"两项结果来自原始 W151 转盘。"}
+      ],
+      "choices":[
+        {"id":"disaster_killed", "value":"天灾被五条踢死，但羂索跑路", "label":"天灾被五条击杀", "next":"core_shibuya_gojo_state_bridge", "text":"天灾在五条面前被击杀，但羂索趁乱逃离，涩谷没有迎来真正的收束。"},
+        {"id":"kenjaku_captured", "value":"天灾暴毙，羂索被捕", "label":"羂索被捕", "next":"core_shibuya_gojo_state_bridge", "text":"天灾暴毙，羂索也被捕获，咒术界第一次获得了改写规则的机会。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_sukuna_line", "type":"rpg", "title":"W152·宿傩结果·五条破封线", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":152, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W152：五条破封线进入宿傩结果节点。"},
+        {"speaker":"旁白", "text":"狱门疆终于出现松动，宿傩的力量却先一步从城市另一端升起。你要判断这条世界线能否压住他的复苏。"},
+        {"speaker":"系统记录", "text":"两项结果来自原始 W152 转盘。"}
+      ],
+      "choices":[
+        {"id":"sealed", "value":"被虎杖封印没办法复活", "label":"被虎杖封印", "next":"core_shibuya_worldline_state", "text":"虎杖完成封印，宿傩暂时失去复活机会。"},
+        {"id":"revive_weak", "value":"依旧复活，但实力大减", "label":"复活但实力大减", "next":"core_shibuya_sukuna_revival", "text":"宿傩仍然复活，但力量遭到严重削弱，决战条件被重新改写。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_sukuna_revival", "type":"rpg", "title":"W153·宿傩复活后·五条破封", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":153, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W153：宿傩复活后，五条破封线的最后一次世界意志判断。"},
+        {"speaker":"旁白", "text":"五条悟重新站在战场上。宿傩的力量虽然不完整，但任何轻率的判断都可能让一切回到最坏结果。"},
+        {"speaker":"系统记录", "text":"两项结果来自原始 W153 转盘。"}
+      ],
+      "choices":[
+        {"id":"slowdown", "value":"被五条当减速带", "label":"被五条压制", "next":"core_shibuya_worldline_state", "text":"宿傩被五条当作减速带，战场主动权重新回到高专一侧。"},
+        {"id":"hide", "value":"潜伏然后恢复决战实力（世界意志）", "label":"潜伏恢复实力", "next":"core_shibuya_worldline_state", "text":"宿傩选择潜伏，等待恢复决战实力，世界线留下了新的隐患。"}
+      ]
+    },
+    {
+      "id":"core_shibuya_non_high_school", "type":"rpg", "title":"W98·涩谷事变过程（非高专方）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":98, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W98：非高专方在涩谷的行动路线。"},
+        {"speaker":"旁白", "text":"你没有救援任务，也不受高专指挥。涩谷的每一处战斗都可以成为你的交易、猎杀或逃生路线。"},
+        {"speaker":"系统记录", "text":"五项过程来自原始 W98 转盘。"}
+      ],
+      "choices":[
+        {"id":"hanami_jogo", "value":"对战花御，漏瑚", "label":"对战花御与漏瑚", "next":"core_shibuya_after_state", "battleNode":"core_battle_shibuya_hanami_jogo", "text":"你在结界中与花御、漏瑚交手，非高专路线被卷入咒灵方的核心冲突。"},
+        {"id":"mahito", "value":"对战真人", "label":"对战真人", "next":"core_shibuya_after_state", "battleNode":"core_battle_shibuya_mahito", "text":"你与真人交手，顺平事件留下的关系和旗标开始反噬。"},
+        {"id":"kenjaku_choso", "value":"对战羂索，胀相", "label":"对战羂索与胀相", "next":"core_shibuya_after_state", "battleNode":"core_battle_shibuya_kenjaku_choso", "text":"你同时面对羂索与胀相，任何一方的承诺都不再可信。"},
+        {"id":"smallpox", "value":"对战疱疮神", "label":"对战疱疮神", "next":"core_shibuya_after_state", "battleNode":"core_battle_shibuya_smallpox", "text":"你被拖入疱疮神的结界，必须先破解诅咒规则。"},
+        {"id":"haruta", "value":"对战春太", "label":"对战春太", "next":"core_shibuya_after_state", "battleNode":"core_battle_shibuya_haruta", "text":"你在混乱街区遭遇春太，选择了最直接的战斗路线。"}
+      ]
+    },
+    {"id":"core_battle_shibuya_sukuna","type":"battle","nodeKind":"core_battle","title":"核心战斗·宿傩","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_sukuna_line","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"sukuna","battleRules":{"victory":{"xp":30,"stability":-8,"growth":{"体术":2,"咒力操纵":1}},"retreat":{"xp":8,"stability":-15,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-20,"growth":{"体质":1}}}},
+    {"id":"core_battle_shibuya_dagon","type":"battle","nodeKind":"core_battle","title":"核心战斗·陀艮与漏瑚","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_gojo_rescue","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"dagon_jogo","battleRules":{"victory":{"xp":24,"stability":-6,"growth":{"体术":1,"咒力效率":1}},"retreat":{"xp":7,"stability":-12,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-16,"growth":{"体质":1}}}},
+    {"id":"core_battle_shibuya_choso","type":"battle","nodeKind":"core_battle","title":"核心战斗·胀相","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_gojo_rescue","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"choso","battleRules":{"victory":{"xp":22,"stability":-5,"growth":{"体术":1,"体质":1}},"retreat":{"xp":7,"stability":-11,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-14,"growth":{"体质":1}}}},
+    {"id":"core_battle_shibuya_hanami_jogo","type":"battle","nodeKind":"core_battle","title":"核心战斗·花御与漏瑚","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_after_state","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"hanami_jogo","battleRules":{"victory":{"xp":24,"stability":-7,"growth":{"咒力效率":2}},"retreat":{"xp":7,"stability":-13,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-17,"growth":{"体质":1}}}},
+    {"id":"core_battle_shibuya_mahito","type":"battle","nodeKind":"core_battle","title":"核心战斗·真人","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_after_state","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"mahito","battleRules":{"victory":{"xp":26,"stability":-9,"growth":{"悟性":2,"体术":1}},"retreat":{"xp":7,"stability":-15,"growth":{"悟性":1}},"defeat":{"xp":2,"stability":-19,"growth":{"悟性":1}}}},
+    {"id":"core_battle_shibuya_kenjaku_choso","type":"battle","nodeKind":"core_battle","title":"核心战斗·羂索与胀相","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_after_state","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"kenjaku_choso","battleRules":{"victory":{"xp":28,"stability":-8,"growth":{"悟性":1,"咒力操纵":1}},"retreat":{"xp":7,"stability":-14,"growth":{"悟性":1}},"defeat":{"xp":2,"stability":-18,"growth":{"体质":1}}}},
+    {"id":"core_battle_shibuya_smallpox","type":"battle","nodeKind":"core_battle","title":"核心战斗·疱疮神","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_after_state","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"smallpox","battleRules":{"victory":{"xp":20,"stability":-6,"growth":{"咒力操纵":1,"咒力效率":1}},"retreat":{"xp":6,"stability":-11,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-15,"growth":{"体质":1}}}},
+    {"id":"core_battle_shibuya_haruta","type":"battle","nodeKind":"core_battle","title":"核心战斗·春太","scene":"res://scenes/battle/battle_scene.tscn","next":"core_shibuya_after_state","critical":true,"aiMayResolve":false,"sourceRole":"core_wheel_battle","battleProfile":"haruta","battleRules":{"victory":{"xp":18,"stability":-4,"growth":{"体术":1,"悟性":1}},"retreat":{"xp":5,"stability":-9,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-12,"growth":{"体质":1}}}},
+    {
+      "id":"core_shibuya_gojo_state_bridge", "type":"rpg", "title":"涩谷后五条状态", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"收敛节点：涩谷后五条状态。原时间线要求在高专路线中确认这一世界状态。"},{"speaker":"旁白","text":"封印、狱门疆与救援行动留下了不同的后果。你必须确认五条悟最终站在哪一条世界线上。"}],
+      "choices":[
+        {"id":"gojo_unsealed","value":"五条未被封印，高专抢回主动权","label":"五条未被封印","next":"core_shibuya_kenjaku_plan_state","text":"五条仍在战场上，高专暂时夺回主动权。","storyFlags":{"gojo_can_affect_sukuna":true,"gojo_shibuya_state":"unsealed"}},
+        {"id":"prison_realm_recovered","value":"五条被封印但狱门疆被高专夺回","label":"夺回狱门疆","next":"core_shibuya_kenjaku_plan_state","text":"五条被封印，但狱门疆已经落入高专手中，破局仍有可能。","storyFlags":{"gojo_can_affect_sukuna":true,"gojo_shibuya_state":"sealed_realm_recovered"}},
+        {"id":"gojo_sealed","value":"五条仍被封印，涩谷按原著主轴推进","label":"五条仍被封印","next":"core_shibuya_kenjaku_plan_state","text":"五条仍被封印，涩谷大部分后果沿原著主轴推进。","storyFlags":{"gojo_can_affect_sukuna":false,"gojo_shibuya_state":"sealed"}}
+      ]
+    },
+    {
+      "id":"core_shibuya_kenjaku_plan_state", "type":"rpg", "title":"羂索计划是否继续", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"收敛节点：羂索计划是否继续。该结果决定死灭回游前置状态。"},{"speaker":"旁白","text":"真正的战斗结束后，计划本身仍可能继续。你要判断羂索、结界和备用方案留下了什么。"}],
+      "choices":[
+        {"id":"captured","value":"羂索被捕，死灭回游无法正常发动","label":"羂索被捕","next":"core_shibuya_worldline_state","text":"羂索被捕，死灭回游无法按原计划正常发动。","storyFlags":{"kenjaku_plan_state":"stopped","culling_game_participation_blocked":true}},
+        {"id":"damaged","value":"羂索逃走，但计划严重受损","label":"计划严重受损","next":"core_shibuya_worldline_state","text":"羂索逃走，但结界与咒力资源都受到重创。","storyFlags":{"kenjaku_plan_state":"damaged"}},
+        {"id":"canon","value":"羂索逃走，原著大体继续","label":"原著大体继续","next":"core_shibuya_worldline_state","text":"羂索逃走，死灭回游沿原著大体继续。","storyFlags":{"kenjaku_plan_state":"canon"}},
+        {"id":"backup","value":"羂索启用备用方案强行发动","label":"强行启动备用方案","next":"core_shibuya_worldline_state","text":"羂索启动备用方案，死灭回游以更高风险提前发动。","storyFlags":{"kenjaku_plan_state":"backup","culling_game_forced_start":true}}
+      ]
+    },
+    {
+      "id":"core_shibuya_worldline_state", "type":"rpg", "title":"改写后的世界线走向", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"收敛节点：改写后的世界线走向。结果来自原始核心时间线的四项世界意志选项。"},{"speaker":"旁白","text":"涩谷已经成为过去，但每一个选择仍在向未来施力。你要确认接下来世界会偏向哪一条主轴。"}],
+      "choices":[
+        {"id":"correction","value":"原著修正力回归，后续仍大体发生","label":"原著修正力回归","next":"core_shibuya_after_state","text":"后续事件仍大体发生，但你已经改变了若干关键关系。","storyFlags":{"worldline_state":"canon_correction"}},
+        {"id":"high_school_advantage","value":"高专提前占优，死灭回游削弱或跳过","label":"高专提前占优","next":"core_shibuya_after_state","text":"高专提前占据优势，死灭回游被削弱或跳过。","storyFlags":{"worldline_state":"high_school_advantage","culling_game_participation_blocked":true}},
+        {"id":"remnants","value":"羂索残党继续推动事件","label":"羂索残党继续推动","next":"core_shibuya_after_state","text":"羂索残党继续推动事件，后续危机转为地下战争。","storyFlags":{"worldline_state":"kenjaku_remnants"}},
+        {"id":"sukuna_new_shinjuku","value":"宿傩潜伏，直接转向新宿变体线","label":"转向新宿变体线","next":"core_shibuya_after_state","text":"宿傩潜伏，世界线跳过部分死灭回游，直接向新宿变体线收束。","storyFlags":{"worldline_state":"sukuna_shinjuku_variant","culling_game_participation_blocked":true}}
+      ]
+    },
+    {
+      "id":"core_shibuya_after_state", "type":"rpg", "title":"W69·涩谷事变后状态", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":69, "aiMayResolve":false,
+      "rpgLines":[
+        {"speaker":"系统记录", "text":"核心剧情盘 W69：涩谷事变结束后的生存状态。"},
+        {"speaker":"旁白", "text":"帐已散去，城市却没有恢复原状。你必须确认自己是带着伤活下来，还是永远留在这场事变里。"},
+        {"speaker":"系统记录", "text":"三项结果来自原始 W69 转盘；本节点完成后进入涩谷阶段结算。"}
+      ],
+      "choices":[
+        {"id":"injured", "value":"重伤存活（不能参加死灭回游）", "label":"重伤存活", "next":"core_shibuya_outcome", "text":"你重伤存活，但短期内无法参加死灭回游。", "resources":{"hp":-45,"stability":-25,"xp":24}, "npcFlags":{"junior_sorcerer":{"shibuya_injured":true}}, "storyFlags":{"culling_game_participation_blocked":true}},
+        {"id":"survive", "value":"存活", "label":"存活", "next":"core_shibuya_outcome", "text":"你活着离开涩谷，带着新的伤痕和改变世界线的记录。", "resources":{"xp":36,"stability":-8}, "growth":{"悟性":1}},
+        {"id":"sacrifice", "value":"牺牲", "label":"牺牲", "next":"core_shibuya_outcome", "text":"你的名字留在涩谷事变的牺牲者名单里，其他人的路线因此被改写。", "resources":{"hp":-999,"stability":-100}, "npcFlags":{"junior_sorcerer":{"protagonist_sacrificed":true}}, "storyFlags":{"protagonist_dead":true,"culling_game_participation_blocked":true}}
+      ]
+    },
+    {
+      "id":"core_shibuya_outcome", "type":"random", "nodeKind":"weighted_choice", "title":"涩谷事变结局", "scene":"res://scenes/story/RPG.tscn", "next":"core_shibuya_end", "critical":true, "aiMayResolve":false, "resolution":"weighted_choice", "rpgLines":[
+        {"speaker":"系统记录", "text":"核心时间线收束：涩谷事变结局。结果由源文件定义的本地权重抽取，不由AI代替。"},
+        {"speaker":"旁白", "text":"帐已经散去，但世界仍在判断这场事变究竟留下了谁的胜利。"},
+        {"speaker":"系统记录", "text":"三项结果：高专胜利、咒灵胜利、诅咒师胜利。确认后将进行一次可复现的本地加权抽取。"}
+      ],
+      "choices":[{"id":"roll","value":"结局抽取","label":"抽取涩谷结局","next":"core_shibuya_end"}],
+      "outcomes":[
+        {"id":"high_school_win","weight":1,"weightByFlag":{"faction_high_school":2},"title":"涩谷结局·高专胜利","text":"高专方守住了最后的撤离线，城市损失惨重，但主导权没有完全落入敌手。","storyFlags":{"shibuya_outcome":"high_school_win"},"resources":{"xp":30,"stability":8}},
+        {"id":"curse_win","weight":1,"weightByFlag":{"faction_kenjaku":2},"title":"涩谷结局·咒灵胜利","text":"咒灵方在混乱中夺走关键优势，残秽沿着城市地下继续扩散。","storyFlags":{"shibuya_outcome":"curse_win"},"resources":{"xp":24,"stability":-18}},
+        {"id":"sorcerer_win","weight":1,"weightByFlag":{"faction_third_party":2},"title":"涩谷结局·诅咒师胜利","text":"第三方诅咒师利用双方交战夺走筹码，新的秩序从废墟边缘开始形成。","storyFlags":{"shibuya_outcome":"sorcerer_win"},"resources":{"xp":26,"stability":-10,"money":15}}
+      ]
+    },
+    {"id":"core_shibuya_end","type":"end","title":"涩谷事变阶段完成","scene":"res://scenes/story/Map.tscn","next":"core_culling_gate","critical":true,"aiMayResolve":false,"sourceRole":"core_timeline_end"},
+    {
+      "id":"core_culling_gate", "type":"rpg", "title":"死灭回游前置判断", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"进入文件2的 cullingGame 段落。死灭回游是否能发生，取决于涩谷后羂索计划与角色生还状态。"},{"speaker":"旁白","text":"你从涩谷的废墟回到暂时安全的区域。结界尚未完全成形，但有人正在等待它启动。"}],
+      "choices":[
+        {"id":"dead_end","value":"记录角色死亡", "label":"记录角色死亡", "next":"core_culling_dead_end", "requiresFlags":["protagonist_dead"]},
+        {"id":"guard_gate","value":"先处理高专守卫天元安排", "label":"高专路线·先确认天元守卫", "next":"core_culling_guard_tengen", "requiresFlags":["joined_high_school"], "excludesFlags":["culling_game_participation_blocked","protagonist_dead"]},
+        {"id":"enter","value":"进入死灭回游判断", "label":"确认死灭回游入口", "next":"core_culling_participation", "excludesFlags":["joined_high_school","culling_game_participation_blocked","protagonist_dead"]},
+        {"id":"altered","value":"死灭回游改写后走向", "label":"查看改写后走向", "next":"core_culling_altered_outcome", "requiresFlags":["culling_game_participation_blocked"]}
+      ]
+    },
+    {
+      "id":"core_culling_altered_outcome", "type":"rpg", "title":"死灭回游改写后走向", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"源文件定义：当 cullingGameCanOccur == false 时，进入死灭回游替代结局。"},{"speaker":"旁白","text":"羂索的计划已经无法按原样展开。你必须确认这场未能成形的战争会留下什么。"}],
+      "choices":[
+        {"id":"stillborn","value":"死灭回游胎死腹中，高专开始清算残余术师","label":"死灭回游胎死腹中","next":"chapter1_end","text":"结界没有形成，高专开始清算残余术师。"},
+        {"id":"sporadic","value":"残党零星作乱，但没有形成大规模结界战","label":"残党零星作乱","next":"chapter1_end","text":"残党仍在各地作乱，但没有形成大规模结界战。"},
+        {"id":"delayed","value":"羂索计划被迫延期，后续事件大幅缩水","label":"计划延期","next":"chapter1_end","text":"计划被迫延期，后续事件的规模大幅缩水。"}
+      ]
+    },
+    {
+      "id":"core_culling_dead_end", "type":"rpg", "title":"角色死亡·主线收束", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"角色死亡旗标已成立。当前存档不能继续进行死灭回游，经历会保留在结算与事件记录中。"},{"speaker":"旁白","text":"签名本最后一页合上，所有未完成的可能性停在这一刻。"}],
+      "choices":[
+        {"id":"acknowledge","value":"确认死亡并结算","label":"确认死亡并结算","next":"chapter1_end","text":"你确认这条时间线以角色死亡收束。存档保留完整经历，但不再推进后续节点。","storyFlags":{"run_terminal":true}}
+      ]
+    },
+    {
+      "id":"core_culling_guard_tengen", "type":"rpg", "title":"W73·是否留下守卫天元", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":73, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"原始 W73 仅适用于加入高专且死灭回游能够发生的路线。你的选择会决定是否承担守卫天元的职责。"}],
+      "choices":[
+        {"id":"stay","value":"是","label":"留下守卫天元","next":"core_culling_guard_tengen_result","text":"你留下守卫天元，暂时把自己放在结界后方的关键位置。","storyFlags":{"guards_tengen":true}},
+        {"id":"leave","value":"否","label":"不留下","next":"core_culling_participation","text":"你不承担守卫天元的职责，转而准备进入死灭回游。","storyFlags":{"guards_tengen":false}}
+      ]
+    },
+    {
+      "id":"core_culling_guard_tengen_result", "type":"rpg", "title":"W74·守卫天元结果", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":74, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"W74 记录守卫天元期间的结果，然后继续进入 W144。"}],
+      "choices":[
+        {"id":"win","value":"打得羂索仓皇逃窜","label":"击退羂索","next":"core_culling_participation","resources":{"xp":20},"storyFlags":{"tengen_guard_result":"kenjaku_retreat"}},
+        {"id":"dead","value":"死亡，没有改变任何事","label":"死亡","next":"core_culling_participation","resources":{"hp":-80,"stability":-25},"storyFlags":{"tengen_guard_result":"dead"}},
+        {"id":"run","value":"跑路了，没有改变任何事","label":"撤离","next":"core_culling_participation","resources":{"stability":-5},"storyFlags":{"tengen_guard_result":"retreated"}},
+        {"id":"star","value":"其实我有星浆体资质直接同化气死羂索","label":"星浆体同化","next":"core_culling_participation","resources":{"xp":30,"stability":10},"storyFlags":{"tengen_guard_result":"star_plasma_merger"}}
+      ]
+    },
+    {
+      "id":"core_culling_participation", "type":"rpg", "title":"W144·是否参加死灭回游", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":144, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"核心剧情盘 W144：是否参加死灭回游。"},{"speaker":"旁白","text":"结界向你发出邀请。参加意味着进入持续消耗的真实战场，拒绝则保留观察和准备的机会。"},{"speaker":"系统记录","text":"两项选项来自原始 W144 转盘，AI不能代替选择。"}],
+      "choices":[
+        {"id":"join","value":"是","label":"参加死灭回游","next":"core_culling_post_join_gate","text":"你进入结界，先确认术式觉醒与受肉状态。","storyFlags":{"participates_culling_game":true}},
+        {"id":"decline","value":"否","label":"不参加","next":"chapter1_end","text":"你暂时不进入结界，等待更明确的破局机会。","storyFlags":{"participates_culling_game":false}}
+      ]
+    },
+    {
+      "id":"core_culling_post_join_gate", "type":"rpg", "title":"死灭回游参战资格分流", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"根据转盘角色的术式与等级标签，进入对应的死灭回游节点。没有生得术式者先处理 W54；特级进入 W107；其他术师进入 W55。"}],
+      "choices":[
+        {"id":"awakening","value":"进入术式觉醒判定","label":"没有生得术式·进入W54","next":"core_culling_awakening","requiresFlags":["participates_culling_game"],"excludesFlags":["has_technique"]},
+        {"id":"special_location","value":"进入特级地点判定","label":"特级·进入W107","next":"core_culling_special_location","requiresFlags":["participates_culling_game","is_special_grade"]},
+        {"id":"normal_location","value":"进入普通地点判定","label":"普通术师·进入W55","next":"core_culling_location","requiresFlags":["participates_culling_game"],"excludesFlags":["is_special_grade"]}
+      ]
+    },
+    {
+      "id":"core_culling_awakening", "type":"rpg", "title":"W54·死灭回游中能不能觉醒术式", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":54, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"原始 W54 仅适用于没有生得术式的角色。结果会决定你获得新术式、维持无术式状态，或被古代术师受肉。"}],
+      "choices":[
+        {"id":"awaken","value":"是","label":"觉醒术式","next":"core_culling_location","text":"结界中的压力逼出新的术式回路。","storyFlags":{"has_technique":true,"culling_technique_awakened":true}},
+        {"id":"none","value":"否","label":"没有觉醒","next":"core_culling_location","text":"你没有获得新术式，只能依靠原有体术与咒力求生。","storyFlags":{"culling_technique_awakened":false}},
+        {"id":"reincarnated","value":"被受肉了","label":"被古代术师受肉","next":"core_culling_reincarnation","text":"你的身体被古代术师夺取，W70 将决定受肉对象。","storyFlags":{"culling_reincarnated":true}}
+      ]
+    },
+    {
+      "id":"core_culling_reincarnation", "type":"rpg", "title":"W70·被谁受肉", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":70, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"W70 结果记录受肉对象，并保留为后续战斗与身份判断的剧情旗标。"}],
+      "choices":[
+        {"id":"angel","value":"万","label":"万","next":"core_culling_location","storyFlags":{"reincarnation_host":"万"}},
+        {"id":"kashimo","value":"鹿紫云一","label":"鹿紫云一","next":"core_culling_location","storyFlags":{"reincarnation_host":"鹿紫云一"}},
+        {"id":"reggie","value":"雷吉史达","label":"雷吉史达","next":"core_culling_location","storyFlags":{"reincarnation_host":"雷吉史达"}},
+        {"id":"ancient","value":"某不知名古代术师","label":"某不知名古代术师","next":"core_culling_location","storyFlags":{"reincarnation_host":"某不知名古代术师"}}
+      ]
+    },
+    {
+      "id":"core_culling_special_location", "type":"rpg", "title":"W107·参加死灭地点（特级专属）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":107, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"原始 W107 仅对特级角色开放。选择落点后直接进入非弱者结算 W72。"}],
+      "choices":[
+        {"id":"higuruma","value":"去东京找日车","label":"去东京找日车","next":"core_culling_result","storyFlags":{"culling_location":"东京·日车"}},
+        {"id":"sendai_four","value":"去仙台一穿五啊","label":"去仙台一穿五啊","next":"core_culling_result","storyFlags":{"culling_location":"仙台·一穿五"}},
+        {"id":"wander","value":"闲逛，想去哪去哪","label":"自由游走","next":"core_culling_result","storyFlags":{"culling_location":"自由游走"}},
+        {"id":"kashimo","value":"去东京找鹿紫云一","label":"去东京找鹿紫云一","next":"core_culling_result","storyFlags":{"culling_location":"东京·鹿紫云一"}},
+        {"id":"four","value":"地点，我直接一穿四啊（指结界）","label":"直接挑战结界","next":"core_culling_result","storyFlags":{"culling_location":"结界挑战"}}
+      ]
+    },
+    {
+      "id":"core_culling_location", "type":"rpg", "title":"W55·参加死灭回游地点", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":55, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"核心剧情盘 W55：参加死灭回游地点。"},{"speaker":"旁白","text":"结界把仙台、东京和其他区域标记在地图上。你的落点会决定第一个遭遇的敌人与资源。"}],
+      "choices":[
+        {"id":"sendai","value":"仙台","label":"仙台","next":"core_culling_result","text":"你回到仙台结界，熟悉的河岸残秽成为新的线索。","storyFlags":{"culling_location":"仙台"}},
+        {"id":"tokyo","value":"东京","label":"东京","next":"core_culling_result","text":"你选择东京，进入术师与结界规则最密集的区域。","storyFlags":{"culling_location":"东京"}},
+        {"id":"other","value":"其他","label":"其他","next":"core_culling_result","text":"你选择其他区域，暂时避开主战场，寻找新的突破口。","storyFlags":{"culling_location":"其他"}}
+      ]
+    },
+    {
+      "id":"core_culling_result", "type":"rpg", "title":"死灭回游结果分流", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":0, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"根据转盘角色标签，弱者进入 W127，其他角色进入 W72。"}],
+      "choices":[
+        {"id":"weak","value":"进入弱者结果","label":"弱者·进入W127","next":"core_culling_weak_result","requiresFlags":["is_weak_grade"]},
+        {"id":"strong","value":"进入常规结果","label":"常规·进入W72","next":"core_culling_strong_result","excludesFlags":["is_weak_grade"]}
+      ]
+    },
+    {
+      "id":"core_culling_weak_result", "type":"rpg", "title":"W127·参加死灭结果（弱者专属）", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":127, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"弱者结果决定你是否能活着离开第一轮结界。"}],
+      "choices":[
+        {"id":"alive","value":"活着","label":"活着","next":"chapter1_end","resources":{"xp":20,"stability":4},"storyFlags":{"culling_result":"alive"}},
+        {"id":"dead","value":"死了","label":"死了","next":"chapter1_end","resources":{"hp":-100,"stability":-50},"storyFlags":{"culling_result":"dead","protagonist_dead":true}}
+      ]
+    },
+    {
+      "id":"core_culling_strong_result", "type":"rpg", "title":"W72·死灭回游结果", "scene":"res://scenes/story/RPG.tscn", "critical":true, "sourceWheelId":72, "aiMayResolve":false,
+      "rpgLines":[{"speaker":"系统记录","text":"非弱者结果记录死灭回游第一阶段的生死，并把结界经历交给后续章节。"}],
+      "choices":[
+        {"id":"alive","value":"存活","label":"存活","next":"chapter1_end","resources":{"xp":35,"stability":-4},"storyFlags":{"culling_result":"alive"}},
+        {"id":"dead","value":"死亡","label":"死亡","next":"chapter1_end","resources":{"hp":-100,"stability":-60},"storyFlags":{"culling_result":"dead","protagonist_dead":true}}
+      ]
+    }
+  ]
+}

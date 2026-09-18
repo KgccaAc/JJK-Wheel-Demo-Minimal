@@ -1,0 +1,48 @@
+TEST_START test=battle_post_strategy_input_acceptance.ps1
+Godot Engine v4.6.2.stable.mono.official.71f334935 - https://godotengine.org
+
+POST_STRATEGY_TEST_START
+WARNING: res://ui/battle_status/resource_counter_card.tscn:4 - ext_resource, invalid UID: uid://bs4xqrg8p8ddu - using text path instead: res://ui/battle_status/resource_counter_card.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/godot/BattlePostStrategyInputAcceptance.gd:7)
+WARNING: res://ui/battle_status/special_effect_badge.tscn:4 - ext_resource, invalid UID: uid://bew21ejp4qiut - using text path instead: res://ui/battle_status/special_effect_badge.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/godot/BattlePostStrategyInputAcceptance.gd:7)
+WARNING: res://ui/battle_cards/basic_card.tscn:3 - ext_resource, invalid UID: uid://ba4awdleoaxtj - using text path instead: res://ui/battle_cards/battle_card_view.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/godot/BattlePostStrategyInputAcceptance.gd:7)
+WARNING: res://scenes/battle/first_move_contest.tscn:4 - ext_resource, invalid UID: uid://dlu1owv2mo08p - using text path instead: res://scenes/battle/FirstMoveContest.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/godot/BattlePostStrategyInputAcceptance.gd:7)
+WARNING: res://scenes/battle/round_summary_panel.tscn:3 - ext_resource, invalid UID: uid://kio24nufv3np - using text path instead: res://scenes/battle/round_summary_panel.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/godot/BattlePostStrategyInputAcceptance.gd:7)
+WARNING: res://scenes/battle/strategy_selection.tscn:13 - ext_resource, invalid UID: uid://bf8yqtqf2pmcq - using text path instead: res://scenes/battle/StrategySelection.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _initialize (res://tests/godot/BattlePostStrategyInputAcceptance.gd:7)
+POST_STRATEGY_STARTUP_WAIT_COMPLETE
+post-strategy phase=DISCARD preview_visible=false
+post-strategy hand candidate=BasicCard rect=[P: (60.0, 500.0), S: (248.0, 372.0)]
+post-strategy overlap card=BasicCard card_rect=[P: (500.0, 700.0), S: (248.0, 372.0)] my_area=[P: (310.0, 680.0), S: (1080.0, 220.0)] hovered=/root/BattleScene/HandCardLayer/BasicCard
+post-strategy card rect=[P: (60.0, 500.0), S: (248.0, 372.0)] phase=2 action_parent_rect=[P: (0.0, 815.0), S: (1672.0, 126.0)] action_parent_filter=2
+candidate path=/root/BattleScene/DeskBackground/TextureRect type=TextureRect z=0 filter=1 disabled=false
+candidate path=/root/BattleScene/HandCardLayer/BasicCard type=TextureButton z=0 filter=0 disabled=false
+post-strategy action phase=DISCARD hand_phase=2 has_hand=true mode=combined action_visible=true action_modulate=(1.0, 1.0, 1.0, 1.0)
+post-strategy probe=(600.0, 700.0) hovered=/root/BattleScene/HandCardLayer/@TextureButton@15
+post-strategy probe=(900.0, 700.0) hovered=/root/BattleScene/HandCardLayer/@TextureButton@21
+post-strategy probe=(1300.0, 860.0) hovered=/root/BattleScene/ActionButtons/BasicCardButton
+post-strategy probe=(700.0, 860.0) hovered=/root/BattleScene/HandCardLayer/@TextureButton@18
+post-strategy probe=(800.0, 300.0) hovered=/root/BattleScene/DeskBackground/TextureRect
+BATTLE_POST_STRATEGY_INPUT_PASS phase=DISCARD
+
+
+TEST_PASS test=battle_post_strategy_input_acceptance.ps1
+BATTLE_ACCEPTANCE_RESULT status=PASS script=C:\Users\KgccaAc\Desktop\Public\JJK-Wheel-Demo-Minimal\tests\powershell\battle_post_strategy_input_acceptance.ps1
+TEST_END run_id=20260917T100021999Z
+BATTLE_ACCEPTANCE_SUMMARY total=1 passed=1 failed=0

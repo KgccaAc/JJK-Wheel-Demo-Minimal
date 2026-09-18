@@ -1,0 +1,1036 @@
+[gd_scene format=3 uid="uid://gyu25263h1vt"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="3_4deho"]
+[ext_resource type="Script" uid="uid://p7wcj44lk2bg" path="res://scenes/roster/RosterPicker.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="4_cmb4g"]
+[ext_resource type="Texture2D" uid="uid://lyk16p6133l5" path="res://art/fight/角色选择/展开衬底.png" id="5_1my11"]
+[ext_resource type="Texture2D" uid="uid://bbb83lgxtlep" path="res://art/fight/角色选择/我方面板.png" id="5_61b1b"]
+[ext_resource type="Script" uid="uid://c06dxfqi22d6u" path="res://ui/navigation/BottomNav.gd" id="5_xbpvj"]
+[ext_resource type="Texture2D" uid="uid://db8uvkw3yegeo" path="res://art/fight/角色选择/角色选择未选中.png" id="6_2rn3p"]
+[ext_resource type="Texture2D" uid="uid://b7va8t3okofmt" path="res://art/fight/角色选择/角色选中我方.png" id="6_7vlk7"]
+[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/选中状态主页小标.png" id="6_61b1b"]
+[ext_resource type="Texture2D" uid="uid://cqwgypxo4yixc" path="res://art/fight/角色选择/敌方面板.png" id="6_bqetg"]
+[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/未选中状态角色小标.png" id="7_bqetg"]
+[ext_resource type="Texture2D" uid="uid://dxm0xh02xeeid" path="res://art/fight/角色选择/角色选中敌方.png" id="8_1my11"]
+[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/未选中状态战斗小标.png" id="8_7vlk7"]
+[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/未选中状态论坛小标.png" id="9_1my11"]
+[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/未选中状态OC小标.png" id="10_2rn3p"]
+[ext_resource type="Script" path="res://scenes/roster/CharacterDetail.gd" id="11_detail"]
+
+[node name="CharacterSelection" type="Control" unique_id=1186122561]
+custom_minimum_size = Vector2(1672, 941)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1672.0
+offset_bottom = 941.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=59212903]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1675.0
+offset_bottom = -934.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Background" unique_id=915664033]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_4deho")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=1723330306]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=2082591440]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "角色选择"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=210867042]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "领域展开 · 咒术师的终极对决"
+
+[node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=299662088]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 28.0
+offset_right = 1430.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_cmb4g")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background/Header/UserButton" unique_id=1428943502]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=2113144111]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Background/Header" unique_id=916048634]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="CharacterBackground" type="TextureRect" parent="." unique_id=110242566]
+z_index = 20
+layout_mode = 0
+offset_left = 544.0
+offset_top = 119.0
+offset_right = 1076.0
+offset_bottom = 751.0
+texture = ExtResource("5_1my11")
+expand_mode = 1
+
+[node name="Character6" type="TextureRect" parent="CharacterBackground" unique_id=1636825052]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 436.0
+offset_right = 532.0
+offset_bottom = 619.0
+texture = ExtResource("6_2rn3p")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterBackground/Character6" unique_id=2121921072]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 63.0
+offset_right = 510.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "五条悟（新宿决战）"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Character5" type="TextureRect" parent="CharacterBackground" unique_id=794007104]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 348.0
+offset_right = 533.0
+offset_bottom = 531.0
+texture = ExtResource("6_2rn3p")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterBackground/Character5" unique_id=1526386538]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 63.0
+offset_right = 510.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "五条悟（新宿决战）"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Character4" type="TextureRect" parent="CharacterBackground" unique_id=1479330385]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 260.0
+offset_right = 533.0
+offset_bottom = 443.0
+texture = ExtResource("6_2rn3p")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterBackground/Character4" unique_id=1862346962]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 63.0
+offset_right = 510.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "五条悟（新宿决战）"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Character3" type="TextureRect" parent="CharacterBackground" unique_id=338353719]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 174.0
+offset_right = 533.0
+offset_bottom = 357.0
+texture = ExtResource("6_2rn3p")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterBackground/Character3" unique_id=428141265]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 63.0
+offset_right = 510.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "五条悟（新宿决战）"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Character2" type="TextureRect" parent="CharacterBackground" unique_id=549181198]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 87.0
+offset_right = 532.0
+offset_bottom = 270.0
+texture = ExtResource("6_2rn3p")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterBackground/Character2" unique_id=1124593148]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 63.0
+offset_right = 510.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "五条悟（新宿决战）"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Character" type="TextureRect" parent="CharacterBackground" unique_id=1259372269]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 531.0
+offset_bottom = 186.0
+texture = ExtResource("6_2rn3p")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterBackground/Character" unique_id=272314828]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 63.0
+offset_right = 510.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "五条悟（新宿决战）"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CharacterScrollBar" type="VScrollBar" parent="CharacterBackground" unique_id=1900000001]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 8.0
+offset_right = 529.0
+offset_bottom = 624.0
+mouse_default_cursor_shape = 2
+max_value = 1.0
+step = 1.0
+page = 1.0
+
+[node name="CharacterScroll" type="ScrollContainer" parent="CharacterBackground" unique_id=1900000002]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 620.0
+mouse_default_cursor_shape = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="CharacterList" type="VBoxContainer" parent="CharacterBackground/CharacterScroll" unique_id=1900000003]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CharacterContent" type="Control" parent="." unique_id=1787612301]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1675.0
+offset_bottom = -939.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerCharacterSlots" type="Control" parent="CharacterContent" unique_id=107483767]
+anchors_preset = 0
+offset_left = 100.0
+offset_top = 160.0
+offset_right = 740.0
+offset_bottom = 700.0
+
+[node name="PlayerCharacter" type="TextureRect" parent="CharacterContent/PlayerCharacterSlots" unique_id=1730871294]
+layout_mode = 0
+offset_left = -79.0
+offset_top = -42.0
+offset_right = 632.0
+offset_bottom = 569.0
+texture = ExtResource("5_61b1b")
+expand_mode = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=785973673]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 287.0
+offset_right = 668.0
+offset_bottom = 376.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "   悟性
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel6" unique_id=572192361]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel6" unique_id=663754193]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1607264720]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 287.0
+offset_right = 514.0
+offset_bottom = 376.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "   体术
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel5" unique_id=1796025258]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel5" unique_id=498225080]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1879669167]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 287.0
+offset_right = 361.0
+offset_bottom = 376.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "   体质
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel4" unique_id=1497503006]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel4" unique_id=2110471195]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=575777326]
+layout_mode = 0
+offset_left = 530.0
+offset_top = 190.0
+offset_right = 668.0
+offset_bottom = 279.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "    咒力效率
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel3" unique_id=111285786]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel3" unique_id=1583870550]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1823760871]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 190.0
+offset_right = 514.0
+offset_bottom = 279.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "    咒力操纵
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel2" unique_id=1397938535]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel2" unique_id=958287740]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1818783466]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 190.0
+offset_right = 361.0
+offset_bottom = 279.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "    咒力总量
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel" unique_id=362468466]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/RichTextLabel" unique_id=1713951144]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="Character" type="TextureRect" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=962916901]
+layout_mode = 0
+offset_left = 400.0
+offset_top = -124.0
+offset_right = 1070.0
+offset_bottom = 42.0
+texture = ExtResource("6_7vlk7")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter/Character" unique_id=1295204555]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 55.0
+offset_right = 573.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "五条悟（新宿决战）"
+
+[node name="Level5" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1753157127]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 144.0
+offset_right = 671.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "扰动：100"
+
+[node name="Level4" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=116002766]
+layout_mode = 0
+offset_left = 516.0
+offset_top = 143.0
+offset_right = 591.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "战力：19999"
+
+[node name="Level3" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1276511777]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 144.0
+offset_right = 503.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Special / 天灾池"
+
+[node name="Level2" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1596062067]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 144.0
+offset_right = 407.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Level_Special"
+
+[node name="Level" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=796949066]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 140.0
+offset_right = 297.0
+offset_bottom = 164.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "上位特级"
+
+[node name="Name" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1471741501]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 97.0
+offset_right = 308.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "五条悟"
+
+[node name="Detail" type="RichTextLabel" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacter" unique_id=1900000101]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 354.0
+offset_right = 705.0
+offset_bottom = 589.0
+focus_mode = 0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/line_separation = 9
+theme_override_constants/paragraph_separation = 6
+theme_override_constants/table_v_separation = 9
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[table=2][cell][color=#68798b]字段[/color][/cell][cell][color=#68798b]信息[/color][/cell][cell]四轴[/cell][cell]咒术 4.5 / 肉体 3 / 悟性 5.624 / 构筑 0[/cell][cell]特质[/cell][cell]无[/cell][cell]术式/强度[/cell][cell]无[/cell][cell]领域[/cell][cell]无[/cell][cell]装备/外部资源[/cell][cell]无[/cell][cell]特殊词条[/cell][cell]无[/cell][cell]说明[/cell][cell]编辑器预览示例[/cell][/table]"
+scroll_active = false
+autowrap_mode = 2
+tab_size = 5
+script = ExtResource("11_detail")
+detail_line_separation = 9.0
+detail_paragraph_separation = 6.0
+
+[node name="PlayerCharacterButtonPlayerCharacterButton" type="Button" parent="CharacterContent/PlayerCharacterSlots" unique_id=625590457]
+layout_mode = 0
+offset_left = 350.0
+offset_top = -125.0
+offset_right = 964.0
+offset_bottom = -45.0
+tooltip_text = "我方角色选择"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="OpponentCharacterSlots" type="Control" parent="CharacterContent" unique_id=1726777237]
+anchors_preset = 0
+offset_left = 930.0
+offset_top = 160.0
+offset_right = 1570.0
+offset_bottom = 700.0
+
+[node name="OpponentCharacter" type="TextureRect" parent="CharacterContent/OpponentCharacterSlots" unique_id=1251962853]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -45.0
+offset_right = 725.0
+offset_bottom = 574.0
+texture = ExtResource("6_bqetg")
+expand_mode = 1
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=2122295598]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 290.0
+offset_right = 677.0
+offset_bottom = 379.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "   悟性
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel6" unique_id=1950206197]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel6" unique_id=1468528139]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=843614946]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 290.0
+offset_right = 521.0
+offset_bottom = 379.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "   体术
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel5" unique_id=1522668556]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel5" unique_id=266230022]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=208119243]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 290.0
+offset_right = 366.0
+offset_bottom = 379.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "   体质
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel4" unique_id=1365352850]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel4" unique_id=522726421]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1440932216]
+layout_mode = 0
+offset_left = 539.0
+offset_top = 193.0
+offset_right = 677.0
+offset_bottom = 282.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "    咒力效率
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel3" unique_id=616597679]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel3" unique_id=283842782]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=2062992322]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 191.0
+offset_right = 521.0
+offset_bottom = 280.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "    咒力操纵
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel2" unique_id=179264277]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel2" unique_id=1325332724]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1546310248]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 191.0
+offset_right = 366.0
+offset_bottom = 280.0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/paragraph_separation = 4
+theme_override_font_sizes/normal_font_size = 13
+text = "    咒力总量
+
+
+     实值:"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel" unique_id=1732862989]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 49.0
+offset_bottom = 77.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "S"
+
+[node name="Label2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/RichTextLabel" unique_id=247993681]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 64.0
+offset_right = 61.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "8"
+
+[node name="Character" type="TextureRect" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=473201345]
+layout_mode = 0
+offset_left = -415.0
+offset_top = 592.0
+offset_right = 268.0
+offset_bottom = 758.0
+texture = ExtResource("8_1my11")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter/Character" unique_id=54957722]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 50.0
+offset_right = 465.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "五条悟（新宿决战）"
+
+[node name="Level5" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1420482223]
+layout_mode = 0
+offset_left = 611.0
+offset_top = 144.0
+offset_right = 682.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "扰动：100"
+
+[node name="Level4" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1562636858]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 144.0
+offset_right = 597.0
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "战力：19999"
+
+[node name="Level3" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1434704124]
+layout_mode = 0
+offset_left = 431.0
+offset_top = 145.0
+offset_right = 509.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Special / 天灾池"
+
+[node name="Level2" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1435726811]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 145.0
+offset_right = 407.0
+offset_bottom = 167.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
+text = "Level_Special"
+
+[node name="Level" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1146741421]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 141.0
+offset_right = 298.0
+offset_bottom = 165.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "上位特级"
+
+[node name="Name" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=38022937]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 97.0
+offset_right = 308.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "两面宿傩"
+
+[node name="Detail" type="RichTextLabel" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacter" unique_id=1900000102]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 357.0
+offset_right = 723.0
+offset_bottom = 603.0
+focus_mode = 0
+theme_override_colors/default_color = Color(0.07450981, 0.13333334, 0.19215687, 1)
+theme_override_constants/line_separation = 9
+theme_override_constants/paragraph_separation = 6
+theme_override_constants/table_v_separation = 9
+theme_override_font_sizes/normal_font_size = 14
+bbcode_enabled = true
+text = "[table=2][cell][color=#68798b]字段[/color][/cell][cell][color=#68798b]信息[/color][/cell][cell]四轴[/cell][cell]咒术 4.5 / 肉体 3 / 悟性 5.624 / 构筑 0[/cell][cell]特质[/cell][cell]无[/cell][cell]术式/强度[/cell][cell]无[/cell][cell]领域[/cell][cell]无[/cell][cell]装备/外部资源[/cell][cell]无[/cell][cell]特殊词条[/cell][cell]无[/cell][cell]说明[/cell][cell]编辑器预览示例[/cell][/table]"
+scroll_active = false
+autowrap_mode = 2
+script = ExtResource("11_detail")
+detail_line_separation = 9.0
+detail_paragraph_separation = 6.0
+
+[node name="OpponentCharacterButton" type="Button" parent="CharacterContent/OpponentCharacterSlots" unique_id=125526942]
+layout_mode = 0
+offset_left = -389.0
+offset_top = 589.0
+offset_right = 248.0
+offset_bottom = 669.0
+tooltip_text = "对手角色选择"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="BottomNav" type="HBoxContainer" parent="." unique_id=73235477]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.875
+anchor_right = 0.96
+anchor_bottom = 0.995
+offset_left = -63.759995
+offset_top = -818.75
+offset_right = -1608.24
+offset_bottom = -949.67004
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("5_xbpvj")
+
+[node name="HomeButton" type="TextureButton" parent="BottomNav" unique_id=899748911]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_61b1b")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharacterButton" type="TextureButton" parent="BottomNav" unique_id=1942744202]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_bqetg")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BattleButton" type="TextureButton" parent="BottomNav" unique_id=861235793]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_7vlk7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ForumButton" type="TextureButton" parent="BottomNav" unique_id=1402285839]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_1my11")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ArchiveButton" type="TextureButton" parent="BottomNav" unique_id=1890464259]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_2rn3p")
+ignore_texture_size = true
+stretch_mode = 5
+
+
+
+
+

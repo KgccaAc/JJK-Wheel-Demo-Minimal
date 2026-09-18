@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3]
+
+[ext_resource type="FontFile" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="1_cjk_font"]
+
+[resource]
+default_font = ExtResource("1_cjk_font")

@@ -1,0 +1,14 @@
+services:
+  worker:
+    image: node:24-alpine
+    working_dir: /app
+    command: ["node", "local-worker.mjs"]
+    env_file: ../.env.example
+    ports:
+      - "${LOCAL_WORKER_PORT:-8787}:8787"
+    volumes:
+      - ../:/app
+      - worker-data:/app/.runtime
+    restart: unless-stopped
+volumes:
+  worker-data:

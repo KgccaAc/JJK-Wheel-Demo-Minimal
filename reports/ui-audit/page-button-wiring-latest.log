@@ -1,0 +1,85 @@
+﻿Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+WARNING: res://scenes/auth/auth_login.tscn:9 - ext_resource, invalid UID: uid://hekwli054qhh - using text path instead: res://scenes/auth/AuthLogin.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/auth/auth_login.tscn:10 - ext_resource, invalid UID: uid://d3w17khby1cpo - using text path instead: res://scenes/auth/AuthLoginResponsive.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/wheel/wheel.tscn:3 - ext_resource, invalid UID: uid://7maiuidmap3f - using text path instead: res://scenes/wheel/wheel.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/wheel/wheel.tscn:5 - ext_resource, invalid UID: uid://cdcojw81226oh - using text path instead: res://scenes/wheel/wheel_segments.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/roster/roster_picker.tscn:4 - ext_resource, invalid UID: uid://p7wcj44lk2bg - using text path instead: res://scenes/roster/RosterPicker.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/roster/roster_picker.tscn:8 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/community/community_vote.tscn:3 - ext_resource, invalid UID: uid://bun2nonru3368 - using text path instead: res://scenes/community/CommunityVote.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/battle/character_selection.tscn:4 - ext_resource, invalid UID: uid://p7wcj44lk2bg - using text path instead: res://scenes/battle/CharacterSelection.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/battle/character_selection.tscn:8 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://ui/battle_status/resource_counter_card.tscn:4 - ext_resource, invalid UID: uid://bs4xqrg8p8ddu - using text path instead: res://ui/battle_status/resource_counter_card.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://ui/battle_status/special_effect_badge.tscn:4 - ext_resource, invalid UID: uid://bew21ejp4qiut - using text path instead: res://ui/battle_status/special_effect_badge.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://ui/battle_cards/basic_card.tscn:3 - ext_resource, invalid UID: uid://ba4awdleoaxtj - using text path instead: res://ui/battle_cards/battle_card_view.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/battle/first_move_contest.tscn:4 - ext_resource, invalid UID: uid://dlu1owv2mo08p - using text path instead: res://scenes/battle/FirstMoveContest.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/battle/round_summary_panel.tscn:3 - ext_resource, invalid UID: uid://kio24nufv3np - using text path instead: res://scenes/battle/round_summary_panel.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/battle/strategy_selection.tscn:13 - ext_resource, invalid UID: uid://bf8yqtqf2pmcq - using text path instead: res://scenes/battle/StrategySelection.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/online/room_page.tscn:15 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/online/matchmaking_page.tscn:6 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/online/online_room.tscn:5 - ext_resource, invalid UID: uid://b7l1d3hjgnusl - using text path instead: res://scenes/online/OnlineRoom.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/roster/roster_picker.tscn:4 - ext_resource, invalid UID: uid://p7wcj44lk2bg - using text path instead: res://scenes/roster/RosterPicker.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+WARNING: res://scenes/roster/roster_picker.tscn:8 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
+PAGE_BUTTON_WIRING_AUDIT PASS pages=17 buttons=372 load_errors=0 unbound=0
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2641)

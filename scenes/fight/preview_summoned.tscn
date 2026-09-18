@@ -1,0 +1,104 @@
+﻿[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://dk46olf8rkm5o" path="res://art/fight/鍙敜鐗?png" id="1_kccsi"]
+[ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="2_font"]
+[ext_resource type="Texture2D" uid="uid://br246jmc3cn8e" path="res://art/menu/鎴樻枟鏍?png" id="3_marker"]
+[ext_resource type="Script" path="res://scenes/fight/SummonedPreview.gd" id="4_script"]
+
+[node name="SummonedPreview" type="Control" unique_id=1261942423 groups=["summoned_preview"]]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2162.0
+offset_bottom = 1536.0
+mouse_filter = 2
+clip_contents = true
+script = ExtResource("4_script")
+metadata/description = "鎴樻枟鐘舵€佹爮涓殑鐙珛鍙敜鐗╅瑙堢粍浠讹紱涓嶅鐢ㄨ祫婧愯鏁扮墝缁勪欢銆?
+
+[node name="PresentationRoot" type="Control" parent="."]
+layout_mode = 0
+offset_right = 2176.0
+offset_bottom = 1536.0
+mouse_filter = 2
+
+[node name="HealthFill" type="ColorRect" parent="PresentationRoot" unique_id=1350968860]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 881.0
+offset_right = 1886.0
+offset_bottom = 957.0
+mouse_filter = 2
+color = Color(0.78, 0.16, 0.12, 0.88)
+
+[node name="Background" type="TextureRect" parent="PresentationRoot" unique_id=669490151]
+layout_mode = 0
+offset_right = 2176.0
+offset_bottom = 1440.0
+mouse_filter = 2
+texture = ExtResource("1_kccsi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="PresentationRoot" unique_id=658290274]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 639.0
+offset_right = 1182.0
+offset_bottom = 815.0
+mouse_filter = 2
+texture = ExtResource("3_marker")
+
+[node name="CounterName" type="Label" parent="PresentationRoot" unique_id=42742456]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 132.0
+offset_top = 246.0
+offset_right = -92.0
+offset_bottom = 806.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.12, 0.08, 0.16, 1)
+theme_override_colors/font_outline_color = Color(0.92, 0.82, 1, 0.75)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 120
+text = "	鍙敜鐗╁悕绉?
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="HpAccount" type="Label" parent="PresentationRoot" unique_id=1279135696]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = -801.0
+offset_right = -142.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.96, 0.88, 1, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.04, 0.18, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 100
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="PresentationRoot" unique_id=979945553]
+layout_mode = 0
+offset_left = 1039.0
+offset_top = 801.0
+offset_right = 1144.0
+offset_bottom = 875.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_font")
+theme_override_font_sizes/font_size = 51
+text = "琛€閲?
+
+
+
+

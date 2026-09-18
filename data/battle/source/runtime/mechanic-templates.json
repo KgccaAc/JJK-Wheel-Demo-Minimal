@@ -1,0 +1,401 @@
+{
+  "schema": "jjk-battle-runtime-mechanic-templates",
+  "version": "V26.7-r78",
+  "status": "CANDIDATE",
+  "scope": "hand beta action-backed unique mechanics without full deck lifecycle",
+  "notes": [
+    "Mechanics are resolved locally through action effect patches.",
+    "AI may narrate after local resolution but cannot decide numeric effects or outcomes.",
+    "black_flash_window is a trigger window only; no active black-flash card/action is defined."
+  ],
+  "mechanics": [
+    {
+      "id": "black_flash_window",
+      "label": "黑闪窗口",
+      "status": "CANDIDATE",
+      "trigger": "impact_timing_window",
+      "effectPatch": {
+        "outgoingScale": 1.04,
+        "weightDeltas": {
+          "finisher": 0.25
+        },
+        "selfStatus": {
+          "id": "burstTimingWindowCandidate",
+          "label": "爆发时机窗口候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "建立下一次 strike 类动作的爆发机会；不是主动卡。",
+      "logTemplate": "你建立爆发时机窗口，下一次 strike 类动作获得更好的上限机会。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "impact_timing_window"
+      ]
+    },
+    {
+      "id": "divergent_fist_delay",
+      "label": "逕庭拳延迟",
+      "status": "CANDIDATE",
+      "trigger": "divergent_fist_delay",
+      "effectPatch": {
+        "opponentStabilityDelta": -0.006,
+        "opponentStatus": {
+          "id": "delayedImpactCandidate",
+          "label": "延迟冲击候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "当前较低直接输出，追加延迟冲击压力。",
+      "logTemplate": "延迟冲击继续扰动对手体势。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "divergent_fist_delay"
+      ]
+    },
+    {
+      "id": "shikigami_intercept",
+      "label": "式神牵制",
+      "status": "CANDIDATE",
+      "trigger": "shikigami_intercept",
+      "effectPatch": {
+        "incomingHpScale": 0.94,
+        "selfStatus": {
+          "id": "shikigamiScreenCandidate",
+          "label": "式神掩护候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "降低一次 incoming damage 或提高防守窗口。",
+      "logTemplate": "式神掩护承接了一部分压力。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "shikigami_intercept"
+      ]
+    },
+    {
+      "id": "shadow_storage",
+      "label": "影中收纳",
+      "status": "CANDIDATE",
+      "trigger": "shadow_storage",
+      "effectPatch": {
+        "stabilityDelta": 0.006,
+        "weightDeltas": {
+          "counter": 0.15
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "保存少量效率或延迟释放，不做 AP 结转系统。",
+      "logTemplate": "影中收纳留下一个低成本反击窗口。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "shadow_storage",
+        "shadow_terrain_pressure"
+      ]
+    },
+    {
+      "id": "shrine_slash_pressure",
+      "label": "伏魔斩压",
+      "status": "CANDIDATE",
+      "trigger": "shrine_slash_pressure",
+      "effectPatch": {
+        "opponentStabilityDelta": -0.006,
+        "opponentWeightDeltas": {
+          "sustain": -0.15
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "对 domainPressure / manualAttack 施加持续压力。",
+      "logTemplate": "斩压持续干扰对方稳定与续航。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "dismantle_pressure",
+        "cleave_adaptation",
+        "shrine_slash_pressure"
+      ]
+    },
+    {
+      "id": "soul_touch_pressure",
+      "label": "灵魂触碰压力",
+      "status": "CANDIDATE",
+      "trigger": "soul_touch_pressure",
+      "effectPatch": {
+        "opponentStabilityDelta": -0.008,
+        "opponentStatus": {
+          "id": "soulBoundaryExposed",
+          "label": "灵魂边界暴露候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "降低对手 stability，施加灵魂边界暴露候选。",
+      "logTemplate": "灵魂边界压力让对方稳定继续下降。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "soul_touch_pressure",
+        "body_morph_guard",
+        "self_embodiment_pressure"
+      ]
+    },
+    {
+      "id": "zero_ce_entry",
+      "label": "零咒力突入",
+      "status": "CANDIDATE",
+      "trigger": "zero_ce_entry",
+      "effectPatch": {
+        "incomingCeScale": 0.92,
+        "weightDeltas": {
+          "initiative": 0.2
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "领域中提高接近与反击机会，不消耗 CE。",
+      "logTemplate": "零咒力突入提高了接近与反击机会。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "zero_ce_entry",
+        "barrier_boundary_break"
+      ]
+    },
+    {
+      "id": "sure_hit_bypass_counter",
+      "label": "必中规避反击",
+      "status": "CANDIDATE",
+      "trigger": "sure_hit_bypass_counter",
+      "effectPatch": {
+        "sureHitScale": 0.75,
+        "domainPressureScale": 1.02
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "只针对 sureHit 组件，不免疫全部领域压力。",
+      "logTemplate": "必中捕捉被规避，但领域压制仍然存在。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "sure_hit_bypass_counter"
+      ]
+    },
+    {
+      "id": "rika_assist",
+      "label": "里香援护",
+      "status": "CANDIDATE",
+      "trigger": "rika_assist",
+      "effectPatch": {
+        "incomingHpScale": 0.95,
+        "selfStatus": {
+          "id": "rikaAssistUsedCandidate",
+          "label": "里香援护已使用候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "一次性提高 defense 或 outgoingScale，消耗 CE 或产生冷却-like 状态。",
+      "logTemplate": "里香援护提供一段攻防缓冲，随后进入回收节奏。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "rika_assist",
+        "reverse_output_support",
+        "ce_reserve_release"
+      ]
+    },
+    {
+      "id": "copy_stock_candidate",
+      "label": "术式复制候选",
+      "status": "CANDIDATE",
+      "trigger": "copy_stock_candidate",
+      "effectPatch": {
+        "weightDeltas": {
+          "technique": 0.2
+        },
+        "selfStatus": {
+          "id": "copyStockCandidate",
+          "label": "术式复制候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "临时 action weight 改写，不做完整复制系统。",
+      "logTemplate": "复制候选只改变临时选择权重，不生成无限复制池。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "copy_stock_candidate"
+      ]
+    },
+    {
+      "id": "enforce_confiscation",
+      "label": "没收执行",
+      "status": "CANDIDATE",
+      "trigger": "enforce_confiscation",
+      "effectPatch": {
+        "opponentWeightDeltas": {
+          "technique": -0.2
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "与 techniqueConfiscated / cursedToolConfiscated 状态联动。",
+      "logTemplate": "没收压力继续限制对方术式路线。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "press_contradiction",
+        "lock_charge",
+        "organize_evidence_chain",
+        "enforce_confiscation"
+      ]
+    },
+    {
+      "id": "jackpot_pressure",
+      "label": "中奖后压制",
+      "status": "CANDIDATE",
+      "trigger": "jackpot_pressure",
+      "effectPatch": {
+        "weightDeltas": {
+          "sustain": 0.2
+        },
+        "selfStatus": {
+          "id": "jackpotStateCandidate",
+          "label": "jackpot 候选余韵",
+          "rounds": 1,
+          "value": 0.25
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "jackpotStateCandidate 下增强 sustain / outgoing pressure。",
+      "logTemplate": "jackpot 余韵增强持续压迫，但不会无代价延长收益。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "accelerate_reach",
+        "stabilize_probability",
+        "risky_reach_loop",
+        "jackpot_pressure"
+      ]
+    },
+    {
+      "id": "curse_regen_candidate",
+      "label": "咒灵再生候选",
+      "status": "CANDIDATE",
+      "trigger": "curse_regen_candidate",
+      "effectPatch": {
+        "stabilityDelta": 0.01,
+        "selfStatus": {
+          "id": "curseRegenCandidate",
+          "label": "咒灵再生候选",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "咒灵类单位小幅回复稳定，受术式干涉限制。",
+      "logTemplate": "咒灵躯体尝试回稳，仍受术式干涉影响。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "curse_regen_candidate"
+      ]
+    },
+    {
+      "id": "open_domain_pressure",
+      "label": "开放领域压制",
+      "status": "CANDIDATE",
+      "trigger": "open_domain_pressure",
+      "effectPatch": {
+        "domainPressureScale": 1.04,
+        "domainLoadDelta": 2
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "保留 sureHit / domainPressure / manualAttack 区分。",
+      "logTemplate": "开放领域压制被分解到必中、领域压力与手动追击三个通道。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "open_domain_pressure"
+      ]
+    },
+    {
+      "id": "domain_instinct_resistance",
+      "label": "领域本能反抗",
+      "status": "CANDIDATE",
+      "trigger": "domain_instinct_resistance",
+      "effectPatch": {
+        "domainPressureScale": 0.96,
+        "weightDeltas": {
+          "counter": 0.15
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "智能咒灵或领域直觉提供小幅反抗，不等于完整反领域。",
+      "logTemplate": "领域本能提供短暂反抗，但不能完全抵消领域压力。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "domain_instinct_resistance",
+        "incomplete_domain_shadow_support"
+      ]
+    },
+    {
+      "id": "curse_miasma",
+      "label": "咒力瘴气",
+      "status": "CANDIDATE",
+      "trigger": "curse_miasma",
+      "effectPatch": {
+        "opponentRegenInterference": 0.04,
+        "opponentWeightDeltas": {
+          "initiative": -0.12
+        }
+      },
+      "duration": "one_turn_or_status_rounds",
+      "effectSummary": "咒力污染造成小幅回流干扰。",
+      "logTemplate": "咒力瘴气让对方回流和判断出现噪声。",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "curse_miasma",
+        "transfigured_swarm",
+        "residue_distortion"
+      ]
+    },
+    {
+      "id": "melee_chain_pressure",
+      "label": "连续打击",
+      "trigger": "melee_chain_pressure",
+      "effectPatch": {
+        "outgoingScale": 1.02,
+        "opponentStabilityDelta": -0.004,
+        "weightDeltas": {
+          "melee": 0.12
+        }
+      },
+      "effectSummary": "连续打击轻微提高 melee 权重并压低对手稳定。",
+      "logTemplate": "你贴身连续打击，迫使对方把资源投入防守节奏。",
+      "status": "CANDIDATE",
+      "duration": "one_turn_or_status_rounds",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "melee_chain_pressure"
+      ]
+    },
+    {
+      "id": "ce_burst_strike",
+      "label": "咒力爆发打击",
+      "trigger": "ce_burst_strike",
+      "effectPatch": {
+        "outgoingScale": 1.03,
+        "domainLoadDelta": 1,
+        "weightDeltas": {
+          "finisher": 0.12
+        }
+      },
+      "effectSummary": "咒力爆发打击提高终结权重并增加领域负荷。",
+      "logTemplate": "你把咒力压入一击爆发，输出窗口扩大但体势略被拉紧。",
+      "status": "CANDIDATE",
+      "duration": "one_turn_or_status_rounds",
+      "doesNotDecideOutcome": true,
+      "actionIds": [
+        "ce_burst_strike"
+      ]
+    }
+  ]
+}
+

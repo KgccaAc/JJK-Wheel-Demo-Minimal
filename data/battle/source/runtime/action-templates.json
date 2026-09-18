@@ -1,0 +1,289 @@
+{
+  "schema": "jjk-battle-runtime-action-templates",
+  "version": "V26.7-r78",
+  "status": "CANDIDATE",
+  "sourceLayer": [
+    "site_1.386",
+    "site_1.386A_resource_layer",
+    "prototype_balance"
+  ],
+  "scope": "cyber duel three-choice action layer",
+  "notes": [
+    "This file defines candidate action templates for the 1.386B cyber duel three-choice technique layer.",
+    "These actions are not cards, do not form a deck, and must not be treated as canon balance.",
+    "AI may narrate selected actions after local resolution, but AI must not write CE costs, output multipliers, domain thresholds, resources, win rates, or final outcomes.",
+    "Target-specific trial three-choice candidates are kept in data/battle/runtime/trial-target-rules.json and are not part of the generic combat action deck.",
+    "1.389A expands CANDIDATE action-backed hand candidates while keeping local deterministic effect resolution.",
+    "MechanicIds point to battle-runtime-mechanic-templates metadata; AI may narrate only after local resolution.",
+    "2026-05-05 removed action templates whose id is already provided by the archived card source; special hand cards are authoritative for those actionIds."
+  ],
+  "relatedDataFiles": {
+    "trialTargetRules": "data/battle/runtime/trial-target-rules.json",
+    "mechanicTemplates": "data/battle/runtime/mechanic-templates.json"
+  },
+  "choiceCount": 3,
+  "riskLabels": {
+    "low": "低风险",
+    "medium": "中风险",
+    "high": "高风险",
+    "critical": "极高风险"
+  },
+  "templates": [
+    {
+      "id": "ce_reinforcement",
+      "label": "咒力强化",
+      "status": "CANDIDATE",
+      "description": "将咒力贴合肉体与近身节奏，本回合直接压制更强。",
+      "cost": {
+        "ceRatio": 0.045,
+        "minCe": 10
+      },
+      "requirements": {
+        "domainActive": "any"
+      },
+      "effects": {
+        "outgoingScale": 1.12,
+        "weightDeltas": {
+          "initiative": 0.8,
+          "melee": 1.15,
+          "finisher": 0.35
+        },
+        "stabilityDelta": -0.012,
+        "domainLoadDelta": 1.5
+      },
+      "damage": 12,
+      "baseDomainLoadDelta": 1.5,
+      "durationRounds": 1,
+      "ceCost": 10,
+      "costType": "ce_ratio_min",
+      "damageType": "melee",
+      "scalingProfile": "balanced",
+      "risk": "medium",
+      "logTemplate": "你将咒力集中于近身压制，本回合体术与直接输出上升，但咒力流动略有紊乱。"
+    },
+    {
+      "id": "defensive_frame",
+      "label": "防御构筑",
+      "status": "CANDIDATE",
+      "description": "用咒力构成防线，压低本回合体势损耗。",
+      "cost": {
+        "ceRatio": 0.035,
+        "minCe": 8
+      },
+      "requirements": {
+        "domainActive": "any"
+      },
+      "effects": {
+        "incomingHpScale": 0.76,
+        "incomingCeScale": 0.88,
+        "stabilityDelta": 0.018,
+        "weightDeltas": {
+          "counter": 0.45,
+          "sustain": 0.65
+        }
+      },
+      "block": 24,
+      "baseStabilityRestore": 18,
+      "baseDefensePressure": 6,
+      "durationRounds": 1,
+      "ceCost": 8,
+      "costType": "ce_ratio_min",
+      "damageType": "none",
+      "scalingProfile": "defense",
+      "risk": "low",
+      "logTemplate": "你先补足防御构筑，减少本回合体势损耗，并让咒力稳定略有回正。"
+    },
+    {
+      "id": "technique_interference",
+      "label": "术式干涉",
+      "status": "CANDIDATE",
+      "description": "干扰对方术式与回流节奏，推高领域负荷。",
+      "cost": {
+        "ceRatio": 0.07,
+        "minCe": 14
+      },
+      "requirements": {
+        "domainActive": "any"
+      },
+      "effects": {
+        "weightDeltas": {
+          "counter": 1.15,
+          "technique": 0.35
+        },
+        "opponentWeightDeltas": {
+          "technique": -0.7,
+          "domain": -0.55
+        },
+        "opponentStabilityDelta": -0.026,
+        "opponentDomainLoadDelta": 7,
+        "opponentRegenInterference": 0.22,
+        "opponentStatus": {
+          "id": "techniqueInterfered",
+          "label": "术式受扰",
+          "rounds": 1,
+          "value": 1
+        }
+      },
+      "baseStabilityDamage": 26,
+      "baseCeDamage": 22,
+      "baseDomainPressure": 7,
+      "durationRounds": 1,
+      "ceCost": 14,
+      "costType": "ce_ratio_min",
+      "damageType": "technique",
+      "scalingProfile": "balanced",
+      "risk": "medium",
+      "logTemplate": "你把咒力打入对方术式节奏，干扰其咒力回流与领域维持。"
+    },
+    {
+      "id": "residue_reading",
+      "label": "咒力流淌",
+      "status": "CANDIDATE",
+      "description": "调整自身咒力流向，使下一回合咒力回流提高15%。",
+      "cost": {
+        "ceRatio": 0.018,
+        "minCe": 4
+      },
+      "requirements": {
+        "domainActive": "any"
+      },
+      "effects": {
+        "selfStatus": {
+          "id": "ceRegenBoost",
+          "label": "咒力流淌",
+          "rounds": 1,
+          "value": 0.15
+        }
+      },
+      "baseStabilityRestore": 0,
+      "baseDefensePressure": 0,
+      "durationRounds": 1,
+      "ceCost": 4,
+      "costType": "ce_ratio_min",
+      "damageType": "none",
+      "scalingProfile": "support_stability",
+      "risk": "low",
+      "logTemplate": "你顺着咒力流向重新调息，下一回合咒力回流提高15%。"
+    },
+    {
+      "id": "ce_compression",
+      "label": "压缩咒力",
+      "status": "CANDIDATE",
+      "description": "收束咒力流动，降低过载与领域负担，但本回合输出略降。",
+      "cost": {
+        "ceRatio": 0.028,
+        "minCe": 6
+      },
+      "requirements": {
+        "domainActive": "any"
+      },
+      "effects": {
+        "outgoingScale": 0.9,
+        "stabilityDelta": 0.042,
+        "domainLoadDelta": -5,
+        "domainLoadScale": 0.72,
+        "weightDeltas": {
+          "sustain": 0.9,
+          "counter": 0.35,
+          "finisher": -0.55
+        }
+      },
+      "baseStabilityRestore": 42,
+      "baseDomainLoadDelta": -5,
+      "baseDefensePressure": 6,
+      "durationRounds": 1,
+      "ceCost": 6,
+      "costType": "ce_ratio_min",
+      "damageType": "none",
+      "scalingProfile": "support_stability",
+      "risk": "low",
+      "logTemplate": "你主动压缩咒力输出，降低领域负荷增长并回稳咒力流。"
+    },
+    {
+      "id": "domain_survival_guard",
+      "label": "域内求生",
+      "status": "CANDIDATE",
+      "description": "缺少硬防线时以体势和咒力硬扛领域，只能争取一回合窗口。",
+      "cost": {
+        "ceRatio": 0.045,
+        "minCe": 0
+      },
+      "requirements": {
+        "opponentDomainActive": true,
+        "requiresNoDomainResponse": true
+      },
+      "effects": {
+        "sureHitScale": 0.86,
+        "domainPressureScale": 0.93,
+        "manualAttackScale": 1,
+        "incomingHpScale": 0.92,
+        "stabilityDelta": -0.025,
+        "weightDeltas": {
+          "sustain": 0.55,
+          "counter": 0.15
+        }
+      },
+      "block": 8,
+      "baseShield": 14,
+      "baseDefensePressure": 4,
+      "durationRounds": 1,
+      "ceCost": 0,
+      "costType": "ce_ratio",
+      "damageType": "domain",
+      "scalingProfile": "domain_pressure",
+      "risk": "high",
+      "logTemplate": "你缺少领域或反领域硬防线，只能以体势和咒力硬扛，等待领域崩解、咒力耗尽或近身机会。",
+      "baseDomainPressure": 16
+    }
+  ],
+  "removedSpecialShadowedTemplateCount": 46,
+  "removedSpecialShadowedTemplateIds": [
+    "domain_expand",
+    "domain_compress",
+    "domain_force_sustain",
+    "domain_release",
+    "domain_clash",
+    "simple_domain_guard",
+    "hollow_wicker_basket_guard",
+    "falling_blossom_emotion",
+    "zero_ce_domain_bypass",
+    "divergent_fist_delay",
+    "melee_chain_pressure",
+    "ce_burst_strike",
+    "impact_timing_window",
+    "hutian_black_flash",
+    "shikigami_intercept",
+    "shadow_storage",
+    "shadow_terrain_pressure",
+    "incomplete_domain_shadow_support",
+    "dismantle_pressure",
+    "cleave_adaptation",
+    "shrine_slash_pressure",
+    "open_domain_pressure",
+    "soul_touch_pressure",
+    "body_morph_guard",
+    "transfigured_swarm",
+    "self_embodiment_pressure",
+    "zero_ce_entry",
+    "sure_hit_bypass_counter",
+    "cursed_tool_combo",
+    "barrier_boundary_break",
+    "rika_assist",
+    "reverse_output_support",
+    "copy_stock_candidate",
+    "ce_reserve_release",
+    "press_contradiction",
+    "lock_charge",
+    "organize_evidence_chain",
+    "enforce_confiscation",
+    "accelerate_reach",
+    "stabilize_probability",
+    "risky_reach_loop",
+    "jackpot_pressure",
+    "curse_miasma",
+    "residue_distortion",
+    "domain_instinct_resistance",
+    "curse_regen_candidate"
+  ]
+}
+

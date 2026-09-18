@@ -1,0 +1,86 @@
+{
+  "schema": "story-npc-dialogue-v1",
+  "routes": {
+    "junior_sorcerer": {
+      "displayName": "初级术师",
+      "galgameDesign": {
+        "coreLoop": "观察态度→回应承诺→共同承担风险→解锁同行与援护",
+        "failureState": "好感不足不会锁死主线，只会错过本章专属故事和援护牌",
+        "playerRead": "每次对话明确显示对方态度变化，但不显示隐藏阈值"
+      },
+      "dialogue": {
+        "unknown": [
+          {"speaker":"初级术师", "text":"你能看见残秽，却没有登记记录。先别把我当成敌人。"},
+          {"speaker":"玩家", "text":"那就从互不妨碍开始。你观察我，我也观察你。"}
+        ],
+        "first_meeting": [
+          {"speaker":"初级术师", "text":"你没有把普通人当成诱饵，这一点我记下了。"},
+          {"speaker":"初级术师", "text":"别急着证明自己。能在危险里守住选择，才算术师。"}
+        ],
+        "testing": [
+          {"speaker":"初级术师", "text":"你最近总在残秽最浓的地方出现。是胆子大，还是有人在等你犯错？"},
+          {"speaker":"玩家", "text":"如果我只想活命，就不会回头。"},
+          {"speaker":"初级术师", "text":"很好。那我再给你一次并肩的机会。"}
+        ],
+        "conflict": [
+          {"speaker":"初级术师", "text":"你把风险算进了自己的计划，却没把我的命算进去。"},
+          {"speaker":"玩家", "text":"我会把决定说清楚。你可以拒绝，但我不会把选择藏起来。"},
+          {"speaker":"初级术师", "text":"……至少你愿意承担后果。"}
+        ],
+        "temporary_partner": [
+          {"speaker":"初级术师", "text":"这次我走左边，你走右边。谁先发现异常就发信号。"},
+          {"speaker":"初级术师", "text":"别误会，这只是任务配合。只是我开始相信你能听见信号了。"}
+        ],
+        "recruit": [
+          {"speaker":"初级术师", "text":"你说过，危险的时候会回头。现在轮到我回答。"},
+          {"speaker":"初级术师", "text":"从今天起，我不是临时援手。我会作为你的同行者留下。"}
+        ]
+      },
+      "攻略Choices": [
+        {"id":"honest_risk", "label":"把真实风险告诉他", "requirements":{"stageIn":["first_meeting","testing","conflict"]}, "delta":{"affection":6,"trust":1}},
+        {"id":"cover_civilians", "label":"优先保护普通人", "requirements":{"stageIn":["first_meeting","testing","temporary_partner"]}, "delta":{"affection":8,"respect":1}},
+        {"id":"share_credit", "label":"把战果归给共同配合", "requirements":{"stageIn":["testing","conflict","temporary_partner"]}, "delta":{"affection":5,"trust":1,"compatibility":1}},
+        {"id":"promise_return", "label":"承诺危险时一定回头", "requirements":{"stageIn":["conflict","temporary_partner"]}, "delta":{"affection":10,"trust":1,"respect":1}, "flags":{"junior_personal_event_done":true}}
+      ],
+      "routeStories": [
+        {"id":"junior_personal_event", "stage":"conflict", "title":"没有被留下的人", "requirements":{"affection":30,"trust":2}, "lines":["初级术师在河岸边找到一张被水泡皱的任务单。","那上面写着一个没有被救出来的名字。","他没有要求你安慰，只问你下次是否还会回头。"], "reward":{"relationshipDelta":{"junior_sorcerer":{"affection":8,"respect":1}},"storyFlags":{"junior_personal_event_done":true}}},
+        {"id":"junior_recruitment", "stage":"recruit", "title":"并肩者的承诺", "requirements":{"affection":60,"trust":3,"respect":2,"flags":["junior_personal_event_done"]}, "lines":["你们在河岸入口交换了各自的退路。","没有誓言式的夸张台词，只有下一次危险时谁会留下。","初级术师收起护符，正式加入你的队伍。"], "reward":{"storyFlags":{"junior_recruitment_event":true},"unlock":"companion_support_card"}}
+      ]
+    },
+    "river_witness": {
+      "displayName": "河岸目击者",
+      "dialogue": {
+        "available": [
+          {"speaker":"目击者", "text":"我没有看清那是什么，只知道它拖着水声往桥下走。"},
+          {"speaker":"玩家", "text":"你先站到路灯下面，把你记得的都告诉我。"}
+        ],
+        "rescued": [
+          {"speaker":"目击者", "text":"你明明也害怕，却还是先把我推到灯下。河岸下面有第二条路，沿着旧排水口能绕过去。"},
+          {"speaker":"玩家", "text":"记住这件事：下次看见异常，先离开，再报警。"}
+        ]
+      },
+      "interactionChoices": [
+        {"id":"calm_witness", "label":"先让目击者冷静", "delta":{"stability":2,"xp":2}, "storyFlags":{"river_witness_calmed":true}},
+        {"id":"press_details", "label":"追问水道细节", "delta":{"xp":4,"悟性":1}, "storyFlags":{"river_drain_route_known":true}}
+      ]
+    },
+    "cursed_tool_trader": {
+      "displayName": "咒具商人",
+      "dialogue": {
+        "available": [
+          {"speaker":"咒具商人", "text":"护符不是免费赠品。你可以用钱买，也可以用一个答案换。"},
+          {"speaker":"玩家", "text":"先说答案。河岸下还有什么？"},
+          {"speaker":"咒具商人", "text":"第二层残秽会模仿人的脚步声。听见两组脚步时，别回头。"}
+        ],
+        "trader_met": [
+          {"speaker":"咒具商人", "text":"你把护符带进战斗，若它发热就说明附近有咒具级残秽。"},
+          {"speaker":"玩家", "text":"如果我活着回来，这笔账再算。"}
+        ]
+      },
+      "interactionChoices": [
+        {"id":"buy_talisman", "label":"用金钱购买护符", "requirements":{"money":15}, "delta":{"money":-15,"ce":6}, "inventoryDelta":{"river_protective_talisman":1}, "storyFlags":{"river_tool_obtained":true}},
+        {"id":"trade_information", "label":"用河岸情报交换", "delta":{"xp":3,"悟性":1}, "storyFlags":{"river_tool_warning_known":true}}
+      ]
+    }
+  }
+}

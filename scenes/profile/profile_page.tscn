@@ -1,0 +1,714 @@
+[gd_scene format=3 uid="uid://cfked8v2l0xfj"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="1_jbw83"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="2_vp4vs"]
+[ext_resource type="Texture2D" uid="uid://qo1kjki7k4y0" path="res://art/USER/战斗设置.png" id="3_yftnm"]
+[ext_resource type="Texture2D" uid="uid://cmo2yvvd68x2t" path="res://art/USER/展开.png" id="4_fiaw0"]
+[ext_resource type="Texture2D" uid="uid://fgb6kqmgacei" path="res://art/USER/选择文件.png" id="5_w1vnd"]
+[ext_resource type="Texture2D" uid="uid://belltxg4to7q1" path="res://art/USER/用户数据.png" id="6_ultjw"]
+[ext_resource type="Texture2D" uid="uid://dp0effqtttbwr" path="res://art/USER/下载.png" id="7_fiaw0"]
+[ext_resource type="Texture2D" uid="uid://bcrbs4f5t6vwn" path="res://art/USER/全选.png" id="8_ultjw"]
+[ext_resource type="Texture2D" uid="uid://b6hve46xww5s1" path="res://art/USER/删除选择.png" id="9_c0x8g"]
+[ext_resource type="Texture2D" uid="uid://8v1qbhb1kq78" path="res://art/USER/角色栏.png" id="10_c0x8g"]
+[ext_resource type="Texture2D" uid="uid://d0d15q6aoxp6" path="res://art/USER/卡内角色.png" id="11_hcxrc"]
+[ext_resource type="Script" path="res://scenes/profile/ProfilePage.gd" id="12_user_panel"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yftnm"]
+load_path = "res://.godot/imported/牌.png-add9de015ddde347b93349f750545615.ctex"
+
+[node name="ProfilePage" type="Control" unique_id=1490865419]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_user_panel")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1577367591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_right = -1673.5
+offset_bottom = -934.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Background" unique_id=2085891897]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.5
+offset_right = 1672.5
+offset_bottom = 934.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_jbw83")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=1728359648]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=865333148]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "账号与设置"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=4425600]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "领域展开 · 咒术师的终极对决"
+
+[node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=905380243]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 28.0
+offset_right = 1430.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_vp4vs")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background/Header/UserButton" unique_id=1475995882]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=1817682754]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Background/Header" unique_id=1791607523]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="Setting" type="TextureRect" parent="." unique_id=863289733]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 106.0
+offset_right = 1511.0
+offset_bottom = 449.0
+texture = ExtResource("3_yftnm")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Setting" unique_id=749531071]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 10.0
+offset_right = 245.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 26
+text = "界面与卡牌外观"
+
+[node name="sub1" type="Label" parent="Setting/Title" unique_id=595814033]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 106.0
+offset_right = 154.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "启用简洁卡面"
+
+[node name="sub2" type="Label" parent="Setting/Title" unique_id=1607797967]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 97.0
+offset_right = 624.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "启用简洁卡面"
+
+[node name="Button" type="TextureButton" parent="Setting" unique_id=25549220]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 30.0
+offset_right = 458.0
+offset_bottom = 141.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_fiaw0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Setting/Button" unique_id=1488711727]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 36.0
+offset_right = 224.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 22
+text = "界面颜色：原色模式"
+
+[node name="Button2" type="TextureButton" parent="Setting" unique_id=1063016784]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 29.0
+offset_right = 879.0
+offset_bottom = 140.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_fiaw0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Setting/Button2" unique_id=1997768066]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 37.0
+offset_right = 224.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 22
+text = "卡牌皮肤：默认"
+
+[node name="Button3" type="TextureButton" parent="Setting" unique_id=334163990]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 31.0
+offset_right = 1310.0
+offset_bottom = 142.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_w1vnd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Setting/Button3" unique_id=951652872]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 39.0
+offset_right = 230.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 22
+text = "选择文件        加载自制皮肤json
+"
+
+[node name="Card" type="Control" parent="Setting" unique_id=1704480089]
+anchors_preset = 0
+offset_left = 27.0
+offset_top = 155.0
+offset_right = 67.0
+offset_bottom = 195.0
+
+[node name="Card1" type="TextureRect" parent="Setting/Card" unique_id=560876819]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 109.0
+texture = SubResource("CompressedTexture2D_yftnm")
+expand_mode = 1
+
+[node name="Card2" type="TextureRect" parent="Setting/Card" unique_id=784298569]
+layout_mode = 0
+offset_left = 219.0
+offset_top = -1.0
+offset_right = 441.0
+offset_bottom = 108.0
+texture = SubResource("CompressedTexture2D_yftnm")
+expand_mode = 1
+
+[node name="Card3" type="TextureRect" parent="Setting/Card" unique_id=420709855]
+layout_mode = 0
+offset_left = 432.0
+offset_top = -4.0
+offset_right = 654.0
+offset_bottom = 105.0
+texture = SubResource("CompressedTexture2D_yftnm")
+expand_mode = 1
+
+[node name="Card4" type="TextureRect" parent="Setting/Card" unique_id=623146124]
+layout_mode = 0
+offset_left = 646.0
+offset_top = -4.0
+offset_right = 868.0
+offset_bottom = 105.0
+texture = SubResource("CompressedTexture2D_yftnm")
+expand_mode = 1
+
+[node name="Card5" type="TextureRect" parent="Setting/Card" unique_id=1642411065]
+layout_mode = 0
+offset_left = 859.0
+offset_top = -4.0
+offset_right = 1081.0
+offset_bottom = 105.0
+texture = SubResource("CompressedTexture2D_yftnm")
+expand_mode = 1
+
+[node name="Card6" type="TextureRect" parent="Setting/Card" unique_id=1506618305]
+layout_mode = 0
+offset_left = 1073.0
+offset_top = -4.0
+offset_right = 1295.0
+offset_bottom = 105.0
+texture = SubResource("CompressedTexture2D_yftnm")
+expand_mode = 1
+
+[node name="Character" type="TextureRect" parent="." unique_id=611878340]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 347.0
+offset_right = 1559.0
+offset_bottom = 930.0
+texture = ExtResource("6_ultjw")
+
+[node name="Title" type="Label" parent="Character" unique_id=1983634339]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 10.0
+offset_right = 308.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 26
+text = "管理卡面角色"
+
+[node name="Button1" type="TextureButton" parent="Character" unique_id=162817477]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 39.0
+offset_right = 408.0
+offset_bottom = 144.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_w1vnd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Character/Button1" unique_id=2053675501]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 38.0
+offset_right = 338.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "选择文件         读取登陆卡"
+
+[node name="Button2" type="TextureButton" parent="Character" unique_id=1913960761]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 37.0
+offset_right = 743.0
+offset_bottom = 142.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_w1vnd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Character/Button2" unique_id=2040532286]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 39.0
+offset_right = 336.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "选择文件         更换卡面图片"
+
+[node name="PlayerName" type="Label" parent="Character" unique_id=1515586551]
+layout_mode = 0
+offset_left = 778.0
+offset_top = 73.0
+offset_right = 1037.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "PANDORAPARADOXXX"
+
+[node name="PlayerName" type="Label" parent="Character/PlayerName" unique_id=41859256]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -33.0
+offset_right = 251.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "当前登陆卡昵称"
+
+[node name="Button3" type="TextureButton" parent="Character" unique_id=859236692]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 104.0
+offset_right = 347.0
+offset_bottom = 206.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_fiaw0")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Character/Button3" unique_id=104623889]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 35.0
+offset_right = 242.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "重新下载登陆卡"
+
+[node name="Button4" type="TextureButton" parent="Character" unique_id=814422606]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 121.0
+offset_right = 542.0
+offset_bottom = 191.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_ultjw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Character/Button4" unique_id=1417036984]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 18.0
+offset_right = 169.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "全选/取消"
+
+[node name="Button5" type="TextureButton" parent="Character" unique_id=1425123537]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 118.0
+offset_right = 735.0
+offset_bottom = 192.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("9_c0x8g")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Color" type="Label" parent="Character/Button5" unique_id=2045198974]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 21.0
+offset_right = 163.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "删除所选"
+
+[node name="Character" type="Control" parent="Character" unique_id=1131165427]
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 197.0
+offset_right = 1389.0
+offset_bottom = 566.0
+
+[node name="Character1" type="TextureButton" parent="Character/Character" unique_id=1870758828]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 2.0
+offset_right = 1298.0
+offset_bottom = 70.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_c0x8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Name" type="Label" parent="Character/Character/Character1" unique_id=1233371742]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "角色名字"
+
+[node name="Info" type="Label" parent="Character/Character/Character1" unique_id=1766864003]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 19.0
+offset_right = 602.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "标准特级  ·  战力4000  ·  术式名称：ABCD"
+
+[node name="edit" type="Label" parent="Character/Character/Character1" unique_id=636452808]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 19.0
+offset_right = 1241.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "编辑角色"
+
+[node name="Character2" type="TextureButton" parent="Character/Character" unique_id=1207952419]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 61.0
+offset_right = 1297.0
+offset_bottom = 129.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_c0x8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Name" type="Label" parent="Character/Character/Character2" unique_id=1240921604]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "角色名字"
+
+[node name="Info" type="Label" parent="Character/Character/Character2" unique_id=1016618106]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 19.0
+offset_right = 602.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "标准特级  ·  战力4000  ·  术式名称：ABCD"
+
+[node name="edit" type="Label" parent="Character/Character/Character2" unique_id=398516399]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 19.0
+offset_right = 1241.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "编辑角色"
+
+[node name="Character3" type="TextureButton" parent="Character/Character" unique_id=744250316]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 120.0
+offset_right = 1297.0
+offset_bottom = 188.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_c0x8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Name" type="Label" parent="Character/Character/Character3" unique_id=1829583202]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "角色名字"
+
+[node name="Info" type="Label" parent="Character/Character/Character3" unique_id=1555417979]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 19.0
+offset_right = 602.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "标准特级  ·  战力4000  ·  术式名称：ABCD"
+
+[node name="edit" type="Label" parent="Character/Character/Character3" unique_id=1718565582]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 19.0
+offset_right = 1241.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "编辑角色"
+
+[node name="Character4" type="TextureButton" parent="Character/Character" unique_id=6628529]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 179.0
+offset_right = 1296.0
+offset_bottom = 247.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_c0x8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Name" type="Label" parent="Character/Character/Character4" unique_id=1586580670]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "角色名字"
+
+[node name="Info" type="Label" parent="Character/Character/Character4" unique_id=1097411940]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 19.0
+offset_right = 602.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "标准特级  ·  战力4000  ·  术式名称：ABCD"
+
+[node name="edit" type="Label" parent="Character/Character/Character4" unique_id=1765515056]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 19.0
+offset_right = 1241.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "编辑角色"
+
+[node name="Character5" type="TextureButton" parent="Character/Character" unique_id=1895321277]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 237.0
+offset_right = 1298.0
+offset_bottom = 305.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_c0x8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Name" type="Label" parent="Character/Character/Character5" unique_id=743542858]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "角色名字"
+
+[node name="Info" type="Label" parent="Character/Character/Character5" unique_id=683714814]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 19.0
+offset_right = 602.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "标准特级  ·  战力4000  ·  术式名称：ABCD"
+
+[node name="edit" type="Label" parent="Character/Character/Character5" unique_id=1188821994]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 19.0
+offset_right = 1241.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "编辑角色"
+
+[node name="Character6" type="TextureButton" parent="Character/Character" unique_id=2003080225]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 295.0
+offset_right = 1298.0
+offset_bottom = 363.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("10_c0x8g")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Name" type="Label" parent="Character/Character/Character6" unique_id=2082560330]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 18.0
+offset_right = 166.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "角色名字"
+
+[node name="Info" type="Label" parent="Character/Character/Character6" unique_id=1820538342]
+layout_mode = 0
+offset_left = 201.0
+offset_top = 19.0
+offset_right = 602.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "标准特级  ·  战力4000  ·  术式名称：ABCD"
+
+[node name="edit" type="Label" parent="Character/Character/Character6" unique_id=1027733933]
+layout_mode = 0
+offset_left = 1161.0
+offset_top = 19.0
+offset_right = 1241.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "编辑角色"
+
+[node name="Number" type="TextureRect" parent="Character" unique_id=1944768631]
+layout_mode = 0
+offset_left = 1065.0
+offset_top = 45.0
+offset_right = 1373.0
+offset_bottom = 145.0
+texture = ExtResource("11_hcxrc")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Character/Number" unique_id=1418623692]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 9.0
+offset_right = 167.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "卡内角色"
+
+[node name="Num" type="Label" parent="Character/Number" unique_id=2114133486]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 32.0
+offset_right = 175.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "7/15"
+
+
+

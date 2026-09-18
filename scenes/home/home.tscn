@@ -1,0 +1,626 @@
+[gd_scene format=3 uid="uid://cy6g2seqbjtb"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="1_background"]
+[ext_resource type="Texture2D" uid="uid://b25nmxvgcoo7n" path="res://art/menu/转盘大图标.png" id="2_profile"]
+[ext_resource type="Texture2D" uid="uid://oj2gjsaolyv2" path="res://art/menu/继续上次战斗标.png" id="3_draw"]
+[ext_resource type="Texture2D" uid="uid://cf6e43ek82my4" path="res://art/menu/菜单大按钮.png" id="4_card"]
+[ext_resource type="Texture2D" uid="uid://cveh268dnu7ye" path="res://d4544459fc744b707b15442cf873d1af_720.png" id="5_rrod7"]
+[ext_resource type="Texture2D" uid="uid://br246jmc3cn8e" path="res://art/menu/战斗标.png" id="5_solo"]
+[ext_resource type="Texture2D" uid="uid://df35416c4hqdr" path="res://art/menu/联机模式标.png" id="6_async"]
+[ext_resource type="Texture2D" uid="uid://b0cew4xko31jy" path="res://art/menu/匹配赛标.png" id="7_online"]
+[ext_resource type="Texture2D" uid="uid://b1ycje66obyip" path="res://art/menu/斗傩大陆标.png" id="8_ranked"]
+[ext_resource type="Texture2D" uid="uid://m5mx7l6u7fef" path="res://art/menu/涩谷事变标.png" id="9_story"]
+[ext_resource type="Texture2D" uid="uid://cdp4oxb4fiqv0" path="res://art/menu/OC标.png" id="10_event"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="11_user"]
+[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/选中状态主页小标.png" id="13_home"]
+[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/未选中状态角色小标.png" id="14_character"]
+[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/未选中状态战斗小标.png" id="15_battle"]
+[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/未选中状态论坛小标.png" id="16_forum"]
+[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/未选中状态OC小标.png" id="17_archive"]
+[ext_resource type="Script" uid="uid://bg0uykylnxhuj" path="res://ui/navigation/BottomNav.gd" id="18_bottom_nav"]
+[ext_resource type="Script" uid="uid://cmn3uswkdmmet" path="res://scenes/home/HomePage.gd" id="24_menu_interactions"]
+
+[node name="Menu" type="Control" unique_id=1871564539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("24_menu_interactions")
+
+[node name="Background" type="TextureRect" parent="." unique_id=440820607]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Content" type="Control" parent="." unique_id=579387577]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Control" parent="Content" unique_id=1509441510]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Content/Header" unique_id=283548610]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "咒术对战"
+
+[node name="Subtitle" type="Label" parent="Content/Header" unique_id=1222768131]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "领域展开 · 咒术师的终极对决"
+
+[node name="UserButton" type="TextureButton" parent="Content/Header" unique_id=1639518542]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 28.0
+offset_right = 1430.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("11_user")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Content/Header/UserButton" unique_id=990240329]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Content/Header/UserButton" unique_id=531759222]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Content/Header" unique_id=734941134]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="ProfileSection" type="Control" parent="Content" unique_id=691547617]
+layout_mode = 1
+anchor_left = 0.055
+anchor_top = 0.145
+anchor_right = 0.43
+anchor_bottom = 0.84
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProfilePanel" type="TextureRect" parent="Content/ProfileSection" unique_id=2026380491]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_profile")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerCardFace" type="TextureRect" parent="Content/ProfileSection/ProfilePanel" unique_id=166538300]
+layout_mode = 0
+offset_left = 169.04001
+offset_top = 106.0
+offset_right = 399.04
+offset_bottom = 412.0
+texture = ExtResource("5_rrod7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlayerName" type="Label" parent="Content/ProfileSection" unique_id=2119056064]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 456.0
+offset_bottom = 504.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.96, 0.96, 0.98, 1)
+theme_override_font_sizes/font_size = 28
+text = "五条悟"
+horizontal_alignment = 1
+
+[node name="PlayerArea" type="Label" parent="Content/ProfileSection" unique_id=1355912544]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 506.0
+offset_bottom = 534.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.78, 0.79, 0.84, 1)
+theme_override_font_sizes/font_size = 14
+text = "特级咒术师 · 无下限术式"
+horizontal_alignment = 1
+
+[node name="DrawButton" type="TextureButton" parent="Content/ProfileSection" unique_id=1062028028]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.040000916
+offset_top = -69.44
+offset_right = 0.039978027
+offset_bottom = 24.559998
+grow_horizontal = 2
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_draw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="DrawButtonLabel" type="Label" parent="Content/ProfileSection/DrawButton" unique_id=1261243548]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.96, 0.94, 1)
+theme_override_font_sizes/font_size = 23
+text = "进入咒术转盘"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DrawButtonHint" type="Label" parent="Content/ProfileSection/DrawButton" unique_id=1670754912]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.9, 0.88, 1)
+theme_override_font_sizes/font_size = 12
+text = "获取术式 · 角色 · 专属领域"
+horizontal_alignment = 1
+
+[node name="ModeSection" type="Control" parent="Content" unique_id=1696054486]
+layout_mode = 1
+anchor_left = 0.455
+anchor_top = 0.155
+anchor_right = 0.965
+anchor_bottom = 0.84
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ModeTitle" type="Label" parent="Content/ModeSection" unique_id=1074573990]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 350.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 30
+text = "对战模式"
+
+[node name="ModeGrid" type="GridContainer" parent="Content/ModeSection" unique_id=1053633402]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.01
+anchor_top = 0.105
+anchor_right = 0.99
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="BattleModeCard" type="TextureButton" parent="Content/ModeSection/ModeGrid" unique_id=727611366]
+custom_minimum_size = Vector2(370, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Content/ModeSection/ModeGrid/BattleModeCard" unique_id=924917353]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.64, 0.13, 0.13, 1)
+theme_override_font_sizes/font_size = 34
+text = "01"
+
+[node name="Icon" type="TextureRect" parent="Content/ModeSection/ModeGrid/BattleModeCard" unique_id=1122656613]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 39.0
+offset_right = 172.0
+offset_bottom = 135.0
+mouse_filter = 2
+texture = ExtResource("5_solo")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/ModeSection/ModeGrid/BattleModeCard" unique_id=2058055486]
+layout_mode = 0
+offset_left = 201.71277
+offset_top = 63.463577
+offset_right = 359.71277
+offset_bottom = 99.46358
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "单人对战"
+
+[node name="Subtitle" type="Label" parent="Content/ModeSection/ModeGrid/BattleModeCard" unique_id=120360143]
+layout_mode = 0
+offset_left = 219.71277
+offset_top = 100.46356
+offset_right = 377.71277
+offset_bottom = 130.46356
+theme_override_colors/font_color = Color(0.32, 0.3, 0.28, 1)
+theme_override_font_sizes/font_size = 12
+text = "与 AI 进行对决"
+
+[node name="OnlineModeCard" type="TextureButton" parent="Content/ModeSection/ModeGrid" unique_id=167203883]
+custom_minimum_size = Vector2(370, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Content/ModeSection/ModeGrid/OnlineModeCard" unique_id=1804587113]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.12, 0.47, 0.65, 1)
+theme_override_font_sizes/font_size = 34
+text = "02"
+
+[node name="Icon" type="TextureRect" parent="Content/ModeSection/ModeGrid/OnlineModeCard" unique_id=498693018]
+layout_mode = 0
+offset_left = 70.71277
+offset_top = 39.463577
+offset_right = 166.71277
+offset_bottom = 135.46358
+mouse_filter = 2
+texture = ExtResource("6_async")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/ModeSection/ModeGrid/OnlineModeCard" unique_id=1171379207]
+layout_mode = 0
+offset_left = 201.71277
+offset_top = 63.463577
+offset_right = 359.71277
+offset_bottom = 99.46358
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "联机模式"
+
+[node name="Subtitle" type="Label" parent="Content/ModeSection/ModeGrid/OnlineModeCard" unique_id=1513206801]
+layout_mode = 0
+offset_left = 218.71277
+offset_top = 100.46356
+offset_right = 376.71277
+offset_bottom = 130.46356
+theme_override_colors/font_color = Color(0.32, 0.3, 0.28, 1)
+theme_override_font_sizes/font_size = 12
+text = "挑战其他玩家"
+
+[node name="RankingModeCard" type="TextureButton" parent="Content/ModeSection/ModeGrid" unique_id=1500436632]
+custom_minimum_size = Vector2(370, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Content/ModeSection/ModeGrid/RankingModeCard" unique_id=1628634414]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.63, 0.43, 0.09, 1)
+theme_override_font_sizes/font_size = 34
+text = "03"
+
+[node name="Icon" type="TextureRect" parent="Content/ModeSection/ModeGrid/RankingModeCard" unique_id=904576184]
+layout_mode = 0
+offset_left = 75.71277
+offset_top = 42.463562
+offset_right = 171.71277
+offset_bottom = 138.46356
+mouse_filter = 2
+texture = ExtResource("7_online")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/ModeSection/ModeGrid/RankingModeCard" unique_id=1574335051]
+layout_mode = 0
+offset_left = 201.71277
+offset_top = 60.463562
+offset_right = 359.71277
+offset_bottom = 96.46356
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "积分赛"
+
+[node name="Subtitle" type="Label" parent="Content/ModeSection/ModeGrid/RankingModeCard" unique_id=1701656039]
+layout_mode = 0
+offset_left = 219.71277
+offset_top = 100.46356
+offset_right = 377.71277
+offset_bottom = 130.46356
+theme_override_colors/font_color = Color(0.32, 0.3, 0.28, 1)
+theme_override_font_sizes/font_size = 12
+text = "实时匹配对战"
+
+[node name="BOSSModeCard" type="TextureButton" parent="Content/ModeSection/ModeGrid" unique_id=336552566]
+custom_minimum_size = Vector2(370, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Content/ModeSection/ModeGrid/BOSSModeCard" unique_id=353263826]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.64, 0.13, 0.13, 1)
+theme_override_font_sizes/font_size = 34
+text = "04"
+
+[node name="Icon" type="TextureRect" parent="Content/ModeSection/ModeGrid/BOSSModeCard" unique_id=789009561]
+layout_mode = 0
+offset_left = 70.71277
+offset_top = 42.463562
+offset_right = 166.71277
+offset_bottom = 138.46356
+mouse_filter = 2
+texture = ExtResource("8_ranked")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/ModeSection/ModeGrid/BOSSModeCard" unique_id=993421793]
+layout_mode = 0
+offset_left = 193.71277
+offset_top = 60.463562
+offset_right = 351.71277
+offset_bottom = 96.46356
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "斗傩大陆"
+
+[node name="Subtitle" type="Label" parent="Content/ModeSection/ModeGrid/BOSSModeCard" unique_id=1409119847]
+layout_mode = 0
+offset_left = 218.71277
+offset_top = 96.46356
+offset_right = 376.71277
+offset_bottom = 126.46356
+theme_override_colors/font_color = Color(0.32, 0.3, 0.28, 1)
+theme_override_font_sizes/font_size = 12
+text = " BOSS挑战"
+
+[node name="StoryModeCard" type="TextureButton" parent="Content/ModeSection/ModeGrid" unique_id=453551228]
+custom_minimum_size = Vector2(370, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Content/ModeSection/ModeGrid/StoryModeCard" unique_id=1111273843]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.63, 0.43, 0.09, 1)
+theme_override_font_sizes/font_size = 34
+text = "05"
+
+[node name="Icon" type="TextureRect" parent="Content/ModeSection/ModeGrid/StoryModeCard" unique_id=1536852320]
+layout_mode = 0
+offset_left = 75.71277
+offset_top = 42.463562
+offset_right = 171.71277
+offset_bottom = 138.46356
+mouse_filter = 2
+texture = ExtResource("9_story")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/ModeSection/ModeGrid/StoryModeCard" unique_id=1224888629]
+layout_mode = 0
+offset_left = 201.71277
+offset_top = 61.463562
+offset_right = 359.71277
+offset_bottom = 97.46356
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "故事模式"
+
+[node name="Subtitle" type="Label" parent="Content/ModeSection/ModeGrid/StoryModeCard" unique_id=1673768802]
+layout_mode = 0
+offset_left = 219.71277
+offset_top = 100.46356
+offset_right = 377.71277
+offset_bottom = 130.46356
+theme_override_colors/font_color = Color(0.32, 0.3, 0.28, 1)
+theme_override_font_sizes/font_size = 12
+text = "PVE 剧情肉鸽挑战"
+
+[node name="CommunityModeCard" type="TextureButton" parent="Content/ModeSection/ModeGrid" unique_id=166169585]
+custom_minimum_size = Vector2(370, 150)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Content/ModeSection/ModeGrid/CommunityModeCard" unique_id=1569620262]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 38.0
+offset_right = 100.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.12, 0.47, 0.65, 1)
+theme_override_font_sizes/font_size = 34
+text = "06"
+
+[node name="Icon" type="TextureRect" parent="Content/ModeSection/ModeGrid/CommunityModeCard" unique_id=1938788080]
+layout_mode = 0
+offset_left = 70.71277
+offset_top = 42.463562
+offset_right = 166.71277
+offset_bottom = 142.46356
+mouse_filter = 2
+texture = ExtResource("10_event")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/ModeSection/ModeGrid/CommunityModeCard" unique_id=129549424]
+layout_mode = 0
+offset_left = 193.71277
+offset_top = 61.463562
+offset_right = 351.71277
+offset_bottom = 97.46356
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "玩家社区"
+
+[node name="Subtitle" type="Label" parent="Content/ModeSection/ModeGrid/CommunityModeCard" unique_id=368320225]
+layout_mode = 0
+offset_left = 218.71277
+offset_top = 97.46356
+offset_right = 376.71277
+offset_bottom = 127.46356
+theme_override_colors/font_color = Color(0.32, 0.3, 0.28, 1)
+theme_override_font_sizes/font_size = 12
+text = "玩家交流区 "
+
+[node name="BottomNav" type="HBoxContainer" parent="Content" unique_id=1170535991]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.875
+anchor_right = 0.96
+anchor_bottom = 0.995
+offset_left = 6.1200027
+offset_top = 3.625
+offset_right = -0.11999512
+offset_bottom = -17.294983
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("18_bottom_nav")
+
+[node name="HomeButton" type="TextureButton" parent="Content/BottomNav" unique_id=237109542]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("13_home")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharacterButton" type="TextureButton" parent="Content/BottomNav" unique_id=1076577218]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("14_character")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BattleButton" type="TextureButton" parent="Content/BottomNav" unique_id=638899750]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("15_battle")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ForumButton" type="TextureButton" parent="Content/BottomNav" unique_id=711877780]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("16_forum")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ArchiveButton" type="TextureButton" parent="Content/BottomNav" unique_id=1814410103]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("17_archive")
+ignore_texture_size = true
+stretch_mode = 5

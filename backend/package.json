@@ -1,0 +1,13 @@
+{
+  "name": "jjk-local-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:local-worker": "node ../tests/backend/local_worker_acceptance.mjs",
+    "test:preview-room": "node ../tests/backend/online_room_v2_acceptance.mjs"
+    ,"worker": "node scripts/worker.mjs"
+    ,"worker:start": "node scripts/worker.mjs start"
+    ,"worker:health": "node scripts/worker.mjs health"
+  }
+}
+

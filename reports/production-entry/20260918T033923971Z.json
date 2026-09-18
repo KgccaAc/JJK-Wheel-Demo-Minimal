@@ -1,0 +1,22 @@
+﻿{
+    "schema":  "jjk-production-entry-audit-v1",
+    "run_id":  "20260918T033923971Z",
+    "scanned_roots":  [
+                          "app",
+                          "gameplay",
+                          "network",
+                          "backend",
+                          "scenes/auth",
+                          "scenes/home",
+                          "scenes/roster",
+                          "scenes/battle",
+                          "scenes/online",
+                          "scenes/profile",
+                          "project.godot"
+                      ],
+    "scanned_files":  76,
+    "violations":  0,
+    "findings":  [
+
+                 ]
+}

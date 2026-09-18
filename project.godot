@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="JJK Wheel Demo"
+run/main_scene="res://scenes/auth/auth_login.tscn"
+config/features=PackedStringArray("4.6", "C#")
+
+[autoload]
+
+FontFallback="*res://ui/FontFallback.gd"
+AccountState="*res://account/AccountState.gd"
+SelectionState="*res://SelectionState.gd"
+AudioManager="*res://audio/AudioManager.gd"
+ErrorService="*res://app/diagnostics/ErrorService.gd"
+PageRouter="*res://app/navigation/PageRouter.gd"
+AppSession="*res://app/session/AppSession.gd"
+StoryState="*res://story/StoryState.gd"
+StoryTransition="*res://app/navigation/StoryTransition.gd"
+EventBus="*res://app/session/EventBus.gd"
+Logger="*res://app/diagnostics/Logger.gd"
+CrashReporter="*res://app/diagnostics/CrashReporter.gd"
+
+[display]
+
+window/size/viewport_width=1672
+window/size/viewport_height=941
+window/size/window_width_override=1100
+window/size/window_height_override=619
+window/stretch/mode="canvas_items"
+
+[dotnet]
+
+project/assembly_name="JJK Wheel Demo"
+
+[gui]
+
+theme/custom="res://ui/global_theme.tres"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

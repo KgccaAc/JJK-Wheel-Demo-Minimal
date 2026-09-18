@@ -1,0 +1,62 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+WARNING: res://ui/battle_status/resource_counter_card.tscn:4 - ext_resource, invalid UID: uid://bs4xqrg8p8ddu - using text path instead: res://ui/battle_status/resource_counter_card.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://ui/battle_status/special_effect_badge.tscn:4 - ext_resource, invalid UID: uid://bew21ejp4qiut - using text path instead: res://ui/battle_status/special_effect_badge.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://ui/battle_cards/basic_card.tscn:3 - ext_resource, invalid UID: uid://ba4awdleoaxtj - using text path instead: res://ui/battle_cards/battle_card_view.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+SCRIPT ERROR: Parse Error: Could not resolve super class inheritance from "BattleHandCard".
+   at: GDScript::reload (res://ui/battle_cards/battle_card_view.gd:2)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+ERROR: Failed to load script "res://ui/battle_cards/battle_card_view.gd" with error "Parse error".
+   at: load (modules/gdscript/gdscript.cpp:2907)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://scenes/battle/first_move_contest.tscn:4 - ext_resource, invalid UID: uid://dlu1owv2mo08p - using text path instead: res://scenes/battle/FirstMoveContest.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://scenes/battle/round_summary_panel.tscn:3 - ext_resource, invalid UID: uid://kio24nufv3np - using text path instead: res://scenes/battle/round_summary_panel.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://scenes/battle/strategy_selection.tscn:13 - ext_resource, invalid UID: uid://bf8yqtqf2pmcq - using text path instead: res://scenes/battle/StrategySelection.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+SCRIPT ERROR: Invalid call. Nonexistent function 'configure (via call)' in base 'TextureButton'.
+   at: _spawn_hand_cards (res://scenes/battle/FightPresenter.gd:518)
+   GDScript backtrace (most recent call first):
+       [0] _spawn_hand_cards (res://scenes/battle/FightPresenter.gd:518)
+       [1] _begin_open (res://scenes/battle/FightPresenter.gd:434)
+       [2] _request_hand_mode (res://scenes/battle/FightPresenter.gd:426)
+       [3] _on_hand_updated (res://scenes/battle/FightPresenter.gd:342)
+       [4] _publish_state (res://battle/core/BattleFlowSession.gd:961)
+       [5] deal_round (res://battle/core/BattleFlowSession.gd:310)
+       [6] confirm_strategy (res://scenes/battle/BattleFlowCoordinator.gd:167)
+       [7] _confirm_strategy (res://scenes/battle/FightPresenter.gd:1345)
+       [8] <anonymous lambda> (res://scenes/battle/StrategySelection.gd:57)
+ERROR: discard_card_missing_0
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _fail (res://tests/godot/StoryBattleRealFullAcceptance.gd:227)
+       [1] _discard_two (res://tests/godot/StoryBattleRealFullAcceptance.gd:100)
+       [2] _wait_visible_cards (res://tests/godot/StoryBattleRealFullAcceptance.gd:174)
+STORY_BATTLE_REAL_FULL_ACCEPTANCE FAIL rounds=0 failures=["discard_card_missing_0"] errors=0
+WARNING: 22 RIDs of type "CanvasItem" were leaked.
+   at: _free_rids (servers/rendering/renderer_canvas_cull.cpp:2692)
+ERROR: 16 RID allocations of type 'PN13RendererDummy14TextureStorage12DummyTextureE' were leaked at exit.
+ERROR: 24 RID allocations of type 'PN18TextServerAdvanced22ShapedTextDataAdvancedE' were leaked at exit.
+ERROR: 2 RID allocations of type 'PN18TextServerAdvanced12FontAdvancedE' were leaked at exit.
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2641)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

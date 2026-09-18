@@ -1,0 +1,58 @@
+{
+  "schema": "story-npc-v1",
+  "npcs": [
+    {
+      "id": "river_witness",
+      "name": "河岸目击者",
+      "type": "information",
+      "secondaryTypes": ["剧情向", "环境向"],
+      "personality": ["谨慎", "怕惹麻烦"],
+      "initialState": "available",
+      "dialogueRefs": ["river_witness_first", "river_witness_hint"],
+      "aiPolicy": "flavor_only"
+    },
+    {
+      "id": "junior_sorcerer",
+      "name": "初级术师",
+      "type": "攻略型",
+      "secondaryTypes": ["剧情向", "战斗向", "情报向"],
+      "personality": ["谨慎", "重视承诺", "保护欲"],
+      "initialState": "unknown",
+      "affinity": {"affection": 0, "trust": 0, "respect": 0, "compatibility": 0},
+      "routeStages": [
+        {"id": "first_meeting", "requirements": {}, "dialogue": "junior_first_meeting"},
+        {"id": "testing", "requirements": {"affection": 15}, "dialogue": "junior_testing"},
+        {"id": "conflict", "requirements": {"affection": 30, "trust": 2}, "dialogue": "junior_conflict"},
+        {"id": "temporary_partner", "requirements": {"affection": 45, "trust": 2}, "dialogue": "junior_temporary_partner"},
+        {"id": "recruit", "requirements": {"affection": 60, "trust": 3, "respect": 2, "flags": ["junior_personal_event_done"]}, "dialogue": "junior_recruit"}
+      ],
+      "companion": {
+        "role": "support",
+        "supportSkill": "protective_intervention",
+        "passiveSkill": "shared_focus",
+        "availableFrom": "temporary_partner"
+      },
+      "aiPolicy": "dialogue_only"
+    },
+    {
+      "id": "cursed_tool_trader",
+      "name": "咒具商人",
+      "type": "merchant",
+      "secondaryTypes": ["情报向", "增益向"],
+      "personality": ["精明", "识货"],
+      "initialState": "available",
+      "dialogueRefs": ["trader_intro", "trader_inventory"],
+      "aiPolicy": "flavor_only"
+    },
+    {
+      "id": "river_curse",
+      "name": "河岸低级咒灵",
+      "type": "enemy",
+      "secondaryTypes": ["战斗向"],
+      "personality": ["饥饿", "畏光"],
+      "initialState": "hostile",
+      "battleProfile": "river_low_grade_curse",
+      "aiPolicy": "disabled"
+    }
+  ]
+}

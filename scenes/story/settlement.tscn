@@ -1,0 +1,642 @@
+[gd_scene format=3 uid="uid://dfafjcro7dowq"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="1_c8fia"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="2_x45mo"]
+[ext_resource type="Texture2D" uid="uid://bt561g045cesl" path="res://art/Story/通用结算/节点回顾.png" id="3_4vsep"]
+[ext_resource type="Texture2D" uid="uid://l6w3grnfg5xu" path="res://art/Story/通用结算/小图标/HP.png" id="4_76u66"]
+[ext_resource type="Texture2D" uid="uid://cewve6phtx7f" path="res://art/Story/通用结算/状态变化.png" id="4_m1tdb"]
+[ext_resource type="Texture2D" uid="uid://cwwxhs40k5ibh" path="res://art/Story/Select/序章场景图/郊区.png" id="5_exppy"]
+[ext_resource type="Texture2D" uid="uid://b406c4nlklfwc" path="res://art/Story/通用结算/路线变化.png" id="5_j4ijo"]
+[ext_resource type="Texture2D" uid="uid://bing5kp31t01v" path="res://art/Story/通用结算/小图标/CE.png" id="5_y3rfg"]
+[ext_resource type="Texture2D" uid="uid://b1scf0euce6et" path="res://art/Story/通用结算/小图标/钱.png" id="6_5kg4d"]
+[ext_resource type="Texture2D" uid="uid://b0xk6tun6irb5" path="res://art/Story/通用结算/成功标签.png" id="7_s11vl"]
+[ext_resource type="Texture2D" uid="uid://c0c5683c7nrbr" path="res://art/Story/通用结算/小图标/经验值.png" id="7_y3rfg"]
+[ext_resource type="Texture2D" uid="uid://bgfoi4bi1xu7c" path="res://art/Story/通用结算/小图标/伤势.png" id="8_5kg4d"]
+[ext_resource type="Texture2D" uid="uid://7m4fyf03ou46" path="res://art/Story/通用结算/节点完成.png" id="8_j6bkq"]
+[ext_resource type="Texture2D" uid="uid://bo25sfq0nlw86" path="res://art/wheel/角色认定/体质.png" id="9_8mfch"]
+[ext_resource type="Texture2D" uid="uid://puauia6pui3b" path="res://art/Story/通用结算/记录保存.png" id="9_76u66"]
+[ext_resource type="Texture2D" uid="uid://d0dilg10is4e3" path="res://art/Story/通用结算/小图标/调查进度.png" id="9_mctad"]
+[ext_resource type="Texture2D" uid="uid://bghms4jmrj6n2" path="res://art/wheel/角色认定/咒力总量.png" id="10_jtto0"]
+[ext_resource type="Texture2D" uid="uid://2pnojmiqm0yd" path="res://art/Story/通用结算/继续.png" id="10_y3rfg"]
+[ext_resource type="Texture2D" uid="uid://bqcw86r0ry587" path="res://art/Story/通用结算/事件记录.png" id="11_5kg4d"]
+[ext_resource type="Texture2D" uid="uid://45momceaavna" path="res://art/wheel/角色认定/咒力操纵.png" id="11_mctad"]
+[ext_resource type="Texture2D" uid="uid://w2lsc4rr0mor" path="res://art/wheel/角色认定/咒力效率.png" id="12_1q5vg"]
+[ext_resource type="Texture2D" uid="uid://cbpedb0rblrk2" path="res://art/Story/通用结算/返回地图.png" id="12_hf4vo"]
+[ext_resource type="Texture2D" uid="uid://bb4fga2c8iexx" path="res://art/wheel/角色认定/体术.png" id="13_irdlu"]
+[ext_resource type="Texture2D" uid="uid://b4c1scvj6pis6" path="res://art/wheel/角色认定/悟性.png" id="14_k408i"]
+[ext_resource type="Texture2D" uid="uid://c6xcdjxrsc6sg" path="res://art/Story/通用结算/小图标/阵营关系.png" id="15_jtto0"]
+[ext_resource type="Texture2D" uid="uid://dk7gkryrut8xb" path="res://art/Story/通用结算/小图标/获得线索.png" id="17_1q5vg"]
+[ext_resource type="Texture2D" uid="uid://d07k1emn8y3kt" path="res://art/Story/通用结算/查看完整经历.png" id="27_irdlu"]
+[ext_resource type="Script" uid="uid://bd6xlf2qibe3m" path="res://scenes/story/SettlementFlow.gd" id="28_settlement"]
+
+[node name="Settlement" type="Control" unique_id=2044386443]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("28_settlement")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1112970478]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_c8fia")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=1375963250]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=1507569667]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 39
+text = "第一幕·节点结算"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=297013438]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 95.0
+offset_right = 268.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 20
+text = "普通事件"
+
+[node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=1462757310]
+layout_mode = 0
+offset_left = 1147.0
+offset_top = 23.0
+offset_right = 1402.0
+offset_bottom = 123.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_x45mo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background/Header/UserButton" unique_id=904062628]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=1392019281]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="Status" type="NinePatchRect" parent="." unique_id=1584284059]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 210.0
+offset_right = 1270.0
+offset_bottom = 826.0
+texture = ExtResource("4_m1tdb")
+
+[node name="ResourceChange" type="Label" parent="Status" unique_id=1366760099]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 147.0
+offset_right = 245.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "资源变化"
+
+[node name="HP" type="TextureRect" parent="Status/ResourceChange" unique_id=1671256272]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 51.0
+offset_right = 10.0
+offset_bottom = 80.0
+texture = ExtResource("4_76u66")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/ResourceChange/HP" unique_id=1404318443]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.1782, 0.1782, 1)
+text = "无变化"
+
+[node name="CE" type="TextureRect" parent="Status/ResourceChange" unique_id=2054501887]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 91.0
+offset_right = 10.0
+offset_bottom = 120.0
+texture = ExtResource("5_y3rfg")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/ResourceChange/CE" unique_id=1930649631]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21839999, 0.4347467, 0.56, 1)
+text = "+13"
+
+[node name="Money" type="TextureRect" parent="Status/ResourceChange" unique_id=729338519]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 131.0
+offset_right = 10.0
+offset_bottom = 160.0
+texture = ExtResource("6_5kg4d")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/ResourceChange/Money" unique_id=132477439]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 2.0
+offset_right = 87.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.56, 0.16800001, 0.16800001, 1)
+text = "-10"
+
+[node name="EXP" type="TextureRect" parent="Status/ResourceChange" unique_id=1043138191]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 51.0
+offset_right = 138.0
+offset_bottom = 80.0
+texture = ExtResource("7_y3rfg")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/ResourceChange/EXP" unique_id=1612797692]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.1782, 0.1782, 1)
+text = "无变化"
+
+[node name="Stability" type="TextureRect" parent="Status/ResourceChange" unique_id=195987938]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 91.0
+offset_right = 138.0
+offset_bottom = 120.0
+texture = ExtResource("8_5kg4d")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/ResourceChange/Stability" unique_id=250240970]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 2.0
+offset_right = 87.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21839999, 0.4347467, 0.56, 1)
+text = "+13"
+
+[node name="Research" type="TextureRect" parent="Status/ResourceChange" unique_id=1697556438]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 131.0
+offset_right = 138.0
+offset_bottom = 160.0
+texture = ExtResource("9_mctad")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/ResourceChange/Research" unique_id=329495181]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21839999, 0.4347467, 0.56, 1)
+text = "+13"
+
+[node name="Born" type="Label" parent="Status" unique_id=1861442917]
+layout_mode = 0
+offset_left = 529.0
+offset_top = 147.0
+offset_right = 645.0
+offset_bottom = 190.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "成长变化"
+
+[node name="HP" type="TextureRect" parent="Status/Born" unique_id=927095927]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 51.0
+offset_right = 10.0
+offset_bottom = 80.0
+texture = ExtResource("9_8mfch")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/Born/HP" unique_id=83545427]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.1782, 0.1782, 1)
+text = "无变化"
+
+[node name="MaxCE" type="TextureRect" parent="Status/Born" unique_id=1645492442]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 91.0
+offset_right = 10.0
+offset_bottom = 120.0
+texture = ExtResource("10_jtto0")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/Born/MaxCE" unique_id=2024998950]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21839999, 0.4347467, 0.56, 1)
+text = "+13"
+
+[node name="CeControl" type="TextureRect" parent="Status/Born" unique_id=1011216258]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 131.0
+offset_right = 10.0
+offset_bottom = 160.0
+texture = ExtResource("11_mctad")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/Born/CeControl" unique_id=991369397]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 2.0
+offset_right = 87.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.56, 0.16800001, 0.16800001, 1)
+text = "-10"
+
+[node name="CeEfficiency" type="TextureRect" parent="Status/Born" unique_id=588997555]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 51.0
+offset_right = 138.0
+offset_bottom = 80.0
+texture = ExtResource("12_1q5vg")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/Born/CeEfficiency" unique_id=84277955]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.1782, 0.1782, 1)
+text = "无变化"
+
+[node name="BodyTech" type="TextureRect" parent="Status/Born" unique_id=1514978939]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 91.0
+offset_right = 138.0
+offset_bottom = 120.0
+texture = ExtResource("13_irdlu")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/Born/BodyTech" unique_id=373934595]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21839999, 0.4347467, 0.56, 1)
+text = "+13"
+
+[node name="Insight" type="TextureRect" parent="Status/Born" unique_id=820553995]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 131.0
+offset_right = 138.0
+offset_bottom = 160.0
+texture = ExtResource("14_k408i")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Status/Born/Insight" unique_id=741429530]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21839999, 0.4347467, 0.56, 1)
+text = "+13"
+
+[node name="Connection" type="Label" parent="Status" unique_id=844900374]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 379.0
+offset_right = 253.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "关系变化"
+
+[node name="Camp1" type="TextureRect" parent="Status/Connection" unique_id=1612211511]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 51.0
+offset_right = 10.0
+offset_bottom = 80.0
+texture = ExtResource("15_jtto0")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="Status/Connection/Camp1" unique_id=581313807]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.1782, 0.1782, 1)
+text = "咒术高专"
+
+[node name="Value" type="Label" parent="Status/Connection/Camp1" unique_id=1689598149]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 2.0
+offset_right = 173.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21960784, 0.43529412, 0.56078434, 1)
+text = "+1"
+
+[node name="Investigation" type="Label" parent="Status" unique_id=416276395]
+layout_mode = 0
+offset_left = 521.0
+offset_top = 379.0
+offset_right = 637.0
+offset_bottom = 422.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "调查结果"
+
+[node name="Investigation" type="TextureRect" parent="Status/Investigation" unique_id=1623465525]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 51.0
+offset_right = 10.0
+offset_bottom = 80.0
+texture = ExtResource("17_1q5vg")
+expand_mode = 1
+
+[node name="Name" type="Label" parent="Status/Investigation/Investigation" unique_id=1725231258]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 2.0
+offset_right = 85.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.22, 0.1782, 0.1782, 1)
+text = "奇怪的痕迹"
+
+[node name="Value" type="Label" parent="Status/Investigation/Investigation" unique_id=785030141]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 2.0
+offset_right = 173.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.21960784, 0.43529412, 0.56078434, 1)
+text = "+1"
+
+[node name="Title" type="Label" parent="Status" unique_id=1327595057]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 47.0
+offset_right = 251.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 39
+text = "·状态变化·"
+
+[node name="Subtitle" type="Label" parent="Status" unique_id=1989608092]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 88.0
+offset_right = 342.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 20
+text = "本节点产生的变化"
+
+[node name="Reflect" type="TextureRect" parent="." unique_id=1492023815]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 229.0
+offset_right = 447.0
+offset_bottom = 812.0
+texture = ExtResource("3_4vsep")
+
+[node name="Photo" type="TextureRect" parent="Reflect" unique_id=1529749571]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 134.0
+offset_right = 390.0
+offset_bottom = 325.0
+texture = ExtResource("5_exppy")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Reflect" unique_id=1556144710]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 39
+text = "事件回顾"
+
+[node name="Label" type="Label" parent="Reflect" unique_id=1084999417]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 337.0
+offset_right = 394.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(0.23, 0.23, 0.23, 1)
+theme_override_font_sizes/font_size = 23
+text = "·在便利店外发现未知痕迹。
+·和便利店里的可疑人士交谈。
+·购买了饮料。"
+autowrap_mode = 1
+
+[node name="Road" type="TextureRect" parent="." unique_id=1920889281]
+layout_mode = 0
+offset_left = 1230.0
+offset_top = 229.0
+offset_right = 1659.0
+offset_bottom = 801.0
+texture = ExtResource("5_j4ijo")
+
+[node name="Now" type="Label" parent="Road" unique_id=610332714]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 153.0
+offset_right = 245.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "当前节点：初来乍到"
+
+[node name="Next" type="Label" parent="Road" unique_id=1490834701]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 269.0
+offset_right = 363.0
+offset_bottom = 312.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "解锁节点：深入探究"
+
+[node name="Road" type="Label" parent="Road" unique_id=1386680274]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 381.0
+offset_right = 363.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 26
+text = "可选路线：1"
+
+[node name="SuccessItem" type="TextureRect" parent="." unique_id=1962560489]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 110.0
+offset_right = 1057.0
+offset_bottom = 203.0
+texture = ExtResource("7_s11vl")
+
+[node name="SuccessLabel" type="TextureRect" parent="." unique_id=1041102033]
+layout_mode = 0
+offset_left = 606.0
+offset_top = 31.0
+offset_right = 1056.0
+offset_bottom = 100.0
+texture = ExtResource("8_j6bkq")
+
+[node name="Label" type="Label" parent="SuccessLabel" unique_id=406150011]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 12.0
+offset_right = 276.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(1, 0.979, 0.82, 1)
+theme_override_font_sizes/font_size = 29
+text = "节点完成"
+
+[node name="Review" type="TextureButton" parent="." unique_id=1796757475]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 811.0
+offset_right = 459.0
+offset_bottom = 893.0
+texture_normal = ExtResource("9_76u66")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Review" unique_id=1341348679]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 19.0
+offset_right = 269.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.23, 0.23, 0.23, 1)
+theme_override_font_sizes/font_size = 28
+text = "查看完整记录"
+
+[node name="Enter" type="TextureButton" parent="." unique_id=162584487]
+layout_mode = 0
+offset_left = 1224.0
+offset_top = 815.0
+offset_right = 1656.0
+offset_bottom = 898.0
+texture_normal = ExtResource("10_y3rfg")
+
+[node name="Label" type="Label" parent="Enter" unique_id=2024649154]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 19.0
+offset_right = 321.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 27
+text = "结算并回到地图"
+
+[node name="History" type="TextureButton" parent="." unique_id=1772507909]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 140.0
+offset_right = 230.0
+offset_bottom = 225.0
+texture_normal = ExtResource("11_5kg4d")
+
+[node name="Label" type="Label" parent="History" unique_id=256524384]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.23, 0.23, 0.23, 1)
+theme_override_font_sizes/font_size = 23
+text = "完整回顾"
+
+[node name="Back" type="TextureButton" parent="." unique_id=36840549]
+layout_mode = 0
+offset_left = 1429.0
+offset_top = 33.0
+offset_right = 1614.0
+offset_bottom = 118.0
+texture_normal = ExtResource("12_hf4vo")
+
+[node name="Label" type="Label" parent="Back" unique_id=1953837591]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 27.0
+offset_right = 172.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0.23, 0.23, 0.23, 1)
+theme_override_font_sizes/font_size = 21
+text = "回到主页"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1187412128]
+layout_mode = 0
+offset_left = 631.0
+offset_top = 816.0
+offset_right = 1066.0
+offset_bottom = 896.0
+texture = ExtResource("27_irdlu")
+
+[node name="Label" type="Label" parent="TextureRect" unique_id=1752833678]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 17.0
+offset_right = 288.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.23, 0.23, 0.23, 1)
+theme_override_font_sizes/font_size = 28
+text = "记录已保存"

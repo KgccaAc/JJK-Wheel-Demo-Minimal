@@ -1,0 +1,198 @@
+﻿[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://xqu6l1qm4fi5" path="res://art/fight/鍏堟墜浜夊ず/鍏堟墜浜夊ず鑳屾櫙.png" id="1_bg"]
+[ext_resource type="Script" uid="uid://dlu1owv2mo08p" path="res://scenes/fight/FirstMoveContest.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://4u58y4m2c66t" path="res://art/fight/鍏堟墜浜夊ず/鍏堟墜浜夊ず妗?png" id="4_veyy0"]
+[ext_resource type="Texture2D" uid="uid://b5sgav6u511nn" path="res://art/fight/鍏堟墜浜夊ず/鍏堟墜浜夊ず浣撳娍鎶曞叆鎸夐挳鏈€変腑.png" id="5_5n6bu"]
+
+[node name="FirstMoveContest" type="Control" unique_id=595502869]
+custom_minimum_size = Vector2(1672, 941)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1452420652]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ContestContent" type="Control" parent="." unique_id=1088100378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 2.0
+offset_right = -124.0
+offset_bottom = -681.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(836, 470.5)
+
+[node name="TextureRect" type="TextureRect" parent="ContestContent" unique_id=127292902]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 70.0
+offset_right = 1535.0
+offset_bottom = 226.0
+texture = ExtResource("4_veyy0")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="ContestContent/TextureRect" unique_id=1203386715]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 61.0
+offset_right = 210.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 42
+text = "鍏堟墜浜夊ず"
+horizontal_alignment = 1
+
+[node name="SubTitle" type="Label" parent="ContestContent/TextureRect/Title" unique_id=597643563]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 9.0
+offset_right = 900.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 31
+text = "鏍规嵁鍙屾柟鎶曞叆鐨勪綋鍔挎潵绔炰簤鍏堝悗锛岀浉鍚屾椂姣旀嫾浣撴湳"
+horizontal_alignment = 1
+
+[node name="ChoiceButtons" type="Control" parent="ContestContent/TextureRect" unique_id=1911720470]
+anchors_preset = 0
+offset_left = 911.0
+offset_top = 38.0
+offset_right = 1433.0
+offset_bottom = 142.0
+
+[node name="Option01" type="Button" parent="ContestContent/TextureRect/ChoiceButtons" unique_id=965593880]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 21.0
+offset_right = 161.0
+offset_bottom = 85.0
+tooltip_text = "绛栫暐涓€"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Buttom" type="TextureRect" parent="ContestContent/TextureRect/ChoiceButtons/Option01" unique_id=616138877]
+layout_mode = 0
+offset_left = -12.0
+offset_top = -1.0
+offset_right = 122.0
+offset_bottom = 62.0
+texture = ExtResource("5_5n6bu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ContestContent/TextureRect/ChoiceButtons/Option01" unique_id=141833213]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 16.0
+offset_right = 103.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.4, 0.072000004, 0.072000004, 1)
+theme_override_font_sizes/font_size = 20
+text = " 鎶曞叆0浣撳娍"
+
+[node name="Option02" type="Button" parent="ContestContent/TextureRect/ChoiceButtons" unique_id=594272086]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 20.0
+offset_right = 263.0
+offset_bottom = 84.0
+tooltip_text = "绛栫暐涓€"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Buttom" type="TextureRect" parent="ContestContent/TextureRect/ChoiceButtons/Option02" unique_id=1036400379]
+layout_mode = 0
+offset_left = -15.0
+offset_right = 119.0
+offset_bottom = 63.0
+texture = ExtResource("5_5n6bu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ContestContent/TextureRect/ChoiceButtons/Option02" unique_id=786423077]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 101.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.4, 0.072000004, 0.072000004, 1)
+theme_override_font_sizes/font_size = 20
+text = " 鎶曞叆5浣撳娍"
+
+[node name="Option03" type="Button" parent="ContestContent/TextureRect/ChoiceButtons" unique_id=533794325]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 21.0
+offset_right = 394.0
+offset_bottom = 85.0
+tooltip_text = "绛栫暐涓€"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Buttom" type="TextureRect" parent="ContestContent/TextureRect/ChoiceButtons/Option03" unique_id=650512478]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -1.0
+offset_right = 117.0
+offset_bottom = 62.0
+texture = ExtResource("5_5n6bu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ContestContent/TextureRect/ChoiceButtons/Option03" unique_id=1207467689]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 17.0
+offset_right = 102.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.4, 0.072000004, 0.072000004, 1)
+theme_override_font_sizes/font_size = 20
+text = " 鎶曞叆10浣撳娍"
+
+[node name="Option04" type="Button" parent="ContestContent/TextureRect/ChoiceButtons" unique_id=2128873902]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 22.0
+offset_right = 522.0
+offset_bottom = 86.0
+tooltip_text = "绛栫暐涓€"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Buttom" type="TextureRect" parent="ContestContent/TextureRect/ChoiceButtons/Option04" unique_id=899899005]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -1.0
+offset_right = 116.0
+offset_bottom = 62.0
+texture = ExtResource("5_5n6bu")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ContestContent/TextureRect/ChoiceButtons/Option04" unique_id=790075403]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 16.0
+offset_right = 102.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(0.4, 0.072000004, 0.072000004, 1)
+theme_override_font_sizes/font_size = 20
+text = " 鎶曞叆15浣撳娍"
+
+
+

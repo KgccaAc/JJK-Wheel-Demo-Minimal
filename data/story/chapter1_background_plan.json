@@ -1,0 +1,28 @@
+{
+  "schema": "story-background-plan-v1",
+  "chapterId": "chapter1",
+  "title": "第一章·仙台的异乡人",
+  "rule": "关键节点使用独立叙事背景；四时段和普通节点复用可变场景；未制作项保留路径与美术 brief，不阻塞本地逻辑。",
+  "backgrounds": [
+    {"id":"rpg_signing_hall","category":"RPG·序幕","path":"res://art/Story/RPG/初始背景/1.png","status":"existing","usedBy":["chapter1_intro"],"brief":"签名会长队的尽头，暖白灯光和签名本作为视觉锚点。"},
+    {"id":"rpg_author_close","category":"RPG·序幕","path":"res://art/Story/RPG/初始背景/2.png","status":"existing","usedBy":["chapter1_intro"],"brief":"作者抬眼与缝合额头的近景，背景压暗，保留不安。"},
+    {"id":"rpg_glass_break","category":"RPG·穿越","path":"res://art/Story/RPG/初始背景/3.png","status":"existing","usedBy":["chapter1_intro"],"brief":"玻璃裂纹从画面中心扩散，白光覆盖边缘。"},
+    {"id":"rpg_blackout","category":"RPG·穿越","path":"res://art/Story/RPG/初始背景/4.png","status":"existing","usedBy":["chapter1_intro"],"brief":"纯黑与残留裂纹，给玻璃破碎音效留出停顿。"},
+    {"id":"rpg_sendai_sign","category":"RPG·穿越","path":"res://art/Story/RPG/初始背景/5.png","status":"existing","usedBy":["chapter1_intro"],"brief":"仙台市路牌和陌生街道，日语自动理解的第一处证据。"},
+    {"id":"rpg_memory_pain","category":"RPG·穿越","path":"res://art/Story/RPG/初始背景/6.png","status":"existing","usedBy":["chapter1_intro"],"brief":"签名本特写与疼痛造成的重影，作为进入普通节点的收束。"},
+    {"id":"selection_morning","category":"普通节点·四时段","path":"res://art/Story/RPG/第一章/仙台街道_清晨.png","status":"existing","usedBy":["chapter1_selection.早上"],"brief":"便利店玻璃反光，行人稀疏，适合观察与交谈。"},
+    {"id":"selection_noon","category":"普通节点·四时段","path":"res://art/Story/RPG/第一章/仙台街道_正午.png","status":"existing","usedBy":["chapter1_selection.中午"],"brief":"人流遮挡残秽，明亮硬阴影，突出搜索难度。"},
+    {"id":"selection_evening","category":"普通节点·四时段","path":"res://art/Story/RPG/第一章/仙台街道_黄昏.png","status":"existing","usedBy":["chapter1_selection.下午"],"brief":"长影和封闭步道，关系型 NPC 首次进入画面。"},
+    {"id":"selection_night","category":"普通节点·四时段","path":"res://art/Story/RPG/第一章/仙台街道_夜.png","status":"existing","usedBy":["chapter1_selection.晚上"],"brief":"路灯、河岸方向和远处安全标记，推进高危前的悬念。"},
+    {"id":"clue_riverside","category":"剧情节点","path":"res://art/Story/RPG/第一章/河岸入口.png","status":"existing","usedBy":["chapter1_clue"],"brief":"护栏、湿地残秽和看不见的水道入口，给有限选择留出空间。"},
+    {"id":"random_under_bridge","category":"普通随机节点","path":"res://art/Story/RPG/第一章/河岸桥下.png","status":"existing","usedBy":["chapter1_optional_event"],"brief":"桥下三条去向：目击者、商人、术师安全标记，以阴影分区表现。"},
+    {"id":"branch_convenience_backdoor","category":"手动分支节点","path":"res://art/Story/RPG/第一章/便利店后门.png","status":"existing","usedBy":["chapter1_branch"],"brief":"狭窄后门和雨水反光，突出保护、追查、跟随、撤离的四种态度。"},
+    {"id":"danger_river_depth","category":"战斗前演出","path":"res://art/Story/RPG/第一章/河岸深处.png","status":"planned","usedBy":["chapter1_danger"],"brief":"河岸下方的黑色水面与低级咒灵巢穴；需要可读战斗入口轮廓。","priority":"P0"},
+    {"id":"map_sendai_route","category":"地图","path":"res://art/Story/Map/地图.png","status":"existing","usedBy":["chapter1_map","chapter1_end"],"brief":"节点路径必须让已完成、可达、锁定三态一眼可区分。"},
+    {"id":"settlement_neutral","category":"统一结算","path":"res://art/Story/通用结算/节点完成.png","status":"existing","usedBy":["settlement"],"brief":"所有事件、剧情、战斗共用；资源、成长、关系、事件四区分层。"},
+    {"id":"npc_junior_personal","category":"攻略型NPC专属","path":"res://art/Story/RPG/第一章/术师任务单.png","status":"planned","usedBy":["junior_personal_event"],"brief":"被水泡皱的任务单和未救出的名字，情绪低但不煽情。","priority":"P1"},
+    {"id":"npc_junior_recruit","category":"攻略型NPC专属","path":"res://art/Story/RPG/第一章/河岸并肩.png","status":"planned","usedBy":["junior_recruitment"],"brief":"两人背靠背站在河岸入口，留出援护牌入场的视觉位置。","priority":"P1"},
+    {"id":"core_high_school_gate","category":"核心剧情预留","path":"res://art/Story/RPG/核心/高专入口.png","status":"planned","usedBy":["core_join_high_school"],"brief":"高专结界入口与签名本墨迹，作为第一章与原剧情盘的接缝。","priority":"P1"},
+    {"id":"core_shibuya_night","category":"核心剧情预留","path":"res://art/Story/RPG/核心/涩谷夜幕.png","status":"planned","usedBy":["core_shibuya_participation","core_shibuya_end"],"brief":"涩谷夜幕、封锁线和多阵营灯牌，后续只由核心节点使用。","priority":"P2"}
+  ]
+}

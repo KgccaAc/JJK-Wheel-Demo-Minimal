@@ -1,0 +1,25 @@
+﻿{
+    "schema":  "godot-self-improve-v1",
+    "generated_at":  "2026-09-17T10:01:04.5680178Z",
+    "acceptance":  {
+                       "total":  3,
+                       "passed":  3,
+                       "failed":  0
+                   },
+    "full_flow":  {
+                      "status":  "passed"
+                  },
+    "priorities":  {
+                       "P0":  0,
+                       "P1":  0,
+                       "P2":  6
+                   },
+    "follow_ups":  [
+                       "P2: migrate FightPresenter to BattleRulesV1Session read-only projection",
+                       "P2: extend CoreActionResolver DSL execution coverage with state assertions",
+                       "P2: repair the remaining invalid UID metadata in battle scene resources",
+                       "P2: add field-by-field source fixture state_hash comparison",
+                       "P2: add 720p, 1080p, and tall-window screenshot layout coverage",
+                       "P2: add an exported Web build journey covering CORS and scene navigation"
+                   ]
+}

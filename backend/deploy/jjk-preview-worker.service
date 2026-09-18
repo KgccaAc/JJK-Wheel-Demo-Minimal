@@ -1,0 +1,25 @@
+[Unit]
+Description=JJK Preview Online Room Worker (v1 state machine)
+After=network.target jjk-preview-login-card.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/jjk-preview-room
+Environment=NODE_ENV=production
+Environment=LOCAL_WORKER_HOST=127.0.0.1
+Environment=LOCAL_WORKER_PORT=8786
+# Let systemd create this directory for the service account. Keeping mutable
+# state out of /opt prevents root-owned deployment directories from breaking
+# room creation after a redeploy.
+Environment=LOCAL_WORKER_DATA_DIR=/var/lib/jjk-preview-worker
+StateDirectory=jjk-preview-worker
+StateDirectoryMode=0750
+ExecStart=/opt/jjk-node24/bin/node /opt/jjk-preview-room/local-worker.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

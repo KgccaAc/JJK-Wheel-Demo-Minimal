@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://depyd76ivuofi"]
+
+[ext_resource type="Script" uid="uid://ba4awdleoaxtj" path="res://ui/battle_cards/battle_card_view.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dxmyx1cfpqmsu" path="res://art/fight/基本牌.png" id="2_face"]
+[ext_resource type="FontFile" uid="uid://cr5lypi77717m" path="res://art/fonts/NotoSerifSC-Variable.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="4_bold"]
+
+[node name="BasicCard" type="TextureButton" unique_id=77950464]
+custom_minimum_size = Vector2(248, 372)
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=683242426]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_face")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SelectionFrame" type="ColorRect" parent="." unique_id=1879039908]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.45, 0.9, 0.64, 0.25)
+
+[node name="LockedOverlay" type="ColorRect" parent="." unique_id=1080175042]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.04, 0.08, 0.06, 0.76)
+
+[node name="LockReason" type="Label" parent="LockedOverlay" unique_id=1166184962]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.76, 0.7, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContentMargin" type="MarginContainer" parent="." unique_id=2053079929]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 22.0
+offset_right = -20.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="ContentMargin" unique_id=2057233921]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CardName" type="Label" parent="ContentMargin/Content" unique_id=2075758744]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 21.0
+offset_right = 214.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 27
+text = "体 术 打 击"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CardType" type="Label" parent="ContentMargin/Content" unique_id=1224071826]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 62.0
+offset_right = 209.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 13
+text = "attack"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Summary" type="RichTextLabel" parent="ContentMargin/Content" unique_id=1606759029]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 101.0
+offset_right = 182.0
+offset_bottom = 197.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_font")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+text = "依靠体术技巧发动打击并根据体术强度带来加成。"
+scroll_active = false
+
+[node name="CostRow" type="Control" parent="ContentMargin/Content" unique_id=1744484496]
+anchors_preset = 0
+offset_top = 218.0
+offset_right = 208.0
+offset_bottom = 274.0
+
+[node name="CeCostLabel" type="Label" parent="ContentMargin/Content/CostRow" unique_id=741821882]
+layout_mode = 0
+offset_left = 138.0
+offset_top = -57.0
+offset_right = 204.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "CE"
+horizontal_alignment = 1
+
+[node name="DefenceLabel" type="Label" parent="ContentMargin/Content/CostRow" unique_id=1059865132]
+layout_mode = 0
+offset_left = 73.0
+offset_top = -57.0
+offset_right = 139.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "防御"
+horizontal_alignment = 1
+
+[node name="AttackLabel" type="Label" parent="ContentMargin/Content/CostRow" unique_id=347226775]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -57.0
+offset_right = 72.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "攻击"
+horizontal_alignment = 1
+
+[node name="Attack" type="Label" parent="ContentMargin/Content/CostRow" unique_id=834679543]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -50.0
+offset_right = 74.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+
+[node name="Defence" type="Label" parent="ContentMargin/Content/CostRow" unique_id=2057550239]
+layout_mode = 0
+offset_left = 73.0
+offset_top = -50.0
+offset_right = 139.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 20
+text = "50"
+horizontal_alignment = 1
+
+[node name="CeCost" type="Label" parent="ContentMargin/Content/CostRow" unique_id=493166403]
+layout_mode = 0
+offset_left = 137.0
+offset_top = -50.0
+offset_right = 203.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 20
+text = "50"
+horizontal_alignment = 1
+
+[node name="RiskLabel" type="Label" parent="ContentMargin/Content" unique_id=838720785]
+layout_mode = 0
+offset_top = 215.0
+offset_right = 208.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "风险：极其危险"
+horizontal_alignment = 1
+
+[node name="TagsLabel" type="Label" parent="ContentMargin/Content" unique_id=124157803]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 239.0
+offset_right = 209.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+text = "体术 · 攻击 · 近战"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TopDivider" type="ColorRect" parent="ContentMargin/Content" unique_id=1571512191]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 146.0
+offset_bottom = 91.0
+mouse_filter = 2
+color = Color(0.56, 0.44, 0.27, 0.55)
+
+[node name="BottomDivider" type="ColorRect" parent="ContentMargin/Content" unique_id=1103730475]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 207.0
+offset_right = 144.0
+offset_bottom = 208.0
+mouse_filter = 2
+color = Color(0.56, 0.44, 0.27, 0.42)
+
+
+

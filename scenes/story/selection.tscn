@@ -1,0 +1,491 @@
+[gd_scene format=3 uid="uid://b6n0kiolh5ise"]
+
+[ext_resource type="Script" path="res://scenes/story/SelectionFlow.gd" id="22_selection"]
+
+[ext_resource type="Texture2D" uid="uid://cwwxhs40k5ibh" path="res://art/Story/Select/序章场景图/郊区.png" id="1_07c0p"]
+[ext_resource type="Texture2D" uid="uid://bfehya2uw31ik" path="res://art/Story/Select/标题.png" id="2_3lxu6"]
+[ext_resource type="Texture2D" uid="uid://gsy1qmm3a0jt" path="res://art/Story/Select/章节与退出.png" id="3_3lxu6"]
+[ext_resource type="Texture2D" uid="uid://lpf03jrtlxto" path="res://art/Story/Select/返回地图.png" id="4_locv1"]
+[ext_resource type="Texture2D" uid="uid://tfvhvki8irsm" path="res://art/Story/Select/退出.png" id="5_f70vd"]
+[ext_resource type="Texture2D" uid="uid://d21a6ctwmftyj" path="res://art/Story/Select/当前情景.png" id="6_51ad2"]
+[ext_resource type="Texture2D" uid="uid://cot4yy02m7qyq" path="res://art/Story/Select/选择行动.png" id="7_e47wy"]
+[ext_resource type="Texture2D" uid="uid://cu2ktvufvsfnf" path="res://art/Story/Select/行动方式选择/选择行动观察未选中.png" id="8_p3hl8"]
+[ext_resource type="Texture2D" uid="uid://bh3kkb1om2qlt" path="res://art/Story/Select/行动方式选择/行动选择交谈未选中.png" id="9_71223"]
+[ext_resource type="Texture2D" uid="uid://b4s381m1ypnkc" path="res://art/Story/Select/行动方式选择/行动选择搜索未选中.png" id="10_77adx"]
+[ext_resource type="Texture2D" uid="uid://cguldjlecjv07" path="res://art/Story/Select/行动方式选择/行动选择休息未选中.png" id="11_irppj"]
+[ext_resource type="Texture2D" uid="uid://d337t6ipgjr0r" path="res://art/Story/开始游戏按钮.png" id="12_77adx"]
+[ext_resource type="Texture2D" uid="uid://cf48gpteqnk1i" path="res://art/Story/Select/行动方式.png" id="13_ba7kh"]
+[ext_resource type="Texture2D" uid="uid://dvedj7rr6ikxo" path="res://art/Story/Select/行动方式选择/行动方式固定未选中.png" id="14_a8en6"]
+[ext_resource type="Texture2D" uid="uid://da4iibkbnpg71" path="res://art/Story/Select/行动方式选择/行动方式AI未选中.png" id="15_3viqo"]
+[ext_resource type="Texture2D" uid="uid://dv575ntt6jjju" path="res://art/Story/Select/当前状态.png" id="16_a8en6"]
+[ext_resource type="Texture2D" uid="uid://b1h54sultlb88" path="res://art/wheel/角色认定/数值条.png" id="17_3viqo"]
+[ext_resource type="Texture2D" uid="uid://l6w3grnfg5xu" path="res://art/Story/通用结算/小图标/HP.png" id="18_7vadn"]
+[ext_resource type="Texture2D" uid="uid://bing5kp31t01v" path="res://art/Story/通用结算/小图标/CE.png" id="19_vlx36"]
+[ext_resource type="Texture2D" uid="uid://c0c5683c7nrbr" path="res://art/Story/通用结算/小图标/经验值.png" id="20_x48qb"]
+[ext_resource type="Texture2D" uid="uid://bgfoi4bi1xu7c" path="res://art/Story/通用结算/小图标/伤势.png" id="21_cxwf8"]
+[ext_resource type="Texture2D" uid="uid://b1scf0euce6et" path="res://art/Story/通用结算/小图标/钱.png" id="22_oba7c"]
+
+[node name="Selection" type="Control" unique_id=582970763]
+script = ExtResource("22_selection")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=592552646]
+layout_mode = 0
+offset_right = 1672.0
+offset_bottom = 941.0
+texture = ExtResource("1_07c0p")
+
+[node name="Title" type="TextureRect" parent="." unique_id=1008577704]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -9.0
+offset_right = 492.6627
+offset_bottom = 112.0
+texture = ExtResource("2_3lxu6")
+expand_mode = 1
+
+[node name="NodeTitle" type="Label" parent="Title" unique_id=1781926166]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 39.0
+offset_right = 394.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.09, 0.09, 0.09, 1)
+theme_override_font_sizes/font_size = 39
+text = "·初来乍到"
+
+[node name="Label" type="Label" parent="Title" unique_id=1194946217]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 79.0
+offset_right = 399.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0.18, 0.15480001, 0.15480001, 1)
+theme_override_font_sizes/font_size = 22
+text = "普通节点"
+
+[node name="Setting" type="TextureRect" parent="." unique_id=1976407897]
+layout_mode = 0
+offset_left = 1214.0
+offset_top = 12.0
+offset_right = 1673.6552
+offset_bottom = 98.0
+texture = ExtResource("3_3lxu6")
+expand_mode = 1
+
+[node name="Chapter" type="Label" parent="Setting" unique_id=2113811945]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 253.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.07, 0.060200002, 0.060200002, 1)
+theme_override_font_sizes/font_size = 23
+text = "第0幕：咒术回战？"
+
+[node name="Time" type="Label" parent="Setting" unique_id=840898870]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 47.0
+offset_right = 162.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0.18, 0.15480001, 0.15480001, 1)
+theme_override_font_sizes/font_size = 16
+text = "时间：下午"
+
+[node name="Map" type="TextureButton" parent="Setting" unique_id=2002461149]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 6.0
+offset_right = 331.34885
+offset_bottom = 66.0
+texture_normal = ExtResource("4_locv1")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Setting/Map" unique_id=2087189664]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 52.0
+offset_right = 66.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "返回地图"
+
+[node name="Exit" type="TextureButton" parent="Setting" unique_id=869751541]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 6.0
+offset_right = 411.34885
+offset_bottom = 66.0
+texture_normal = ExtResource("5_f70vd")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Setting/Exit" unique_id=1145780422]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 52.0
+offset_right = 68.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "退出到首页"
+
+[node name="Scene" type="TextureRect" parent="." unique_id=731891602]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 565.0
+offset_right = 1002.0
+offset_bottom = 726.0
+texture = ExtResource("6_51ad2")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Scene" unique_id=980758717]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 25.0
+offset_right = 141.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.07, 0.060200002, 0.060200002, 1)
+theme_override_font_sizes/font_size = 23
+text = "当前情景"
+
+[node name="Detail" type="Label" parent="Scene" unique_id=95092165]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 70.0
+offset_right = 281.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0.25, 0.1875, 0.1875, 1)
+theme_override_font_sizes/font_size = 20
+text = "你来到了一条陌生的街道"
+
+[node name="Select" type="TextureRect" parent="." unique_id=1077955359]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 717.0
+offset_right = 811.0
+offset_bottom = 785.0
+texture = ExtResource("7_e47wy")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Select" unique_id=2127214088]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 15.0
+offset_right = 123.0
+offset_bottom = 49.0
+theme_override_colors/font_color = Color(0.07, 0.060200002, 0.060200002, 1)
+theme_override_font_sizes/font_size = 23
+text = "选择行动"
+
+[node name="SelectView" type="TextureButton" parent="Select" unique_id=1747515251]
+layout_mode = 0
+offset_left = 119.0
+offset_top = -2.0
+offset_right = 450.0
+offset_bottom = 220.0
+texture_normal = ExtResource("8_p3hl8")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SelectFight" type="TextureButton" parent="Select" unique_id=1580682544]
+layout_mode = 0
+offset_left = 463.0
+offset_right = 792.0
+offset_bottom = 221.0
+texture_normal = ExtResource("9_71223")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SelectFight2" type="TextureButton" parent="Select" unique_id=58935850]
+layout_mode = 0
+offset_left = 799.0
+offset_top = -1.0
+offset_right = 1122.0
+offset_bottom = 216.0
+texture_normal = ExtResource("10_77adx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SelectFight3" type="TextureButton" parent="Select" unique_id=670520552]
+layout_mode = 0
+offset_left = 1135.0
+offset_top = -1.0
+offset_right = 1465.0
+offset_bottom = 219.0
+texture_normal = ExtResource("11_irppj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Enter" type="TextureButton" parent="." unique_id=1626156393]
+layout_mode = 0
+offset_left = 1297.0
+offset_top = 537.0
+offset_right = 1674.1819
+offset_bottom = 618.0
+texture_normal = ExtResource("12_77adx")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Enter" unique_id=917179657]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 12.0
+offset_right = 255.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.92, 0.88136, 0.86480004, 1)
+theme_override_font_sizes/font_size = 35
+text = "确认选择"
+
+[node name="Model" type="TextureRect" parent="." unique_id=930904578]
+layout_mode = 0
+offset_left = 1266.0
+offset_top = 371.0
+offset_right = 1672.0
+offset_bottom = 528.9416
+texture = ExtResource("13_ba7kh")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Model" unique_id=112715185]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 13.0
+offset_right = 138.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "行动方式"
+
+[node name="ModelNormal" type="TextureButton" parent="Model" unique_id=883406683]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 48.0
+offset_right = 186.91782
+offset_bottom = 111.0
+texture_normal = ExtResource("14_a8en6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Model/ModelNormal" unique_id=1339129907]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 67.0
+offset_right = 110.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.09, 0.09, 0.09, 1)
+theme_override_font_sizes/font_size = 16
+text = "普通模式"
+
+[node name="ModelNormal2" type="TextureButton" parent="Model" unique_id=1721899746]
+layout_mode = 0
+offset_left = 213.0
+offset_top = 48.0
+offset_right = 354.91782
+offset_bottom = 114.0
+texture_normal = ExtResource("15_3viqo")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Model/ModelNormal2" unique_id=1907332360]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 67.0
+offset_right = 115.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.09, 0.09, 0.09, 1)
+theme_override_font_sizes/font_size = 16
+text = "AI模式"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1412170161]
+layout_mode = 0
+offset_left = 1211.0
+offset_top = 97.0
+offset_right = 1677.0
+offset_bottom = 361.0
+texture = ExtResource("16_a8en6")
+
+[node name="Name" type="Label" parent="TextureRect" unique_id=351983652]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 21.0
+offset_right = 210.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -35
+theme_override_font_sizes/font_size = 28
+text = "当前状态"
+
+[node name="Control" type="Control" parent="TextureRect" unique_id=837673864]
+anchors_preset = 0
+offset_left = 74.0
+offset_top = 79.0
+offset_right = 385.0
+offset_bottom = 232.0
+
+[node name="Hp" type="Label" parent="TextureRect/Control" unique_id=76472775]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 64.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP"
+
+[node name="Tube" type="TextureRect" parent="TextureRect/Control/Hp" unique_id=1245656669]
+layout_mode = 0
+offset_left = 43.0
+offset_top = -2.0
+offset_right = 262.0
+offset_bottom = 28.0
+texture = ExtResource("17_3viqo")
+expand_mode = 1
+
+[node name="Item" type="TextureRect" parent="TextureRect/Control/Hp" unique_id=1089773686]
+layout_mode = 0
+offset_left = -35.0
+offset_top = -1.0
+offset_right = -11.0
+offset_bottom = 23.0
+texture = ExtResource("18_7vadn")
+expand_mode = 1
+
+[node name="CE" type="Label" parent="TextureRect/Control" unique_id=299833727]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 35.0
+offset_right = 64.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CE"
+
+[node name="Tube" type="TextureRect" parent="TextureRect/Control/CE" unique_id=1545741]
+layout_mode = 0
+offset_left = 43.0
+offset_top = -2.0
+offset_right = 262.0
+offset_bottom = 28.0
+texture = ExtResource("17_3viqo")
+expand_mode = 1
+
+[node name="Item" type="TextureRect" parent="TextureRect/Control/CE" unique_id=243800501]
+layout_mode = 0
+offset_left = -35.0
+offset_top = -1.0
+offset_right = -11.0
+offset_bottom = 23.0
+texture = ExtResource("19_vlx36")
+expand_mode = 1
+
+[node name="Exp" type="Label" parent="TextureRect/Control" unique_id=1588973434]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 66.0
+offset_right = 64.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "经验值"
+
+[node name="Tube" type="TextureRect" parent="TextureRect/Control/Exp" unique_id=1053424555]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -2.0
+offset_right = 270.0
+offset_bottom = 28.0
+texture = ExtResource("17_3viqo")
+expand_mode = 1
+
+[node name="Item" type="TextureRect" parent="TextureRect/Control/Exp" unique_id=2000793701]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -1.0
+offset_right = -3.0
+offset_bottom = 23.0
+texture = ExtResource("20_x48qb")
+expand_mode = 1
+
+[node name="Stability" type="Label" parent="TextureRect/Control" unique_id=606702983]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 97.0
+offset_right = 65.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "稳定值"
+
+[node name="Tube" type="TextureRect" parent="TextureRect/Control/Stability" unique_id=258735050]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -2.0
+offset_right = 270.0
+offset_bottom = 28.0
+texture = ExtResource("17_3viqo")
+expand_mode = 1
+
+[node name="Item" type="TextureRect" parent="TextureRect/Control/Stability" unique_id=951166122]
+layout_mode = 0
+offset_left = -30.0
+offset_top = -1.0
+offset_right = -3.0
+offset_bottom = 23.0
+texture = ExtResource("21_cxwf8")
+expand_mode = 1
+
+[node name="Money" type="Label" parent="TextureRect/Control" unique_id=2010658339]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 126.0
+offset_right = 55.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "金钱"
+
+[node name="Item" type="TextureRect" parent="TextureRect/Control/Money" unique_id=1044826749]
+layout_mode = 0
+offset_left = -35.0
+offset_right = -8.0
+offset_bottom = 24.0
+texture = ExtResource("22_oba7c")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="TextureRect/Control/Money" unique_id=1140901165]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 3.0
+offset_right = 144.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.61, 0.48474666, 0.14030002, 1)
+text = "100"
+
+[node name="Print" type="NinePatchRect" parent="." unique_id=859803396]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 704.0
+offset_right = 1673.0
+offset_bottom = 957.0
+texture = ExtResource("6_51ad2")
+
+[node name="NodeTitle" type="Label" parent="Print" unique_id=965363910]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 40.0
+offset_right = 283.0
+offset_bottom = 97.0
+theme_override_colors/font_color = Color(0.09, 0.09, 0.09, 1)
+theme_override_font_sizes/font_size = 39
+text = "请输入行动"
+
+[node name="Print" type="TextEdit" parent="Print" unique_id=1746614858]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 93.0
+offset_right = 1600.0
+offset_bottom = 222.0
+text = "请输入你的行动，如“进入便利店”。"

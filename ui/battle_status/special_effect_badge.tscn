@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dwv8rqsopixh3"]
+
+[ext_resource type="Texture2D" uid="uid://bmjd3txibmuyv" path="res://art/fight/特殊效果标记.png" id="1_face"]
+[ext_resource type="Script" uid="uid://bew21ejp4qiut" path="res://ui/battle_status/special_effect_badge.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="3_font"]
+
+[node name="SpecialEffectBadge" type="TextureRect" unique_id=1640132670]
+custom_minimum_size = Vector2(132, 66)
+offset_right = 132.0
+offset_bottom = 66.0
+mouse_filter = 2
+texture = ExtResource("1_face")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_script")
+
+[node name="EffectName" type="Label" parent="." unique_id=673422449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 9.0
+offset_right = -15.0
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.98, 0.92, 1, 1)
+theme_override_colors/font_outline_color = Color(0.14, 0.04, 0.18, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "特殊效果名称"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 3
+
+
+

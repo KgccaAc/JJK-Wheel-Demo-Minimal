@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://h8jwa18djjmw"]
+
+[ext_resource type="Texture2D" uid="uid://cb0hpv6bdovy1" path="res://art/fight/策略选择/策略UI背景.png" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://cs1k1fc56kjhm" path="res://art/fight/策略选择/策略UI模板.png" id="2_template"]
+[ext_resource type="Texture2D" uid="uid://bgcxbmgf71ve6" path="res://art/fight/策略选择/抬头.png" id="3_title"]
+[ext_resource type="Texture2D" uid="uid://bexfoiekhwotg" path="res://art/fight/策略选择/稳扎稳打.png" id="4_steady"]
+[ext_resource type="Texture2D" uid="uid://buu1na712cqrc" path="res://art/fight/策略选择/抢攻压制.png" id="5_aggressive"]
+[ext_resource type="Texture2D" uid="uid://b1xomdnjrkoax" path="res://art/fight/策略选择/术式主导.png" id="6_technique"]
+[ext_resource type="Texture2D" uid="uid://r6nlkfyy11t3" path="res://art/fight/策略选择/抢领域.png" id="7_domain"]
+[ext_resource type="Texture2D" uid="uid://bm4b4vssvtyyx" path="res://art/fight/策略选择/反制拆招.png" id="8_counter"]
+[ext_resource type="Texture2D" uid="uid://c2rmbj6e5yb8q" path="res://art/fight/策略选择/拖入消耗.png" id="9_resource"]
+[ext_resource type="Texture2D" uid="uid://dkoatny8kefkn" path="res://art/fight/策略选择/赌命收割.png" id="10_risk"]
+[ext_resource type="Script" uid="uid://bf8yqtqf2pmcq" path="res://scenes/battle/StrategySelection.gd" id="11_script"]
+
+[node name="StrategySelection" type="Control" unique_id=1528020090]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1672.0
+offset_bottom = 941.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("11_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=369108551]
+visible = false
+modulate = Color(1, 1, 1, 0.2)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="StrategyContent" type="Control" parent="." unique_id=303257867]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Template" type="TextureRect" parent="StrategyContent" unique_id=1549374074]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_template")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="HeaderArt" type="TextureRect" parent="StrategyContent" unique_id=1595125016]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 15.0
+offset_right = 1565.0
+offset_bottom = 180.0
+mouse_filter = 2
+texture = ExtResource("3_title")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StrategyOptions" type="Control" parent="StrategyContent" unique_id=1153598195]
+anchors_preset = 0
+offset_right = 1672.0
+offset_bottom = 941.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="SteadyArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=1305931068]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 170.0
+offset_right = 812.0
+offset_bottom = 342.0
+mouse_filter = 2
+texture = ExtResource("4_steady")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SteadyButton" type="Button" parent="StrategyContent/StrategyOptions/SteadyArt" unique_id=2081278164]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "稳扎稳打"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="AggressiveArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=1172564992]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 170.0
+offset_right = 1595.0
+offset_bottom = 342.0
+mouse_filter = 2
+texture = ExtResource("5_aggressive")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AggressiveButton" type="Button" parent="StrategyContent/StrategyOptions/AggressiveArt" unique_id=2122071773]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "抢攻压制"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="TechniqueArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=1203753074]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 365.0
+offset_right = 812.0
+offset_bottom = 537.0
+mouse_filter = 2
+texture = ExtResource("6_technique")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TechniqueButton" type="Button" parent="StrategyContent/StrategyOptions/TechniqueArt" unique_id=1281451266]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "术式主导"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="DomainArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=603971765]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 365.0
+offset_right = 1595.0
+offset_bottom = 537.0
+mouse_filter = 2
+texture = ExtResource("7_domain")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DomainButton" type="Button" parent="StrategyContent/StrategyOptions/DomainArt" unique_id=578062809]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "抢领域"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="CounterArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=464993295]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 560.0
+offset_right = 812.0
+offset_bottom = 732.0
+mouse_filter = 2
+texture = ExtResource("8_counter")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CounterButton" type="Button" parent="StrategyContent/StrategyOptions/CounterArt" unique_id=1097168840]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "反制拆招"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="ResourceArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=1352146443]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 560.0
+offset_right = 1595.0
+offset_bottom = 732.0
+mouse_filter = 2
+texture = ExtResource("9_resource")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ResourceButton" type="Button" parent="StrategyContent/StrategyOptions/ResourceArt" unique_id=132942193]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "拖入消耗"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="RiskArt" type="TextureRect" parent="StrategyContent/StrategyOptions" unique_id=826577633]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 755.0
+offset_right = 812.0
+offset_bottom = 927.0
+mouse_filter = 2
+texture = ExtResource("10_risk")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RiskButton" type="Button" parent="StrategyContent/StrategyOptions/RiskArt" unique_id=43443147]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "赌命收割"
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="Title" type="Label" parent="StrategyContent" unique_id=1746157459]
+visible = false
+layout_mode = 0
+offset_left = 150.0
+offset_top = 55.0
+offset_right = 560.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 48
+text = "战斗倾向"
+
+[node name="InteractionLayer" type="Control" parent="." unique_id=450682167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+
+
+

@@ -1,0 +1,433 @@
+﻿[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/涓昏彍鍗曡儗鏅?png" id="1_4e2ch"]
+[ext_resource type="Texture2D" uid="uid://byroilpgey0o5" path="res://art/onlineroom/鍖归厤璧?鍖归厤璧涘皬鎸夐挳绾㈣壊.png" id="2_red"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/鐢ㄦ埛.png" id="2_rjnjj"]
+[ext_resource type="Script" uid="uid://c06dxfqi22d6u" path="res://ui/navigation/BottomNav.gd" id="3_20u7h"]
+[ext_resource type="Texture2D" uid="uid://bfsut1ptfggm1" path="res://art/onlineroom/鍖归厤璧?鍖归厤璧涘皬鎸夐挳鐧借壊.png" id="3_white"]
+[ext_resource type="Texture2D" uid="uid://bqmjjgiiwfuji" path="res://art/onlineroom/鍖归厤璧?鍖归厤妗嗘灦.png" id="4_frame"]
+[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/閫変腑鐘舵€佷富椤靛皬鏍?png" id="4_qjif5"]
+[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/鏈€変腑鐘舵€佽鑹插皬鏍?png" id="5_r8re2"]
+[ext_resource type="Texture2D" uid="uid://c54mn6dby3eku" path="res://art/onlineroom/鍖归厤璧?鎺掕姒?png" id="5_rank"]
+[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/鏈€変腑鐘舵€佹垬鏂楀皬鏍?png" id="6_y14xh"]
+[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/鏈€変腑鐘舵€佽鍧涘皬鏍?png" id="7_1tm7j"]
+[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/鏈€変腑鐘舵€丱C灏忔爣.png" id="8_tg5s7"]
+
+[node name="MatchmakingPage" type="Control" unique_id=1193552036]
+custom_minimum_size = Vector2(1672, 941)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background2" type="TextureRect" parent="." unique_id=1202417464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_4e2ch")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background2" unique_id=2066422614]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -3.0
+offset_top = 21.0
+offset_right = -3.0
+offset_bottom = 171.0
+grow_horizontal = 2
+
+[node name="TitleText" type="Label" parent="Background2/Header" unique_id=826038081]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 13.0
+offset_right = 575.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0.12, 0.11, 0.1, 1)
+theme_override_font_sizes/font_size = 32
+text = "闅忔満鍖归厤"
+
+[node name="Subtitle2" type="Label" parent="Background2/Header" unique_id=220204773]
+layout_mode = 0
+offset_left = 182.0
+offset_top = 59.0
+offset_right = 592.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 17
+text = "涓庨殢鏈虹殑瀵规墜浜ゆ垬锛岀劧鍚庤鏈€寮虹殑鎴樼哗閾埢浜庢锛?
+
+[node name="UserButton" type="TextureButton" parent="Background2/Header" unique_id=1781449962]
+layout_mode = 0
+offset_left = 1127.0
+offset_top = 3.0
+offset_right = 1382.0
+offset_bottom = 103.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_rjnjj")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background2/Header/UserButton" unique_id=638921500]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "娓稿"
+
+[node name="UserStatus" type="Label" parent="Background2/Header/UserButton" unique_id=940924741]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "鏆傛湭鐧诲綍 路 鐐瑰嚮鐧诲綍"
+
+[node name="MoreButton" type="Button" parent="Background2/Header" unique_id=1880438412]
+layout_mode = 0
+offset_left = 1409.0
+offset_top = 2.0
+offset_right = 1596.0
+offset_bottom = 102.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "鏇村    +"
+flat = true
+
+[node name="BottomNav" type="HBoxContainer" parent="Background2" unique_id=418589705]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.875
+anchor_right = 0.96
+anchor_bottom = 0.995
+offset_left = 13.120003
+offset_top = 0.625
+offset_right = 6.880005
+offset_bottom = -20.294983
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("3_20u7h")
+
+[node name="HomeButton" type="TextureButton" parent="Background2/BottomNav" unique_id=1128534679]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_qjif5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharacterButton" type="TextureButton" parent="Background2/BottomNav" unique_id=1320750739]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_r8re2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BattleButton" type="TextureButton" parent="Background2/BottomNav" unique_id=388352241]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_y14xh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ForumButton" type="TextureButton" parent="Background2/BottomNav" unique_id=1114071251]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_1tm7j")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ArchiveButton" type="TextureButton" parent="Background2/BottomNav" unique_id=1843902498]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_tg5s7")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Basic" type="TextureRect" parent="." unique_id=1033077885]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 119.0
+offset_right = 1063.0
+offset_bottom = 823.0
+texture = ExtResource("4_frame")
+
+[node name="Title" type="Label" parent="Basic" unique_id=573031295]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 24.0
+offset_right = 256.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 20
+text = "姝荤伃娲勬父绗笁璧涘"
+
+[node name="Notice" type="Label" parent="Basic" unique_id=2094262079]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 78.0
+offset_right = 728.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "
+褰撳墠宸插父椹伙紝浠ラ暱璧涘璁板綍绉垎涓庢帓鍚嶃€?鏈禌瀛ｅ凡缁忛噸缃帓琛屾锛涙柊鍗′笉鍐嶅彈鍒板奖鍝嶏紝灏嗕娇鐢ㄦ渶鏂扮殑姣旇禌瑙勫垯杩涜
+姣旇禌銆?"
+
+[node name="Tablet" type="Label" parent="Basic" unique_id=467370349]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 235.0
+offset_right = 210.0
+offset_bottom = 265.0
+theme_override_font_sizes/font_size = 18
+text = "姝荤伃娲勬父绗笁璧涘"
+
+[node name="Label1" type="Label" parent="Basic/Tablet" unique_id=932080380]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 85.0
+offset_right = 59.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  01
+閫?浜?
+
+[node name="Label2" type="Label" parent="Basic/Tablet" unique_id=415485682]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 84.0
+offset_right = 173.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  02
+鏍?楠?
+
+[node name="Label3" type="Label" parent="Basic/Tablet" unique_id=1194978092]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 83.0
+offset_right = 288.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  03
+鍖?閰?
+
+[node name="Label4" type="Label" parent="Basic/Tablet" unique_id=1421655795]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 83.0
+offset_right = 403.0
+offset_bottom = 142.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  04
+纭?璁?
+
+[node name="Label5" type="Label" parent="Basic/Tablet" unique_id=1347831900]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 82.0
+offset_right = 518.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  05
+浜?鐩?
+
+[node name="Label6" type="Label" parent="Basic/Tablet" unique_id=569298488]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 82.0
+offset_right = 640.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  06
+鎴?鏂?
+
+[node name="Label7" type="Label" parent="Basic/Tablet" unique_id=1744787247]
+layout_mode = 0
+offset_left = 731.0
+offset_top = 82.0
+offset_right = 769.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "  07
+缁?绠?
+
+[node name="Title" type="Label" parent="Basic/Tablet" unique_id=1838748539]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 34.0
+offset_right = 134.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "姣旇禌鑸炲彴"
+
+[node name="Enermy" type="Label" parent="Basic/Tablet" unique_id=189739811]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 183.0
+offset_right = 237.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 17
+text = "褰撳墠瀵规墜"
+
+[node name="Name" type="Label" parent="Basic/Tablet/Enermy" unique_id=1060641276]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 46.0
+offset_right = 155.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 28
+text = "灏氭湭纭畾"
+
+[node name="InteractiveLayer" type="Control" parent="Basic" unique_id=1065170451]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -157.0
+offset_top = -123.0
+offset_right = -157.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RefreshButton" type="TextureButton" parent="Basic/InteractiveLayer" unique_id=1712948007]
+layout_mode = 0
+offset_left = 898.0
+offset_top = 698.0
+offset_right = 1029.0
+offset_bottom = 752.0
+texture_normal = ExtResource("3_white")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Basic/InteractiveLayer/RefreshButton" unique_id=1589092453]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 126.0
+offset_bottom = 44.0
+theme_override_colors/font_color = Color(0.25, 0.25, 0.25, 1)
+theme_override_font_sizes/font_size = 16
+text = "棰勮鍙屾柟闈㈡澘"
+
+[node name="StartMatchButton" type="TextureButton" parent="Basic/InteractiveLayer" unique_id=1376213514]
+layout_mode = 0
+offset_left = 744.0
+offset_top = 699.0
+offset_right = 898.0
+offset_bottom = 752.0
+texture_normal = ExtResource("2_red")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Basic/InteractiveLayer/StartMatchButton" unique_id=1701423585]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 10.0
+offset_right = 118.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 20
+text = "鍔犲叆鎴樻枟"
+
+[node name="ParticipantCharacter" type="OptionButton" parent="Basic/InteractiveLayer" unique_id=987953507]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 704.0
+offset_right = 474.0
+offset_bottom = 745.0
+theme_override_font_sizes/font_size = 18
+selected = 0
+item_count = 1
+popup/item_0/text = "閫夋嫨鍙傝禌瑙掕壊"
+popup/item_0/id = 0
+
+[node name="ServerRegion" type="OptionButton" parent="Basic/InteractiveLayer" unique_id=1851555377]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 704.0
+offset_right = 724.0
+offset_bottom = 745.0
+theme_override_font_sizes/font_size = 18
+selected = 0
+item_count = 1
+popup/item_0/text = "閫夋嫨鎵€灞炲睘缇?
+popup/item_0/id = 0
+
+[node name="Score" type="Label" parent="Basic" unique_id=1992266537]
+layout_mode = 0
+offset_left = 426.0
+offset_top = 410.0
+offset_right = 491.0
+offset_bottom = 434.0
+theme_override_colors/font_color = Color(0.21, 0.1281, 0.1281, 1)
+text = "褰撳墠绉垎"
+
+[node name="Score" type="Label" parent="Basic/Score" unique_id=1877749390]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 35.0
+offset_right = 314.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0.49, 0.18620001, 0.18620001, 1)
+theme_override_font_sizes/font_size = 70
+text = "1026"
+
+[node name="Title" type="Label" parent="Basic/Score" unique_id=517525222]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 31.0
+offset_right = 245.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "鑳滃埄鍚庢牴鎹弻鏂规垬鏂楀姏宸窛鍔犲垎
+骞冲眬鍙屾柟鍚?1
+璐熷浐瀹?6鍒?
+
+[node name="Rank" type="TextureRect" parent="." unique_id=1600991298]
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 121.0
+offset_right = 1572.0
+offset_bottom = 831.0
+texture = ExtResource("5_rank")
+expand_mode = 1
+
+[node name="Rank" type="RichTextLabel" parent="Rank" unique_id=1771797028]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 62.0
+offset_right = 481.0
+offset_bottom = 687.0
+
+
+

@@ -1,0 +1,6 @@
+[
+ {"node_id":"chapter_1_intro","chapter_id":"chapter_1","node_type":"choice","title":"东京咒术高专·初见","summary":"你刚刚完成角色判定，第一次面对这个时代的咒术世界。","choices":[{"id":"observe","label":"先观察周围，确认局势"},{"id":"act","label":"主动寻找咒灵踪迹"}],"next_nodes":{"observe":"chapter_1_wheel","act":"chapter_1_wheel"},"ai_policy":"suggest"},
+ {"node_id":"chapter_1_wheel","chapter_id":"chapter_1","node_type":"wheel","title":"第一次委托","summary":"任务情报存在不确定性，转盘决定你遇到的局面。","wheel_config":{"wheel_id":1},"next_nodes":{"发现低级咒灵":"chapter_1_battle","遭遇可疑术师":"chapter_1_battle","default":"chapter_1_battle"}},
+ {"node_id":"chapter_1_battle","chapter_id":"chapter_1","node_type":"battle","title":"夜间帐内的战斗","summary":"真实战斗决定你是否能完成第一次任务。","battle_config":{"opponent_id":"demo_curse","victory_condition":"击败对手"},"growth_rules":{"xp":20,"stats":{"power":2,"control":1},"tags":["完成首次任务"]},"next_nodes":{"victory":"chapter_1_end","defeat":"chapter_1_end"},"failure_policy":"continue_with_injury"},
+ {"node_id":"chapter_1_end","chapter_id":"chapter_1","node_type":"ending","title":"第一幕结算","summary":"你的第一次任务留下了可追溯的结果。","next_nodes":{}}
+]

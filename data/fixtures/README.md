@@ -1,0 +1,1 @@
+Deterministic battle fixtures.

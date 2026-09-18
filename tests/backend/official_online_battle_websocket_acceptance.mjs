@@ -1,0 +1,30 @@
+const endpoint = process.env.ONLINE_BATTLE_ENDPOINT || 'https://119.91.224.223/preview-room-api/api/rooms';
+const wsBase = endpoint.replace(/\/api\/rooms$/, '/api/rooms/socket');
+const suffix = `${Date.now()}-${Math.floor(Math.random()*1e6)}`;
+const hostId = `node-ws-host-${suffix}`; const guestId = `node-ws-guest-${suffix}`;
+const profile = (id) => ({id, displayName:id, stats:{body:'B',martial:'B',cursed_energy:'B',control:'B',efficiency:'B',talent:'B'}, cards:Array.from({length:10},(_,i)=>({id:`${id}-finisher-${i}`,name:'终结牌',type:'action',tags:[],effect:{damage:100000,target:'opponent'},cost:{ce:0}}))});
+const p = async (identityId, operation, payload) => (await fetch(endpoint,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({protocolVersion:'online-battle-v3',requestId:`${identityId}-${Date.now()}-${Math.random()}`,traceId:identityId,identity:{identityId,guest:true},operation,payload})})).json();
+const assertOk = (value,label) => { if(!value?.ok) throw new Error(`${label}: ${JSON.stringify(value)}`); };
+const openSocket = (identityId, roomId) => {
+  const ws = new WebSocket(`${wsBase}?roomId=${encodeURIComponent(roomId)}`); const events=[]; const waiters=[];
+  ws.onopen=()=>ws.send(JSON.stringify({protocolVersion:'online-battle-v3',requestId:`sub-${identityId}`,traceId:identityId,identity:{identityId,guest:true},type:'subscribe_room',payload:{roomId}}));
+  ws.onmessage=(message)=>{const event=JSON.parse(message.data); events.push(event); for(let i=waiters.length-1;i>=0;i--) if(waiters[i].predicate(event)){const waiter=waiters.splice(i,1)[0]; clearTimeout(waiter.timer); waiter.resolve(event);}};
+  ws.onerror=()=>{for(const waiter of waiters) waiter.reject(new Error(`${identityId} websocket error`));};
+  return {ws,events,wait:(predicate)=>new Promise((resolve,reject)=>{const existing=events.find(predicate); if(existing){resolve(existing); return;} const timer=setTimeout(()=>reject(new Error(`${identityId} websocket timeout events=${JSON.stringify(events.map(e=>e.type))}`)),8000); waiters.push({predicate,resolve,reject,timer});})};
+};
+const main = async () => {
+  const created=await p(hostId,'create_room',{mode:'private_1v1',spectatorPolicy:'read_only',characterId:hostId,characterSnapshot:profile(hostId)}); assertOk(created,'create'); const roomId=created.data.room.roomId;
+  assertOk(await p(guestId,'join_room',{roomId,characterId:guestId,characterSnapshot:profile(guestId)}),'join');
+  assertOk(await p(hostId,'lock_character',{roomId,characterId:hostId,snapshotHash:'',characterSnapshot:profile(hostId),locked:true}),'host lock'); assertOk(await p(guestId,'lock_character',{roomId,characterId:guestId,snapshotHash:'',characterSnapshot:profile(guestId),locked:true}),'guest lock');
+  const bootstrap=await p(hostId,'get_battle_bootstrap',{roomId}); assertOk(bootstrap,'bootstrap');
+  const host= openSocket(hostId,roomId); const guest=openSocket(guestId,roomId); await Promise.all([host.wait(e=>e.type==='battle_bootstrap'),guest.wait(e=>e.type==='battle_bootstrap')]);
+  let revision=bootstrap.data.battleRevision ?? 0; const submit=(id,stage,data)=>p(id,'submit_stage_input',{roomId,battleRevision:revision,stage,data});
+  assertOk(await submit(hostId,'strategy',{id:'SteadyButton'}),'host strategy'); const strategy=await submit(guestId,'strategy',{id:'SteadyButton'}); assertOk(strategy,'guest strategy'); revision=strategy.data.battleRevision; await Promise.all([host.wait(e=>e.type==='stage_result'&&e.visible_state?.phase==='DISCARD'),guest.wait(e=>e.type==='stage_result'&&e.visible_state?.phase==='DISCARD')]);
+  const strategyHost=host.events.find(e=>e.type==='stage_result'&&e.visible_state?.phase==='DISCARD'); const strategyGuest=guest.events.find(e=>e.type==='stage_result'&&e.visible_state?.phase==='DISCARD'); const handIds=(event,side)=>((event.visible_state.actors[side].zones.hand||[]).map(card=>card.instance_id).filter(Boolean).slice(0,2));
+  assertOk(await submit(hostId,'discard',{ids:handIds(strategyHost,0)}),'host discard'); const discard=await submit(guestId,'discard',{ids:handIds(strategyGuest,1)}); assertOk(discard,'guest discard'); revision=discard.data.battleRevision; await Promise.all([host.wait(e=>e.type==='stage_result'&&e.visible_state?.phase==='INITIATIVE'),guest.wait(e=>e.type==='stage_result'&&e.visible_state?.phase==='INITIATIVE')]);
+  assertOk(await submit(hostId,'initiative',{investment:0}),'host initiative'); const initiative=await submit(guestId,'initiative',{investment:0}); assertOk(initiative,'guest initiative'); revision=initiative.data.battleRevision; const initEvent=await host.wait(e=>e.type==='stage_result'&&e.visible_state?.phase==='PLAY'); const guestInitEvent=await guest.wait(e=>e.type==='stage_result'&&e.visible_state?.phase==='PLAY'); const hostCard=initEvent.visible_state.actors[0].zones.hand[0].instance_id; const guestCard=guestInitEvent.visible_state.actors[1].zones.hand[0].instance_id;
+  assertOk(await submit(hostId,'play',{cards:[hostCard],domain:''}),'host play'); const play=await submit(guestId,'play',{cards:[guestCard],domain:''}); assertOk(play,'guest play'); const finished=(e)=>['stage_result','round_result'].includes(e.type)&&e.visible_state?.phase==='FINISHED'; const [hostFinish,guestFinish]=await Promise.all([host.wait(finished),guest.wait(finished)]);
+  if(hostFinish.battleRevision!==guestFinish.battleRevision || hostFinish.visible_state.winner!==guestFinish.visible_state.winner) throw new Error(`mismatch host=${JSON.stringify(hostFinish)} guest=${JSON.stringify(guestFinish)}`);
+  console.log(`OFFICIAL_ONLINE_BATTLE_WEBSOCKET_ACCEPTANCE PASS room=${roomId} phase=${hostFinish.visible_state.phase} winner=${hostFinish.visible_state.winner}`); host.ws.close(); guest.ws.close();
+};
+main().catch(error=>{console.error(`OFFICIAL_ONLINE_BATTLE_WEBSOCKET_ACCEPTANCE FAIL ${error.stack||error}`);process.exit(1);});

@@ -1,0 +1,25 @@
+{
+  "failures": [
+    "rpg_text_hit_area_too_small",
+    "map_completed_overlay_missing"
+  ],
+  "generated_at": "2026-09-18T03:59:43",
+  "input": "rendered-window mouse events",
+  "journey": [
+    "Identity",
+    "Select",
+    "StoryHome",
+    "RPG",
+    "Selection×4",
+    "Settlement",
+    "Map",
+    "RPG",
+    "Battle",
+    "Settlement",
+    "Map"
+  ],
+  "reason": "completed",
+  "schema": "godot-full-flow-v2",
+  "screenshots": [],
+  "status": "failed"
+}

@@ -1,0 +1,300 @@
+{
+  "schema": "jjk-battle-runtime-hand-injections",
+  "version": 1,
+  "generatedAt": "2026-05-14T00:00:00.000Z",
+  "runtimeReadPolicy": {
+    "battleSource": "data/battle/runtime/hand-injections.json",
+    "codeRole": "gate and materialize templates only",
+    "dataRole": "store injected hand card surfaces and unit stat payloads"
+  },
+  "runtimeUnits": {
+    "mahoraga_unattuned_unit": {
+      "sourceCardId": "card_unit_mahoraga_unattuned",
+      "actionId": "unit_mahoraga_unattuned",
+      "name": "八握剑异戒神将 魔虚罗",
+      "label": "八握剑异戒神将 魔虚罗（未调幅）",
+      "maxHp": 500,
+      "currentHp": 500,
+      "damage": 250,
+      "block": 80,
+      "damageReductionRatio": 0.25,
+      "mahoragaTurnEndHpRegen": 170,
+      "guardBreak": 24,
+      "actionsPerRound": 1,
+      "placement": "battlefield_center",
+      "control": "neutral_berserk",
+      "controlResistance": "high",
+      "domainResistance": "high",
+      "damageType": "melee",
+      "accuracyProfile": "melee",
+      "evasionAllowed": false,
+      "baseStats": {
+        "cursedEnergy": "SS",
+        "control": "A",
+        "efficiency": "A",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SS"
+      },
+      "raw": {
+        "cursedEnergyScore": 7.4,
+        "controlScore": 5.8,
+        "efficiencyScore": 5.8,
+        "bodyScore": 8.8,
+        "martialScore": 8.8,
+        "talentScore": 7.4
+      },
+      "axes": {
+        "jujutsu": 6.75,
+        "body": 8.8,
+        "insight": 7.4,
+        "build": 8.25
+      },
+      "attackProfile": {
+        "accuracyProfile": "melee",
+        "hitRateModifier": 0.08,
+        "damageScale": 1,
+        "attackType": "exorcism_blade",
+        "curseDamageMultiplier": 3
+      }
+    }
+  },
+  "templates": {
+    "mahoraga_wheel_adjusted_summon": {
+      "id": "mahoraga_wheel_adjusted_summon",
+      "actionId": "mahoraga_wheel_adjusted_summon",
+      "label": "魔虚罗·调幅召唤",
+      "name": "魔虚罗·调幅召唤",
+      "cardType": "summon",
+      "type": "ten_shadows_summon",
+      "tags": ["十影", "魔虚罗", "调幅", "式神", "ten_shadows", "mahoraga"],
+      "specialHandTags": ["ten_shadows"],
+      "apCost": 1,
+      "cost": { "ceRatio": 0.12, "minCe": 0 },
+      "costType": "percentage",
+      "ceCostRatio": 0.12,
+      "damage": 0,
+      "block": 36,
+      "risk": "medium",
+      "weight": 940,
+      "guaranteedPerTurn": true,
+      "retainedPermanent": true,
+      "handSource": "mahoraga-wheel-adjusted",
+      "summonSpec": {
+        "unitCardId": "mahoraga_wheel_adjusted_unit",
+        "unitName": "八握剑异戒神将 魔虚罗（调幅）",
+        "control": "player_controlled",
+        "placement": "battlefield",
+        "durationRounds": 0,
+        "maintenanceCeCost": 22
+      },
+      "unitStats": {
+        "maxHp": 760,
+        "currentHp": 760,
+        "damage": 40,
+        "block": 80,
+        "mahoragaTurnEndHpRegen": 170,
+        "actionsPerRound": 1,
+        "damageReductionRatio": 0.34,
+        "blockIgnoreRatio": 0.18,
+        "damageType": "shikigami_melee",
+        "accuracyProfile": "weapon",
+        "guardPriority": 42,
+        "tags": ["十影", "魔虚罗", "调幅", "适应"]
+      },
+      "guardRules": { "protectOwner": true, "interceptsOpponentAttacks": true, "priority": 42 },
+      "targetingRules": { "preferEnemyCharacter": true },
+      "effects": { "stabilityDelta": 0.015 },
+      "effectSummary": "转盘抽中调幅成功后，召唤已调幅魔虚罗作为友方式神，不接管角色、不锁手牌。",
+      "logTemplate": "你打出魔虚罗·调幅召唤，转盘调幅后的魔虚罗加入战场。",
+      "status": "CONFIRMED"
+    },
+    "douna_subdued_mahoraga_summon": {
+      "id": "douna_subdued_mahoraga_summon",
+      "actionId": "douna_subdued_mahoraga_summon",
+      "label": "已调伏魔虚罗·协同召唤",
+      "name": "已调伏魔虚罗·协同召唤",
+      "cardType": "summon",
+      "type": "ten_shadows_summon",
+      "tags": [
+        "十影",
+        "魔虚罗",
+        "已调伏",
+        "协同",
+        "式神",
+        "ten_shadows",
+        "mahoraga"
+      ],
+      "specialHandTags": [
+        "ten_shadows"
+      ],
+      "apCost": 1,
+      "cost": {
+        "ceRatio": 0.12,
+        "minCe": 0
+      },
+      "costType": "percentage",
+      "ceCostRatio": 0.12,
+      "damage": 0,
+      "block": 36,
+      "risk": "medium",
+      "weight": 940,
+      "guaranteedPerTurn": true,
+      "retainedPermanent": true,
+      "handSource": "douna-ten-shadows-fixed",
+      "summonSpec": {
+        "unitCardId": "douna_subdued_mahoraga_unit",
+        "unitName": "八握剑异戒神将 魔虚罗（已调伏）",
+        "control": "player_controlled",
+        "placement": "battlefield",
+        "durationRounds": 0,
+        "maintenanceCeCost": 22
+      },
+      "unitStats": {
+        "maxHp": 760,
+        "currentHp": 760,
+        "damage": 40,
+        "block": 80,
+        "mahoragaTurnEndHpRegen": 170,
+        "actionsPerRound": 1,
+        "damageReductionRatio": 0.34,
+        "blockIgnoreRatio": 0.18,
+        "damageType": "shikigami_melee",
+        "accuracyProfile": "weapon",
+        "guardPriority": 42,
+        "tags": [
+          "十影",
+          "魔虚罗",
+          "已调伏",
+          "协同",
+          "适应"
+        ],
+        "attackProfile": {
+          "damageScale": 1,
+          "accuracyProfile": "weapon",
+          "attackType": "cooperative_mahoraga",
+          "blockIgnoreRatio": 0.18
+        },
+        "raw": {
+          "name": "八握剑异戒神将 魔虚罗（已调伏）"
+        }
+      },
+      "guardRules": {
+        "protectOwner": true,
+        "interceptsOpponentAttacks": true,
+        "priority": 42
+      },
+      "targetingRules": {
+        "preferEnemyCharacter": true
+      },
+      "effects": {
+        "stabilityDelta": 0.015
+      },
+      "effectSummary": "斗傩宿傩已拥有调伏后的魔虚罗。此牌直接召唤已调伏魔虚罗作为友方协同单位，不切换角色、不锁手牌、不进入代打。",
+      "logTemplate": "宿傩从影中召来已调伏的魔虚罗，进入协同作战。",
+      "status": "CONFIRMED"
+    },
+    "douna_subdued_agito_summon": {
+      "id": "douna_subdued_agito_summon",
+      "actionId": "douna_subdued_agito_summon",
+      "label": "嵌合兽顎吐·协同召唤",
+      "name": "嵌合兽顎吐·协同召唤",
+      "cardType": "summon",
+      "type": "ten_shadows_summon",
+      "tags": [
+        "十影",
+        "嵌合兽",
+        "顎吐",
+        "agito",
+        "协同",
+        "式神",
+        "ten_shadows"
+      ],
+      "specialHandTags": [
+        "ten_shadows"
+      ],
+      "apCost": 1,
+      "cost": {
+        "ceRatio": 0.1,
+        "minCe": 0
+      },
+      "costType": "percentage",
+      "ceCostRatio": 0.1,
+      "damage": 0,
+      "block": 30,
+      "risk": "medium",
+      "weight": 930,
+      "guaranteedPerTurn": true,
+      "retainedPermanent": true,
+      "handSource": "douna-ten-shadows-fixed",
+      "summonSpec": {
+        "unitCardId": "douna_subdued_agito_unit",
+        "unitName": "嵌合兽顎吐",
+        "control": "player_controlled",
+        "placement": "battlefield",
+        "durationRounds": 0,
+        "maintenanceCeCost": 16
+      },
+      "unitStats": {
+        "maxHp": 520,
+        "currentHp": 520,
+        "damage": 30,
+        "block": 34,
+        "actionsPerRound": 1,
+        "damageReductionRatio": 0.24,
+        "fixedEvasionRate": 0,
+        "evasionRate": 0,
+        "blockIgnoreRatio": 0.1,
+        "damageType": "shikigami_melee",
+        "accuracyProfile": "melee",
+        "guardPriority": 34,
+        "tags": [
+          "十影",
+          "嵌合兽",
+          "顎吐",
+          "agito",
+          "协同",
+          "治愈"
+        ],
+        "attackProfile": {
+          "damageScale": 1,
+          "accuracyProfile": "melee",
+          "attackType": "cooperative_agito",
+          "blockIgnoreRatio": 0.1
+        },
+        "raw": {
+          "name": "嵌合兽顎吐"
+        }
+      },
+      "guardRules": {
+        "protectOwner": true,
+        "interceptsOpponentAttacks": true,
+        "priority": 34
+      },
+      "targetingRules": {
+        "preferEnemyCharacter": true
+      },
+      "effects": {
+        "stabilityDelta": 0.01,
+        "selfStatuses": [
+          {
+            "id": "agitoCooperativeRegen",
+            "label": "顎吐协同回生",
+            "rounds": 2,
+            "value": 1,
+            "regenHpFlat": 18
+          }
+        ]
+      },
+      "effectSummary": "斗傩宿傩调用十影资源嵌合兽顎吐，作为友方协同式神在场护主并攻击，不替代宿傩本体行动。",
+      "logTemplate": "宿傩从影中放出嵌合兽顎吐，协同压制挑战者。",
+      "status": "CONFIRMED"
+    }
+  },
+  "constraints": {
+    "formalEntryChanged": false,
+    "dataMutation": false,
+    "balanceChange": false
+  }
+}
+

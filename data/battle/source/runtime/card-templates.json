@@ -1,0 +1,572 @@
+{
+  "schema": "jjk-battle-runtime-card-templates",
+  "version": "0.1.2",
+  "status": "CANDIDATE",
+  "description": "Card-like template metadata layered over existing duel action templates. This is display and structure metadata only, not a full deck system.",
+  "notes": [
+    "Legacy metadata-only card templates wrap existing duel action templates by actionId.",
+    "Public baseline card templates may define simple runtime fields consumed by modules/duel/duel-actions.js; legacy wrapped cards still resolve through battle-runtime-action-templates.",
+    "No pile lifecycle, collection, editor, or animation rules are defined in this candidate data.",
+    "1.389A adds action-backed CANDIDATE hand templates plus futureTemplate metadata; future templates are not playable in hand beta.",
+    "Public baseline card templates may define simple runtime fields when actionId is unique and playableInHandBeta is true.",
+    "Base numeric fields on action-backed cards are CANDIDATE display/balance hints; public baseline cards in this file may be resolved directly by modules/duel/duel-actions.js."
+  ],
+  "cardTypeLabels": {
+    "basic": "基础",
+    "defense": "防御",
+    "technique": "术式",
+    "domain": "领域",
+    "domain_response": "领域应对",
+    "domain_maintenance": "领域维持",
+    "rule_trial": "审判推进",
+    "rule_defense": "审判防御",
+    "jackpot": "坐杀搏徒",
+    "resource": "资源",
+    "support": "支援",
+    "summon": "召唤",
+    "maintenance": "维持",
+    "unit": "单位",
+    "curse_tool": "咒具",
+    "special": "特殊"
+  },
+  "rarityLabels": {
+    "common": "common",
+    "uncommon": "uncommon",
+    "rare": "rare",
+    "special": "special",
+    "domain": "domain",
+    "rule": "rule"
+  },
+  "cards": [
+    {
+      "cardId": "card_defensive_frame",
+      "actionId": "defensive_frame",
+      "name": "防御构筑",
+      "cardType": "defense",
+      "apCost": 1,
+      "ceCostMode": "from_action",
+      "tags": [
+        "防御",
+        "稳定",
+        "体势"
+      ],
+      "rarity": "common",
+      "weight": 1,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "构成咒力防线，降低本回合体势损耗。",
+      "block": 24,
+      "baseStabilityRestore": 18,
+      "baseDefensePressure": 6,
+      "durationRounds": 1,
+      "ceCost": 8,
+      "costType": "ce_ratio_min",
+      "damageType": "none",
+      "scalingProfile": "defense",
+      "risk": "low",
+      "status": "CANDIDATE"
+    },
+    {
+      "cardId": "card_douna_counter_cursed_energy_guard",
+      "actionId": "douna_counter_cursed_energy_guard",
+      "name": "咒力防御",
+      "cardType": "defense",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 12,
+      "tags": [
+        "基础手牌",
+        "防御",
+        "咒力",
+        "斩击防御"
+      ],
+      "rarity": "common",
+      "weight": 0.95,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "以咒力覆盖身体轮廓，降低本回合受到的直接伤害。",
+      "damage": 0,
+      "block": 22,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "defense",
+      "effects": {
+        "incomingHpScale": 0.9,
+        "stabilityDelta": 0.01
+      },
+      "dounaCounterFor": "dismantle",
+      "risk": "low",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "guaranteedPerTurn": false,
+      "retainedPermanent": false,
+      "ignoreHandSelectionLimit": true,
+      "doesNotCountTowardSelectionLimit": true,
+      "handSource": "public-baseline-guard"
+    },
+    {
+      "cardId": "card_residue_reading",
+      "actionId": "residue_reading",
+      "name": "咒力流淌",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "from_action",
+      "tags": [
+        "咒力",
+        "回流",
+        "调息"
+      ],
+      "rarity": "common",
+      "weight": 1,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "下一回合咒力回流提高15%。",
+      "baseStabilityRestore": 0,
+      "baseDefensePressure": 0,
+      "durationRounds": 1,
+      "ceCost": 4,
+      "costType": "ce_ratio_min",
+      "damageType": "none",
+      "scalingProfile": "support_stability",
+      "risk": "low",
+      "status": "CANDIDATE"
+    },
+    {
+      "cardId": "card_basic_physical_strike",
+      "actionId": "basic_physical_strike",
+      "name": "体术打击",
+      "cardType": "basic",
+      "apCost": 1,
+      "ceCostMode": "none",
+      "ceCost": 0,
+      "tags": [
+        "基础手牌",
+        "体术",
+        "近身"
+      ],
+      "rarity": "common",
+      "weight": 1.15,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "不依赖专属术式的近身打击，根据使用者体术与体质结算伤害。",
+      "damage": 16,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "physical_strike",
+      "scalingProfile": "physical",
+      "basePhysicalScale": 1,
+      "risk": "low",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "guaranteedPerTurn": true,
+      "retainedPermanent": false,
+      "doesNotCountTowardHandLimit": true,
+      "ignoreHandSizeLimit": true,
+      "handSource": "public-baseline-basic-physical",
+      "accuracyProfile": "melee",
+      "evasionAllowed": true,
+      "hitRateModifier": 0
+    },
+    {
+      "cardId": "card_basic_cursed_energy_strike",
+      "actionId": "basic_cursed_energy_strike",
+      "name": "简单咒力打击",
+      "cardType": "basic",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 8,
+      "tags": [
+        "基础手牌",
+        "咒力",
+        "远程"
+      ],
+      "rarity": "common",
+      "weight": 1.05,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "不依赖专属术式的咒力打击，根据使用者咒力结算伤害。",
+      "damage": 14,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "cursed_energy_strike",
+      "scalingProfile": "ce_burst",
+      "baseCePoolScale": 0.35,
+      "baseCeControlScale": 0.25,
+      "risk": "low",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "accuracyProfile": "technique_projectile",
+      "evasionAllowed": true,
+      "hitRateModifier": 0
+    },
+    {
+      "cardId": "card_high_output_cursed_energy_blast",
+      "actionId": "high_output_cursed_energy_blast",
+      "name": "大功率咒力输出",
+      "cardType": "basic",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 18,
+      "tags": [
+        "基础手牌",
+        "咒力",
+        "远程",
+        "高输出"
+      ],
+      "rarity": "uncommon",
+      "weight": 1.08,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "不依赖专属术式的大功率咒力输出，伤害高于简单咒力打击，但咒力消耗更高且更容易被闪避。",
+      "damage": 26,
+      "block": 0,
+      "baseDomainLoadDelta": 2,
+      "durationRounds": 0,
+      "damageType": "cursed_energy_blast",
+      "scalingProfile": "ce_burst",
+      "baseCePoolScale": 0.55,
+      "baseCeControlScale": 0.35,
+      "risk": "medium",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "accuracyProfile": "technique_projectile",
+      "evasionAllowed": true,
+      "hitRateModifier": -0.04
+    },
+    {
+      "cardId": "card_cursed_energy_focus",
+      "actionId": "cursed_energy_focus",
+      "name": "咒力凝聚",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 80,
+      "tags": [
+        "基础手牌",
+        "咒力",
+        "增幅"
+      ],
+      "rarity": "uncommon",
+      "weight": 0.9,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "消耗80CE凝聚咒力，本回合后续伤害提高20%。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 4,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "risk": "medium",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "outgoingScale": 1.2,
+      "consumeOutgoingScaleOnDamage": false
+    },
+    {
+      "cardId": "card_desperate_burst",
+      "actionId": "desperate_burst",
+      "name": "竭力爆发",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "none",
+      "ceCost": 0,
+      "tags": [
+        "基础手牌",
+        "爆发",
+        "高风险"
+      ],
+      "rarity": "uncommon",
+      "weight": 0.85,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "扣除最大体势30%，本次伤害提升50%。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "risk": "high",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "outgoingScale": 1.5,
+      "selfHpCostRatio": 0.3,
+      "selfHpCostNonlethal": true
+    },
+    {
+      "cardId": "card_loaned_shot",
+      "actionId": "loaned_shot",
+      "name": "贷款一发",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "none",
+      "ceCost": 0,
+      "tags": [
+        "基础手牌",
+        "爆发",
+        "延迟负担"
+      ],
+      "rarity": "uncommon",
+      "weight": 0.8,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "本回合伤害增加70%；从下一回合开始，伤害永久减少20%。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "risk": "high",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "outgoingScale": 1.7,
+      "consumeOutgoingScaleOnDamage": false,
+      "delayedSelfStatuses": [
+        {
+          "id": "loaned_shot_debt",
+          "label": "贷款反噬",
+          "rounds": 999,
+          "value": 0.8,
+          "outgoingScale": 0.8,
+          "triggerDelayTurns": 1
+        }
+      ]
+    },
+    {
+      "cardId": "card_loaned_next_shot",
+      "actionId": "loaned_next_shot",
+      "name": "贷款下一发",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "none",
+      "ceCost": 0,
+      "tags": [
+        "基础手牌",
+        "爆发",
+        "延迟爆发",
+        "延迟负担"
+      ],
+      "rarity": "uncommon",
+      "weight": 0.86,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "下一回合伤害增加35%；从再下一回合开始，伤害永久减少10%。数值为“贷款一发”的一半。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "risk": "medium",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "consumeOutgoingScaleOnDamage": false,
+      "delayedSelfStatuses": [
+        {
+          "id": "loaned_next_shot_boost",
+          "label": "贷款下一发",
+          "rounds": 1,
+          "value": 1.35,
+          "outgoingScale": 1.35,
+          "triggerDelayTurns": 1
+        },
+        {
+          "id": "loaned_shot_debt",
+          "label": "轻度贷款反噬",
+          "rounds": 999,
+          "value": 0.9,
+          "outgoingScale": 0.9,
+          "triggerDelayTurns": 2
+        }
+      ]
+    },
+    {
+      "cardId": "card_full_guard",
+      "actionId": "full_guard",
+      "name": "全力防御",
+      "cardType": "defense",
+      "apCost": 2,
+      "ceCostMode": "fixed",
+      "ceCost": 12,
+      "tags": [
+        "基础手牌",
+        "防御",
+        "单独使用"
+      ],
+      "rarity": "common",
+      "weight": 0.9,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "以当前咒力与体力结算防御力，且本回合不能选择其他手牌。",
+      "damage": 0,
+      "block": 52,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "ce_vitality_guard",
+      "risk": "medium",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "exclusiveHandSelection": true,
+      "selectionLockReason": "全力防御必须单独使用",
+      "blockToIncomingScale": true
+    },
+    {
+      "cardId": "card_range_adjustment",
+      "actionId": "range_adjustment",
+      "name": "范围调整",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 32.4,
+      "tags": [
+        "基础手牌",
+        "支援",
+        "范围",
+        "AOE"
+      ],
+      "rarity": "common",
+      "weight": 0.88,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "调整下一次攻击的作用范围：本次攻击对敌方所有单位生效，主目标闪避时仍会命中场上敌方单位，每个目标承受原本 60% 伤害。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 1,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "effects": {
+        "rangeAdjustment": true,
+        "rangeAdjustmentDamageScale": 0.6
+      },
+      "risk": "medium",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "guaranteedPerTurn": false,
+      "retainedPermanent": false,
+      "doesNotCountTowardHandLimit": false,
+      "ignoreHandSizeLimit": false,
+      "handSource": "public-baseline-normal-draw"
+    },
+    {
+      "cardId": "card_avoid_edge",
+      "actionId": "avoid_edge",
+      "name": "避其锋芒",
+      "cardType": "defense",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 4,
+      "tags": [
+        "基础手牌",
+        "闪避",
+        "单独使用"
+      ],
+      "rarity": "common",
+      "weight": 0.95,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "本回合闪避提高60%，且不能选择其他手牌。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "risk": "medium",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true,
+      "evasionBonus": 0.6,
+      "exclusiveHandSelection": true,
+      "selectionLockReason": "避其锋芒必须单独使用"
+    },
+    {
+      "cardId": "card_douna_counter_fly_head_interference",
+      "actionId": "douna_counter_fly_head_interference",
+      "name": "蝇头干扰",
+      "cardType": "support",
+      "apCost": 1,
+      "ceCostMode": "fixed",
+      "ceCost": 10,
+      "tags": [
+        "基础手牌",
+        "干扰",
+        "蝇头"
+      ],
+      "rarity": "common",
+      "weight": 0.9,
+      "contexts": [
+        "normal",
+        "domain",
+        "trial_allowed"
+      ],
+      "effectSummary": "以蝇头扰乱视线与火线锁定，本回合闪避提高20%，并降低敌方关键攻击的命中稳定性。",
+      "damage": 0,
+      "block": 0,
+      "baseDomainLoadDelta": 0,
+      "durationRounds": 0,
+      "damageType": "none",
+      "scalingProfile": "support",
+      "effects": {
+        "evasionBonus": 0.2,
+        "stabilityDelta": 0.006
+      },
+      "evasionBonus": 0.2,
+      "dounaCounterFor": "furnace",
+      "risk": "low",
+      "status": "CONFIRMED",
+      "playableInHandBeta": true
+    }
+  ],
+  "publicTemplatePolicy": {
+    "updatedAt": "2026-05-05",
+    "rule": "Only unrestricted public baseline cards remain here; character, technique, domain, trial, jackpot, cursed-tool, summon, unit, and future placeholder cards were migrated out."
+  },
+  "migratedRestrictedCardCount": 72,
+  "archivedTemplateCardCount": 20
+}
+

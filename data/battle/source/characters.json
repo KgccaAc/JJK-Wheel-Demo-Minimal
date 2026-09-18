@@ -1,0 +1,3700 @@
+{
+  "schema": "jjk-battle-characters-direct-v1",
+  "version": 1,
+  "characters": [
+    {
+      "id": "gojo_satoru_shinjuku",
+      "name": "五条悟（新宿决战）",
+      "stats": {
+        "cursedEnergy": "S",
+        "control": "SSS",
+        "efficiency": "SSS",
+        "body": "S",
+        "martial": "SSS",
+        "talent": "SS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "limitless",
+        "gojo",
+        "五条",
+        "无下限",
+        "six_eyes",
+        "六眼",
+        "领域展开",
+        "苍",
+        "赫",
+        "无量空处",
+        "unlimited_void",
+        "gojo_limitless"
+      ],
+      "cardTags": [
+        "limitless",
+        "six_eyes",
+        "unlimited_void",
+        "gojo",
+        "五条",
+        "无下限",
+        "六眼",
+        "gojo_limitless",
+        "gojo_limitless_user",
+        "gojo_satoru_shinjuku"
+      ],
+      "domainId": "gojo_unlimited_void",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "yuji_itadori_after68",
+      "name": "虎天帝 / 虎杖悠仁（68年后）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "EX-",
+        "efficiency": "SSS",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "EX-"
+      },
+      "traits": [
+        "yuji",
+        "itadori",
+        "虎杖",
+        "体术",
+        "灵魂打击",
+        "black_flash_window",
+        "yuji_after68_black_flash",
+        "high_level_anti_domain",
+        "沉淀咒物",
+        "半人半咒",
+        "不老/咒物沉淀",
+        "随意黑闪",
+        "EX锚点",
+        "反领域能力",
+        "连击",
+        "爆发",
+        "延迟",
+        "窗口",
+        "soul_melee",
+        "post_canon_exception",
+        "yuji_soul_melee",
+        "shrine",
+        "blood_manipulation",
+        "御厨子",
+        "赤血操术"
+      ],
+      "cardTags": [
+        "yuji_after68_black_flash",
+        "high_level_anti_domain",
+        "shrine",
+        "blood_manipulation",
+        "soul_melee",
+        "black_flash_window",
+        "post_canon_exception",
+        "yuji",
+        "itadori",
+        "yuji_soul_melee",
+        "yuji_after68_black_flash_user",
+        "yuji_itadori_after68"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "takaba_fumihiko_culling",
+      "name": "高羽史彦（死灭回游）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "B",
+        "efficiency": "B",
+        "body": "B",
+        "martial": "C",
+        "talent": "SS"
+      },
+      "traits": [
+        "comedian"
+      ],
+      "cardTags": [
+        "comedian",
+        "takaba_fumihiko_culling"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "toji_fushiguro_hidden_inventory",
+      "name": "伏黑甚尔（怀玉，完整咒具）",
+      "stats": {
+        "cursedEnergy": "E-",
+        "control": "E-",
+        "efficiency": "E-",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SS"
+      },
+      "traits": [
+        "zero_ce",
+        "零咒力",
+        "heavenly_restriction",
+        "天与咒缚",
+        "physical",
+        "体术",
+        "cursed_tool",
+        "咒具",
+        "零咒力天与暴君型天与咒缚",
+        "天逆鉾",
+        "万里锁",
+        "释魂刀",
+        "武器库咒灵",
+        "必中规避",
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "toji_cursed_tools",
+        "inverted_spear_of_heaven",
+        "chain_of_thousand_miles",
+        "soul_split_katana",
+        "weapon_inventory_curse",
+        "机动",
+        "反领域"
+      ],
+      "cardTags": [
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "inverted_spear_of_heaven",
+        "chain_of_thousand_miles",
+        "soul_split_katana",
+        "weapon_inventory_curse",
+        "zero_ce",
+        "heavenly_restriction",
+        "physical",
+        "cursed_tool",
+        "toji_cursed_tools",
+        "toji_fushiguro_hidden_inventory"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": false,
+        "ceLimited": true,
+        "hasInnateTechnique": false,
+        "hasDomainAccess": false,
+        "isZeroCe": true,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "toji_fushiguro_shibuya_revenant",
+      "name": "伏黑甚尔（涩谷通灵）",
+      "stats": {
+        "cursedEnergy": "E-",
+        "control": "E-",
+        "efficiency": "E-",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "S"
+      },
+      "traits": [
+        "zero_ce",
+        "零咒力",
+        "heavenly_restriction",
+        "天与咒缚",
+        "physical",
+        "体术",
+        "cursed_tool",
+        "咒具",
+        "零咒力天与暴君型天与咒缚",
+        "游云",
+        "必中规避",
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "toji_revenant",
+        "playful_cloud",
+        "机动",
+        "反领域"
+      ],
+      "cardTags": [
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "playful_cloud",
+        "zero_ce",
+        "heavenly_restriction",
+        "physical",
+        "cursed_tool",
+        "toji_revenant",
+        "toji_fushiguro_shibuya_revenant"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": false,
+        "ceLimited": true,
+        "hasInnateTechnique": false,
+        "hasDomainAccess": false,
+        "isZeroCe": true,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "maki_zenin_culling",
+      "name": "禅院真希（死灭回游完成后）",
+      "stats": {
+        "cursedEnergy": "E-",
+        "control": "E-",
+        "efficiency": "E-",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SS"
+      },
+      "traits": [
+        "zero_ce",
+        "零咒力",
+        "heavenly_restriction",
+        "天与咒缚",
+        "physical",
+        "体术",
+        "cursed_tool",
+        "咒具",
+        "soul",
+        "灵魂",
+        "零咒力天与暴君型天与咒缚",
+        "释魂刀",
+        "必中规避",
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "maki_cursed_tools",
+        "soul_split_katana",
+        "机动",
+        "反领域"
+      ],
+      "cardTags": [
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "soul_split_katana",
+        "zero_ce",
+        "heavenly_restriction",
+        "physical",
+        "cursed_tool",
+        "soul",
+        "maki_cursed_tools",
+        "maki_zenin_culling"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": false,
+        "ceLimited": true,
+        "hasInnateTechnique": false,
+        "hasDomainAccess": false,
+        "isZeroCe": true,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "shoko_ieiri_support_candidate",
+      "name": "家入硝子（高专医师）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "S",
+        "efficiency": "S",
+        "body": "C",
+        "martial": "D",
+        "talent": "A"
+      },
+      "traits": [
+        "反转术式",
+        "反转术式外放",
+        "医师",
+        "rct_support"
+      ],
+      "cardTags": [
+        "rct_support",
+        "shoko_ieiri_support_candidate"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": true
+      }
+    },
+    {
+      "id": "yuta_okkotsu_volume0_true_rika",
+      "name": "乙骨忧太（0卷，真里香）",
+      "stats": {
+        "cursedEnergy": "EX-",
+        "control": "A",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "S",
+        "talent": "SSS"
+      },
+      "traits": [
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "乙骨",
+        "里香",
+        "反转术式外放",
+        "复制",
+        "反转术式",
+        "reverse_output",
+        "okkotsu_rika_copy",
+        "copy",
+        "yuta_rika_manifestation_volume0"
+      ],
+      "cardTags": [
+        "copy",
+        "yuta_rika_manifestation_volume0",
+        "rika",
+        "copy_candidate",
+        "okkotsu",
+        "okkotsu_rika_copy",
+        "yuta_okkotsu_volume0_true_rika"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": true
+      }
+    },
+    {
+      "id": "geto_suguru_volume0",
+      "name": "夏油杰（0卷）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SS",
+        "efficiency": "SS",
+        "body": "S",
+        "martial": "SS",
+        "talent": "SS"
+      },
+      "traits": [
+        "summon",
+        "shikigami",
+        "式神",
+        "召唤物",
+        "curse_spirit_manipulation",
+        "咒灵操术",
+        "咒灵库存",
+        "noDomain",
+        "curse_spirit_manipulation_owner",
+        "百鬼夜行",
+        "hundred_demons_night_parade",
+        "maximum_uzumaki",
+        "极之番漩涡",
+        "极之番"
+      ],
+      "cardTags": [
+        "curse_spirit_manipulation",
+        "summon",
+        "shikigami",
+        "咒灵操术",
+        "noDomain",
+        "curse_spirit_manipulation_owner",
+        "咒灵库存",
+        "百鬼夜行",
+        "hundred_demons_night_parade",
+        "maximum_uzumaki",
+        "极之番漩涡",
+        "geto_suguru_volume0"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kashimo_hajime_ancient",
+      "name": "鹿紫云一（400年前）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "SS",
+        "martial": "SS",
+        "talent": "SS"
+      },
+      "traits": [
+        "电荷咒力",
+        "弥虚葛笼",
+        "反领域能力",
+        "mythical_beast_amber",
+        "kashimo_mythical_beast",
+        "hollow_wicker_basket"
+      ],
+      "cardTags": [
+        "mythical_beast_amber",
+        "hollow_wicker_basket",
+        "kashimo_mythical_beast",
+        "kashimo_hajime_ancient"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "hakari_kinji_jackpot",
+      "name": "秤金次（死灭回游）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "SS",
+        "body": "SS",
+        "martial": "SS",
+        "talent": "S"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "jackpot",
+        "hakari",
+        "秤",
+        "领域展开",
+        "演出",
+        "中奖",
+        "jackpot_rule",
+        "probability",
+        "pachinko",
+        "hakari_jackpot_owner",
+        "idle_death_gamble"
+      ],
+      "cardTags": [
+        "idle_death_gamble",
+        "hakari_jackpot_owner",
+        "jackpot_rule",
+        "probability",
+        "pachinko",
+        "jackpot",
+        "hakari",
+        "hakari_kinji_jackpot"
+      ],
+      "domainId": "hakari_idle_death_gamble",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "uraume_shinjuku",
+      "name": "里梅（新宿）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "S",
+        "martial": "S",
+        "talent": "SS"
+      },
+      "traits": [
+        "jackpot",
+        "hakari",
+        "秤",
+        "hakari_jackpot_owner",
+        "ice_formation"
+      ],
+      "cardTags": [
+        "ice_formation",
+        "jackpot",
+        "hakari",
+        "hakari_jackpot_owner",
+        "uraume_shinjuku"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "dabra_modulo",
+      "name": "达布拉（Modulo）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SSS",
+        "efficiency": "S",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SSS"
+      },
+      "traits": [
+        "sukuna",
+        "shrine",
+        "slash",
+        "宿傩",
+        "斩击",
+        "embodied_killing_intent_light"
+      ],
+      "cardTags": [
+        "embodied_killing_intent_light",
+        "sukuna",
+        "shrine",
+        "slash",
+        "宿傩",
+        "sukuna_shrine_user",
+        "dabra_modulo"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "maru_modulo",
+      "name": "马鲁（Modulo）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "S",
+        "efficiency": "A",
+        "body": "B",
+        "martial": "B",
+        "talent": "SS"
+      },
+      "traits": [
+        "chaos_and_harmony"
+      ],
+      "cardTags": [
+        "chaos_and_harmony",
+        "maru_modulo"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "okkotsu_tsurugi_modulo",
+      "name": "乙骨真剑（Modulo）",
+      "stats": {
+        "cursedEnergy": "E-",
+        "control": "E-",
+        "efficiency": "E-",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SS"
+      },
+      "traits": [
+        "zero_ce",
+        "零咒力",
+        "heavenly_restriction",
+        "天与咒缚",
+        "physical",
+        "体术",
+        "cursed_tool",
+        "咒具",
+        "rika_ring",
+        "里香戒指",
+        "yuta_rika_manifestation_modern",
+        "copy",
+        "里香",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "乙骨",
+        "零咒力天与暴君型天与咒缚",
+        "无",
+        "焰柳",
+        "乙骨戒指/里香戒指",
+        "释魂刀（阶段性）",
+        "复制",
+        "反转术式",
+        "reverse_output",
+        "okkotsu_rika_copy",
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "soul_split_katana"
+      ],
+      "cardTags": [
+        "zero_ce_heavenly_restriction",
+        "cursed_tool_user",
+        "rika_ring",
+        "soul_split_katana",
+        "rika",
+        "copy_candidate",
+        "zero_ce",
+        "heavenly_restriction",
+        "physical",
+        "cursed_tool",
+        "yuta_rika_manifestation_modern",
+        "copy",
+        "okkotsu",
+        "okkotsu_rika_copy",
+        "okkotsu_tsurugi_modulo"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": false,
+        "ceLimited": true,
+        "hasInnateTechnique": false,
+        "hasDomainAccess": false,
+        "isZeroCe": true,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "cross_modulo",
+      "name": "克罗斯（Modulo）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "B",
+        "martial": "B",
+        "talent": "A"
+      },
+      "traits": [
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "乙骨",
+        "里香",
+        "okkotsu_rika_copy",
+        "chaos_and_harmony"
+      ],
+      "cardTags": [
+        "chaos_and_harmony",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "okkotsu_rika_copy",
+        "cross_modulo"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "rika_orimoto_volume0_full",
+      "name": "祈本里香（0卷，完全显现）",
+      "stats": {
+        "cursedEnergy": "EX-",
+        "control": "B",
+        "efficiency": "A",
+        "body": "SS",
+        "martial": "B",
+        "talent": "A"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "summon",
+        "shikigami",
+        "式神",
+        "召唤物",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "乙骨",
+        "里香",
+        "特级过咒怨灵-完全显现",
+        "乙骨外部式神",
+        "反转术式外放",
+        "okkotsu_rika_copy",
+        "curse_spirit_general",
+        "rika_independent_unit"
+      ],
+      "cardTags": [
+        "rika_independent_unit",
+        "curse",
+        "summon",
+        "shikigami",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "okkotsu_rika_copy",
+        "curse_spirit_general",
+        "rika_orimoto_volume0_full"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": true
+      }
+    },
+    {
+      "id": "rika_orimoto_modern_full",
+      "name": "祈本里香（正传，完全显现）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "S",
+        "efficiency": "S",
+        "body": "SS",
+        "martial": "S",
+        "talent": "S"
+      },
+      "traits": [
+        "summon",
+        "shikigami",
+        "式神",
+        "召唤物",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "乙骨",
+        "里香",
+        "完全显现式神",
+        "乙骨外部式神",
+        "反转术式外放",
+        "okkotsu_rika_copy",
+        "rika_independent_unit"
+      ],
+      "cardTags": [
+        "rika_independent_unit",
+        "summon",
+        "shikigami",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "okkotsu_rika_copy",
+        "rika_orimoto_modern_full"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": true
+      }
+    },
+    {
+      "id": "jogo_shibuya",
+      "name": "漏瑚（涩谷）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "S",
+        "martial": "A",
+        "talent": "S"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "domain",
+        "领域",
+        "咒灵之躯",
+        "灾害咒灵",
+        "领域展开",
+        "curse_spirit_general",
+        "disaster_flames"
+      ],
+      "cardTags": [
+        "disaster_flames",
+        "curse",
+        "curse_spirit_general",
+        "jogo_shibuya"
+      ],
+      "domainId": "jogo_coffin_iron_mountain",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "sukuna_shibuya",
+      "name": "两面宿傩（涩谷）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SSS",
+        "efficiency": "S",
+        "body": "SS",
+        "martial": "SSS",
+        "talent": "SSS"
+      },
+      "traits": [
+        "sukuna",
+        "宿傩",
+        "shrine",
+        "slash",
+        "御厨子",
+        "开放领域",
+        "open_domain",
+        "incarnated"
+      ],
+      "cardTags": [
+        "shrine",
+        "sukuna",
+        "slash",
+        "open_domain",
+        "sukuna_shibuya"
+      ],
+      "domainId": "sukuna_malevolent_shrine",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": true,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "mahito_shibuya",
+      "name": "真人（涩谷）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "S",
+        "body": "A",
+        "martial": "A",
+        "talent": "SS"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "domain",
+        "领域",
+        "mahito",
+        "soul",
+        "真人",
+        "灵魂",
+        "咒灵之躯",
+        "灾害咒灵",
+        "无为转变",
+        "灵魂干涉",
+        "领域展开",
+        "改造人",
+        "soul_transfiguration",
+        "self_embodiment",
+        "mahito_soul_transfiguration",
+        "curse_spirit_general",
+        "idle_transfiguration"
+      ],
+      "cardTags": [
+        "idle_transfiguration",
+        "shibuya_transfigured_human_swarm",
+        "soul_transfiguration",
+        "self_embodiment",
+        "curse",
+        "mahito",
+        "soul",
+        "无为转变",
+        "mahito_soul_transfiguration",
+        "curse_spirit_general",
+        "mahito_shibuya"
+      ],
+      "domainId": "mahito_self_embodiment",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "hanami_exchange_event",
+      "name": "花御（京都交流会）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "S",
+        "body": "SS",
+        "martial": "A",
+        "talent": "A"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "domain",
+        "领域",
+        "咒灵之躯",
+        "灾害咒灵",
+        "领域展开",
+        "curse_spirit_general",
+        "disaster_plants"
+      ],
+      "cardTags": [
+        "disaster_plants",
+        "curse",
+        "curse_spirit_general",
+        "hanami_exchange_event"
+      ],
+      "domainId": "hanami_ceremonial_sea_of_light",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "dagon_shibuya_domain",
+      "name": "陀艮（涩谷，领域展开）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "A",
+        "body": "SS",
+        "martial": "A",
+        "talent": "A"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "domain",
+        "领域",
+        "summon",
+        "shikigami",
+        "式神",
+        "召唤物",
+        "咒灵之躯",
+        "灾害咒灵",
+        "领域展开",
+        "curse_spirit_general",
+        "disaster_tides"
+      ],
+      "cardTags": [
+        "disaster_tides",
+        "curse",
+        "summon",
+        "shikigami",
+        "curse_spirit_general",
+        "dagon_shibuya_domain"
+      ],
+      "domainId": "dagon_horizon_of_captivating_skandha",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "naoya_cursed_spirit_sakurajima",
+      "name": "禅院直哉（咒灵，樱岛）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "S",
+        "body": "SSS",
+        "martial": "SS",
+        "talent": "S"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "domain",
+        "领域",
+        "咒灵之躯",
+        "投射咒法",
+        "领域展开",
+        "curse_spirit_general",
+        "projection_sorcery"
+      ],
+      "cardTags": [
+        "projection_sorcery",
+        "curse",
+        "投射咒法",
+        "curse_spirit_general",
+        "naoya_cursed_spirit_sakurajima"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "smallpox_deity_shibuya",
+      "name": "疱疮神（涩谷）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "S",
+        "body": "A",
+        "martial": "C",
+        "talent": "B"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "domain",
+        "领域",
+        "咒灵之躯",
+        "疾病咒灵",
+        "领域展开",
+        "curse_spirit_general",
+        "smallpox_deity_countdown"
+      ],
+      "cardTags": [
+        "smallpox_deity_countdown",
+        "curse",
+        "curse_spirit_general",
+        "smallpox_deity_shibuya"
+      ],
+      "domainId": "smallpox_deity_plague_coffin",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "choso_shibuya_culling",
+      "name": "胀相（涩谷/死灭）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "A",
+        "body": "S",
+        "martial": "SS",
+        "talent": "S"
+      },
+      "traits": [
+        "curse",
+        "咒灵",
+        "咒胎九相图",
+        "赤血操术",
+        "curse_spirit_general",
+        "blood_manipulation"
+      ],
+      "cardTags": [
+        "blood_manipulation",
+        "curse",
+        "赤血操术",
+        "curse_spirit_general",
+        "choso_shibuya_culling"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": true,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kenjaku_geto_body",
+      "name": "羂索（夏油身体）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SSS",
+        "efficiency": "SS",
+        "body": "S",
+        "martial": "SSS",
+        "talent": "SSS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "summon",
+        "shikigami",
+        "式神",
+        "召唤物",
+        "curse_spirit_manipulation",
+        "咒灵操术",
+        "咒灵库存",
+        "夺舍",
+        "反重力机构",
+        "领域展开",
+        "curse_spirit_manipulation_owner",
+        "body_hopping",
+        "anti_gravity_system",
+        "ganesha_obstacle_removal",
+        "ganesh_obstacle_removal"
+      ],
+      "cardTags": [
+        "body_hopping",
+        "curse_spirit_manipulation",
+        "anti_gravity_system",
+        "ganesha_obstacle_removal",
+        "summon",
+        "shikigami",
+        "咒灵操术",
+        "反重力机构",
+        "curse_spirit_manipulation_owner",
+        "ganesh_obstacle_removal",
+        "kenjaku_geto_body"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "yuki_tsukumo_culling",
+      "name": "九十九由基（死灭前后）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "SSS",
+        "martial": "SS",
+        "talent": "SS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "星之怒",
+        "凰轮",
+        "领域展开",
+        "star_rage"
+      ],
+      "cardTags": [
+        "star_rage",
+        "星之怒",
+        "yuki_tsukumo_culling"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "yuta_okkotsu_shinjuku",
+      "name": "乙骨忧太（新宿决战）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "S",
+        "martial": "SS",
+        "talent": "SSS"
+      },
+      "traits": [
+        "cursed_tool",
+        "咒具",
+        "rika_ring",
+        "里香戒指",
+        "yuta_rika_manifestation_modern",
+        "copy",
+        "里香",
+        "domain",
+        "领域",
+        "okkotsu",
+        "rika",
+        "copy_candidate",
+        "乙骨",
+        "反转术式外放",
+        "领域展开",
+        "复制",
+        "反转术式",
+        "reverse_output",
+        "okkotsu_rika_copy"
+      ],
+      "cardTags": [
+        "copy",
+        "yuta_rika_manifestation_modern",
+        "rika_ring",
+        "rika",
+        "copy_candidate",
+        "cursed_tool",
+        "okkotsu",
+        "okkotsu_rika_copy",
+        "yuta_okkotsu_shinjuku"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": true
+      }
+    },
+    {
+      "id": "yuji_itadori_shibuya",
+      "name": "虎杖悠仁（涩谷）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "B",
+        "efficiency": "B",
+        "body": "SS",
+        "martial": "SS",
+        "talent": "S"
+      },
+      "traits": [
+        "yuji",
+        "itadori",
+        "虎杖",
+        "体术",
+        "宿傩容器",
+        "超常体能",
+        "逕庭拳",
+        "黑闪",
+        "灵魂",
+        "可触及灵魂",
+        "melee",
+        "yuji_soul_melee"
+      ],
+      "cardTags": [
+        "yuji_soul_melee",
+        "yuji",
+        "itadori",
+        "soul",
+        "yuji_itadori_shibuya"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": false,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "megumi_fushiguro_shibuya",
+      "name": "伏黑惠（涩谷）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "B",
+        "body": "B",
+        "martial": "B",
+        "talent": "SS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "ten_shadows",
+        "shikigami",
+        "shadow",
+        "伏黑惠",
+        "式神",
+        "影",
+        "十种影法术",
+        "未完成领域",
+        "incomplete_domain"
+      ],
+      "cardTags": [
+        "ten_shadows",
+        "shikigami",
+        "incomplete_domain",
+        "shadow",
+        "ten_shadows_user",
+        "megumi_ten_shadows_user",
+        "megumi_fushiguro_shibuya"
+      ],
+      "domainId": "megumi_chimera_shadow_garden",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "maki_zenin_shibuya",
+      "name": "禅院真希（涩谷）",
+      "stats": {
+        "cursedEnergy": "D",
+        "control": "D",
+        "efficiency": "D",
+        "body": "S",
+        "martial": "SS",
+        "talent": "A"
+      },
+      "traits": [
+        "physical",
+        "体术",
+        "cursed_tool",
+        "咒具",
+        "不完全天与咒缚",
+        "咒具使",
+        "游云",
+        "cursed_tool_user",
+        "playful_cloud"
+      ],
+      "cardTags": [
+        "cursed_tool_user",
+        "playful_cloud",
+        "physical",
+        "cursed_tool",
+        "maki_zenin_shibuya"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": true,
+        "hasInnateTechnique": false,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "yuji_itadori_shinjuku",
+      "name": "虎杖悠仁（新宿决战）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "S",
+        "efficiency": "SS",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SS"
+      },
+      "traits": [
+        "yuji",
+        "itadori",
+        "虎杖",
+        "体术",
+        "灵魂打击",
+        "black_flash_window",
+        "soul",
+        "灵魂",
+        "半人半咒",
+        "黑闪连锁",
+        "简易领域",
+        "反领域能力",
+        "连击",
+        "爆发",
+        "延迟",
+        "窗口",
+        "soul_melee",
+        "bloodline_sukuna_trace",
+        "yuji_soul_melee"
+      ],
+      "cardTags": [
+        "yuji_soul_melee",
+        "simple_domain",
+        "soul_melee",
+        "black_flash_window",
+        "bloodline_sukuna_trace",
+        "yuji",
+        "itadori",
+        "soul",
+        "sukuna_shrine_user",
+        "yuji_itadori_shinjuku"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "megumi_fushiguro_culling",
+      "name": "伏黑惠（死灭回游）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "B",
+        "body": "B",
+        "martial": "B",
+        "talent": "SS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "ten_shadows",
+        "shikigami",
+        "shadow",
+        "伏黑惠",
+        "式神",
+        "影",
+        "十种影法术",
+        "领域展开",
+        "伏黑",
+        "未完成领域",
+        "incomplete_domain"
+      ],
+      "cardTags": [
+        "ten_shadows",
+        "shikigami",
+        "incomplete_domain",
+        "shadow",
+        "十种影法术",
+        "ten_shadows_user",
+        "megumi_ten_shadows_user",
+        "megumi_fushiguro_culling"
+      ],
+      "domainId": "megumi_chimera_shadow_garden",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "higuruma_hiromi_culling",
+      "name": "日车宽见（死灭回游/新宿）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "B",
+        "martial": "B",
+        "talent": "SSS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "trial",
+        "judgment",
+        "日车",
+        "审判",
+        "规则类（日车）",
+        "日车领域",
+        "领域展开",
+        "证据",
+        "判决",
+        "没收",
+        "rule_trial",
+        "confiscation",
+        "higuruma_trial_owner"
+      ],
+      "cardTags": [
+        "higuruma_trial_owner",
+        "rule_trial",
+        "judgment",
+        "confiscation",
+        "trial",
+        "higuruma_hiromi_culling"
+      ],
+      "domainId": "higuruma_deadly_sentencing",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "yorozu_heian_vessel",
+      "name": "万（平安/受肉）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "SS",
+        "martial": "SS",
+        "talent": "SS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "构筑术式",
+        "领域展开",
+        "construction"
+      ],
+      "cardTags": [
+        "construction",
+        "构筑术式",
+        "yorozu_heian_vessel"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": true,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "uro_takako_sendai",
+      "name": "乌鹭亨子（仙台结界）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "A",
+        "martial": "A",
+        "talent": "SS"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "天空术式",
+        "领域展开",
+        "sky_manipulation"
+      ],
+      "cardTags": [
+        "sky_manipulation",
+        "天空术式",
+        "uro_takako_sendai"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "ryu_ishigori_sendai",
+      "name": "石流龙（仙台结界）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "S",
+        "efficiency": "A",
+        "body": "SS",
+        "martial": "SS",
+        "talent": "A"
+      },
+      "traits": [
+        "domain",
+        "领域",
+        "咒力大炮",
+        "领域展开",
+        "granite_blast"
+      ],
+      "cardTags": [
+        "granite_blast",
+        "ryu_ishigori_sendai"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "angel_hana_culling",
+      "name": "天使 / 来栖华（死灭回游）",
+      "stats": {
+        "cursedEnergy": "S",
+        "control": "S",
+        "efficiency": "S",
+        "body": "B",
+        "martial": "C",
+        "talent": "SS"
+      },
+      "traits": [
+        "天使",
+        "术式消灭",
+        "雅各布天梯",
+        "jacobs_ladder"
+      ],
+      "cardTags": [
+        "jacobs_ladder",
+        "angel_hana_culling"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": true,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "todo_aoi_shibuya",
+      "name": "东堂葵（涩谷）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "B",
+        "body": "SS",
+        "martial": "SS",
+        "talent": "S"
+      },
+      "traits": [
+        "不义游戏",
+        "boogie_woogie"
+      ],
+      "cardTags": [
+        "boogie_woogie",
+        "不义游戏",
+        "todo_aoi_shibuya"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "nanami_kento_shibuya",
+      "name": "七海建人（涩谷）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "SS",
+        "talent": "A"
+      },
+      "traits": [
+        "十划咒法",
+        "ratio_technique"
+      ],
+      "cardTags": [
+        "ratio_technique",
+        "十划咒法",
+        "nanami_kento_shibuya"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kusakabe_atsuya_shinjuku",
+      "name": "日下部笃也（新宿）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "SS",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "SS",
+        "talent": "S"
+      },
+      "traits": [
+        "简易领域",
+        "新阴流",
+        "simple_domain_sword",
+        "kusakabe_guard"
+      ],
+      "cardTags": [
+        "simple_domain_sword",
+        "simple_domain",
+        "kusakabe_guard",
+        "kusakabe_atsuya_shinjuku"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "mei_mei_shibuya",
+      "name": "冥冥（涩谷）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "SS",
+        "talent": "A"
+      },
+      "traits": [
+        "黑鸟操术",
+        "black_bird_manipulation"
+      ],
+      "cardTags": [
+        "black_bird_manipulation",
+        "黑鸟操术",
+        "mei_mei_shibuya"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "nobara_kugisaki_main_start",
+      "name": "钉崎野蔷薇（剧情开始）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "A",
+        "body": "B",
+        "martial": "A",
+        "talent": "A"
+      },
+      "traits": [
+        "soul",
+        "灵魂",
+        "刍灵咒法",
+        "灵魂共鸣",
+        "straw_doll_technique"
+      ],
+      "cardTags": [
+        "straw_doll_technique",
+        "soul",
+        "刍灵咒法",
+        "nobara_kugisaki_main_start"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "inumaki_toge_volume0",
+      "name": "狗卷棘（0卷）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "C",
+        "martial": "C",
+        "talent": "A"
+      },
+      "traits": [
+        "咒言",
+        "cursed_speech"
+      ],
+      "cardTags": [
+        "cursed_speech",
+        "咒言",
+        "inumaki_toge_volume0"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "panda_volume0",
+      "name": "熊猫（0卷）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "C",
+        "efficiency": "C",
+        "body": "SS",
+        "martial": "S",
+        "talent": "B"
+      },
+      "traits": [
+        "咒骸",
+        "三核心",
+        "panda_core_shift"
+      ],
+      "cardTags": [
+        "panda_core_shift",
+        "panda_volume0"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "miguel_volume0",
+      "name": "米格尔（0卷，黑绳）",
+      "stats": {
+        "cursedEnergy": "S",
+        "control": "S",
+        "efficiency": "S",
+        "body": "SS",
+        "martial": "SSS",
+        "talent": "S"
+      },
+      "traits": [
+        "cursed_tool",
+        "咒具",
+        "黑绳",
+        "cursed_tool_user",
+        "black_rope",
+        "miguel_evasion"
+      ],
+      "cardTags": [
+        "cursed_tool_user",
+        "black_rope",
+        "miguel_evasion",
+        "cursed_tool",
+        "gojo_limitless_user",
+        "miguel_volume0"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "reggie_star_culling",
+      "name": "雷吉·斯塔（死灭回游）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "S",
+        "talent": "A"
+      },
+      "traits": [
+        "summon",
+        "shikigami",
+        "式神",
+        "召唤物",
+        "recontract_icon",
+        "recontract",
+        "receipt",
+        "再契象",
+        "收据",
+        "实物具现",
+        "契约库存",
+        "道具式神",
+        "实物式神",
+        "服务收据",
+        "contract_recreation",
+        "receipt_materialization"
+      ],
+      "cardTags": [
+        "contract_recreation",
+        "recontract_icon",
+        "recontract",
+        "receipt_materialization",
+        "summon",
+        "shikigami",
+        "receipt",
+        "reggie_star_culling"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "sukuna_heian_shinjuku",
+      "name": "两面宿傩（平安/新宿决战基准）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SSS",
+        "efficiency": "S",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SSS"
+      },
+      "traits": [
+        "双面四臂",
+        "善用束缚",
+        "领域展开",
+        "domain",
+        "领域",
+        "sukuna",
+        "shrine",
+        "slash",
+        "宿傩",
+        "斩击",
+        "ten_shadows",
+        "shikigami",
+        "shadow",
+        "伏黑惠",
+        "式神",
+        "影",
+        "伏魔御厨子",
+        "开放领域",
+        "open_domain"
+      ],
+      "cardTags": [
+        "shrine",
+        "sukuna_heian_or_shinjuku",
+        "sukuna_heian_shinjuku",
+        "open_domain",
+        "sukuna",
+        "slash",
+        "宿傩",
+        "ten_shadows",
+        "shikigami",
+        "shadow",
+        "伏魔御厨子",
+        "sukuna_shrine_user",
+        "ten_shadows_user",
+        "sukuna_ten_shadows_user"
+      ],
+      "domainId": "sukuna_malevolent_shrine",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": true,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": true
+      }
+    },
+    {
+      "id": "ino_takuma_shibuya_candidate",
+      "name": "猪野琢真（涩谷）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "B",
+        "efficiency": "B",
+        "body": "A",
+        "martial": "S",
+        "talent": "B"
+      },
+      "traits": [
+        "降灵术来访瑞兽",
+        "grade2",
+        "二级术师",
+        "shibuya",
+        "auspicious_beasts"
+      ],
+      "cardTags": [
+        "ino_takuma_shibuya_candidate",
+        "猪野琢真（涩谷）",
+        "降灵术来访瑞兽",
+        "auspicious_beasts",
+        "獬豸突袭",
+        "猪野琢真",
+        "来访瑞兽",
+        "灵龟护身"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kamo_noritoshi_culling_candidate",
+      "name": "加茂宪纪（死灭回游）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "A",
+        "body": "B",
+        "martial": "B",
+        "talent": "A"
+      },
+      "traits": [
+        "赤血操术",
+        "semiGrade1",
+        "准一级术师候补",
+        "culling",
+        "blood_manipulation"
+      ],
+      "cardTags": [
+        "kamo_noritoshi_culling_candidate",
+        "加茂宪纪（死灭回游）",
+        "赤血操术",
+        "blood_manipulation",
+        "超新星",
+        "blood",
+        "百敛穿血",
+        "血刃缠臂",
+        "赤鳞跃动",
+        "苅祓"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kokichi_muta_mechamaru_candidate",
+      "name": "与幸吉／机械丸（京都校）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "A",
+        "efficiency": "B",
+        "body": "E",
+        "martial": "D",
+        "talent": "S"
+      },
+      "traits": [
+        "傀儡操术",
+        "specialGrade1",
+        "准一级术师",
+        "kyoto_school",
+        "puppet_user",
+        "remote_control",
+        "puppet_manipulation",
+        "simple_domain"
+      ],
+      "cardTags": [
+        "kokichi_muta_mechamaru_candidate",
+        "与幸吉／机械丸（京都校）",
+        "傀儡操术",
+        "puppet_user",
+        "remote_control",
+        "puppet_manipulation",
+        "simple_domain",
+        "傀儡远程齐射",
+        "与幸吉",
+        "傀儡装甲防御"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "nishimiya_momo_kyoto_candidate",
+      "name": "西宫桃（京都校）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "A",
+        "body": "C",
+        "martial": "B",
+        "talent": "A"
+      },
+      "traits": [
+        "付丧操术",
+        "grade2_support",
+        "二级术师",
+        "kyoto_school",
+        "tool_manipulation"
+      ],
+      "cardTags": [
+        "nishimiya_momo_kyoto_candidate",
+        "西宫桃（京都校）",
+        "付丧操术",
+        "tool_manipulation",
+        "broom",
+        "aerial",
+        "nishimiya_momo",
+        "evasion",
+        "support"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "mai_zenin_kyoto_candidate",
+      "name": "禅院真依（京都校）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "B",
+        "efficiency": "D",
+        "body": "C",
+        "martial": "B",
+        "talent": "C"
+      },
+      "traits": [
+        "构筑术式",
+        "grade3",
+        "三级术师",
+        "kyoto_school",
+        "construction"
+      ],
+      "cardTags": [
+        "mai_zenin_kyoto_candidate",
+        "禅院真依（京都校）",
+        "构筑术式",
+        "construction",
+        "真球构筑",
+        "perfect_sphere",
+        "液金甲胄",
+        "liquid_metal",
+        "昆虫机理",
+        "efficiency",
+        "液金",
+        "构筑素材",
+        "虫甲",
+        "防御",
+        "三重疾苦",
+        "真球"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "gakuganji_yoshinobu_kyoto_candidate",
+      "name": "乐岩寺嘉伸（京都校长）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "SS",
+        "efficiency": "A",
+        "body": "C",
+        "martial": "C",
+        "talent": "A"
+      },
+      "traits": [
+        "咒力音波",
+        "grade1_support",
+        "一级术师",
+        "kyoto_school",
+        "gakuganji_music"
+      ],
+      "cardTags": [
+        "gakuganji_yoshinobu_kyoto_candidate",
+        "乐岩寺嘉伸（京都校长）",
+        "咒力音波",
+        "gakuganji_music",
+        "乐巌寺音波",
+        "乐巌寺嘉伸",
+        "乐器咒力",
+        "扩音器反馈"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "utahime_iori_kyoto_candidate",
+      "name": "庵歌姬（京都校）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "A",
+        "body": "C",
+        "martial": "C",
+        "talent": "S"
+      },
+      "traits": [
+        "单独禁区",
+        "support_grade1",
+        "准一级术师",
+        "kyoto_school",
+        "solo_forbidden_area",
+        "solo_solo_forbidden_area",
+        "prayer_song"
+      ],
+      "cardTags": [
+        "utahime_iori_kyoto_candidate",
+        "庵歌姬（京都校）",
+        "单独禁区",
+        "solo_forbidden_area",
+        "solo_solo_forbidden_area",
+        "prayer_song",
+        "禁区仪式",
+        "孤独禁区",
+        "禁区出力强化"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "junpei_yoshino_main_start_candidate",
+      "name": "吉野顺平（剧情开始）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "B",
+        "efficiency": "B",
+        "body": "C",
+        "martial": "C",
+        "talent": "B"
+      },
+      "traits": [
+        "淀月",
+        "grade3_utility",
+        "觉醒术式者",
+        "main_start",
+        "moon_dregs"
+      ],
+      "cardTags": [
+        "junpei_yoshino_main_start_candidate",
+        "吉野顺平（剧情开始）",
+        "淀月",
+        "moon_dregs",
+        "月之泪护卫",
+        "月之泪",
+        "水母式神",
+        "月之泪毒刺"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "haruta_shigemo_shibuya_candidate",
+      "name": "重面春太（涩谷）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "C",
+        "efficiency": "C",
+        "body": "C",
+        "martial": "C",
+        "talent": "C"
+      },
+      "traits": [
+        "奇迹",
+        "grade3_survival",
+        "诅咒师",
+        "shibuya",
+        "miracles"
+      ],
+      "cardTags": [
+        "haruta_shigemo_shibuya_candidate",
+        "重面春太（涩谷）",
+        "奇迹",
+        "miracles",
+        "奇迹储备",
+        "重面春太",
+        "幸运脱身"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "awasaka_jiro_shibuya_candidate",
+      "name": "粟坂二良（涩谷）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "B",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "B",
+        "talent": "A"
+      },
+      "traits": [
+        "强弱颠倒",
+        "grade2_counter",
+        "诅咒师",
+        "shibuya",
+        "inverse"
+      ],
+      "cardTags": [
+        "awasaka_jiro_shibuya_candidate",
+        "粟坂二良（涩谷）",
+        "强弱颠倒",
+        "inverse",
+        "伤害反转",
+        "反比例术式",
+        "反比例",
+        "反转反击窗口"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "ogami_granny_shibuya_candidate",
+      "name": "参拜婆（涩谷）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "B",
+        "body": "D",
+        "martial": "D",
+        "talent": "S"
+      },
+      "traits": [
+        "降灵术",
+        "support_preparation",
+        "诅咒师",
+        "shibuya",
+        "seance_technique"
+      ],
+      "cardTags": [
+        "ogami_granny_shibuya_candidate",
+        "参拜婆（涩谷）",
+        "降灵术",
+        "seance_technique",
+        "肉体降灵",
+        "肉体信息",
+        "目标遗物追迹",
+        "媒介"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "eso_origin_candidate",
+      "name": "坏相（咒胎九相图）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "B",
+        "efficiency": "B",
+        "body": "A",
+        "martial": "A",
+        "talent": "B"
+      },
+      "traits": [
+        "蚀烂术式",
+        "semiGrade1",
+        "特级咒物受肉体",
+        "origin",
+        "rot_technique",
+        "curse_womb"
+      ],
+      "cardTags": [
+        "eso_origin_candidate",
+        "坏相（咒胎九相图）",
+        "蚀烂术式",
+        "rot_technique",
+        "curse_womb",
+        "蚀烂腐血",
+        "坏相",
+        "血涂",
+        "翅王"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kechizu_origin_candidate",
+      "name": "血涂（咒胎九相图）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "B",
+        "efficiency": "B",
+        "body": "A",
+        "martial": "A",
+        "talent": "B"
+      },
+      "traits": [
+        "蚀烂术式",
+        "semiGrade1",
+        "特级咒物受肉体",
+        "origin",
+        "rot_technique",
+        "curse_womb"
+      ],
+      "cardTags": [
+        "kechizu_origin_candidate",
+        "血涂（咒胎九相图）",
+        "蚀烂术式",
+        "rot_technique",
+        "curse_womb",
+        "蚀烂腐血",
+        "坏相",
+        "血涂",
+        "翅王"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kirara_hoshi_culling_candidate",
+      "name": "星绮罗罗（死灭回游前后）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "A",
+        "efficiency": "A",
+        "body": "C",
+        "martial": "C",
+        "talent": "S"
+      },
+      "traits": [
+        "星间飞行",
+        "support_control",
+        "准一级术师",
+        "culling",
+        "star_travel"
+      ],
+      "cardTags": [
+        "kirara_hoshi_culling_candidate",
+        "星绮罗罗（死灭回游前后）",
+        "星间飞行",
+        "star_travel",
+        "星标标定",
+        "星绮罗罗",
+        "星轨交错"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "charles_bernard_culling_candidate",
+      "name": "查理·贝尔纳（死灭回游）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "B",
+        "efficiency": "B",
+        "body": "C",
+        "martial": "B",
+        "talent": "A"
+      },
+      "traits": [
+        "G 战杖/未来画面",
+        "grade3_utility",
+        "觉醒泳者",
+        "culling",
+        "manga_artist"
+      ],
+      "cardTags": [
+        "charles_bernard_culling_candidate",
+        "查理·贝尔纳（死灭回游）",
+        "G 战杖/未来画面",
+        "manga_artist",
+        "未来画格",
+        "漫画术式",
+        "未来视",
+        "分镜切换",
+        "分镜"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "hazeno_ki_culling_candidate",
+      "name": "黄栌折（死灭回游）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "B",
+        "efficiency": "B",
+        "body": "A",
+        "martial": "S",
+        "talent": "B"
+      },
+      "traits": [
+        "爆炸肉体",
+        "grade2_brawler",
+        "觉醒泳者",
+        "culling",
+        "explosive_body",
+        "hazel"
+      ],
+      "cardTags": [
+        "hazeno_ki_culling_candidate",
+        "黄栌折（死灭回游）",
+        "爆炸肉体",
+        "explosive_body",
+        "hazel",
+        "爆牙投掷",
+        "羽生",
+        "眼球爆弹"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "remi_culling_candidate",
+      "name": "丽美（死灭回游）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "C",
+        "efficiency": "C",
+        "body": "C",
+        "martial": "C",
+        "talent": "C"
+      },
+      "traits": [
+        "蝎尾头发",
+        "grade4_trickster",
+        "觉醒泳者",
+        "culling",
+        "remi_scorpion_hair",
+        "remi_hair"
+      ],
+      "cardTags": [
+        "remi_culling_candidate",
+        "丽美（死灭回游）",
+        "蝎尾头发",
+        "remi_scorpion_hair",
+        "remi_hair",
+        "丽美",
+        "诱导"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "dhruv_lakdawalla_sendai_candidate",
+      "name": "杜鲁夫·拉克达瓦拉（仙台结界）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "SS",
+        "efficiency": "S",
+        "body": "B",
+        "martial": "B",
+        "talent": "S"
+      },
+      "traits": [
+        "式神轨迹领域",
+        "grade1_shikigami",
+        "古代特级术师",
+        "sendai",
+        "dhruv_shikigami"
+      ],
+      "cardTags": [
+        "dhruv_lakdawalla_sendai_candidate",
+        "杜鲁夫·拉克达瓦拉（仙台结界）",
+        "式神轨迹领域",
+        "dhruv_shikigami",
+        "shikigami",
+        "orbit",
+        "domain_pressure",
+        "barrier",
+        "tracking"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "kurourushi_sendai_candidate",
+      "name": "黑沐死（仙台结界）",
+      "stats": {
+        "cursedEnergy": "SS",
+        "control": "S",
+        "efficiency": "S",
+        "body": "S",
+        "martial": "A",
+        "talent": "B"
+      },
+      "traits": [
+        "腐蠊胎巢 —— 黑沐死",
+        "specialGrade_curse",
+        "特级咒灵",
+        "sendai",
+        "cockroach_swarm"
+      ],
+      "cardTags": [
+        "kurourushi_sendai_candidate",
+        "黑沐死（仙台结界）",
+        "腐蠊胎巢 —— 黑沐死",
+        "cockroach_swarm",
+        "蜚蠊啃噬",
+        "黑沐死",
+        "蜚蠊群",
+        "蜚蠊产卵"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": true,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "hanyu_culling_candidate",
+      "name": "羽生（死灭回游）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "C",
+        "efficiency": "C",
+        "body": "C",
+        "martial": "C",
+        "talent": "C"
+      },
+      "traits": [
+        "喷气头发",
+        "grade4_mobility",
+        "觉醒泳者",
+        "culling",
+        "hanyu_jet_hair"
+      ],
+      "cardTags": [
+        "hanyu_culling_candidate",
+        "羽生（死灭回游）",
+        "喷气头发",
+        "hanyu_jet_hair",
+        "羽生",
+        "高速机动",
+        "回避"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "haba_culling_candidate",
+      "name": "羽场（死灭回游）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "C",
+        "efficiency": "C",
+        "body": "C",
+        "martial": "C",
+        "talent": "C"
+      },
+      "traits": [
+        "直升机头发",
+        "grade4_mobility",
+        "觉醒泳者",
+        "culling",
+        "haba_helicopter_hair"
+      ],
+      "cardTags": [
+        "haba_culling_candidate",
+        "羽场（死灭回游）",
+        "直升机头发",
+        "haba_helicopter_hair",
+        "旋翼升空",
+        "羽场",
+        "直升机发",
+        "旋翼撞击"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "ogi_zenin_perfect_preparation_candidate",
+      "name": "禅院扇（禅院家）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "SS",
+        "talent": "B"
+      },
+      "traits": [
+        "焦眉之赳",
+        "specialGrade1",
+        "特别一级术师",
+        "perfect_preparation",
+        "ogi_flame_blade",
+        "zenin_ogi_flame_blade"
+      ],
+      "cardTags": [
+        "ogi_zenin_perfect_preparation_candidate",
+        "禅院扇（禅院家）",
+        "焦眉之赳",
+        "ogi_flame_blade",
+        "zenin_ogi_flame_blade",
+        "禅院扇"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "jinichi_zenin_perfect_preparation_candidate",
+      "name": "禅院甚一（禅院家）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "A",
+        "efficiency": "B",
+        "body": "A",
+        "martial": "SS",
+        "talent": "B"
+      },
+      "traits": [
+        "巨大咒力拳",
+        "specialGrade1",
+        "特别一级术师",
+        "perfect_preparation",
+        "jinichi_fist",
+        "zenin_jinichi",
+        "falling_blossom_emotion"
+      ],
+      "cardTags": [
+        "jinichi_zenin_perfect_preparation_candidate",
+        "禅院甚一（禅院家）",
+        "巨大咒力拳",
+        "jinichi_fist",
+        "zenin_jinichi",
+        "falling_blossom_emotion",
+        "禅院甚一",
+        "咒力拳防卫"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "ranta_zenin_perfect_preparation_candidate",
+      "name": "禅院兰太（禅院家）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "S",
+        "efficiency": "B",
+        "body": "C",
+        "martial": "C",
+        "talent": "A"
+      },
+      "traits": [
+        "视线拘束",
+        "support_grade2",
+        "准一级术师",
+        "perfect_preparation",
+        "ranta_eye_bind",
+        "zenin_ranta",
+        "falling_blossom_emotion"
+      ],
+      "cardTags": [
+        "ranta_zenin_perfect_preparation_candidate",
+        "禅院兰太（禅院家）",
+        "视线拘束",
+        "ranta_eye_bind",
+        "zenin_ranta",
+        "falling_blossom_emotion",
+        "眼缚凝视",
+        "禅院兰太",
+        "眼缚聚焦"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "naobito_zenin_shibuya_candidate",
+      "name": "禅院直毘人（涩谷）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "S",
+        "efficiency": "S",
+        "body": "S",
+        "martial": "SS",
+        "talent": "A"
+      },
+      "traits": [
+        "投射咒法",
+        "specialGrade1_high",
+        "特别一级术师",
+        "shibuya",
+        "projection_sorcery",
+        "falling_blossom_emotion"
+      ],
+      "cardTags": [
+        "naobito_zenin_shibuya_candidate",
+        "禅院直毘人（涩谷）",
+        "投射咒法",
+        "projection_sorcery",
+        "falling_blossom_emotion",
+        "投射术式",
+        "帧率"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "miwa_kasumi_kyoto_candidate",
+      "name": "三轮霞（京都校）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "B",
+        "efficiency": "B",
+        "body": "C",
+        "martial": "B",
+        "talent": "C"
+      },
+      "traits": [
+        "简易领域",
+        "grade3_defense",
+        "三级术师",
+        "kyoto_school",
+        "simple_domain_sword",
+        "simple_domain",
+        "sword_draw"
+      ],
+      "cardTags": [
+        "miwa_kasumi_kyoto_candidate",
+        "三轮霞（京都校）",
+        "简易领域",
+        "simple_domain_sword",
+        "simple_domain",
+        "sword_draw",
+        "kusakabe_guard",
+        "新阴流架势",
+        "日下部笃也",
+        "新阴流简易领域",
+        "拔刀防御",
+        "保护同伴",
+        "反击斩"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": true,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "tengen_barrier_candidate",
+      "name": "天元（结界核心）",
+      "stats": {
+        "cursedEnergy": "B",
+        "control": "SS",
+        "efficiency": "B",
+        "body": "E",
+        "martial": "E",
+        "talent": "S"
+      },
+      "traits": [
+        "不死与结界维护",
+        "strategic_support",
+        "结界核心",
+        "main_story",
+        "immortality_tengen"
+      ],
+      "cardTags": [
+        "tengen_barrier_candidate",
+        "天元（结界核心）",
+        "不死与结界维护",
+        "immortality_tengen",
+        "结界维持",
+        "天元",
+        "不死术式",
+        "同化延缓"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "ijichi_kiyotaka_support_candidate",
+      "name": "伊地知洁高（辅助监督）",
+      "stats": {
+        "cursedEnergy": "D",
+        "control": "B",
+        "efficiency": "B",
+        "body": "D",
+        "martial": "D",
+        "talent": "B"
+      },
+      "traits": [
+        "辅助监督与帐",
+        "noncombat_support",
+        "辅助监督",
+        "main_story"
+      ],
+      "cardTags": [
+        "ijichi_kiyotaka_support_candidate",
+        "伊地知洁高（辅助监督）",
+        "辅助监督与帐",
+        "assistant_supervisor",
+        "curtain",
+        "barrier",
+        "ijichi",
+        "dispatch",
+        "support"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": false,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "nanako_hasaba_volume0_candidate",
+      "name": "枷场菜菜子（0卷）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "B",
+        "efficiency": "C",
+        "body": "C",
+        "martial": "C",
+        "talent": "B"
+      },
+      "traits": [
+        "照片操控",
+        "grade3_utility",
+        "诅咒师",
+        "volume0",
+        "photo_manipulation"
+      ],
+      "cardTags": [
+        "nanako_hasaba_volume0_candidate",
+        "枷场菜菜子（0卷）",
+        "照片操控",
+        "photo_manipulation",
+        "写真帧移",
+        "写真操术",
+        "帧移",
+        "影像定格",
+        "定格"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "mimiko_hasaba_volume0_candidate",
+      "name": "枷场美美子（0卷）",
+      "stats": {
+        "cursedEnergy": "C",
+        "control": "B",
+        "efficiency": "C",
+        "body": "C",
+        "martial": "C",
+        "talent": "B"
+      },
+      "traits": [
+        "美美子玩偶术式",
+        "grade3_conditional",
+        "诅咒师",
+        "volume0",
+        "mimiko_doll"
+      ],
+      "cardTags": [
+        "mimiko_hasaba_volume0_candidate",
+        "枷场美美子（0卷）",
+        "美美子玩偶术式",
+        "mimiko_doll",
+        "枷场美美子",
+        "玩偶",
+        "缢线",
+        "牵引"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "naoya_zenin_human_perfect_preparation_candidate",
+      "name": "禅院直哉（人类）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "S",
+        "efficiency": "A",
+        "body": "A",
+        "martial": "SS",
+        "talent": "A"
+      },
+      "traits": [
+        "投射咒法",
+        "specialGrade1",
+        "特别一级术师",
+        "perfect_preparation",
+        "projection_sorcery",
+        "falling_blossom_emotion"
+      ],
+      "cardTags": [
+        "naoya_zenin_human_perfect_preparation_candidate",
+        "禅院直哉（人类）",
+        "投射咒法",
+        "projection_sorcery",
+        "falling_blossom_emotion",
+        "投射术式",
+        "帧率"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "yuka_okkotsu_modulo_candidate",
+      "name": "乙骨忧花（Modulo）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "B",
+        "efficiency": "B",
+        "body": "C",
+        "martial": "C",
+        "talent": "A"
+      },
+      "traits": [
+        "乙骨系咒力适性",
+        "modulo_candidate",
+        "未评级",
+        "modulo"
+      ],
+      "cardTags": [
+        "yuka_okkotsu_modulo_candidate",
+        "乙骨忧花（Modulo）",
+        "乙骨系咒力适性",
+        "modulo_copy_lightweight",
+        "copy",
+        "modulo",
+        "yuka_okkotsu",
+        "rika",
+        "guard"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "jabaloma_modulo_candidate",
+      "name": "贾巴洛马（Modulo）",
+      "stats": {
+        "cursedEnergy": "A",
+        "control": "B",
+        "efficiency": "B",
+        "body": "A",
+        "martial": "A",
+        "talent": "B"
+      },
+      "traits": [
+        "塞姆利亚战斗适性",
+        "modulo_candidate",
+        "未评级",
+        "modulo"
+      ],
+      "cardTags": [
+        "jabaloma_modulo_candidate",
+        "贾巴洛马（Modulo）",
+        "塞姆利亚战斗适性",
+        "jabaloma",
+        "modulo",
+        "adaptive_combat",
+        "melee",
+        "guard"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": false,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    },
+    {
+      "id": "douna_sukuna_boss",
+      "name": "Douna Sukuna Boss",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SSS",
+        "efficiency": "S",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SSS"
+      },
+      "traits": [
+        "双面四臂",
+        "善用束缚",
+        "领域展开",
+        "domain",
+        "领域",
+        "sukuna",
+        "shrine",
+        "slash",
+        "宿傩",
+        "斩击",
+        "ten_shadows",
+        "shikigami",
+        "shadow",
+        "伏黑惠",
+        "式神",
+        "影",
+        "伏魔御厨子",
+        "开放领域",
+        "open_domain",
+        "douna_boss",
+        "斗傩首领",
+        "boss_only"
+      ],
+      "cardTags": [
+        "shrine",
+        "sukuna_heian_shinjuku",
+        "open_domain",
+        "sukuna",
+        "slash",
+        "宿傩",
+        "ten_shadows",
+        "shikigami",
+        "shadow",
+        "伏魔御厨子",
+        "sukuna_shrine_user",
+        "ten_shadows_user",
+        "sukuna_ten_shadows_user",
+        "douna_sukuna_boss",
+        "douna_sukuna_life_1",
+        "douna_sukuna_life_2",
+        "douna_boss",
+        "boss_only"
+      ],
+      "domainId": "sukuna_malevolent_shrine",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": true,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": true,
+        "isDounaBoss": true
+      }
+    },
+    {
+      "id": "sukuna_heian_or_shinjuku",
+      "name": "两面宿傩（旧导入别名）",
+      "stats": {
+        "cursedEnergy": "SSS",
+        "control": "SSS",
+        "efficiency": "S",
+        "body": "SSS",
+        "martial": "SSS",
+        "talent": "SSS",
+        "cursedTechnique": 7.54,
+        "physical": 8,
+        "perception": 8,
+        "construction": 2.92
+      },
+      "traits": [
+        "御厨子",
+        "canonCeiling",
+        "特级咒物/诅咒之王",
+        "heianToShinjuku",
+        "shrine",
+        "反转术式外放",
+        "reverse_output"
+      ],
+      "cardTags": [
+        "sukuna_heian_or_shinjuku",
+        "两面宿傩（平安/新宿决战基准）",
+        "御厨子",
+        "shrine",
+        "反转术式外放",
+        "reverse_output",
+        "public_baseline"
+      ],
+      "domainId": "",
+      "flags": {
+        "hasCe": true,
+        "ceLimited": false,
+        "hasInnateTechnique": true,
+        "hasDomainAccess": true,
+        "isZeroCe": false,
+        "isCurse": false,
+        "isIncarnated": false,
+        "usesCursedTools": false,
+        "hasRctOutputAccess": false
+      }
+    }
+  ]
+}
+

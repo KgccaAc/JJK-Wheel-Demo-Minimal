@@ -1,0 +1,611 @@
+[gd_scene format=3 uid="uid://brdxbiv0p78cg"]
+
+[ext_resource type="Script" uid="uid://bun2nonru3368" path="res://scenes/community/CommunityVote.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="2_3q1he"]
+[ext_resource type="Texture2D" uid="uid://binnt2vb2ngh8" path="res://art/community/议题栏抬头.png" id="2_topic_head"]
+[ext_resource type="Texture2D" uid="uid://c8n357e71cpux" path="res://art/community/议题小窗.png" id="3_topic_card"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="3_wjxdd"]
+[ext_resource type="Texture2D" uid="uid://bfiiufskpl33n" path="res://art/community/议题标题.png" id="4_topic_title"]
+[ext_resource type="Texture2D" uid="uid://b5sd34op61wmh" path="res://art/community/正方投票.png" id="5_pro_vote"]
+[ext_resource type="Texture2D" uid="uid://dh41wshkwtm52" path="res://art/community/反方投票.png" id="6_con_vote"]
+[ext_resource type="Texture2D" uid="uid://cjkenw4io4mli" path="res://art/community/正反进度条.png" id="9_faction_bar"]
+[ext_resource type="Texture2D" uid="uid://dbxshm1k67dn0" path="res://art/community/小正反进度条.png" id="10_topic_bar"]
+[ext_resource type="Texture2D" uid="uid://ysj3qncw5hw4" path="res://art/community/提示栏.png" id="11_hint"]
+
+[node name="CommunityVote" type="Control" unique_id=293237137]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1200466890]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.5
+offset_right = -1673.5
+offset_bottom = -934.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="TextureRect" parent="Background" unique_id=1884328124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.5
+offset_right = 1672.5
+offset_bottom = 934.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_3q1he")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=1662877021]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=1241437236]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "角色选择"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=1130881475]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "领域展开 · 咒术师的终极对决"
+
+[node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=252481639]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 28.0
+offset_right = 1430.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("3_wjxdd")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background/Header/UserButton" unique_id=145281135]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=1510522901]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Background/Header" unique_id=1812906645]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="TopicList" type="Control" parent="." unique_id=1624502675]
+anchors_preset = 0
+offset_left = 69.0
+offset_top = 119.0
+offset_right = 446.0
+offset_bottom = 845.0
+
+[node name="HeaderArt" type="TextureRect" parent="TopicList" unique_id=1701097932]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 366.0
+offset_bottom = 79.0
+mouse_filter = 2
+texture = ExtResource("2_topic_head")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Label" parent="TopicList/HeaderArt" unique_id=1817203078]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 17.0
+offset_right = 350.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.11, 0.13, 0.16, 1)
+theme_override_font_sizes/font_size = 24
+text = "进行中的议题   ·  6"
+
+[node name="Topic02" type="TextureButton" parent="TopicList" unique_id=2053545398]
+layout_mode = 0
+offset_left = -18.0
+offset_top = 212.0
+offset_right = 388.0
+offset_bottom = 344.0
+texture_normal = ExtResource("3_topic_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BarSlot" type="Control" parent="TopicList/Topic02" unique_id=161921802]
+clip_contents = true
+anchors_preset = 0
+offset_left = 33.0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 105.0
+mouse_filter = 2
+
+[node name="ProFill" type="ColorRect" parent="TopicList/Topic02/BarSlot" unique_id=2110577493]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.78, 0.08, 0.09, 1)
+
+[node name="ConFill" type="ColorRect" parent="TopicList/Topic02/BarSlot" unique_id=463586887]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.1, 0.33, 0.76, 1)
+
+[node name="Status" type="Label" parent="TopicList/Topic02" unique_id=1327120644]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 16.0
+offset_right = 301.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.55, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 16
+text = "投票进行中"
+
+[node name="Name" type="Label" parent="TopicList/Topic02" unique_id=1279312594]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 44.0
+offset_right = 558.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.08, 0.11, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "2.5条悟 VS 宿傩的宿难"
+
+[node name="Meta" type="Label" parent="TopicList/Topic02" unique_id=1583529521]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 92.0
+offset_right = 453.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
+theme_override_font_sizes/font_size = 15
+text = "563 人参与              12 条评论"
+
+[node name="Topic01" type="TextureButton" parent="TopicList" unique_id=428439391]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 81.0
+offset_right = 397.0
+offset_bottom = 210.0
+texture_normal = ExtResource("3_topic_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BarSlot" type="Control" parent="TopicList/Topic01" unique_id=10742469]
+clip_contents = true
+anchors_preset = 0
+offset_left = 33.0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 105.0
+mouse_filter = 2
+
+[node name="ProFill" type="ColorRect" parent="TopicList/Topic01/BarSlot" unique_id=869694106]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.78, 0.08, 0.09, 1)
+
+[node name="ConFill" type="ColorRect" parent="TopicList/Topic01/BarSlot" unique_id=620981669]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.1, 0.33, 0.76, 1)
+
+[node name="Status" type="Label" parent="TopicList/Topic01" unique_id=1590202878]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 16.0
+offset_right = 301.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.55, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 16
+text = "投票进行中"
+
+[node name="Name" type="Label" parent="TopicList/Topic01" unique_id=930294391]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 44.0
+offset_right = 558.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.08, 0.11, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "2.5条悟 VS 宿傩的宿难"
+
+[node name="Meta" type="Label" parent="TopicList/Topic01" unique_id=698490935]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 92.0
+offset_right = 453.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
+theme_override_font_sizes/font_size = 15
+text = "563 人参与              12 条评论"
+
+[node name="Topic03" type="TextureButton" parent="TopicList" unique_id=943617687]
+layout_mode = 0
+offset_left = -21.0
+offset_top = 350.0
+offset_right = 390.0
+offset_bottom = 483.0
+texture_normal = ExtResource("3_topic_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BarSlot" type="Control" parent="TopicList/Topic03" unique_id=795951041]
+clip_contents = true
+anchors_preset = 0
+offset_left = 33.0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 105.0
+mouse_filter = 2
+
+[node name="ProFill" type="ColorRect" parent="TopicList/Topic03/BarSlot" unique_id=918323523]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.78, 0.08, 0.09, 1)
+
+[node name="ConFill" type="ColorRect" parent="TopicList/Topic03/BarSlot" unique_id=11960523]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.1, 0.33, 0.76, 1)
+
+[node name="Status" type="Label" parent="TopicList/Topic03" unique_id=801881711]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 16.0
+offset_right = 301.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.55, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 16
+text = "投票进行中"
+
+[node name="Name" type="Label" parent="TopicList/Topic03" unique_id=832366060]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 44.0
+offset_right = 558.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.08, 0.11, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "2.5条悟 VS 宿傩的宿难"
+
+[node name="Meta" type="Label" parent="TopicList/Topic03" unique_id=877171869]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 92.0
+offset_right = 453.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
+theme_override_font_sizes/font_size = 15
+text = "563 人参与              12 条评论"
+
+[node name="Topic04" type="TextureButton" parent="TopicList" unique_id=2144057993]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 487.0
+offset_right = 371.0
+offset_bottom = 623.0
+texture_normal = ExtResource("3_topic_card")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BarSlot" type="Control" parent="TopicList/Topic04" unique_id=2095682065]
+clip_contents = true
+anchors_preset = 0
+offset_left = 33.0
+offset_top = 56.0
+offset_right = 408.0
+offset_bottom = 105.0
+mouse_filter = 2
+
+[node name="ProFill" type="ColorRect" parent="TopicList/Topic04/BarSlot" unique_id=1499045146]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.78, 0.08, 0.09, 1)
+
+[node name="ConFill" type="ColorRect" parent="TopicList/Topic04/BarSlot" unique_id=1651011809]
+layout_mode = 0
+offset_left = 20.0
+offset_right = 337.0
+offset_bottom = 49.0
+color = Color(0.1, 0.33, 0.76, 1)
+
+[node name="Status" type="Label" parent="TopicList/Topic04" unique_id=761648310]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 16.0
+offset_right = 301.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.55, 0.05, 0.06, 1)
+theme_override_font_sizes/font_size = 16
+text = "投票进行中"
+
+[node name="Name" type="Label" parent="TopicList/Topic04" unique_id=631679306]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 44.0
+offset_right = 558.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.08, 0.11, 0.15, 1)
+theme_override_font_sizes/font_size = 20
+text = "2.5条悟 VS 宿傩的宿难"
+
+[node name="Meta" type="Label" parent="TopicList/Topic04" unique_id=171448584]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 92.0
+offset_right = 453.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
+theme_override_font_sizes/font_size = 15
+text = "563 人参与              12 条评论"
+
+[node name="FactionOverview" type="Control" parent="." unique_id=59472346]
+anchors_preset = 0
+offset_left = 457.0
+offset_top = 135.0
+offset_right = 1579.0
+offset_bottom = 254.0
+
+[node name="Frame" type="TextureRect" parent="FactionOverview" unique_id=1545586137]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_top = -10.0
+offset_right = 1122.0
+offset_bottom = 131.0
+mouse_filter = 2
+texture = ExtResource("9_faction_bar")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BarSlot" type="Control" parent="FactionOverview/Frame" unique_id=1684565823]
+clip_contents = true
+anchors_preset = 0
+offset_left = 102.0
+offset_top = 48.0
+offset_right = 1020.0
+offset_bottom = 97.0
+mouse_filter = 2
+
+[node name="ProFill" type="ColorRect" parent="FactionOverview/Frame/BarSlot" unique_id=1181108866]
+layout_mode = 0
+offset_left = 138.0
+offset_top = -13.0
+offset_right = 503.0
+offset_bottom = 68.0
+color = Color(0.78, 0.08, 0.09, 1)
+
+[node name="ConFill" type="ColorRect" parent="FactionOverview/Frame/BarSlot" unique_id=1515033530]
+layout_mode = 0
+offset_left = 501.0
+offset_top = -8.0
+offset_right = 774.0
+offset_bottom = 56.0
+color = Color(0.1, 0.33, 0.76, 1)
+
+[node name="ProPercent" type="Label" parent="FactionOverview" unique_id=1970677392]
+z_index = 2
+layout_mode = 0
+offset_left = 46.0
+offset_top = 10.0
+offset_right = 147.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.62, 0.08, 0.09, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="ConPercent" type="Label" parent="FactionOverview" unique_id=1857409155]
+z_index = 2
+layout_mode = 0
+offset_left = 966.0
+offset_top = 11.0
+offset_right = 1079.0
+offset_bottom = 113.0
+theme_override_colors/font_color = Color(0.08, 0.24, 0.57, 1)
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="CurrentTopic" type="Control" parent="." unique_id=925111683]
+anchors_preset = 0
+offset_left = 523.0
+offset_top = 438.0
+offset_right = 1645.0
+offset_bottom = 855.0
+
+[node name="TitleArt" type="TextureRect" parent="CurrentTopic" unique_id=310882195]
+layout_mode = 0
+offset_left = -88.0
+offset_top = -312.0
+offset_right = 1044.0
+offset_bottom = -74.0
+mouse_filter = 2
+texture = ExtResource("4_topic_title")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="Label" parent="CurrentTopic/TitleArt" unique_id=1662532387]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 76.0
+offset_right = 1139.0
+offset_bottom = 126.0
+theme_override_colors/font_color = Color(0.04, 0.07, 0.12, 1)
+theme_override_font_sizes/font_size = 34
+text = "循环播放雨爱五条悟 VS 贷款掉魔丸的宿难"
+
+[node name="Description" type="Label" parent="CurrentTopic/TitleArt" unique_id=1462948759]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 143.0
+offset_right = 1119.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0.16, 0.18, 0.2, 1)
+theme_override_font_sizes/font_size = 18
+text = "最强 VS 最强！绝对的雨爱，由此而贷款掉的魔丸，救会你束缚的是谁？"
+
+[node name="TopicBarSlot" type="Control" parent="CurrentTopic/TitleArt" unique_id=1773914903]
+clip_contents = true
+anchors_preset = 0
+offset_left = 98.0
+offset_top = 176.0
+offset_right = 1061.0
+offset_bottom = 214.0
+mouse_filter = 2
+
+[node name="ProFill" type="ColorRect" parent="CurrentTopic/TitleArt/TopicBarSlot" unique_id=302996232]
+layout_mode = 0
+offset_right = 869.0
+offset_bottom = 38.0
+color = Color(0.82, 0.1, 0.11, 1)
+
+[node name="ConFill" type="ColorRect" parent="CurrentTopic/TitleArt/TopicBarSlot" unique_id=2088189921]
+layout_mode = 0
+offset_left = 869.0
+offset_right = 962.0
+offset_bottom = 38.0
+color = Color(0.1, 0.34, 0.8, 1)
+
+[node name="Overlay" type="TextureRect" parent="CurrentTopic/TitleArt/TopicBarSlot" unique_id=1134576520]
+layout_mode = 0
+offset_left = -130.0
+offset_top = -7.0
+offset_right = 1075.0
+offset_bottom = 94.0
+mouse_filter = 2
+texture = ExtResource("10_topic_bar")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ProPercent" type="Label" parent="CurrentTopic/TitleArt/TopicBarSlot" unique_id=734568935]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+
+[node name="ConPercent" type="Label" parent="CurrentTopic/TitleArt/TopicBarSlot" unique_id=2005552136]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 4.0
+offset_right = 930.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 2
+
+[node name="ProVoteButton" type="TextureButton" parent="CurrentTopic" unique_id=631243955]
+layout_mode = 0
+offset_left = -77.0
+offset_top = -86.0
+offset_right = 369.0
+offset_bottom = 206.0
+tooltip_text = "预留：提交正方投票"
+texture_normal = ExtResource("5_pro_vote")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ConVoteButton" type="TextureButton" parent="CurrentTopic" unique_id=541400240]
+layout_mode = 0
+offset_left = 606.0
+offset_top = -76.0
+offset_right = 1071.0
+offset_bottom = 205.0
+tooltip_text = "预留：提交反方投票"
+texture_normal = ExtResource("6_con_vote")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CommentList" type="Control" parent="." unique_id=534965563]
+anchors_preset = 0
+offset_left = 523.0
+offset_top = 865.0
+offset_right = 1645.0
+offset_bottom = 930.0
+
+[node name="Hint" type="TextureRect" parent="CommentList" unique_id=446448012]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 695.0
+offset_bottom = 55.0
+mouse_filter = 2
+texture = ExtResource("11_hint")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="HintText" type="Label" parent="CommentList" unique_id=1490173220]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 15.0
+offset_right = 680.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0.25, 0.26, 0.25, 1)
+theme_override_font_sizes/font_size = 16
+text = "投票后可以发表带有正方或反方标识的评论。"
+
+
+

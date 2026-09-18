@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://che1nspldi682"]
+
+[ext_resource type="Script" uid="uid://kio24nufv3np" path="res://scenes/battle/round_summary_panel.gd" id="1_summary"]
+
+[node name="RoundSummaryPanel" type="PanelContainer" unique_id=736748390]
+visible = false
+custom_minimum_size = Vector2(320, 180)
+offset_left = 676.0
+offset_top = 350.0
+offset_right = 996.0
+offset_bottom = 530.0
+script = ExtResource("1_summary")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1295959287]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
+
+[node name="Content" type="VBoxContainer" parent="Margin" unique_id=1048414120]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Margin/Content" unique_id=1148179637]
+unique_name_in_owner = true
+layout_mode = 2
+text = "回合结算"
+horizontal_alignment = 1
+
+[node name="Body" type="RichTextLabel" parent="Margin/Content" unique_id=1322268773]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "等待结算"
+fit_content = true
+
+
+
+

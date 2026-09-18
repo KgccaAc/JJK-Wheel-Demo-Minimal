@@ -1,0 +1,739 @@
+[gd_scene format=3 uid="uid://c2yjtiych6y4v"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="1_6d7nv"]
+[ext_resource type="Texture2D" uid="uid://bmt47eoaqkf54" path="res://art/wheel/角色认定/角色名片.png" id="2_8uv40"]
+[ext_resource type="Texture2D" uid="uid://c1ii1h0t06h67" path="res://art/wheel/角色认定/评级印章/S.png" id="2_qyaqe"]
+[ext_resource type="Texture2D" uid="uid://cvoe7ypalkap8" path="res://art/wheel/角色认定/少女剪影.png" id="3_n1o6l"]
+[ext_resource type="Texture2D" uid="uid://b5ntss0hr06lc" path="res://art/wheel/角色认定/核心身份.png" id="4_f2n82"]
+[ext_resource type="Texture2D" uid="uid://du7pc4y7s8s1k" path="res://art/wheel/角色认定/角色属性.png" id="6_yxd58"]
+[ext_resource type="Texture2D" uid="uid://bghms4jmrj6n2" path="res://art/wheel/角色认定/咒力总量.png" id="7_ot3ik"]
+[ext_resource type="Texture2D" uid="uid://b1h54sultlb88" path="res://art/wheel/角色认定/数值条.png" id="8_xrbww"]
+[ext_resource type="Texture2D" uid="uid://45momceaavna" path="res://art/wheel/角色认定/咒力操纵.png" id="9_bgw4d"]
+[ext_resource type="Texture2D" uid="uid://w2lsc4rr0mor" path="res://art/wheel/角色认定/咒力效率.png" id="10_sxm31"]
+[ext_resource type="Texture2D" uid="uid://b4c1scvj6pis6" path="res://art/wheel/角色认定/悟性.png" id="11_myt5o"]
+[ext_resource type="Texture2D" uid="uid://bb4fga2c8iexx" path="res://art/wheel/角色认定/体术.png" id="12_jp4ep"]
+[ext_resource type="Texture2D" uid="uid://bo25sfq0nlw86" path="res://art/wheel/角色认定/体质.png" id="13_cigkq"]
+[ext_resource type="Texture2D" uid="uid://cmgtpnjkomtot" path="res://art/wheel/角色认定/判定结果.png" id="14_yxd58"]
+[ext_resource type="Texture2D" uid="uid://jt4f5dhfdv85" path="res://art/wheel/角色认定/角色标签5.png" id="16_85fx8"]
+[ext_resource type="Texture2D" uid="uid://44n8bh03b5uu" path="res://art/wheel/角色认定/角色标签2.png" id="16_l3rf5"]
+[ext_resource type="Texture2D" uid="uid://dac6mf7w4gcy" path="res://art/wheel/角色认定/角色标签3.png" id="17_85fx8"]
+[ext_resource type="Texture2D" uid="uid://cum4m46y8lxi8" path="res://art/wheel/角色认定/角色标签4.png" id="18_6fqd4"]
+[ext_resource type="Texture2D" uid="uid://pc4c01grmtbs" path="res://art/wheel/角色认定/下一步.png" id="19_hr7fp"]
+[ext_resource type="Texture2D" uid="uid://syo2rxfuajey" path="res://art/wheel/角色认定/保存角色.png" id="20_8r3n1"]
+[ext_resource type="Texture2D" uid="uid://djb5w3cep8pl" path="res://art/wheel/角色认定/重新抽取.png" id="21_uliyv"]
+[ext_resource type="Script" uid="uid://012kd42vcw3c" path="res://scenes/wheel/IdentityFlow.gd" id="22_identity"]
+
+[node name="Control" type="Control" unique_id=1053494826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("22_identity")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1222958515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_6d7nv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=999659117]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=1474787496]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "角色判定完成"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=108916441]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "至此，一锤定音，结局，已然落定"
+
+[node name="MoreButton" type="Button" parent="Background/Header" unique_id=74722336]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="Level" type="TextureRect" parent="." unique_id=2019686044]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 11.0
+offset_right = 583.0
+offset_bottom = 171.0
+texture = ExtResource("2_qyaqe")
+expand_mode = 1
+
+[node name="CharacterCard" type="TextureRect" parent="." unique_id=902538526]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 124.0
+offset_right = 511.0
+offset_bottom = 840.876
+texture = ExtResource("2_8uv40")
+
+[node name="Picture" type="TextureRect" parent="CharacterCard" unique_id=1675188108]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 21.0
+offset_right = 407.0
+offset_bottom = 493.0
+texture = ExtResource("3_n1o6l")
+
+[node name="Name" type="Label" parent="CharacterCard" unique_id=780389862]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 476.0
+offset_right = 306.0
+offset_bottom = 541.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 45
+text = "龙崎祥"
+
+[node name="Sex" type="Label" parent="CharacterCard" unique_id=1769999502]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 535.0
+offset_right = 251.0
+offset_bottom = 580.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "女"
+
+[node name="Age" type="Label" parent="CharacterCard" unique_id=152603472]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 579.0
+offset_right = 221.0
+offset_bottom = 613.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "刚满18岁"
+
+[node name="Time" type="Label" parent="CharacterCard" unique_id=635855772]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 578.0
+offset_right = 377.0
+offset_bottom = 612.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "剧情开始时期"
+
+[node name="Camp" type="Label" parent="CharacterCard" unique_id=2078599890]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 618.0
+offset_right = 274.0
+offset_bottom = 652.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "咒术师"
+
+[node name="Identity" type="TextureRect" parent="." unique_id=1446346152]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 125.0
+offset_right = 881.0
+offset_bottom = 607.0
+texture = ExtResource("4_f2n82")
+
+[node name="Title" type="Label" parent="Identity" unique_id=1685435777]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 41.0
+offset_right = 225.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -35
+theme_override_font_sizes/font_size = 37
+text = "核心身份"
+
+[node name="IdentityLabel" type="Label" parent="Identity" unique_id=365987448]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 156.0
+offset_right = 150.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 身份   |"
+
+[node name="Identity" type="Label" parent="Identity/IdentityLabel" unique_id=1202385120]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 1.0
+offset_right = 225.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "咒术师"
+
+[node name="Technicalabel" type="Label" parent="Identity" unique_id=35300006]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 204.0
+offset_right = 150.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 术式   |"
+
+[node name="Technical" type="Label" parent="Identity/Technicalabel" unique_id=606094567]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 2.0
+offset_right = 243.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "坐标操术"
+
+[node name="DomainLabel" type="Label" parent="Identity" unique_id=2064067821]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 251.0
+offset_right = 150.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 领域   |"
+
+[node name="Domain" type="Label" parent="Identity/DomainLabel" unique_id=984219555]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 2.0
+offset_right = 245.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "此方彼方"
+
+[node name="NameLabel" type="Label" parent="Identity" unique_id=299369180]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 108.0
+offset_right = 150.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 姓名   |"
+
+[node name="Name" type="Label" parent="Identity/NameLabel" unique_id=603950807]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 1.0
+offset_right = 225.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "龙崎祥"
+
+[node name="TimeLabel" type="Label" parent="Identity" unique_id=760421080]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 299.0
+offset_right = 145.0
+offset_bottom = 343.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 时间线   |"
+
+[node name="Time" type="Label" parent="Identity/TimeLabel" unique_id=462183043]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 2.0
+offset_right = 305.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "剧情开始时期"
+
+[node name="LocationLabel" type="Label" parent="Identity" unique_id=646281330]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 347.0
+offset_right = 151.0
+offset_bottom = 391.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 地点   |"
+
+[node name="Location" type="Label" parent="Identity/LocationLabel" unique_id=1602029623]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 2.0
+offset_right = 245.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "东京"
+
+[node name="CampLabel" type="Label" parent="Identity" unique_id=418075246]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 395.0
+offset_right = 151.0
+offset_bottom = 439.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = " 阵营   |"
+
+[node name="Camp" type="Label" parent="Identity/CampLabel" unique_id=978958034]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 2.0
+offset_right = 245.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 26
+text = "咒术高专"
+
+[node name="Attribute" type="TextureRect" parent="." unique_id=392155261]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 129.0
+offset_right = 1650.0
+offset_bottom = 607.0
+texture = ExtResource("6_yxd58")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Attribute" unique_id=1464027886]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 37.0
+offset_right = 251.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "角色属性"
+
+[node name="Control" type="Control" parent="Attribute" unique_id=678843680]
+anchors_preset = 0
+offset_left = 37.0
+offset_top = 96.0
+offset_right = 742.0
+offset_bottom = 440.0
+
+[node name="CeMax" type="TextureRect" parent="Attribute/Control" unique_id=326994645]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 81.0
+offset_bottom = 81.0
+texture = ExtResource("7_ot3ik")
+
+[node name="Title" type="Label" parent="Attribute/Control/CeMax" unique_id=492832316]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -4.0
+offset_right = 178.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "咒力总量"
+
+[node name="Value" type="Label" parent="Attribute/Control/CeMax" unique_id=455231425]
+layout_mode = 0
+offset_left = 191.0
+offset_top = -3.0
+offset_right = 231.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "325"
+
+[node name="Tube" type="TextureRect" parent="Attribute/Control/CeMax" unique_id=768469083]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 73.0
+texture = ExtResource("8_xrbww")
+
+[node name="CeMax2" type="TextureRect" parent="Attribute/Control" unique_id=107971400]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 115.0
+offset_right = 81.0
+offset_bottom = 193.0
+texture = ExtResource("9_bgw4d")
+
+[node name="Title" type="Label" parent="Attribute/Control/CeMax2" unique_id=1484570274]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -4.0
+offset_right = 178.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "咒力操纵"
+
+[node name="Value" type="Label" parent="Attribute/Control/CeMax2" unique_id=1871426352]
+layout_mode = 0
+offset_left = 191.0
+offset_top = -3.0
+offset_right = 231.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "325"
+
+[node name="Tube" type="TextureRect" parent="Attribute/Control/CeMax2" unique_id=1101178534]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 73.0
+texture = ExtResource("8_xrbww")
+
+[node name="CeMax3" type="TextureRect" parent="Attribute/Control" unique_id=1382326337]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 235.0
+offset_right = 81.0
+offset_bottom = 313.0
+texture = ExtResource("10_sxm31")
+
+[node name="Title" type="Label" parent="Attribute/Control/CeMax3" unique_id=603111931]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -4.0
+offset_right = 178.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "咒力效率"
+
+[node name="Value" type="Label" parent="Attribute/Control/CeMax3" unique_id=1744678768]
+layout_mode = 0
+offset_left = 191.0
+offset_top = -3.0
+offset_right = 231.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "325"
+
+[node name="Tube" type="TextureRect" parent="Attribute/Control/CeMax3" unique_id=1833959176]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 73.0
+texture = ExtResource("8_xrbww")
+
+[node name="CeMax4" type="TextureRect" parent="Attribute/Control" unique_id=1161531418]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 235.0
+offset_right = 433.0
+offset_bottom = 313.0
+texture = ExtResource("11_myt5o")
+
+[node name="Title" type="Label" parent="Attribute/Control/CeMax4" unique_id=490938405]
+layout_mode = 0
+offset_left = 97.0
+offset_top = -4.0
+offset_right = 193.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "悟性"
+
+[node name="Value" type="Label" parent="Attribute/Control/CeMax4" unique_id=1370109025]
+layout_mode = 0
+offset_left = 175.0
+offset_top = -3.0
+offset_right = 215.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "325"
+
+[node name="Tube" type="TextureRect" parent="Attribute/Control/CeMax4" unique_id=745242268]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 73.0
+texture = ExtResource("8_xrbww")
+
+[node name="CeMax5" type="TextureRect" parent="Attribute/Control" unique_id=366563682]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 115.0
+offset_right = 425.0
+offset_bottom = 193.0
+texture = ExtResource("12_jp4ep")
+
+[node name="Title" type="Label" parent="Attribute/Control/CeMax5" unique_id=880584776]
+layout_mode = 0
+offset_left = 98.0
+offset_top = -4.0
+offset_right = 194.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "体术"
+
+[node name="Value" type="Label" parent="Attribute/Control/CeMax5" unique_id=1368070799]
+layout_mode = 0
+offset_left = 175.0
+offset_top = -3.0
+offset_right = 215.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "325"
+
+[node name="Tube" type="TextureRect" parent="Attribute/Control/CeMax5" unique_id=139293418]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 73.0
+texture = ExtResource("8_xrbww")
+
+[node name="CeMax6" type="TextureRect" parent="Attribute/Control" unique_id=2061625673]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 3.0
+offset_right = 425.0
+offset_bottom = 81.0
+texture = ExtResource("13_cigkq")
+
+[node name="Title" type="Label" parent="Attribute/Control/CeMax6" unique_id=445832283]
+layout_mode = 0
+offset_left = 98.0
+offset_top = -4.0
+offset_right = 194.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "体质"
+
+[node name="Value" type="Label" parent="Attribute/Control/CeMax6" unique_id=1566955521]
+layout_mode = 0
+offset_left = 175.0
+offset_top = -3.0
+offset_right = 215.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "325"
+
+[node name="Tube" type="TextureRect" parent="Attribute/Control/CeMax6" unique_id=1616367300]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 26.0
+offset_right = 297.0
+offset_bottom = 73.0
+texture = ExtResource("8_xrbww")
+
+[node name="Report" type="TextureRect" parent="." unique_id=831453129]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 604.0
+offset_right = 1093.3223
+offset_bottom = 840.0
+texture = ExtResource("14_yxd58")
+
+[node name="Title" type="Label" parent="Report" unique_id=624786707]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 19.0
+offset_right = 201.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 29
+text = "角色特质"
+
+[node name="Special" type="Label" parent="Report" unique_id=2129970141]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 58.0
+offset_right = 267.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "特质："
+
+[node name="Special" type="Label" parent="Report/Special" unique_id=1648618556]
+layout_mode = 0
+offset_left = 75.0
+offset_top = -31.0
+offset_right = 341.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0.37015027, 0.17319986, 0.14462444, 1)
+theme_override_font_sizes/font_size = 19
+text = "六眼、半人半咒灵、超级受肉体
+天与暴君、星浆体、两面四臂、
+咒骸制作、简易领域、随意黑闪"
+
+[node name="Special2" type="Label" parent="Report" unique_id=1039292281]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 140.0
+offset_right = 269.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "咒具："
+
+[node name="Special" type="Label" parent="Report/Special2" unique_id=182877174]
+layout_mode = 0
+offset_left = 69.0
+offset_top = -15.0
+offset_right = 335.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0.16171598, 0.22699484, 0.37094215, 1)
+theme_override_font_sizes/font_size = 19
+text = "天逆鉾、游云、屠座魔、黑绳、
+狱门疆、噬魂剑、神武解、
+飞天"
+
+[node name="Tag" type="TextureRect" parent="." unique_id=559160897]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 606.0
+offset_right = 1649.0
+offset_bottom = 842.0
+texture = ExtResource("6_yxd58")
+expand_mode = 1
+
+[node name="TechTag" type="TextureRect" parent="Tag" unique_id=586514934]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 39.0
+offset_right = 196.0
+offset_bottom = 95.0
+texture = ExtResource("16_85fx8")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Tag/TechTag" unique_id=814806722]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 12.0
+offset_right = 161.0
+offset_bottom = 52.0
+autowrap_mode = 3
+
+[node name="TechTag2" type="TextureRect" parent="Tag" unique_id=654360276]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 31.0
+offset_right = 372.93335
+offset_bottom = 96.0
+texture = ExtResource("16_l3rf5")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Tag/TechTag2" unique_id=388323196]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 162.0
+offset_bottom = 55.0
+autowrap_mode = 3
+
+[node name="TechTag3" type="TextureRect" parent="Tag" unique_id=482761199]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 33.0
+offset_right = 547.2894
+offset_bottom = 99.0
+texture = ExtResource("17_85fx8")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Tag/TechTag3" unique_id=740061585]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 12.0
+offset_right = 162.0
+offset_bottom = 54.0
+autowrap_mode = 3
+
+[node name="TechTag4" type="TextureRect" parent="Tag" unique_id=614468078]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 107.0
+offset_right = 197.92648
+offset_bottom = 166.0
+texture = ExtResource("18_6fqd4")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Tag/TechTag4" unique_id=1595984999]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 161.0
+offset_bottom = 51.0
+autowrap_mode = 3
+
+[node name="Next" type="TextureButton" parent="." unique_id=1650137278]
+layout_mode = 0
+offset_left = 1116.0
+offset_top = 838.0
+offset_right = 1553.9546
+offset_bottom = 920.0
+texture_normal = ExtResource("19_hr7fp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Next" unique_id=1752030932]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 13.0
+offset_right = 293.0
+offset_bottom = 68.0
+theme_override_font_sizes/font_size = 34
+text = "继续下一步"
+
+[node name="Save" type="TextureButton" parent="." unique_id=1220887988]
+layout_mode = 0
+offset_left = 648.0
+offset_top = 834.0
+offset_right = 956.0
+offset_bottom = 924.0
+texture_normal = ExtResource("20_8r3n1")
+stretch_mode = 0
+
+[node name="Restart" type="TextureButton" parent="." unique_id=353281147]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 835.0
+offset_right = 480.0
+offset_bottom = 929.0
+texture_normal = ExtResource("21_uliyv")
+stretch_mode = 0

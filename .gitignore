@@ -1,0 +1,19 @@
+backend/.runtime/
+.runtime/
+.godot/
+.godot-user/
+%SystemDrive%/
+Godot/
+card/
+backend/.preview-login-card-data/
+*.orig
+
+# Bundled Godot binaries and export templates are reproducible and exceed
+# GitHub's regular file-size limit.
+tools/godot-web-audit/Godot_v*-stable_win64.exe
+tools/godot-web-audit/Godot_v*-stable_win64_console.exe
+tools/godot-web-audit/Godot_v*-stable_export_templates.tpz
+
+# Generated Web audit/export output.
+web-audit/
+web-preview-localcheck/

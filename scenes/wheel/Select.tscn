@@ -1,0 +1,583 @@
+[gd_scene format=3 uid="uid://crkfoe0dlr03c"]
+
+[ext_resource type="Script" path="res://scenes/wheel/SelectFlow.gd" id="22_select"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="1_euupf"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="2_3qbsb"]
+[ext_resource type="Script" uid="uid://bg0uykylnxhuj" path="res://ui/navigation/BottomNav.gd" id="3_06ypf"]
+[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/选中状态主页小标.png" id="4_7kyeo"]
+[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/未选中状态角色小标.png" id="5_dibc4"]
+[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/未选中状态战斗小标.png" id="6_cu1y8"]
+[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/未选中状态论坛小标.png" id="7_snmqk"]
+[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/未选中状态OC小标.png" id="8_frcer"]
+[ext_resource type="Texture2D" uid="uid://brfso6ixwp8er" path="res://art/Story/角色数据.png" id="9_8ni1f"]
+[ext_resource type="Texture2D" uid="uid://bghms4jmrj6n2" path="res://art/wheel/角色认定/咒力总量.png" id="10_pmxu5"]
+[ext_resource type="Texture2D" uid="uid://45momceaavna" path="res://art/wheel/角色认定/咒力操纵.png" id="11_x1d64"]
+[ext_resource type="Texture2D" uid="uid://bb4fga2c8iexx" path="res://art/wheel/角色认定/体术.png" id="12_vwccm"]
+[ext_resource type="Texture2D" uid="uid://bo25sfq0nlw86" path="res://art/wheel/角色认定/体质.png" id="13_1m6ky"]
+[ext_resource type="Texture2D" uid="uid://w2lsc4rr0mor" path="res://art/wheel/角色认定/咒力效率.png" id="14_evntv"]
+[ext_resource type="Texture2D" uid="uid://b4c1scvj6pis6" path="res://art/wheel/角色认定/悟性.png" id="15_yd6qd"]
+[ext_resource type="Texture2D" uid="uid://cvoe7ypalkap8" path="res://art/wheel/角色认定/少女剪影.png" id="16_8utfq"]
+[ext_resource type="Texture2D" uid="uid://df4ehd00nfv8k" path="res://art/wheel/角色认定/模式选择/故事模式.png" id="17_h5vr0"]
+[ext_resource type="Texture2D" uid="uid://bfhrij1rhrrvh" path="res://art/wheel/角色认定/模式选择/转盘模式.png" id="18_ussa7"]
+[ext_resource type="Texture2D" uid="uid://n38ap2yw7mqr" path="res://art/wheel/角色认定/模式选择/返回角色判定页.png" id="19_rpalf"]
+[ext_resource type="Texture2D" uid="uid://wipw3j0ucblg" path="res://art/wheel/角色认定/模式选择/保存提示.png" id="20_45ke4"]
+[ext_resource type="Texture2D" uid="uid://bngi7coib88q6" path="res://art/wheel/角色认定/模式选择/查看完整数据档案.png" id="21_t7ilg"]
+
+[node name="Control" type="Control" unique_id=222476451]
+script = ExtResource("22_select")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=744377072]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_euupf")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=1450413053]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=991827138]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "角色判定完成"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=975922304]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "至此，一锤定音，结局，已然落定"
+
+[node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=1294449938]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 28.0
+offset_right = 1430.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_3qbsb")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background/Header/UserButton" unique_id=968638934]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=1925192393]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Background/Header" unique_id=707772420]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="BottomNav" type="HBoxContainer" parent="Background" unique_id=492499589]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.875
+anchor_right = 0.96
+anchor_bottom = 0.995
+offset_left = 6.1200027
+offset_top = 3.625
+offset_right = -0.11999512
+offset_bottom = -17.294983
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("3_06ypf")
+
+[node name="HomeButton" type="TextureButton" parent="Background/BottomNav" unique_id=691540399]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_7kyeo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharacterButton" type="TextureButton" parent="Background/BottomNav" unique_id=1889503065]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_dibc4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BattleButton" type="TextureButton" parent="Background/BottomNav" unique_id=692665610]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_cu1y8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ForumButton" type="TextureButton" parent="Background/BottomNav" unique_id=1352999909]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_snmqk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ArchiveButton" type="TextureButton" parent="Background/BottomNav" unique_id=24452305]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_frcer")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharacterTable" type="TextureRect" parent="." unique_id=1808823436]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 119.0
+offset_right = 802.0
+offset_bottom = 822.0
+texture = ExtResource("9_8ni1f")
+
+[node name="NameLabel" type="Label" parent="CharacterTable" unique_id=402827335]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 101.0
+offset_right = 497.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = " 姓名"
+
+[node name="Name" type="Label" parent="CharacterTable/NameLabel" unique_id=2136813486]
+layout_mode = 0
+offset_left = 136.0
+offset_top = -3.0
+offset_right = 300.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "龙崎祥"
+
+[node name="IdentityLabel" type="Label" parent="CharacterTable" unique_id=1351227701]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 167.0
+offset_right = 497.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = " 身份"
+
+[node name="Identity" type="Label" parent="CharacterTable/IdentityLabel" unique_id=120177976]
+layout_mode = 0
+offset_left = 136.0
+offset_top = -3.0
+offset_right = 300.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "咒术师"
+
+[node name="Technicalabel" type="Label" parent="CharacterTable" unique_id=1501019098]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 231.0
+offset_right = 497.0
+offset_bottom = 273.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = " 术式"
+
+[node name="Technical" type="Label" parent="CharacterTable/Technicalabel" unique_id=1304168852]
+layout_mode = 0
+offset_left = 136.0
+offset_top = -3.0
+offset_right = 300.0
+offset_bottom = 42.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "坐标操术"
+
+[node name="DomainLabel" type="Label" parent="CharacterTable" unique_id=1204557157]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 295.0
+offset_right = 497.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = " 领域"
+
+[node name="Domain" type="Label" parent="CharacterTable/DomainLabel" unique_id=710354201]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 299.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "此方彼方"
+
+[node name="CharacterValue" type="Control" parent="CharacterTable" unique_id=2006303858]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CeMax" type="Label" parent="CharacterTable/CharacterValue" unique_id=747617673]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 422.0
+offset_right = 235.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "457"
+
+[node name="Value" type="Label" parent="CharacterTable/CharacterValue/CeMax" unique_id=480665711]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "咒力总量"
+
+[node name="Item" type="TextureRect" parent="CharacterTable/CharacterValue/CeMax" unique_id=1179223692]
+layout_mode = 0
+offset_left = -153.0
+offset_top = -14.0
+offset_right = -111.0
+offset_bottom = 26.0
+texture = ExtResource("10_pmxu5")
+expand_mode = 1
+
+[node name="CeControl" type="Label" parent="CharacterTable/CharacterValue" unique_id=1197487244]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 482.0
+offset_right = 235.0
+offset_bottom = 500.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "457"
+
+[node name="Value" type="Label" parent="CharacterTable/CharacterValue/CeControl" unique_id=348969378]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "咒力操纵"
+
+[node name="Item" type="TextureRect" parent="CharacterTable/CharacterValue/CeControl" unique_id=812927238]
+layout_mode = 0
+offset_left = -153.0
+offset_top = -14.0
+offset_right = -111.0
+offset_bottom = 26.0
+texture = ExtResource("11_x1d64")
+expand_mode = 1
+
+[node name="BodyTech" type="Label" parent="CharacterTable/CharacterValue" unique_id=113797636]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 541.0
+offset_right = 235.0
+offset_bottom = 559.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "457"
+
+[node name="Value" type="Label" parent="CharacterTable/CharacterValue/BodyTech" unique_id=251719724]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "    体术"
+
+[node name="Item" type="TextureRect" parent="CharacterTable/CharacterValue/BodyTech" unique_id=891119451]
+layout_mode = 0
+offset_left = -153.0
+offset_top = -14.0
+offset_right = -111.0
+offset_bottom = 26.0
+texture = ExtResource("12_vwccm")
+expand_mode = 1
+
+[node name="Constitution" type="Label" parent="CharacterTable/CharacterValue" unique_id=876645869]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 422.0
+offset_right = 607.0
+offset_bottom = 440.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "457"
+
+[node name="Value" type="Label" parent="CharacterTable/CharacterValue/Constitution" unique_id=1770205555]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "    体质"
+
+[node name="Item" type="TextureRect" parent="CharacterTable/CharacterValue/Constitution" unique_id=37153283]
+layout_mode = 0
+offset_left = -158.0
+offset_top = -14.0
+offset_right = -116.0
+offset_bottom = 26.0
+texture = ExtResource("13_1m6ky")
+expand_mode = 1
+
+[node name="CeEfficiency" type="Label" parent="CharacterTable/CharacterValue" unique_id=486148887]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 481.0
+offset_right = 609.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "457"
+
+[node name="Value" type="Label" parent="CharacterTable/CharacterValue/CeEfficiency" unique_id=1537397322]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "咒力效率"
+
+[node name="Item" type="TextureRect" parent="CharacterTable/CharacterValue/CeEfficiency" unique_id=1507950008]
+layout_mode = 0
+offset_left = -159.0
+offset_top = -14.0
+offset_right = -117.0
+offset_bottom = 26.0
+texture = ExtResource("14_evntv")
+expand_mode = 1
+
+[node name="Insight" type="Label" parent="CharacterTable/CharacterValue" unique_id=1430454063]
+layout_mode = 0
+offset_left = 586.0
+offset_top = 541.0
+offset_right = 610.0
+offset_bottom = 559.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "457"
+
+[node name="Value" type="Label" parent="CharacterTable/CharacterValue/Insight" unique_id=2138693722]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -20.0
+offset_right = 36.0
+offset_bottom = -1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 13
+text = "    悟性"
+
+[node name="Item" type="TextureRect" parent="CharacterTable/CharacterValue/Insight" unique_id=193891342]
+layout_mode = 0
+offset_left = -159.0
+offset_top = -14.0
+offset_right = -117.0
+offset_bottom = 26.0
+texture = ExtResource("15_yd6qd")
+expand_mode = 1
+
+[node name="Shadow" type="TextureRect" parent="CharacterTable" unique_id=1046588065]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 92.0
+offset_right = 301.0
+offset_bottom = 386.14136
+texture = ExtResource("16_8utfq")
+expand_mode = 1
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=889168496]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 448.0
+offset_right = 1658.0
+offset_bottom = 663.0
+texture_normal = ExtResource("17_h5vr0")
+
+[node name="Title" type="Label" parent="TextureButton" unique_id=244250073]
+layout_mode = 0
+offset_left = 249.0
+offset_top = 40.0
+offset_right = 753.0
+offset_bottom = 132.0
+theme_override_font_sizes/font_size = 60
+text = "使用沉浸故事模式"
+
+[node name="SubTitle" type="Label" parent="TextureButton" unique_id=433037993]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 136.0
+offset_right = 730.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 28
+text = "依靠真实卡牌战斗和角色扮演决定剧情"
+
+[node name="Wheel" type="TextureButton" parent="." unique_id=2020105561]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 224.0
+offset_right = 1659.0
+offset_bottom = 450.0
+texture_normal = ExtResource("18_ussa7")
+
+[node name="Title" type="Label" parent="Wheel" unique_id=2094867703]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 43.0
+offset_right = 752.0
+offset_bottom = 135.0
+theme_override_font_sizes/font_size = 60
+text = "继续游玩转盘模式"
+
+[node name="SubTitle" type="Label" parent="Wheel" unique_id=145792891]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 138.0
+offset_right = 684.0
+offset_bottom = 186.0
+theme_override_font_sizes/font_size = 28
+text = "依靠转盘进行战斗和剧情推进"
+
+[node name="Title" type="Label" parent="." unique_id=1607885743]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 127.0
+offset_right = 1121.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 40
+text = "后续游玩方式选择"
+
+[node name="Subtitle" type="Label" parent="." unique_id=1767202694]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 184.0
+offset_right = 1214.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 21
+text = "角色属性将会作为后续游玩的基础"
+
+[node name="Back" type="TextureRect" parent="." unique_id=38788481]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 748.0
+offset_right = 1196.0
+offset_bottom = 829.0
+texture = ExtResource("19_rpalf")
+
+[node name="SubTitle" type="Label" parent="Back" unique_id=1040466877]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 20.0
+offset_right = 276.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "返回角色判定"
+
+[node name="SaveTitle" type="TextureRect" parent="." unique_id=987788429]
+layout_mode = 0
+offset_left = 790.0
+offset_top = 676.0
+offset_right = 1655.0
+offset_bottom = 743.0
+texture = ExtResource("20_45ke4")
+
+[node name="SubTitle" type="Label" parent="SaveTitle" unique_id=1515714301]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 7.0
+offset_right = 546.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+text = "当前角色已经保存"
+
+[node name="Detail" type="TextureRect" parent="." unique_id=594449571]
+layout_mode = 0
+offset_left = 1250.0
+offset_top = 747.0
+offset_right = 1606.0
+offset_bottom = 825.0
+texture = ExtResource("21_t7ilg")
+
+[node name="SubTitle" type="Label" parent="Detail" unique_id=698272327]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 21.0
+offset_right = 278.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "查看角色详情"

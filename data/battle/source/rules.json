@@ -1,0 +1,148 @@
+{
+  "schema": "jjk-battle-rules-direct-v1",
+  "version": 1,
+  "hand": {
+    "defaultChoiceCount": 8,
+    "minChoiceCount": 3,
+    "maxChoiceCount": 8,
+    "maxHandSize": 8,
+    "drawPerTurn": 5,
+    "overflowDiscardMode": "auto_low_priority_candidate",
+    "discardFromRemainingAndNew": true,
+    "selectionMode": "multi_action_ap_beta",
+    "allowMultipleSelectionsPerTurn": true,
+    "maxSelectionsPerTurn": 3,
+    "disableSelectedCandidate": true,
+    "requireManualResolve": true
+  },
+  "domainHand": {
+    "enabled": true,
+    "maxHandSize": 3,
+    "refreshEachRound": true,
+    "excludeFromNormalHandLimit": true,
+    "specialDomainWeightBonus": 2,
+    "domainAccessWeightBonus": 1,
+    "notes": "Domain / anti-domain / domain-maintenance cards use independent control slots and do not count toward the normal 8-card hand limit."
+  },
+  "ap": {
+    "basePerTurn": 2,
+    "maxPerTurn": 3,
+    "carryOver": false
+  },
+  "cpuDifficulty": {
+    "default": "normal",
+    "options": {
+      "easy": {
+        "label": "简单：陪练",
+        "beamWidth": 1,
+        "scoreNoise": 0.2,
+        "mistakeRate": 0.2
+      },
+      "normal": {
+        "label": "普通：稳定",
+        "beamWidth": 3,
+        "scoreNoise": 0,
+        "mistakeRate": 0
+      },
+      "hard": {
+        "label": "困难：强规划",
+        "beamWidth": 5,
+        "scoreNoise": 0,
+        "mistakeRate": 0
+      }
+    }
+  },
+  "resource": {
+    "hp": {
+      "base": 118,
+      "bodyScale": 15.5,
+      "martialScale": 10.5,
+      "visibleGradeScale": 18,
+      "combatUnitScale": 0.012,
+      "zeroCeBodyBonus": 22,
+      "physicalTagBonus": 14,
+      "min": 80,
+      "max": 460
+    },
+    "ce": {
+      "base": 82,
+      "cursedEnergyScale": 20,
+      "techniqueScale": 9,
+      "visibleGradeScale": 22,
+      "jujutsuAxisScale": 7.5,
+      "zeroCeCap": 32,
+      "min": 36,
+      "max": 560
+    },
+    "regen": {
+      "baseRatio": 0.04,
+      "controlScale": 0.0025,
+      "efficiencyScale": 0.0035,
+      "talentScale": 0.0015,
+      "efficiencyLockBonus": 0.01,
+      "minRatio": 0.025,
+      "maxRatio": 0.12
+    },
+    "stability": {
+      "base": 0.38,
+      "controlScale": 0.034,
+      "efficiencyScale": 0.028,
+      "talentScale": 0.018,
+      "topDomainBonus": 0.055,
+      "efficiencyLockBonus": 0.045,
+      "haxVolatilityPenalty": 0.055,
+      "min": 0.2,
+      "max": 0.96
+    },
+    "domain": {
+      "baseThreshold": 58,
+      "controlScale": 5.5,
+      "efficiencyScale": 4,
+      "talentScale": 3.2,
+      "visibleGradeScale": 7,
+      "topDomainBonus": 24,
+      "openDomainBonus": 32,
+      "customDomainBonus": 12,
+      "domainSustainBonus": 14,
+      "activationLoad": 16,
+      "eventLoad": 18,
+      "maintainLoad": 8,
+      "oppositionLoad": 10,
+      "lowCeLoad": 8,
+      "stabilityRelief": 9,
+      "meltdownCeLossRatio": 0.28,
+      "meltdownStabilityPenalty": 0.08
+    },
+    "statusEffects": {
+      "techniqueImbalance": {
+        "label": "术式失衡",
+        "rounds": 2,
+        "weightPenalty": 1.45,
+        "outputScale": 0.72,
+        "affectedEvents": [
+          "technique",
+          "domain",
+          "finisher"
+        ]
+      },
+      "ceRegenBlocked": {
+        "label": "咒力回流断裂",
+        "rounds": 1,
+        "regenScale": 0
+      }
+    },
+    "limits": {
+      "minHp": 0,
+      "minCe": 0
+    }
+  },
+  "phases": [
+    "prepare",
+    "draw",
+    "select",
+    "resolve",
+    "cleanup",
+    "ended"
+  ]
+}
+

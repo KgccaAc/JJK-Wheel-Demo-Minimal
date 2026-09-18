@@ -1,0 +1,30 @@
+[Unit]
+Description=JJK Preview Room Service (online-battle-v3 authority)
+After=network.target jjk-preview-login-card.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/jjk-preview-room
+Environment=NODE_ENV=production
+Environment=PREVIEW_ROOM_HOST=127.0.0.1
+Environment=PREVIEW_ROOM_PORT=8789
+Environment=PREVIEW_ROOM_DATA_DIR=/opt/jjk-preview-room/data
+# Local origins are explicit development origins for the local Web export; do
+# not replace this with a wildcard because the public gateway accepts requests
+# carrying login-card-derived character snapshots.
+Environment=PREVIEW_ROOM_ALLOWED_ORIGIN=https://119.91.224.223,http://127.0.0.1:8088,http://localhost:8088
+Environment=PREVIEW_WORKER_ALLOWED_ORIGIN=https://119.91.224.223,http://127.0.0.1:8088,http://localhost:8088
+Environment=PREVIEW_LOGIN_CARD_URL=http://127.0.0.1:8788
+Environment=BATTLE_DATA_ROOT=/opt/jjk-preview-room/data/battle/source
+Environment=PREVIEW_ROOM_WS_MAX_CONNECTIONS=4
+Environment=PREVIEW_ROOM_WS_IDLE_TIMEOUT_MS=75000
+Environment=PREVIEW_ROOM_WS_GRACE_MS=15000
+ExecStart=/opt/jjk-node24/bin/node /opt/jjk-preview-room/preview-room-server.mjs
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

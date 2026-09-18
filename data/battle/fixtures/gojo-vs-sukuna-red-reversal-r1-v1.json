@@ -1,0 +1,22 @@
+{
+  "schema": "godot-source-duel-turn-fixture-v1",
+  "ruleset_version": "godot-battle-rules-v1",
+  "seed": "godot-baseline-seed-001",
+  "round": 1,
+  "input": {
+    "left": [
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:normal:card_spatial_red_reversal:3:d3df5732","action_id":"card_spatial_red_reversal","name":"术式反转·赫","ap_cost":1,"ce_cost":51.3,"type":"attack","drawn_round":1,"hand_source":"draw"}
+    ],
+    "right": []
+  },
+  "after": {
+    "round": 1,
+    "left": {"hp":500,"ce":300,"statuses":[{"id":"highCeSaturation","label":"充盈（伤害提高0%）","rounds":2,"value":0,"category":"增益状态","displayOnly":true,"appliedTurn":1}]},
+    "right": {"hp":500,"ce":300,"statuses":[]}
+  },
+  "events": [
+    {"side":"left","actionId":"card_spatial_red_reversal","displayName":"术式反转·赫","applied":true,"skippedDueToBattleEnd":false,"blocked":false,"reason":"","costCe":33.356,"damageApplied":0,"directDamage":0,"directDamageBeforeScale":61,"damageBlocked":0,"healingApplied":0,"hpCost":0,"actorHp":0,"opponentHp":0,"actorDomainLoad":0,"evasion":{"checked":true,"evaded":true,"profile":"technique_projectile","hitRate":0.74,"roll":0.8676},"damageTarget":{"type":"character","id":"right","name":"两面宿傩（旧导入别名）","side":"right","intercepted":false,"selectionMode":"opponent_character"},"damageScale":{"pendingOutgoingScale":1,"activeStatusOutgoingScale":1,"effectDamageScale":1,"tacticDamageScale":0.97,"tacticId":"balanced","initiativeCostScale":0.95,"initiativeDefenseScale":0.9,"defenderIncomingHpScale":0.828,"defenderCardBlockScale":1,"effectiveDefenderCardBlockScale":1,"panelDefensePreventedDamage":38.3,"total":0.8032,"damageBeforeDefenderScale":59.2,"damageAfterDefenderScale":49,"defenderPreventedDamage":10.2},"damageMitigation":{"targetSide":"right","targetType":"character","targetId":"right","targetName":"两面宿傩（旧导入别名）","incomingBeforeDefense":97.5,"afterScaleDefense":49,"panelDefensePrevented":38.3,"scalePrevented":10.2,"inversePrevented":0,"inverseAmplified":0,"blocked":0,"reduced":0,"shieldAbsorbed":0,"targetPrevented":0,"totalPrevented":48.5,"applied":0},"directDomainActionRuntime":null,"directDomainAction":null,"domainSpecific":null,"copyBlade":null,"rikaArsenalPending":null,"error":""}
+  ],
+  "state_hash": "b39b8ecf"
+}
+

@@ -1,0 +1,905 @@
+[gd_scene format=3 uid="uid://cm7l0y88otqm"]
+
+[ext_resource type="Script" path="res://scenes/story/MapFlow.gd" id="22_map"]
+
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="1_jo0yo"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="2_xd3ig"]
+[ext_resource type="Script" uid="uid://bg0uykylnxhuj" path="res://ui/navigation/BottomNav.gd" id="3_2d3a6"]
+[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/选中状态主页小标.png" id="4_od3vl"]
+[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/未选中状态角色小标.png" id="5_jdq04"]
+[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/未选中状态战斗小标.png" id="6_bb5qu"]
+[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/未选中状态论坛小标.png" id="7_d2g6s"]
+[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/未选中状态OC小标.png" id="8_w5ene"]
+[ext_resource type="Texture2D" uid="uid://cmhbd4c06jpln" path="res://art/Story/Map/故事章节.png" id="9_2ve6s"]
+[ext_resource type="Texture2D" uid="uid://dkar3mlrypako" path="res://art/Story/Map/故事章节已完成.png" id="10_6nvxc"]
+[ext_resource type="Texture2D" uid="uid://di8gtb0stommp" path="res://art/Story/Map/故事章节小.png" id="11_w0bat"]
+[ext_resource type="Texture2D" uid="uid://cwb5ggyfyu1ww" path="res://art/Story/Map/故事章节未解锁.png" id="12_7tqdk"]
+[ext_resource type="Texture2D" uid="uid://cx00i8o2fqdc8" path="res://art/Story/Map/地图.png" id="13_rdihi"]
+[ext_resource type="Texture2D" uid="uid://dwpxkcehpl47b" path="res://art/Story/Map/当前状态.png" id="14_q18xj"]
+[ext_resource type="Texture2D" uid="uid://1vg23shqy888" path="res://art/Story/Map/节点图标/已完成节点未选中.png" id="14_w0bat"]
+[ext_resource type="Texture2D" uid="uid://djhucry3m6s85" path="res://art/Story/Map/节点图标/直行.png" id="15_7tqdk"]
+[ext_resource type="Texture2D" uid="uid://3vsveo1hj6vf" path="res://art/Story/Map/节点图标/剧情故事节点未选中.png" id="16_rdihi"]
+[ext_resource type="Texture2D" uid="uid://bscaexcatqsrt" path="res://art/Story/Map/节点图标/战斗节点未选中.png" id="17_q18xj"]
+[ext_resource type="Texture2D" uid="uid://cft10me6v8uyb" path="res://art/Story/Map/节点图标/突发事件节点未选中.png" id="18_x5e71"]
+[ext_resource type="Texture2D" uid="uid://clsgo7ns00ka0" path="res://art/Story/Map/节点图标/分支节点未选中.png" id="19_0onyk"]
+[ext_resource type="Texture2D" uid="uid://bsy3dmikb482c" path="res://art/Story/Map/节点图标/分支.png" id="20_qm331"]
+[ext_resource type="Texture2D" uid="uid://iyh33vmxs3m7" path="res://art/Story/Map/节点图标/分支2.png" id="21_ujrpy"]
+[ext_resource type="Texture2D" uid="uid://kj6gqv34j40b" path="res://art/Story/Map/节点图标/未解锁节点.png" id="22_nxgj3"]
+[ext_resource type="Texture2D" uid="uid://celqvp122wlmv" path="res://art/Story/Map/节点图标/高危节点未选中.png" id="23_1ycl3"]
+[ext_resource type="Texture2D" uid="uid://bnwnblufii3ui" path="res://art/Story/Map/进入节点.png" id="25_q18xj"]
+[ext_resource type="Texture2D" uid="uid://blymmdbb8o2wy" path="res://art/Story/Map/查看经历.png" id="26_x5e71"]
+[ext_resource type="Texture2D" uid="uid://cmt6ckpnipjjl" path="res://art/Story/Map/读取存档.png" id="27_0onyk"]
+
+[node name="Control" type="Control" unique_id=871961984]
+script = ExtResource("22_map")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1502411115]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_jo0yo")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="Background" unique_id=1501331076]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="Background/Header" unique_id=1188381216]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 42.0
+offset_right = 410.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 34
+text = "章节地图"
+
+[node name="Subtitle" type="Label" parent="Background/Header" unique_id=1610305089]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 88.0
+offset_right = 500.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "去改写那个往事，去改变那个世界"
+
+[node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=1476149556]
+layout_mode = 0
+offset_left = 1175.0
+offset_top = 28.0
+offset_right = 1430.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_xd3ig")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Background/Header/UserButton" unique_id=965362258]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=1112744175]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Background/Header" unique_id=1723928123]
+layout_mode = 0
+offset_left = 1448.0
+offset_top = 28.0
+offset_right = 1635.0
+offset_bottom = 128.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="BottomNav" type="HBoxContainer" parent="Background" unique_id=537875680]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.04
+anchor_top = 0.875
+anchor_right = 0.96
+anchor_bottom = 0.995
+offset_left = 6.1200027
+offset_top = 3.625
+offset_right = -0.11999512
+offset_bottom = -17.294983
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("3_2d3a6")
+
+[node name="HomeButton" type="TextureButton" parent="Background/BottomNav" unique_id=186188670]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_od3vl")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="CharacterButton" type="TextureButton" parent="Background/BottomNav" unique_id=328903122]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("5_jdq04")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BattleButton" type="TextureButton" parent="Background/BottomNav" unique_id=1070726462]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_bb5qu")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ForumButton" type="TextureButton" parent="Background/BottomNav" unique_id=727699198]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_d2g6s")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ArchiveButton" type="TextureButton" parent="Background/BottomNav" unique_id=1415878009]
+custom_minimum_size = Vector2(300, 92)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("8_w5ene")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Chapter" type="TextureRect" parent="." unique_id=1501228529]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 123.0
+offset_right = 387.0
+offset_bottom = 744.0
+texture = ExtResource("9_2ve6s")
+
+[node name="ChapterDone" type="TextureRect" parent="Chapter" unique_id=2116499546]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 87.0
+offset_right = 355.0
+offset_bottom = 148.0
+texture = ExtResource("10_6nvxc")
+
+[node name="Title" type="Label" parent="Chapter/ChapterDone" unique_id=1017875130]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 13.0
+offset_right = 219.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第0章·怀玉篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterDone" unique_id=1710912353]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 13.0
+offset_right = 304.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.5, 0.40000004, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "已完成"
+
+[node name="ChapterNow" type="TextureRect" parent="Chapter" unique_id=1377865375]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 155.0
+offset_right = 354.0
+offset_bottom = 222.0
+texture = ExtResource("11_w0bat")
+
+[node name="Title" type="Label" parent="Chapter/ChapterNow" unique_id=374311239]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第1章·开始篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterNow" unique_id=410441060]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.5, 0.116666675, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "进行中"
+
+[node name="ChapterLock" type="TextureRect" parent="Chapter" unique_id=497600107]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 227.0
+offset_right = 355.0
+offset_bottom = 290.0
+texture = ExtResource("12_7tqdk")
+
+[node name="Title" type="Label" parent="Chapter/ChapterLock" unique_id=2026977555]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第2章·高专篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterLock" unique_id=1153804859]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.29, 0.24775666, 0.2349, 1)
+theme_override_font_sizes/font_size = 22
+text = "未解锁"
+
+[node name="ChapterLock2" type="TextureRect" parent="Chapter" unique_id=1515919862]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 299.0
+offset_right = 355.0
+offset_bottom = 362.0
+texture = ExtResource("12_7tqdk")
+
+[node name="Title" type="Label" parent="Chapter/ChapterLock2" unique_id=1731157058]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第X章·XXXX篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterLock2" unique_id=1321660999]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.29, 0.24775666, 0.2349, 1)
+theme_override_font_sizes/font_size = 22
+text = "未解锁"
+
+[node name="ChapterLock3" type="TextureRect" parent="Chapter" unique_id=137079634]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 371.0
+offset_right = 355.0
+offset_bottom = 434.0
+texture = ExtResource("12_7tqdk")
+
+[node name="Title" type="Label" parent="Chapter/ChapterLock3" unique_id=87861346]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第X章·XXXX篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterLock3" unique_id=1963051984]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.29, 0.24775666, 0.2349, 1)
+theme_override_font_sizes/font_size = 22
+text = "未解锁"
+
+[node name="ChapterLock4" type="TextureRect" parent="Chapter" unique_id=357129942]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 443.0
+offset_right = 355.0
+offset_bottom = 506.0
+texture = ExtResource("12_7tqdk")
+
+[node name="Title" type="Label" parent="Chapter/ChapterLock4" unique_id=1657469711]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第X章·XXXX篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterLock4" unique_id=872449204]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.29, 0.24775666, 0.2349, 1)
+theme_override_font_sizes/font_size = 22
+text = "未解锁"
+
+[node name="ChapterLock5" type="TextureRect" parent="Chapter" unique_id=69117507]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 515.0
+offset_right = 355.0
+offset_bottom = 578.0
+texture = ExtResource("12_7tqdk")
+
+[node name="Title" type="Label" parent="Chapter/ChapterLock5" unique_id=1303128430]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 14.0
+offset_right = 219.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 22
+text = "第X章·XXXX篇"
+
+[node name="Status" type="Label" parent="Chapter/ChapterLock5" unique_id=1812328583]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 14.0
+offset_right = 304.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.29, 0.24775666, 0.2349, 1)
+theme_override_font_sizes/font_size = 22
+text = "未解锁"
+
+[node name="Title" type="Label" parent="Chapter" unique_id=1287529954]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 38.0
+offset_right = 250.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "故事章节"
+
+[node name="Map" type="TextureRect" parent="." unique_id=555765181]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 121.0
+offset_right = 1303.0
+offset_bottom = 746.0
+texture = ExtResource("13_rdihi")
+
+[node name="Title" type="Label" parent="Map" unique_id=1535356494]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 27.0
+offset_right = 556.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 31
+text = "第0章·怀玉篇"
+
+[node name="Node" type="Control" parent="Map" unique_id=1930498245]
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 899.0
+offset_bottom = 489.0
+
+[node name="NodeTypeDone" type="TextureButton" parent="Map/Node" unique_id=2008353330]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 169.06148
+offset_right = 100.0
+offset_bottom = 228.7869
+texture_normal = ExtResource("14_w0bat")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeDone" unique_id=1434652768]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 58.0
+offset_right = 72.0
+offset_bottom = 79.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "确认角色数据"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeDone" unique_id=1722163706]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeStory" type="TextureButton" parent="Map/Node" unique_id=1774934117]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 169.06148
+offset_right = 215.0
+offset_bottom = 228.7869
+texture_normal = ExtResource("16_rdihi")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeStory" unique_id=1102317435]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "初来乍到"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeStory" unique_id=1741178502]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeFight" type="TextureButton" parent="Map/Node" unique_id=1030438498]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 169.06148
+offset_right = 319.0
+offset_bottom = 228.7869
+texture_normal = ExtResource("17_q18xj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeFight" unique_id=959619757]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "首次作战"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeFight" unique_id=1253267521]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeRandom" type="TextureButton" parent="Map/Node" unique_id=711488755]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 169.06148
+offset_right = 423.0
+offset_bottom = 228.7869
+texture_normal = ExtResource("18_x5e71")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeRandom" unique_id=1881081961]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "突发事件"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeRandom" unique_id=2083488516]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeBranch" type="TextureButton" parent="Map/Node" unique_id=1861000792]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 169.06148
+offset_right = 530.0
+offset_bottom = 228.7869
+texture_normal = ExtResource("19_0onyk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeBranch" unique_id=634310496]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "分支事件"
+
+[node name="Road1" type="TextureRect" parent="Map/Node/NodeTypeBranch" unique_id=1467638394]
+layout_mode = 0
+offset_left = 58.0
+offset_top = -24.061462
+offset_right = 116.0
+offset_bottom = 38.938538
+texture = ExtResource("20_qm331")
+expand_mode = 1
+
+[node name="Road2" type="TextureRect" parent="Map/Node/NodeTypeBranch" unique_id=1620985077]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 20.938538
+offset_right = 116.0
+offset_bottom = 83.93854
+texture = ExtResource("21_ujrpy")
+expand_mode = 1
+
+[node name="NodeTypeLock" type="TextureButton" parent="Map/Node" unique_id=764148302]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 120.06148
+offset_right = 646.0
+offset_bottom = 179.7869
+texture_normal = ExtResource("22_nxgj3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeLock" unique_id=1074676645]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "未知事件"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeLock" unique_id=35868024]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeDangerous" type="TextureButton" parent="Map/Node" unique_id=1617290614]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 218.06148
+offset_right = 646.0
+offset_bottom = 277.7869
+texture_normal = ExtResource("23_1ycl3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeDangerous" unique_id=932987727]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "险象环生"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeDangerous" unique_id=1158974198]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeLock2" type="TextureButton" parent="Map/Node" unique_id=854939288]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 119.0
+offset_right = 754.0
+offset_bottom = 178.72542
+texture_normal = ExtResource("22_nxgj3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeLock2" unique_id=150325956]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "未知事件"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeLock2" unique_id=1363707737]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTypeLock3" type="TextureButton" parent="Map/Node" unique_id=1360556884]
+layout_mode = 0
+offset_left = 691.0
+offset_top = 217.0
+offset_right = 754.0
+offset_bottom = 276.7254
+texture_normal = ExtResource("22_nxgj3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Map/Node/NodeTypeLock3" unique_id=213919225]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 57.938538
+offset_right = 59.0
+offset_bottom = 78.93854
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "未知事件"
+
+[node name="Road" type="TextureRect" parent="Map/Node/NodeTypeLock3" unique_id=1781629712]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 19.938538
+offset_right = 114.0
+offset_bottom = 43.938538
+texture = ExtResource("15_7tqdk")
+expand_mode = 1
+
+[node name="NodeTitle" type="Label" parent="Map" unique_id=376983446]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 493.0
+offset_right = 526.0
+offset_bottom = 530.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "当前节点：初来乍到"
+
+[node name="NodeSubTitle" type="Label" parent="Map" unique_id=254265717]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 531.0
+offset_right = 853.0
+offset_bottom = 596.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "本节点为可交互节点。"
+
+[node name="CharacterStatus" type="TextureRect" parent="." unique_id=1890589133]
+layout_mode = 0
+offset_left = 1301.0
+offset_top = 128.0
+offset_right = 1658.0
+offset_bottom = 748.0
+texture = ExtResource("14_q18xj")
+
+[node name="Title" type="Label" parent="CharacterStatus" unique_id=1703285569]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 33.0
+offset_right = 230.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "当前状态"
+
+[node name="Name" type="Label" parent="CharacterStatus" unique_id=525691468]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 100.0
+offset_right = 330.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = -35
+theme_override_font_sizes/font_size = 28
+text = " 龙崎祥
+_________"
+
+[node name="IdentityLabel" type="Label" parent="CharacterStatus" unique_id=764011913]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 142.0
+offset_right = 252.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = " 身份|"
+
+[node name="Identity" type="Label" parent="CharacterStatus/IdentityLabel" unique_id=957417027]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 2.0
+offset_right = 152.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "咒术师"
+
+[node name="Technicalabel" type="Label" parent="CharacterStatus" unique_id=1568784937]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 166.0
+offset_right = 252.0
+offset_bottom = 208.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = " 术式|"
+
+[node name="Technical" type="Label" parent="CharacterStatus/Technicalabel" unique_id=1026711481]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 2.0
+offset_right = 152.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "坐标操术"
+
+[node name="DomainLabel" type="Label" parent="CharacterStatus" unique_id=635995069]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 190.0
+offset_right = 252.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = " 领域|"
+
+[node name="Domain" type="Label" parent="CharacterStatus/DomainLabel" unique_id=1229504056]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 2.0
+offset_right = 155.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.19, 0.19, 0.19, 1)
+theme_override_font_sizes/font_size = 16
+text = "此方彼方"
+
+[node name="Control" type="Control" parent="CharacterStatus" unique_id=117165313]
+anchors_preset = 0
+offset_left = 22.0
+offset_top = 249.0
+offset_right = 333.0
+offset_bottom = 402.0
+
+[node name="Hp" type="Label" parent="CharacterStatus/Control" unique_id=223822289]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 2.0
+offset_right = 64.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HP"
+
+[node name="CE" type="Label" parent="CharacterStatus/Control" unique_id=645707854]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 35.0
+offset_right = 64.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "CE"
+
+[node name="Exp" type="Label" parent="CharacterStatus/Control" unique_id=685193528]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 66.0
+offset_right = 64.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "经验值"
+
+[node name="Stability" type="Label" parent="CharacterStatus/Control" unique_id=1934301397]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 97.0
+offset_right = 65.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "稳定值"
+
+[node name="Enter" type="TextureButton" parent="." unique_id=189701532]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 741.0
+offset_right = 1067.0
+offset_bottom = 833.0
+texture_normal = ExtResource("25_q18xj")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="Enter" unique_id=1508075818]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 16.0
+offset_right = 380.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 40
+text = " ----进入节点---- "
+
+[node name="History" type="TextureButton" parent="." unique_id=1481282799]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 746.0
+offset_right = 368.0
+offset_bottom = 830.0
+texture_normal = ExtResource("26_x5e71")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="History" unique_id=449720]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 19.0
+offset_right = 314.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "回顾经历"
+
+[node name="File" type="TextureButton" parent="." unique_id=1924682011]
+layout_mode = 0
+offset_left = 1308.0
+offset_top = 745.0
+offset_right = 1648.0
+offset_bottom = 832.0
+texture_normal = ExtResource("27_0onyk")
+stretch_mode = 0
+
+[node name="Title" type="Label" parent="File" unique_id=950412794]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 20.0
+offset_right = 307.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "加载历史记录"

@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bgfvfjn83uh40"]
+
+[ext_resource type="PackedScene" uid="uid://c6ae3usxmuw7d" path="res://scenes/online/room_page.tscn" id="1_room"]
+[ext_resource type="PackedScene" uid="uid://cpjris1ltlgr5" path="res://scenes/online/matchmaking_page.tscn" id="2_match"]
+[ext_resource type="Script" uid="uid://b7l1d3hjgnusl" path="res://scenes/online/OnlineRoom.gd" id="3_script"]
+
+[node name="OnlineRoom" type="Control" unique_id=1784598923]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_script")
+
+[node name="RoomPage" parent="." unique_id=703286227 instance=ExtResource("1_room")]
+layout_mode = 1
+
+[node name="MatchmakingPage" parent="." unique_id=348332215 instance=ExtResource("2_match")]
+layout_mode = 1
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=1454776038]
+layout_mode = 0
+offset_left = 634.0
+offset_top = 64.0
+offset_right = 1034.0
+offset_bottom = 114.0
+theme_override_constants/separation = 16
+
+[node name="RoomTab" type="Button" parent="TopBar" unique_id=413677189]
+custom_minimum_size = Vector2(176, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "自建联机房间"
+
+[node name="MatchTab" type="Button" parent="TopBar" unique_id=1221688861]
+custom_minimum_size = Vector2(176, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "匹配赛"
+
+[node name="BackgroundLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="SafeArea" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="HeaderBar" type="Control" parent="SafeArea"]
+layout_mode = 0
+
+[node name="MainContent" type="Control" parent="SafeArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FooterBar" type="Control" parent="SafeArea"]
+layout_mode = 0
+
+[node name="InteractionLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="OverlayLayer" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="DebugLayer" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+
+
+

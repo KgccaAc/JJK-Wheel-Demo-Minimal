@@ -1,0 +1,21 @@
+[Unit]
+Description=JJK Preview Login Card API
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/jjk-preview-login-card
+Environment=NODE_ENV=production
+Environment=PREVIEW_LOGIN_CARD_HOST=127.0.0.1
+Environment=PREVIEW_LOGIN_CARD_PORT=8788
+Environment=PREVIEW_LOGIN_CARD_DATA_DIR=/opt/jjk-preview-login-card/data
+ExecStart=/usr/bin/node /opt/jjk-preview-login-card/backend/preview-login-card-server.mjs
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

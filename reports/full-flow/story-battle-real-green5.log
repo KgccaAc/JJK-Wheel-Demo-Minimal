@@ -1,0 +1,37 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+
+WARNING: res://ui/battle_status/resource_counter_card.tscn:4 - ext_resource, invalid UID: uid://bs4xqrg8p8ddu - using text path instead: res://ui/battle_status/resource_counter_card.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://ui/battle_status/special_effect_badge.tscn:4 - ext_resource, invalid UID: uid://bew21ejp4qiut - using text path instead: res://ui/battle_status/special_effect_badge.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://ui/battle_cards/basic_card.tscn:3 - ext_resource, invalid UID: uid://ba4awdleoaxtj - using text path instead: res://ui/battle_cards/battle_card_view.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://scenes/battle/first_move_contest.tscn:4 - ext_resource, invalid UID: uid://dlu1owv2mo08p - using text path instead: res://scenes/battle/FirstMoveContest.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://scenes/battle/round_summary_panel.tscn:3 - ext_resource, invalid UID: uid://kio24nufv3np - using text path instead: res://scenes/battle/round_summary_panel.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+WARNING: res://scenes/battle/strategy_selection.tscn:13 - ext_resource, invalid UID: uid://bf8yqtqf2pmcq - using text path instead: res://scenes/battle/StrategySelection.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/StoryBattleRealFullAcceptance.gd:30)
+REAL_HAND_IDS ["20260902:1:0:hand:0", "20260902:1:0:hand:1", "20260902:1:0:hand:2", "20260902:1:0:hand:3", "20260902:1:0:hand:4", "20260902:1:0:hand:5", "20260902:1:0:hand:6", "20260902:1:0:hand:7", "20260902:1:0:hand:8", "20260902:1:0:hand:9"]
+REAL_DISCARD_BEGIN index=0 id=20260902:1:0:hand:0
+REAL_DISCARD index=0 phase=DISCARD pending=2
+REAL_DISCARD_BEGIN index=1 id=20260902:1:0:hand:0
+REAL_DISCARD index=1 phase=DISCARD pending=1
+ERROR: phase_timeout_expected_INITIATIVE_got_DISCARD
+   at: push_error (core/variant/variant_utility.cpp:1024)
+   GDScript backtrace (most recent call first):
+       [0] _fail (res://tests/godot/StoryBattleRealFullAcceptance.gd:233)
+       [1] _wait_phase (res://tests/godot/StoryBattleRealFullAcceptance.gd:187)
+STORY_BATTLE_REAL_FULL_ACCEPTANCE FAIL rounds=0 failures=["phase_timeout_expected_INITIATIVE_got_DISCARD"] errors=0

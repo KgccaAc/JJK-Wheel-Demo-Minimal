@@ -1,0 +1,51 @@
+{
+  "schema": "godot-source-duel-fixture-v1",
+  "source": "serve/jjk-v267/server/duel-simulation-engine.js",
+  "ruleset_version": "godot-battle-rules-v1",
+  "seed": "godot-baseline-seed-001",
+  "round": 1,
+  "left": {
+    "character_id": "gojo_satoru_shinjuku",
+    "hp": 500,
+    "max_hp": 500,
+    "ce": 300,
+    "max_ce": 300,
+    "normal_hand_capacity": 8,
+    "domain_hand_capacity": 3,
+    "normal_hand": [
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:normal:card_spatial_blue_resource:1:637a8cb9","action_id":"card_spatial_blue_resource","name":"术式顺转·苍","ap_cost":1,"ce_cost":25.65,"type":"support","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:normal:card_spatial_inviolable:2:658ccc81","action_id":"card_spatial_inviolable","name":"无下限·不可侵","ap_cost":1,"ce_cost":0,"type":"support","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:normal:card_spatial_red_reversal:3:d3df5732","action_id":"card_spatial_red_reversal","name":"术式反转·赫","ap_cost":1,"ce_cost":51.3,"type":"attack","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:normal:ce_reinforcement:4:a0890fb4","action_id":"ce_reinforcement","name":"咒力强化","ap_cost":1,"ce_cost":7.6,"type":"","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:normal:defensive_frame:5:ed1f836c","action_id":"defensive_frame","name":"防御构筑","ap_cost":1,"ce_cost":5.7,"type":"","drawn_round":1,"hand_source":"draw"}
+    ],
+    "domain_hand": [
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:domain:hollow_wicker_basket_guard:1:33c64fe7","action_id":"hollow_wicker_basket_guard","name":"弥虚葛笼","ap_cost":1,"ce_cost":7.6,"type":"domain_response","drawn_round":1,"hand_source":"domain-refresh"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:left:R1:domain:simple_domain_guard:2:72e2de14","action_id":"simple_domain_guard","name":"简易领域防御","ap_cost":1,"ce_cost":8.55,"type":"domain_response","drawn_round":1,"hand_source":"domain-refresh"}
+    ]
+  },
+  "right": {
+    "character_id": "sukuna_heian_or_shinjuku",
+    "hp": 500,
+    "max_hp": 500,
+    "ce": 300,
+    "max_ce": 300,
+    "normal_hand_capacity": 8,
+    "domain_hand_capacity": 3,
+    "normal_hand": [
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:normal:reverse_cursed_technique_output:1:cde07c8","action_id":"reverse_cursed_technique_output","name":"反转术式外放","ap_cost":1,"ce_cost":34.2,"type":"healing","drawn_round":1,"hand_source":"guaranteed-per-turn"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:normal:card_shrine_blade_tuning:2:25b3c335","action_id":"card_shrine_blade_tuning","name":"斩击调刃","ap_cost":1,"ce_cost":31.312,"type":"support","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:normal:card_shrine_slash_guard:3:3cf885e1","action_id":"card_shrine_slash_guard","name":"斩击护身","ap_cost":1,"ce_cost":31.312,"type":"defense","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:normal:card_shrine_dismantle:4:f19193e7","action_id":"card_shrine_dismantle","name":"解","ap_cost":1,"ce_cost":23.484,"type":"attack","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:normal:card_shrine_cleave:5:a7163f7f","action_id":"card_shrine_cleave","name":"捌","ap_cost":1,"ce_cost":23.484,"type":"attack","drawn_round":1,"hand_source":"draw"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:normal:card_shrine_furnace_prepare:6:858ae476","action_id":"card_shrine_furnace_prepare","name":"灶火预备","ap_cost":1,"ce_cost":31.312,"type":"support","drawn_round":1,"hand_source":"draw"}
+    ],
+    "domain_hand": [
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:domain:hollow_wicker_basket_guard:1:bd7521bc","action_id":"hollow_wicker_basket_guard","name":"弥虚葛笼","ap_cost":1,"ce_cost":9.5,"type":"domain_response","drawn_round":1,"hand_source":"domain-refresh"},
+      {"instance_id":"godot-baseline-gojo-vs-sukuna:right:R1:domain:simple_domain_guard:2:7f3c0a8b","action_id":"simple_domain_guard","name":"简易领域防御","ap_cost":1,"ce_cost":10.45,"type":"domain_response","drawn_round":1,"hand_source":"domain-refresh"}
+    ]
+  },
+  "events": [],
+  "state_hash": "f29c712d"
+}
+

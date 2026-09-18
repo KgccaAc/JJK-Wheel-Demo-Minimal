@@ -1,0 +1,31 @@
+{
+  "schema": "godot-battle-data-manifest-v1",
+  "source_version": "toy-battle-351",
+  "counts": {
+    "characters": 84,
+    "cards": 351
+  },
+  "files": {
+    "characters.json": "510290fb2102d563a6cccb267340c8bffb1bf3a27682b7b5e3f01b9e78133945",
+    "cards.json": "451f5eff1f22909dabb3f723c7fc551f5fed8c7f68d0b16107ed8941d6c6f485",
+    "domains.json": "7f4238ad8dce54792c3a13eb40ff7a51265159bb852e85844123f69e6489d48e",
+    "rules.json": "9b0c46c93312215572b661af37fbd65be48ec5b4c0ec094ec78313171c0f2e5b",
+    "special-abilities.json": "6c2c4d42b9508ef46cfd0907d15eec2a6978dd3f9bae0390bbdac9c27d3545c4"
+  },
+  "runtime_files": [
+    "action-templates.json",
+    "beta-copy.json",
+    "card-copy.json",
+    "card-templates.json",
+    "character-card-rules.json",
+    "end-rules.json",
+    "hand-injections.json",
+    "hand-rules.json",
+    "mechanic-templates.json",
+    "resource-rules.json",
+    "trial-target-rules.json"
+  ],
+  "notes": [
+    "cards.json contains 351 entries in the selected source snapshot."
+  ]
+}

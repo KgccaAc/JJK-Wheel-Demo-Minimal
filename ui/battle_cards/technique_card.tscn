@@ -1,0 +1,232 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://ui/battle_cards/battle_card_view.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://art/fight/术式牌牌面.png" id="2_face"]
+[ext_resource type="FontFile" path="res://art/fonts/NotoSerifSC-Variable.ttf" id="3_font"]
+[ext_resource type="FontFile" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="4_bold"]
+
+[node name="TechniqueCard" type="TextureButton"]
+custom_minimum_size = Vector2(248, 372)
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_face")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SelectionFrame" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.78, 0.55, 1, 0.25)
+
+[node name="LockedOverlay" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05, 0.04, 0.08, 0.76)
+
+[node name="LockReason" type="Label" parent="LockedOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.72, 0.72, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ContentMargin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 22.0
+offset_right = -20.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Content" type="Control" parent="ContentMargin"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CardName" type="Label" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 21.0
+offset_right = 214.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 27
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CardType" type="Label" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 62.0
+offset_right = 209.0
+offset_bottom = 87.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 13
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Summary" type="RichTextLabel" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 101.0
+offset_right = 182.0
+offset_bottom = 197.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_font")
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+scroll_active = false
+
+[node name="CostRow" type="Control" parent="ContentMargin/Content"]
+anchors_preset = 0
+offset_top = 218.0
+offset_right = 208.0
+offset_bottom = 274.0
+
+[node name="CeCostLabel" type="Label" parent="ContentMargin/Content/CostRow"]
+layout_mode = 0
+offset_left = 138.0
+offset_top = -57.0
+offset_right = 204.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "CE"
+horizontal_alignment = 1
+
+[node name="DefenceLabel" type="Label" parent="ContentMargin/Content/CostRow"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = -57.0
+offset_right = 139.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "防御"
+horizontal_alignment = 1
+
+[node name="AttackLabel" type="Label" parent="ContentMargin/Content/CostRow"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -57.0
+offset_right = 72.0
+offset_bottom = -42.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "攻击"
+horizontal_alignment = 1
+
+[node name="Attack" type="Label" parent="ContentMargin/Content/CostRow"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -50.0
+offset_right = 74.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Defence" type="Label" parent="ContentMargin/Content/CostRow"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = -50.0
+offset_right = 139.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="CeCost" type="Label" parent="ContentMargin/Content/CostRow"]
+layout_mode = 0
+offset_left = 137.0
+offset_top = -50.0
+offset_right = 203.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.12, 0.1, 0.08, 1)
+theme_override_fonts/font = ExtResource("4_bold")
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="RiskLabel" type="Label" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_top = 215.0
+offset_right = 208.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+horizontal_alignment = 1
+
+[node name="TagsLabel" type="Label" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 239.0
+offset_right = 209.0
+offset_bottom = 264.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 9
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="TopDivider" type="ColorRect" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 90.0
+offset_right = 146.0
+offset_bottom = 91.0
+mouse_filter = 2
+color = Color(0.56, 0.44, 0.27, 0.55)
+
+[node name="BottomDivider" type="ColorRect" parent="ContentMargin/Content"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 207.0
+offset_right = 144.0
+offset_bottom = 208.0
+mouse_filter = 2
+color = Color(0.56, 0.44, 0.27, 0.42)
+
+
+

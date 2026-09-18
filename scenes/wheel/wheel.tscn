@@ -1,0 +1,591 @@
+[gd_scene format=3 uid="uid://crg4fjxswlsqv"]
+
+[ext_resource type="Script" uid="uid://7maiuidmap3f" path="res://scenes/wheel/wheel.gd" id="1_screen"]
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="2_m5lkb"]
+[ext_resource type="Script" uid="uid://cdcojw81226oh" path="res://scenes/wheel/wheel_segments.gd" id="2_segments"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="4_gkg57"]
+[ext_resource type="Texture2D" uid="uid://bb287e170fmnh" path="res://art/wheel/大标签1.png" id="5_title"]
+[ext_resource type="Texture2D" uid="uid://dxgy306453tcy" path="res://art/wheel/当前状态标签.png" id="6_status"]
+[ext_resource type="Texture2D" uid="uid://c4pjtoy2wt3yo" path="res://art/wheel/转盘设置标签.png" id="7_settings"]
+[ext_resource type="Texture2D" uid="uid://djkek178kku0y" path="res://art/wheel/登陆统计标签.png" id="8_stats"]
+[ext_resource type="Texture2D" uid="uid://c07gxk6uobb2o" path="res://art/wheel/抽取按钮.png" id="9_draw"]
+[ext_resource type="Texture2D" uid="uid://bfmbuepa6h0da" path="res://art/wheel/重置按钮.png" id="10_reset"]
+[ext_resource type="Texture2D" uid="uid://de5hgdtcr4kyy" path="res://art/wheel/一键抽取到评级按钮.png" id="11_rank"]
+[ext_resource type="Texture2D" uid="uid://bkfghmn5wv103" path="res://art/wheel/转盘主图案.png" id="12_wheel_art"]
+[ext_resource type="Texture2D" uid="uid://d3xdbocfeuqwf" path="res://art/wheel/当前状态小图标组.png" id="13_status_icons"]
+[ext_resource type="Texture2D" uid="uid://jkmdrpy66wjh" path="res://art/wheel/设置前摇按钮.png" id="14_before"]
+[ext_resource type="Texture2D" uid="uid://dt6t1w00oea4m" path="res://art/wheel/设置旋转按钮.png" id="15_rotate"]
+[ext_resource type="Texture2D" uid="uid://dbfo8f2cxdlif" path="res://art/wheel/设置后摇按钮.png" id="16_after"]
+[ext_resource type="Texture2D" uid="uid://cbvijr4tyuvbb" path="res://art/wheel/选择跳转按钮.png" id="17_jump"]
+[ext_resource type="Texture2D" uid="uid://ivmoviyw4xot" path="res://art/wheel/勾选效果是.png" id="18_check"]
+
+[node name="Wheel" type="Control" unique_id=1802283231]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_screen")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=1113047743]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_m5lkb")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Header" type="Control" parent="." unique_id=1108817559]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -12.0
+offset_top = 8.0
+offset_right = -12.0
+offset_bottom = 158.0
+grow_horizontal = 2
+
+[node name="Subtitle2" type="Label" parent="Header" unique_id=594337850]
+layout_mode = 0
+offset_left = 232.0
+offset_top = 75.0
+offset_right = 642.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 17
+text = "抽取你的穿越身份，开启未知的旅程"
+
+[node name="TitleText" type="Label" parent="Header" unique_id=1781942950]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 29.0
+offset_right = 625.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.12, 0.11, 0.1, 1)
+theme_override_font_sizes/font_size = 32
+text = "穿越后的初始身份"
+
+[node name="UserButton" type="TextureButton" parent="Header" unique_id=1643014334]
+layout_mode = 0
+offset_left = 762.0
+offset_top = 23.0
+offset_right = 1017.0
+offset_bottom = 123.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("4_gkg57")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="UserName" type="Label" parent="Header/UserButton" unique_id=1417676682]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 26.0
+offset_right = 230.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
+theme_override_font_sizes/font_size = 18
+text = "游客"
+
+[node name="UserStatus" type="Label" parent="Header/UserButton" unique_id=311575511]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 240.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
+theme_override_font_sizes/font_size = 12
+text = "暂未登录 · 点击登录"
+
+[node name="MoreButton" type="Button" parent="Header" unique_id=332718083]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 11.0
+offset_right = 217.0
+offset_bottom = 111.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
+theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "更多    +"
+flat = true
+
+[node name="WheelArea" type="Control" parent="." unique_id=1436887794]
+anchors_preset = 0
+offset_left = 178.0
+offset_top = 55.0
+offset_right = 971.0
+offset_bottom = 787.0
+
+[node name="WheelSegments" type="Control" parent="WheelArea" unique_id=2084718393]
+z_index = 2
+anchors_preset = 0
+offset_left = 66.0
+offset_top = 67.0
+offset_right = 754.0
+offset_bottom = 705.0
+pivot_offset = Vector2(344, 319)
+tooltip_text = "可编辑转盘色块与文字：调整节点大小、位置、旋转中心及 Inspector 中的内部填充参数"
+mouse_filter = 2
+script = ExtResource("2_segments")
+inner_radius_ratio = 0.5
+label_radius_ratio = 0.57
+label_font_size = 33
+
+[node name="WheelArt" type="TextureRect" parent="WheelArea" unique_id=1162763885]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -6.0
+offset_right = -1.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("12_wheel_art")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ResultLabel" type="Label" parent="WheelArea" unique_id=2016694664]
+z_index = 4
+layout_mode = 0
+offset_left = -205.0
+offset_top = 152.0
+offset_right = 135.0
+offset_bottom = 244.0
+theme_override_colors/font_color = Color(0.08, 0.07424, 0.060799997, 1)
+theme_override_font_sizes/font_size = 66
+text = "咒术师"
+horizontal_alignment = 1
+
+[node name="Pointer" type="Label" parent="WheelArea" unique_id=785091569]
+z_index = 5
+layout_mode = 0
+offset_left = 369.0
+offset_top = 54.0
+offset_right = 456.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.17, 0.13, 0.1, 1)
+theme_override_font_sizes/font_size = 35
+text = "▼"
+horizontal_alignment = 1
+
+[node name="Identity3" type="TextureRect" parent="." unique_id=1389869320]
+layout_mode = 0
+offset_left = 1032.0
+offset_top = 30.0
+offset_right = 1647.0
+offset_bottom = 419.0
+mouse_filter = 2
+texture = ExtResource("5_title")
+expand_mode = 1
+
+[node name="Icon" type="TextureRect" parent="Identity3" unique_id=1670755992]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 66.0
+offset_right = 76.0
+offset_bottom = 316.0
+mouse_filter = 2
+texture = ExtResource("13_status_icons")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatusRows" type="VBoxContainer" parent="Identity3" unique_id=251264865]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 69.0
+offset_right = 568.0
+offset_bottom = 347.0
+theme_override_constants/separation = 5
+
+[node name="Mode" type="Label" parent="Identity3/StatusRows" unique_id=1803129374]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "模式                         随机模式"
+
+[node name="Identity" type="Label" parent="Identity3/StatusRows" unique_id=922609845]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "身份                         未定"
+
+[node name="Time" type="Label" parent="Identity3/StatusRows" unique_id=385075174]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "时间点                       未定"
+
+[node name="Location" type="Label" parent="Identity3/StatusRows" unique_id=1381351014]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "地点                         未定"
+
+[node name="Gender" type="Label" parent="Identity3/StatusRows" unique_id=1838450941]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "性别认同                     未定"
+
+[node name="Grade" type="Label" parent="Identity3/StatusRows" unique_id=1367867917]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "术师等级                     未定"
+
+[node name="Faction" type="Label" parent="Identity3/StatusRows" unique_id=1606650704]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "阵营                         未定"
+
+[node name="Special" type="Label" parent="Identity3/StatusRows" unique_id=291735923]
+custom_minimum_size = Vector2(0, 27)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "特殊                         无"
+
+[node name="StatusPanel" type="TextureRect" parent="." unique_id=1479903857]
+layout_mode = 0
+offset_left = 1031.0
+offset_top = 16.0
+offset_right = 1324.0
+offset_bottom = 100.18283
+texture = ExtResource("6_status")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelTitle" type="Label" parent="StatusPanel" unique_id=1140474342]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 7.0
+offset_right = 245.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.16, 0.14, 0.12, 1)
+theme_override_font_sizes/font_size = 17
+text = "当前状态"
+horizontal_alignment = 1
+
+[node name="Identity" type="TextureRect" parent="." unique_id=1926693190]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 420.0
+offset_right = 1647.0
+offset_bottom = 728.0
+mouse_filter = 2
+texture = ExtResource("5_title")
+expand_mode = 1
+
+[node name="SettingsRows" type="VBoxContainer" parent="Identity" unique_id=885345824]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 77.0
+offset_right = 581.0
+offset_bottom = 279.0
+theme_override_constants/separation = 7
+
+[node name="Before" type="Label" parent="Identity/SettingsRows" unique_id=1535503338]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "▶  前摇                                             0ms"
+
+[node name="Control" type="TextureButton" parent="Identity/SettingsRows/Before" unique_id=1145473845]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -3.0
+offset_right = 26.0
+offset_bottom = 25.0
+texture_normal = ExtResource("14_before")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Rotate" type="Label" parent="Identity/SettingsRows" unique_id=1877161029]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "     旋转                                           300ms"
+
+[node name="Control" type="TextureButton" parent="Identity/SettingsRows/Rotate" unique_id=1918804192]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -1.0
+offset_right = 24.0
+offset_bottom = 27.0
+texture_normal = ExtResource("15_rotate")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="After" type="Label" parent="Identity/SettingsRows" unique_id=231533860]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "□   后摇                                             0ms"
+
+[node name="Control" type="TextureButton" parent="Identity/SettingsRows/After" unique_id=1414790849]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -1.0
+offset_right = 25.0
+offset_bottom = 27.0
+texture_normal = ExtResource("16_after")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Jump" type="Label" parent="Identity/SettingsRows" unique_id=1480367060]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "▶  选择跳转                                         0ms"
+
+[node name="Control" type="TextureButton" parent="Identity/SettingsRows/Jump" unique_id=1726729548]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -3.0
+offset_right = 26.0
+offset_bottom = 25.0
+texture_normal = ExtResource("17_jump")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Options" type="Label" parent="Identity/SettingsRows" unique_id=734163945]
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 15
+text = "☑  动画                 □  音效                 □  语音"
+
+[node name="Animation" type="TextureButton" parent="Identity/SettingsRows/Options" unique_id=1848448560]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 2.0
+offset_right = 20.0
+offset_bottom = 24.0
+texture_normal = ExtResource("18_check")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SettingsPanel" type="TextureRect" parent="." unique_id=448542557]
+layout_mode = 0
+offset_left = 1058.0
+offset_top = 314.0
+offset_right = 1323.0
+offset_bottom = 589.0
+texture = ExtResource("7_settings")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelTitle" type="Label" parent="SettingsPanel" unique_id=1104611131]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 124.0
+offset_right = 229.0
+offset_bottom = 151.0
+theme_override_colors/font_color = Color(0.16, 0.14, 0.12, 1)
+theme_override_font_sizes/font_size = 17
+text = "转盘设置"
+horizontal_alignment = 1
+
+[node name="Identity2" type="TextureRect" parent="." unique_id=1261452471]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 739.0
+offset_right = 1639.0
+offset_bottom = 907.0
+mouse_filter = 2
+texture = ExtResource("5_title")
+expand_mode = 1
+
+[node name="StatRows" type="HBoxContainer" parent="Identity2" unique_id=338971055]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 55.0
+offset_right = 545.0
+offset_bottom = 145.0
+theme_override_constants/separation = 20
+
+[node name="Users" type="Label" parent="Identity2/StatRows" unique_id=573571811]
+custom_minimum_size = Vector2(105, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 14
+text = "12,583
+总使用次数"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Identity2/StatRows/Users" unique_id=1713126967]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -24.0
+offset_right = 67.0
+offset_bottom = 4.0
+mouse_filter = 2
+texture = ExtResource("13_status_icons")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Today" type="Label" parent="Identity2/StatRows" unique_id=124089762]
+custom_minimum_size = Vector2(105, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 14
+text = "8,642
+今日使用"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Identity2/StatRows/Today" unique_id=1132278102]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -24.0
+offset_right = 67.0
+offset_bottom = 4.0
+mouse_filter = 2
+texture = ExtResource("13_status_icons")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Rare" type="Label" parent="Identity2/StatRows" unique_id=647086576]
+custom_minimum_size = Vector2(105, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 14
+text = "2,341
+抽中稀有身份"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Identity2/StatRows/Rare" unique_id=869483321]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -24.0
+offset_right = 67.0
+offset_bottom = 4.0
+mouse_filter = 2
+texture = ExtResource("13_status_icons")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Rate" type="Label" parent="Identity2/StatRows" unique_id=1703268576]
+custom_minimum_size = Vector2(105, 80)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.18, 0.16, 0.14, 1)
+theme_override_font_sizes/font_size = 14
+text = "98.7%
+好评率"
+horizontal_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Identity2/StatRows/Rate" unique_id=327769152]
+layout_mode = 0
+offset_left = 39.0
+offset_top = -24.0
+offset_right = 67.0
+offset_bottom = 4.0
+mouse_filter = 2
+texture = ExtResource("13_status_icons")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StatsPanel" type="TextureRect" parent="." unique_id=702392434]
+layout_mode = 0
+offset_left = 1046.0
+offset_top = 722.0
+offset_right = 1303.0
+offset_bottom = 782.0
+texture = ExtResource("8_stats")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelTitle" type="Label" parent="StatsPanel" unique_id=335333514]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 7.0
+offset_right = 230.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.16, 0.14, 0.12, 1)
+theme_override_font_sizes/font_size = 17
+text = "全站使用统计"
+horizontal_alignment = 1
+
+[node name="DrawButton" type="TextureButton" parent="." unique_id=883061218]
+layout_mode = 0
+offset_left = 423.0
+offset_top = 787.0
+offset_right = 756.0
+offset_bottom = 900.0
+texture_normal = ExtResource("9_draw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="DrawButton" unique_id=394281162]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 25.0
+offset_right = 235.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 44
+text = "· 抽取 ·"
+
+[node name="ResetButton" type="TextureButton" parent="." unique_id=1053761644]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 788.0
+offset_right = 1065.0
+offset_bottom = 889.8428
+texture_normal = ExtResource("10_reset")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ResetButton" unique_id=1607334859]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 32.0
+offset_right = 260.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "一键重启流程"
+
+[node name="RankButton" type="TextureButton" parent="." unique_id=424374593]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 791.0
+offset_right = 410.0
+offset_bottom = 886.53625
+texture_normal = ExtResource("11_rank")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="RankButton" unique_id=2120724409]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 30.0
+offset_right = 310.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "一键自动抽取"
+
+
+

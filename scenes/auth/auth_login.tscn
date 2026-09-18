@@ -1,0 +1,248 @@
+[gd_scene format=3 uid="uid://domsjusqrojhh"]
+
+[ext_resource type="Texture2D" uid="uid://iyk4r12owyjy" path="res://art/login/背景.png" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://b5n3x4qiduhk6" path="res://art/login/登录标题文字.png" id="2_title"]
+[ext_resource type="Texture2D" uid="uid://xds506nisxak" path="res://art/login/账号图标.png" id="3_account"]
+[ext_resource type="Texture2D" uid="uid://brgoepysgwfoq" path="res://art/login/公告图标.png" id="4_notice"]
+[ext_resource type="Texture2D" uid="uid://c1vg8gad10qvt" path="res://art/login/客服图标.png" id="5_support"]
+[ext_resource type="Texture2D" uid="uid://du2xy615hcan2" path="res://art/login/选中标签.png" id="6_selected"]
+[ext_resource type="Script" uid="uid://hekwli054qhh" path="res://scenes/auth/AuthLogin.gd" id="7_script"]
+[ext_resource type="Script" uid="uid://d3w17khby1cpo" path="res://scenes/auth/AuthLoginResponsive.gd" id="8_responsive"]
+
+[sub_resource type="Animation" id="Animation_login_reset"]
+resource_name = "RESET"
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_login_intro"]
+resource_name = "intro"
+length = 1.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.22, 0.65),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.72), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Background:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.65),
+"transitions": PackedFloat32Array(2, 3),
+"update": 0,
+"values": [Vector2(0.92, 0.92), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Navigation:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.3, 0.65),
+"transitions": PackedFloat32Array(2, 2, 2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0.45), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Navigation:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.08, 0.65),
+"transitions": PackedFloat32Array(2, 3),
+"update": 0,
+"values": [Vector2(0.82, 0.82), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_login"]
+_data = {
+&"RESET": SubResource("Animation_login_reset"),
+&"intro": SubResource("Animation_login_intro")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_focus"]
+
+[node name="LoginScreen" type="Control" unique_id=995580053]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_script")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=446891456]
+libraries/ = SubResource("AnimationLibrary_login")
+autoplay = &"intro"
+
+[node name="Background" type="TextureRect" parent="." unique_id=2121401829]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(836, 470.5)
+mouse_filter = 2
+texture = ExtResource("1_bg")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Title" type="TextureRect" parent="." unique_id=212083483]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.16
+anchor_right = 0.55
+anchor_bottom = 0.48
+offset_left = -776.76
+offset_top = -467.56
+offset_right = 606.39996
+offset_bottom = 402.32
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_title")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Navigation" type="VBoxContainer" parent="." unique_id=1896544599]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_top = 74.0
+offset_right = -12.0
+offset_bottom = 367.0
+grow_horizontal = 0
+pivot_offset = Vector2(45, 146.5)
+theme_override_constants/separation = 10
+
+[node name="AccountButton" type="TextureButton" parent="Navigation" unique_id=554309837]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture_normal = ExtResource("3_account")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AnnouncementButton" type="TextureButton" parent="Navigation" unique_id=1075937702]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture_normal = ExtResource("4_notice")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SupportButton" type="TextureButton" parent="Navigation" unique_id=1679784771]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+texture_normal = ExtResource("5_support")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="LoginContent" type="Control" parent="." unique_id=1213258825]
+anchors_preset = 0
+offset_left = 151.0
+offset_top = 431.0
+offset_right = 651.0
+offset_bottom = 696.0
+
+[node name="ResponsiveContent" type="Control" parent="LoginContent" unique_id=1204251316]
+texture_filter = 1
+anchors_preset = 0
+offset_left = -100.0
+offset_top = 46.0
+offset_right = 622.0
+offset_bottom = 443.0
+script = ExtResource("8_responsive")
+
+[node name="SelectionFrame" type="TextureRect" parent="LoginContent/ResponsiveContent" unique_id=54567859]
+layout_mode = 0
+offset_left = -213.712
+offset_top = -312.32852
+offset_right = 950.152
+offset_bottom = 399.27524
+mouse_filter = 2
+texture = ExtResource("6_selected")
+expand_mode = 1
+
+[node name="StartButton" type="Button" parent="LoginContent/ResponsiveContent" unique_id=1218271070]
+z_index = 1
+layout_mode = 0
+offset_right = 722.0
+offset_bottom = 80.89811
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+disabled = true
+text = "开始游戏"
+flat = true
+
+[node name="RegisterButton" type="Button" parent="LoginContent/ResponsiveContent" unique_id=324973874]
+z_index = 1
+layout_mode = 0
+offset_top = 86.890564
+offset_right = 722.0
+offset_bottom = 158.79999
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "注册登录卡"
+flat = true
+
+[node name="SettingsButton" type="Button" parent="LoginContent/ResponsiveContent" unique_id=634458000]
+z_index = 1
+layout_mode = 0
+offset_top = 164.79245
+offset_right = 722.0
+offset_bottom = 236.70187
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxEmpty_focus")
+text = "设置"
+flat = true
+
+[node name="LoginSelector" type="OptionButton" parent="LoginContent/ResponsiveContent" unique_id=583299886]
+z_index = 1
+layout_mode = 0
+offset_left = 184.832
+offset_top = 260.6717
+offset_right = 545.83203
+offset_bottom = 335.57736
+theme_override_font_sizes/font_size = 23
+selected = 0
+item_count = 3
+popup/item_0/text = "请选择登录方式"
+popup/item_0/id = 0
+popup/item_1/text = "登录卡登录"
+popup/item_1/id = 1
+popup/item_2/text = "游客登录"
+popup/item_2/id = 2
+
+[node name="Footer" type="Label" parent="." unique_id=1810695418]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.03
+anchor_top = 0.92
+anchor_right = 0.5
+anchor_bottom = 0.97
+offset_left = -26.16
+offset_top = 19.279968
+offset_right = -26.159973
+offset_bottom = 19.279968
+theme_override_colors/font_color = Color(0.5, 0.53, 0.6, 1)
+text = "咒术转盘 · 登录界面"
+
+[connection signal="pressed" from="LoginContent/ResponsiveContent/StartButton" to="." method="_on_start_pressed"]
+
+
+

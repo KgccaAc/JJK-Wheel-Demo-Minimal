@@ -1,0 +1,765 @@
+{
+  "schema": "jjk-battle-special-abilities-v1",
+  "version": "v1",
+  "notes": "Runtime DSL rules only. Deprecated unconditional resource/access blockers were moved to archive.",
+  "abilities": [
+    {
+      "id": "douna_second_life_counter_injection",
+      "label": "Douna Second Life Counter Injection",
+      "ownerTags": [],
+      "entries": [
+        {
+          "entry": "counter",
+          "timing": "beforeOpponentAction",
+          "when": [
+            {
+              "battlePathEquals": {
+                "path": "dounaGauntlet.bossLife",
+                "value": 2
+              }
+            },
+            {
+              "opponentCardTag": "shrine"
+            }
+          ],
+          "ops": [
+            {
+              "op": "injectCard",
+              "target": "self",
+              "cardIdFrom": "opponentAction.counterId",
+              "reason": "douna_second_life_counter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mythical_beast_amber_availability",
+      "label": "Mythical Beast Amber Availability",
+      "ownerTags": [
+        "mythical_beast_amber"
+      ],
+      "entries": [
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "cardRequirementEquals": {
+                "key": "mythicalBeastAmberState",
+                "value": "release_available"
+              }
+            },
+            {
+              "actorHasStatus": "mythicalBeastAmber"
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "mythical_beast_amber_already_used",
+              "reason": "幻兽琥珀已经解放过，不能再次启动"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "cardRequirementEquals": {
+                "key": "mythicalBeastAmberState",
+                "value": "release_available"
+              }
+            },
+            {
+              "actorHasStatus": "mythicalBeastAmberUsed"
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "mythical_beast_amber_already_used",
+              "reason": "幻兽琥珀已经解放过，不能再次启动"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "cardRequirementEquals": {
+                "key": "mythicalBeastAmberState",
+                "value": "normal"
+              }
+            },
+            {
+              "actorHasStatus": "mythicalBeastAmber"
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "mythical_beast_amber_normal_locked_after_release",
+              "reason": "幻兽琥珀解放中，常态电荷牌已切换"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "cardRequirementEquals": {
+                "key": "mythicalBeastAmberState",
+                "value": "released"
+              }
+            },
+            {
+              "actorMissingStatus": "mythicalBeastAmber"
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "mythical_beast_amber_requires_release",
+              "reason": "需要先解放幻兽琥珀"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "actionEffectTruthy": "mythicalBeastAmberRequiresActive"
+            },
+            {
+              "actorMissingStatus": "mythicalBeastAmber"
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "mythical_beast_amber_requires_release",
+              "reason": "需要先解放幻兽琥珀"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mythical_beast_amber_after_resolved",
+      "label": "Mythical Beast Amber After Resolved",
+      "ownerTags": [
+        "mythical_beast_amber"
+      ],
+      "planner": {
+        "kind": "activation_followup",
+        "activeStatusId": "mythicalBeastAmber",
+        "followupRequirement": {
+          "key": "mythicalBeastAmberState",
+          "value": "released"
+        },
+        "exclusiveActivationCard": true,
+        "priority": 90
+      },
+      "entries": [
+        {
+          "entry": "afterCardResolved",
+          "timing": "afterCardResolved",
+          "when": [
+            {
+              "cardRequirementEquals": {
+                "key": "mythicalBeastAmberState",
+                "value": "release_available"
+              }
+            }
+          ],
+          "ops": [
+            {
+              "op": "addStatus",
+              "target": "self",
+              "status": {
+                "id": "mythicalBeastAmber",
+                "label": "幻兽琥珀",
+                "rounds": 999,
+                "value": 1,
+                "outgoingScale": 1.3,
+                "incomingHpScale": 1.08,
+                "evasionBonus": 0.08,
+                "mythicalBeastAmberAoeFullDodge": true
+              }
+            },
+            {
+              "op": "addStatus",
+              "target": "self",
+              "status": {
+                "id": "mythicalBeastAmberUsed",
+                "label": "幻兽琥珀已解放",
+                "rounds": 999,
+                "value": 1
+              }
+            },
+            {
+              "op": "setBattlePath",
+              "path": "actionUiMessage",
+              "value": "鹿紫云一解放「幻兽琥珀」：肉体术式化，不可逆损耗开始。"
+            }
+          ]
+        },
+        {
+          "entry": "afterCardResolved",
+          "timing": "afterCardResolved",
+          "when": [
+            {
+              "actionEffectTruthy": "mythicalBeastAmberChargeDelta"
+            }
+          ],
+          "ops": [
+            {
+              "op": "adjustCounter",
+              "target": "opponent",
+              "namespace": "mythical_beast_amber",
+              "counterId": "charge",
+              "deltaFrom": "action.effects.mythicalBeastAmberChargeDelta",
+              "min": 0,
+              "max": 6,
+              "label": "电荷标记"
+            }
+          ]
+        },
+        {
+          "entry": "afterCardResolved",
+          "timing": "afterCardResolved",
+          "when": [
+            {
+              "cardId": "card_kashimo_lightning_body_overload"
+            }
+          ],
+          "ops": [
+            {
+              "op": "adjustCounter",
+              "target": "self",
+              "namespace": "mythical_beast_amber",
+              "counterId": "fracture",
+              "delta": 1,
+              "min": 0,
+              "max": 9,
+              "label": "琥珀裂解"
+            }
+          ]
+        },
+        {
+          "entry": "afterCardResolved",
+          "timing": "afterCardResolved",
+          "when": [
+            {
+              "cardId": "card_kashimo_electromagnetic_annihilation"
+            }
+          ],
+          "ops": [
+            {
+              "op": "adjustCounter",
+              "target": "self",
+              "namespace": "mythical_beast_amber",
+              "counterId": "fracture",
+              "delta": 2,
+              "min": 0,
+              "max": 9,
+              "label": "琥珀裂解"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mythical_beast_amber_damage_modifier",
+      "label": "Mythical Beast Amber Damage Modifier",
+      "ownerTags": [
+        "mythical_beast_amber"
+      ],
+      "entries": [
+        {
+          "entry": "damageModifier",
+          "timing": "beforeDamageApplication",
+          "when": [
+            {
+              "cardId": "card_kashimo_electromagnetic_annihilation"
+            }
+          ],
+          "ops": [
+            {
+              "op": "scaleDamageByCounter",
+              "target": "opponent",
+              "namespace": "mythical_beast_amber",
+              "counterId": "charge",
+              "max": 6,
+              "perStack": 0.18,
+              "maxMultiplier": 2.2,
+              "consumeCounter": true
+            }
+          ]
+        },
+        {
+          "entry": "damageModifier",
+          "timing": "beforeDamageApplication",
+          "when": [
+            {
+              "actionEffectTruthy": "mythicalBeastAmberChargeDamageScale"
+            }
+          ],
+          "ops": [
+            {
+              "op": "scaleDamageByCounter",
+              "target": "opponent",
+              "namespace": "mythical_beast_amber",
+              "counterId": "charge",
+              "max": 6,
+              "perStackFrom": "action.effects.mythicalBeastAmberChargeDamageScale",
+              "maxMultiplier": 2.2,
+              "consumeFrom": "action.effects.mythicalBeastAmberChargeConsume"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mythical_beast_amber_aoe_full_dodge",
+      "label": "Mythical Beast Amber AOE Full Dodge",
+      "ownerTags": [],
+      "entries": [
+        {
+          "entry": "evasionModifier",
+          "timing": "beforeEvasionCheck",
+          "when": [
+            {
+              "actorHasStatus": "mythicalBeastAmber"
+            },
+            {
+              "evasionProfile": "technique_area"
+            },
+            {
+              "actionDomainSpecific": false
+            }
+          ],
+          "ops": [
+            {
+              "op": "scaleEvasion",
+              "damageScale": 0,
+              "ceScale": 0,
+              "stabilityScale": 0,
+              "reasonId": "amber_aoe_full_dodge",
+              "reason": "Amber AOE full dodge"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jackpot_gauge_accumulation",
+      "label": "Jackpot Gauge Accumulation",
+      "ownerTags": [
+        "hakari_jackpot_owner",
+        "jackpot"
+      ],
+      "entries": [
+        {
+          "entry": "specialCounter",
+          "timing": "afterCardResolved",
+          "when": [],
+          "ops": [
+            {
+              "op": "upsertSpecialCounter",
+              "target": "self",
+              "namespace": "idle_death_gamble",
+              "counterId": "jackpot_gauge",
+              "delta": 1,
+              "clampMax": 120
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "trial_confiscation_availability",
+      "label": "Trial Confiscation Availability",
+      "ownerTags": [
+        "higuruma_trial_owner",
+        "trial"
+      ],
+      "entries": [
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "actorHasStatus": "techniqueConfiscated"
+            },
+            {
+              "actionRequiresInnateTechnique": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "technique_confiscated",
+              "reason": "术式被没收中"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "actorHasStatus": "curseTechniqueBound"
+            },
+            {
+              "actionRequiresInnateTechnique": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "technique_bound",
+              "reason": "术式被缚中"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "actorHasStatus": "cursedToolConfiscated"
+            },
+            {
+              "actionRequiresCursedTool": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "tool_confiscated",
+              "reason": "咒具被没收中"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "timing": "beforeActionAvailability",
+          "when": [
+            {
+              "actorHasStatus": "toolFunctionLocked"
+            },
+            {
+              "actionRequiresCursedTool": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reasonId": "tool_locked",
+              "reason": "咒具功能锁定中"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mahoraga_summon_defeated",
+      "label": "魔虚罗代打被击破",
+      "description": "当魔虚罗代打单位被击破时，移除代打状态，召唤者直接落败，关闭代理标记",
+      "entries": [
+        {
+          "entry": "summonDefeated",
+          "when": [
+            {
+              "always": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "setDefeatedEffect",
+              "ownerHpZero": true,
+              "deactivateProxy": true,
+              "removeStatuses": [
+                "mahoragaSubstitute"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mahoraga_adaptation_defense",
+      "label": "魔虚罗适应防御",
+      "description": "根据适应次数缩放受到的伤害",
+      "entries": [
+        {
+          "entry": "defenseModifier",
+          "when": [
+            {
+              "actorHasStatus": "mahoragaSubstitute"
+            }
+          ],
+          "ops": [
+            {
+              "op": "setDamageModifier",
+              "scale": {
+                "valueFrom": "battle.mahoragaAdaptScale"
+              },
+              "reason": "mahoraga_adaptation"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "douna_subdued_mahoraga_availability",
+      "label": "斗傩调伏魔虚罗可用性",
+      "description": "控制斗傩大陆中已调伏魔虚罗的召唤牌可用性",
+      "entries": [
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "cardRequirementEquals": {
+                "key": "requiresDounaSubduedMahoraga",
+                "value": true
+              }
+            }
+          ],
+          "ops": [
+            {
+              "op": "setBattlePath",
+              "path": "dounaSubduedMahoragaChecked",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jackpot_claim_availability",
+      "label": "Jackpot 兑现可用性",
+      "description": "jackpot ready 或 gauge>=100 时 allowed，否则 blocked",
+      "entries": [
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "cardId": "claim_jackpot"
+            },
+            {
+              "subPhaseType": "jackpot"
+            },
+            {
+              "subPhaseNotResolved": true
+            },
+            {
+              "subPhaseJackpotReady": false
+            },
+            {
+              "subPhaseJackpotGaugeLt": 100
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "jackpot 期待度不足",
+              "reasonId": "jackpot_gauge_insufficient"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technique_confiscation_burnout_block",
+      "label": "术式没收/烧断封锁",
+      "description": "当术式被没收、封锁或烧断时，禁止需要术式的牌",
+      "entries": [
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "actorHasStatus": "techniqueConfiscated"
+            },
+            {
+              "actionRequiresInnateTechnique": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "术式被没收中",
+              "reasonId": "technique_confiscated"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "actorHasStatus": "curseTechniqueBound"
+            },
+            {
+              "actionRequiresInnateTechnique": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "术式被封锁",
+              "reasonId": "curse_technique_bound"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "actorHasStatus": "techniqueBurnout"
+            },
+            {
+              "actionRequiresInnateTechnique": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "术式烧断中",
+              "reasonId": "technique_burnout"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cursed_tool_confiscation_block",
+      "label": "咒具没收封锁",
+      "description": "当咒具被没收或功能锁定时，禁止需要咒具的牌",
+      "entries": [
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "actorHasStatus": "cursedToolConfiscated"
+            },
+            {
+              "actionRequiresCursedTool": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "咒具被没收中",
+              "reasonId": "cursed_tool_confiscated"
+            }
+          ]
+        },
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "actorHasStatus": "toolFunctionLocked"
+            },
+            {
+              "actionRequiresCursedTool": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "咒具功能被锁定",
+              "reasonId": "tool_function_locked"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projection_hand_seal",
+      "label": "投影手牌封印",
+      "description": "投影术式随机封印对手手牌",
+      "ownerTags": [
+        "projection_sorcery"
+      ],
+      "entries": [
+        {
+          "entry": "handSeal",
+          "when": [
+            {
+              "always": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "upsertSpecialCounter",
+              "namespace": "projection_sorcery",
+              "counterId": "handSealCount",
+              "opCreate": true,
+              "delta": 0,
+              "clampMax": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projection_frame_shield",
+      "label": "投影帧护盾",
+      "description": "投影术式帧护盾反射真实伤害",
+      "entries": [
+        {
+          "entry": "frameShield",
+          "when": [
+            {
+              "always": true
+            }
+          ],
+          "ops": [
+            {
+              "op": "setBattlePath",
+              "path": "projectionFrameShieldReflectRatio",
+              "value": {
+                "value": 0.25
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "star_rage_black_hole_availability",
+      "label": "星之怒黑洞条件",
+      "description": "质量不足5时不能使用黑洞",
+      "entries": [
+        {
+          "entry": "availability",
+          "when": [
+            {
+              "hasStarRageSpec": true
+            },
+            {
+              "starRageEffect": "black_hole"
+            },
+            {
+              "starRageMassLt": 5
+            }
+          ],
+          "ops": [
+            {
+              "op": "blockAvailability",
+              "reason": "质量不足以生成黑洞",
+              "reasonId": "star_rage_black_hole_mass_insufficient"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

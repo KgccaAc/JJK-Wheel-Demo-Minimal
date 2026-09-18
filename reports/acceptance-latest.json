@@ -1,0 +1,48 @@
+﻿{
+    "schema":  "jjk-full-acceptance-v1",
+    "timestamp":  "2026-09-18T03:39:26.1082027Z",
+    "results":  [
+                    {
+                        "test":  "godot_editor_scan",
+                        "status":  "FAIL",
+                        "exitCode":  1
+                    },
+                    {
+                        "test":  "scene_structure_audit",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "uid_ownership",
+                        "status":  "FAIL",
+                        "exitCode":  -196608
+                    },
+                    {
+                        "test":  "production_entry_audit",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "target_structure",
+                        "status":  "FAIL",
+                        "exitCode":  -196608
+                    },
+                    {
+                        "test":  "backend_official_online_battle_full_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_official_online_battle_websocket_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_online_room_v2_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    }
+                ],
+    "failed":  3,
+    "status":  "FAIL"
+}

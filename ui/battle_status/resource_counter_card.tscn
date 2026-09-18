@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://ddl1c4vrthlfb"]
+
+[ext_resource type="Texture2D" uid="uid://bhna1ny3jstcf" path="res://art/fight/资源计数牌牌面.png" id="1_face"]
+[ext_resource type="Script" uid="uid://bs4xqrg8p8ddu" path="res://ui/battle_status/resource_counter_card.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://br246jmc3cn8e" path="res://art/menu/战斗标.png" id="3_ny7an"]
+
+[node name="ResourceCounterCard" type="Control" unique_id=1093386467]
+custom_minimum_size = Vector2(1024, 1536)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1024.0
+offset_bottom = 1536.0
+mouse_filter = 2
+script = ExtResource("2_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1520309212]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 1536.0
+mouse_filter = 2
+texture = ExtResource("1_face")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1478257219]
+layout_mode = 0
+offset_left = 413.0
+offset_top = 651.0
+offset_right = 606.0
+offset_bottom = 827.0
+texture = ExtResource("3_ny7an")
+
+[node name="CounterName" type="Label" parent="." unique_id=1314711100]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 111.0
+offset_top = 245.0
+offset_right = -113.0
+offset_bottom = 805.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.12, 0.08, 0.16, 1)
+theme_override_colors/font_outline_color = Color(0.92, 0.82, 1, 0.75)
+theme_override_constants/outline_size = 13
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 120
+text = "计数器名称"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="CounterValue" type="Label" parent="." unique_id=738080792]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -800.0
+offset_right = -150.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.96, 0.88, 1, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.04, 0.18, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 226
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1915903955]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 863.0
+offset_right = 565.0
+offset_bottom = 934.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 51
+text = "数量"
+
+
+
