@@ -43,6 +43,7 @@ mouse_filter = 2
 script = ExtResource("13_fight_presenter")
 
 [node name="RoundSummaryPanel" parent="." unique_id=1295903012 instance=ExtResource("16_round_summary")]
+visible = true
 layout_mode = 0
 offset_left = 209.0
 offset_top = 44.0
@@ -85,7 +86,6 @@ pivot_offset = Vector2(836, 470.5)
 mouse_filter = 0
 
 [node name="FirstMoveContestEditorPreview" type="Control" parent="." unique_id=296824383]
-visible = false
 z_index = 110
 anchors_preset = 0
 offset_left = -3.0
@@ -298,7 +298,6 @@ text = "战斗准备中"
 fit_content = true
 
 [node name="DiscardDropOverlay" type="ColorRect" parent="." unique_id=910000014]
-visible = false
 z_index = 19
 layout_mode = 0
 offset_left = 420.0
@@ -309,7 +308,6 @@ mouse_filter = 2
 color = Color(0.8, 0.08, 0.08, 0.38)
 
 [node name="DiscardPrompt" type="Label" parent="." unique_id=910000010]
-visible = false
 z_index = 20
 layout_mode = 0
 offset_left = 420.0
@@ -324,7 +322,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HitEffect" type="ColorRect" parent="." unique_id=910000011]
-visible = false
 z_index = 21
 layout_mode = 0
 offset_left = 650.0
@@ -1402,7 +1399,6 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="DebugLayer" type="Control" parent="." unique_id=50598691]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

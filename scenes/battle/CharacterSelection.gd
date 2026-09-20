@@ -4,7 +4,7 @@ const UI: Script = preload("res://ui/ClientUi.gd")
 const PAGE_ENTRANCE: Script = preload("res://ui/PageEntrance.gd")
 
 const MENU_SCENE_PATH: String = "res://scenes/home/home.tscn"
-const FIGHT_SCENE_PATH: String = "res://scenes/battle/fight.tscn"
+const FIGHT_SCENE_PATH: String = "res://scenes/battle/battle_scene.tscn"
 const ONLINE_ROOM_SCENE_PATH: String = "res://scenes/online/online_room.tscn"
 const USER_SCENE_PATH: String = "res://scenes/profile/profile_page.tscn"
 const DATA_REPOSITORY_SCRIPT: Script = preload("res://battle/data/BattleDataRepository.gd")
@@ -20,8 +20,8 @@ const CHARACTER_ROW_SEPARATION: int = -70
 @onready var _character_list: VBoxContainer = $CharacterBackground/CharacterScroll/CharacterList
 @onready var _character_scroll: ScrollContainer = $CharacterBackground/CharacterScroll
 @onready var _character_content: Control = $CharacterContent
-@onready var _player_open_button: Button = _find_open_button($CharacterContent/PlayerCharacterSlots, ["PlayerCharacterButton", "PlayerCharacterButtonPlayerCharacterButton"])
-@onready var _opponent_open_button: Button = _find_open_button($CharacterContent/OpponentCharacterSlots, ["OpponentCharacterButton"])
+@onready var _player_open_button: TextureButton = _find_open_button($CharacterContent/PlayerCharacterSlots, ["PlayerCharacterButton", "PlayerCharacterButtonPlayerCharacterButton"])
+@onready var _opponent_open_button: TextureButton = _find_open_button($CharacterContent/OpponentCharacterSlots, ["OpponentCharacterButton"])
 @onready var _player_card: Control = $CharacterContent/PlayerCharacterSlots/PlayerCharacter
 @onready var _opponent_card: Control = $CharacterContent/OpponentCharacterSlots/OpponentCharacter
 @onready var _player_name: Label = _find_profile_name(_player_card)
@@ -111,16 +111,16 @@ func _open_opponent_picker() -> void:
 ## Layout authors may rename a visual button while polishing a page.  Keep the
 ## compatibility aliases here so scene layout changes cannot turn into a null
 ## signal connection at startup.
-func _find_open_button(container: Node, candidate_names: Array[String]) -> Button:
+func _find_open_button(container: Node, candidate_names: Array[String]) -> TextureButton:
 	for node_name: String in candidate_names:
-		var button: Button = container.get_node_or_null(node_name) as Button
+		var button: TextureButton = container.get_node_or_null(node_name) as TextureButton
 		if button != null: return button
 	return null
 
 func _find_profile_name(card: Control) -> Label:
 	return card.get_node_or_null("Name") as Label if card.get_node_or_null("Name") is Label else card.get_node_or_null("Character/Name") as Label
 
-func _connect_picker_button(button: Button, callback: Callable, label: String) -> void:
+func _connect_picker_button(button: TextureButton, callback: Callable, label: String) -> void:
 	if button == null:
 		push_warning("角色选择页缺少%s按钮；已跳过该按钮绑定。" % label)
 		return
@@ -198,11 +198,15 @@ func _build_character_buttons() -> void:
 		child.queue_free()
 	var visible_characters: Array[Dictionary] = _characters_for_current_picker()
 	for character: Dictionary in visible_characters:
-		var row := Button.new()
+		var row := TextureButton.new()
 		row.custom_minimum_size = Vector2(500.0, CHARACTER_ROW_HEIGHT)
 		row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		row.size_flags_vertical = Control.SIZE_SHRINK_BEGIN
-		row.flat = true
+		row.texture_normal = CHARACTER_ROW_TEXTURE
+		row.texture_hover = CHARACTER_ROW_TEXTURE
+		row.texture_pressed = CHARACTER_ROW_TEXTURE
+		row.ignore_texture_size = true
+		row.stretch_mode = TextureButton.STRETCH_SCALE
 		row.mouse_filter = Control.MOUSE_FILTER_STOP
 		row.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 		row.focus_mode = Control.FOCUS_NONE
@@ -215,23 +219,17 @@ func _build_character_buttons() -> void:
 		row.button_up.connect(_on_character_row_button_up.bind(row))
 		row.gui_input.connect(_on_character_row_gui_input.bind(row))
 		_character_list.add_child(row)
-		var visual := TextureRect.new()
-		visual.texture = CHARACTER_ROW_TEXTURE
-		visual.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		visual.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		visual.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-		visual.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		row.add_child(visual)
 		var name_label := Label.new()
 		name_label.name = &"Name"
 		# Keep the same coordinates as the authored CharacterBackground row,
 		# scaled from 526px artwork width to the 500px scroll content width.
-		name_label.position = Vector2(125.0, 60.0)
-		name_label.size = Vector2(360.0, 54.0)
+		name_label.position = Vector2(65.0, 52.0)
+		name_label.size = Vector2(370.0, 62.0)
 		name_label.add_theme_color_override("font_color", Color(0.0, 0.0, 0.0, 1.0))
 		name_label.add_theme_font_size_override("font_size", 18)
 		name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 		name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		name_label.text = str(character.get("name", ""))
 		row.add_child(name_label)
@@ -263,23 +261,23 @@ func _merge_card_characters(built_ins: Array[Dictionary]) -> Array[Dictionary]:
 			result.append(stored)
 	return result
 
-func _on_character_row_mouse_entered(row: Button) -> void:
+func _on_character_row_mouse_entered(row: TextureButton) -> void:
 	row.modulate = Color(1.08, 1.08, 1.08, 1.0)
 
-func _on_character_row_mouse_exited(row: Button) -> void:
+func _on_character_row_mouse_exited(row: TextureButton) -> void:
 	row.modulate = Color.WHITE
 	row.scale = Vector2.ONE
 
-func _on_character_row_button_down(row: Button) -> void:
+func _on_character_row_button_down(row: TextureButton) -> void:
 	row.pivot_offset = row.size * 0.5
 	row.scale = Vector2(0.98, 0.98)
 	row.modulate = Color(0.92, 0.92, 0.98, 1.0)
 
-func _on_character_row_button_up(row: Button) -> void:
+func _on_character_row_button_up(row: TextureButton) -> void:
 	row.scale = Vector2.ONE
 	row.modulate = Color(1.08, 1.08, 1.08, 1.0)
 
-func _on_character_row_gui_input(event: InputEvent, _row: Button) -> void:
+func _on_character_row_gui_input(event: InputEvent, _row: TextureButton) -> void:
 	if event is InputEventMouseButton and (event as InputEventMouseButton).pressed:
 		var mouse_event: InputEventMouseButton = event as InputEventMouseButton
 		if mouse_event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
@@ -322,16 +320,58 @@ func _refresh_profile(card: Control, name_label: Label, character_id: String) ->
 	for index: int in STAT_FIELDS.size():
 		var stat_node: RichTextLabel = card.get_node_or_null("RichTextLabel%s" % ("" if index == 0 else str(index + 1))) as RichTextLabel
 		if stat_node == null: continue
-		stat_node.text = "   %s\n\n     实值" % STAT_NAMES[index]
+		# Keep the caption in the authored stat tile instead of drawing it inside
+		# the RichTextLabel. The grade/value rows are laid out independently so
+		# an inline second line cannot overlap the rating on the real page.
+		stat_node.text = "   %s" % STAT_NAMES[index]
 		var grade_label: Label = stat_node.get_node_or_null("Label") as Label
 		var value_label: Label = stat_node.get_node_or_null("Label2") as Label
 		var grade_text: String = str(stats.get(STAT_FIELDS[index], "-"))
 		if grade_label != null:
+			grade_label.add_theme_font_size_override("font_size", 28)
+			grade_label.custom_minimum_size = Vector2.ZERO
 			grade_label.text = grade_text
+			# The authored label's minimum size expands with SSS. Use a full-width
+			# centered grade row below the caption instead of a left-side badge;
+			# this keeps every rating visually centered in its stat tile.
+			grade_label.position = Vector2(0.0, 8.0)
+			grade_label.size = Vector2(138.0, 36.0)
+			grade_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			grade_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			grade_label.clip_text = true
 		if value_label != null:
-			value_label.text = _format_stat_value(profile, STAT_FIELDS[index], grade_text)
+			# The value caption is a distinct, centered second row below the
+			# rating. It no longer sits on the tile's right edge or competes with
+			# the rating's visual center.
+			value_label.position = Vector2(0.0, 68.0)
+			value_label.size = Vector2(138.0, 20.0)
+			value_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+			value_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+			value_label.add_theme_font_size_override("font_size", 12)
+			value_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
+			value_label.text = "实值：%s" % _format_stat_value(profile, STAT_FIELDS[index], grade_text)
+	# RichTextLabel performs one layout pass for its authored children after
+	# _ready. Re-apply the tile geometry after that pass so an SSS label cannot
+	# restore its authored 69px height over the value row.
+	call_deferred("_normalize_stat_label_geometry", card)
 	_update_character_levels(card, profile, stats)
 	_update_character_detail(card, profile, stats)
+
+func _normalize_stat_label_geometry(card: Control) -> void:
+	for index: int in STAT_FIELDS.size():
+		var stat_node: RichTextLabel = card.get_node_or_null("RichTextLabel%s" % ("" if index == 0 else str(index + 1))) as RichTextLabel
+		if stat_node == null:
+			continue
+		var grade_label: Label = stat_node.get_node_or_null("Label") as Label
+		var value_label: Label = stat_node.get_node_or_null("Label2") as Label
+		if grade_label != null:
+			grade_label.custom_minimum_size = Vector2.ZERO
+			grade_label.position = Vector2(0.0, 8.0)
+			grade_label.size = Vector2(stat_node.size.x, 36.0)
+		if value_label != null:
+			value_label.custom_minimum_size = Vector2.ZERO
+			value_label.position = Vector2(0.0, 68.0)
+			value_label.size = Vector2(stat_node.size.x, 20.0)
 
 func _update_character_detail(card: Control, profile: Dictionary, stats: Dictionary) -> void:
 	var detail: RichTextLabel = card.get_node_or_null("Detail") as RichTextLabel

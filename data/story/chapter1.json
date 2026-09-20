@@ -52,8 +52,10 @@
       ],
       "choices":[
         {"id":"pursue","value":"追入河岸","label":"追入河岸","next":"chapter1_battle","text":"你压低身体追入河岸，抢在黑影彻底成形前锁定了它。初级术师认可你的果断。","resources":{"ce":-5,"stability":-2},"growth":{"悟性":1},"relationshipDelta":{"junior_sorcerer":{"affection":4,"respect":1}}},
-        {"id":"prepare","value":"先调息备战","label":"先调息备战","next":"chapter1_battle","text":"你没有贸然追击。短暂调息后，咒力沿四肢稳定运转；初级术师对你的谨慎稍微放下戒心。","resources":{"ce":8,"stability":2},"growth":{"咒力效率":1},"relationshipDelta":{"junior_sorcerer":{"affection":5,"trust":1}}}
+        {"id":"prepare","value":"先调息备战","label":"先调息备战","next":"chapter1_battle","text":"你没有贸然追击。短暂调息后，咒力沿四肢稳定运转；初级术师对你的谨慎稍微放下戒心。","resources":{"ce":8,"stability":2},"growth":{"咒力效率":1},"relationshipDelta":{"junior_sorcerer":{"affection":5,"trust":1}}},
+        {"id":"talk_to_junior","value":"先与初级术师确认风险","label":"先与初级术师确认风险","next":"chapter1_ai_contact","text":"你没有贸然追击，而是先回应暗处的术师，确认彼此的退路。","relationshipDelta":{"junior_sorcerer":{"trust":1}}}
       ]},
+    {"id":"chapter1_ai_contact","type":"ai_dialogue","nodeKind":"ai_dialogue","title":"河岸前的临时协商","scene":"res://scenes/story/RPG.tscn","speakerId":"junior_sorcerer","interactionGoal":"在进入河岸战斗前确认风险、退路和是否愿意互相配合","allowedTopics":["河岸残秽","普通人安全","战斗退路","双方信任"],"blockedTopics":["未来剧情","隐藏节点","核心属性修改","战斗胜负作弊"],"maxTurns":3,"fallbackSetId":"junior_sorcerer_fallback","effectPolicyId":"dialogue_only","completionRoutes":{"normal":"chapter1_battle","rejected":"chapter1_battle","fallback":"chapter1_battle"},"next":"chapter1_battle"},
     {
       "id":"chapter1_optional_event", "type":"random", "nodeKind":"random", "title":"河岸旁的偶遇", "scene":"res://scenes/story/RPG.tscn", "background":"res://art/Story/RPG/第一章/河岸桥下.png", "next":"chapter1_branch", "critical":false, "resolution":"hidden_wheel",
       "rpgLines":[
@@ -83,8 +85,8 @@
         {"id":"withdraw","value":"稳妥撤离", "label":"先撤离再正面迎战", "next":"chapter1_danger","text":"你没有追逐眼前的诱饵，而是退回开阔地带，迫使深层残秽主动暴露。","resources":{"hp":3,"ce":4,"xp":5,"stability":5},"growth":{"悟性":1}}
       ]
     },
-    {"id":"chapter1_danger","type":"battle","nodeKind":"dangerous","title":"高危·河岸深层残秽","scene":"res://scenes/battle/battle_scene.tscn","next":"chapter1_end","critical":false,"sourceRole":"optional_danger","battleProfile":"river_deep_curse","battleRules":{"victory":{"xp":20,"stability":-4,"growth":{"体术":2,"体质":1}},"retreat":{"xp":7,"stability":-9,"growth":{"体质":1}},"defeat":{"xp":3,"stability":-12,"growth":{"体质":1}}}},
-    {"id":"chapter1_battle","type":"battle","nodeKind":"battle","title":"河岸的低级咒灵","scene":"res://scenes/battle/battle_scene.tscn","next":"chapter1_end","critical":false,"sourceRole":"tutorial_battle","battleRules":{"victory":{"xp":16,"stability":-3,"growth":{"体术":2,"体质":1}},"retreat":{"xp":6,"stability":-8,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-10,"growth":{"体质":1}}}},
+    {"id":"chapter1_danger","type":"battle","nodeKind":"dangerous","title":"高危·河岸深层残秽","scene":"res://scenes/battle/battle_scene.tscn","next":"chapter1_end","critical":false,"sourceRole":"optional_danger","battleProfile":"river_deep_curse","enemyCharacterId":"kechizu_origin_candidate","enemyHpScale":1.0,"battleRules":{"victory":{"xp":20,"stability":-4,"growth":{"体术":2,"体质":1}},"retreat":{"xp":7,"stability":-9,"growth":{"体质":1}},"defeat":{"xp":3,"stability":-12,"growth":{"体质":1}}}},
+    {"id":"chapter1_battle","type":"battle","nodeKind":"battle","title":"河岸的低级咒灵","scene":"res://scenes/battle/battle_scene.tscn","next":"chapter1_end","critical":false,"sourceRole":"tutorial_battle","battleProfile":"river_low_grade_curse","enemyCharacterId":"kechizu_origin_candidate","enemyHpScale":0.35,"battleRules":{"victory":{"xp":16,"stability":-3,"growth":{"体术":2,"体质":1}},"retreat":{"xp":6,"stability":-8,"growth":{"体质":1}},"defeat":{"xp":2,"stability":-10,"growth":{"体质":1}}}},
     {"id":"chapter1_settlement","type":"settlement","title":"第一章节点结算","scene":"res://scenes/story/settlement.tscn","next":"chapter1_end"},
     {"id":"chapter1_end","type":"end","title":"第一章完成","scene":"res://scenes/story/Map.tscn","next":"core_join_high_school","nextCore":{"nodeId":"joinHighSchool","wheelId":145,"title":"是否加入高专"}},
     {

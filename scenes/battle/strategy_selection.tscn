@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bm4b4vssvtyyx" path="res://art/fight/策略选择/反制拆招.png" id="8_counter"]
 [ext_resource type="Texture2D" uid="uid://c2rmbj6e5yb8q" path="res://art/fight/策略选择/拖入消耗.png" id="9_resource"]
 [ext_resource type="Texture2D" uid="uid://dkoatny8kefkn" path="res://art/fight/策略选择/赌命收割.png" id="10_risk"]
-[ext_resource type="Script" uid="uid://bf8yqtqf2pmcq" path="res://scenes/battle/StrategySelection.gd" id="11_script"]
+[ext_resource type="Script" uid="uid://dgybhmcxieyig" path="res://scenes/battle/StrategySelection.gd" id="11_script"]
 
 [node name="StrategySelection" type="Control" unique_id=1528020090]
 layout_mode = 3

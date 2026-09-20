@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <title>咒术轮盘 · Web 原型</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./wheel.css">
+  <link rel="stylesheet" href="./battle.css">
+</head>
+<body>
+  <div id="app" class="app-shell" data-state="loading">
+    <header class="topbar">
+      <a class="brand" href="#/home" aria-label="返回首页"><span class="brand-mark">JJK</span><span><strong>咒术轮盘</strong><small>WEB PLAYABLE SLICE</small></span></a>
+      <nav class="primary-nav" aria-label="主导航">
+        <a href="#/home" data-route="home">首页</a>
+        <a href="#/story" data-route="story">故事模式</a>
+        <a href="#/wheel" data-route="wheel">转盘</a>
+        <a href="#/battle" data-route="battle">战斗</a>
+        <a href="#/online" data-route="online">联机</a>
+      </nav>
+      <div class="top-status"><span id="ai-status" class="status-dot pending">AI 检查中</span><span id="save-status">未开始</span></div>
+    </header>
+    <main id="main" class="main" tabindex="-1"></main>
+    <footer class="footer"><span>内容版本 <b id="content-version">加载中…</b></span><span>故事逻辑与页面表现已解耦</span></footer>
+  </div>
+  <script type="module" src="./app-shell.mjs"></script>
+</body>
+</html>

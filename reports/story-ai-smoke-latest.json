@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-09-20",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-flash",
+  "status": 200,
+  "source": "deepseek",
+  "fallback": false,
+  "textLength": 21,
+  "rejectedEffectCount": 4,
+  "saveRevision": 2,
+  "secretLogged": false,
+  "note": "真实 Key 只通过临时进程环境注入；报告不含 Key、完整提示词或完整回复。"
+}

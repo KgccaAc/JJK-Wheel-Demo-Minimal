@@ -63,34 +63,6 @@ func _on_button_pressed(selected_index: int) -> void:
 			caption.visible = true
 		elif caption != null:
 			caption.visible = false
-	_update_current_caption(selected_index)
-
-func _update_current_caption(selected_index: int) -> void:
-	var host := get_parent() as Control
-	if host == null: return
-	var caption := host.get_node_or_null("NavCurrentLabel") as Label
-	if caption == null:
-		call_deferred("_create_current_caption")
-		return
-	var selected_button := _buttons[selected_index]
-	if selected_button == null: return
-	caption.position = position + selected_button.position + Vector2(0.0, -27.0)
-	caption.size = Vector2(selected_button.size.x, 24.0)
-	caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	caption.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	caption.z_index = 25
-	caption.add_theme_font_size_override("font_size", 17)
-	caption.add_theme_color_override("font_color", Color(0.24, 0.14, 0.3, 1.0))
-	caption.text = "当前：%s" % BUTTON_TOOLTIPS[selected_index]
-
-func _create_current_caption() -> void:
-	var host := get_parent() as Control
-	if host == null or host.get_node_or_null("NavCurrentLabel") != null: return
-	var caption := Label.new()
-	caption.name = "NavCurrentLabel"
-	host.add_child(caption)
-	_update_current_caption(_selected_index)
 
 
 

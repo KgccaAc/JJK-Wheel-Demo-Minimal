@@ -2,7 +2,7 @@ class_name SourceFixtureAdapter
 extends RefCounted
 
 const RULESET_VERSION: StringName = &"godot-battle-rules-v1"
-const BattleStateScript: Script = preload("res://battle/core/BattleState.gd")
+const BattleStateScript: Script = preload("res://battle/rules/BattleState.gd")
 const DataRepositoryScript: Script = preload("res://battle/data/BattleDataRepository.gd")
 
 var _data: RefCounted = DataRepositoryScript.new()

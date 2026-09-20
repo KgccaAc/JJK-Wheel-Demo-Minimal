@@ -1,11 +1,11 @@
 ﻿{
     "schema":  "jjk-full-acceptance-v1",
-    "timestamp":  "2026-09-18T03:39:26.1082027Z",
+    "timestamp":  "2026-09-20T01:41:51.5815294Z",
     "results":  [
                     {
                         "test":  "godot_editor_scan",
-                        "status":  "FAIL",
-                        "exitCode":  1
+                        "status":  "PASS",
+                        "exitCode":  0
                     },
                     {
                         "test":  "scene_structure_audit",
@@ -14,8 +14,9 @@
                     },
                     {
                         "test":  "uid_ownership",
-                        "status":  "FAIL",
-                        "exitCode":  -196608
+                        "status":  "SKIP",
+                        "exitCode":  null,
+                        "reason":  "missing:tests/powershell/uid_ownership_acceptance.ps1"
                     },
                     {
                         "test":  "production_entry_audit",
@@ -24,8 +25,29 @@
                     },
                     {
                         "test":  "target_structure",
-                        "status":  "FAIL",
-                        "exitCode":  -196608
+                        "status":  "SKIP",
+                        "exitCode":  null,
+                        "reason":  "missing:tests/powershell/refactor_target_structure_acceptance.ps1"
+                    },
+                    {
+                        "test":  "backend_ai_context_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_ai_dialogue_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_local_preview_security_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_local_worker_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
                     },
                     {
                         "test":  "backend_official_online_battle_full_acceptance.mjs",
@@ -41,8 +63,35 @@
                         "test":  "backend_online_room_v2_acceptance.mjs",
                         "status":  "PASS",
                         "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_opponent_card_name_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_story_battle_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_story_content_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "backend_wheel_content_acceptance.mjs",
+                        "status":  "PASS",
+                        "exitCode":  0
+                    },
+                    {
+                        "test":  "online_battle_v3_flow",
+                        "status":  "SKIP",
+                        "exitCode":  null,
+                        "reason":  "missing:tests/powershell/online_battle_v3_flow_acceptance.ps1"
                     }
                 ],
-    "failed":  3,
-    "status":  "FAIL"
+    "failed":  0,
+    "skipped":  3,
+    "status":  "PASS"
 }

@@ -1,6 +1,6 @@
 # 联机传输边界
 
-`OnlineBattleProtocol.gd` 定义本地与线上共同使用的命令/权威更新契约；`LocalBattleCommandGateway.gd` 是当前离线权威实现。
+`OnlineBattleProtocol.gd` 定义本地与线上共同使用的命令/权威更新契约。本地单机的权威实现 `LocalBattleCommandGateway.gd` 已归档到 `_archive/legacy-online/`——当前离线路径由 `battle/ui/BattleFlowCoordinator.gd` 直接驱动 `BattleFlowSession`，不再经过网关层。
 
 `BattleTransportPayloads.gd` 将协议对象包装为版本化传输包，并剔除手牌、牌库、本地卡面路径和认证秘密。`RemoteBattleCommandGateway.gd` 仅预留真实服务端接入点；没有注入网络适配器时固定返回 `online_service_unavailable`，不会伪装成联机成功。
 

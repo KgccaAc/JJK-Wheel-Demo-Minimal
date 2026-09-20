@@ -13,6 +13,12 @@ signal turn_resolved(result: Dictionary)
 signal battle_finished(winner: String, reason: String)
 signal battle_error(message: String)
 
+## V1 时代的基础规则版本号，**仅用于源 fixture 校验**（见 SourceFixtureAdapter）。
+##
+## 生产会话不使用此值：所有 start_* 入口都硬编码 `battle-rules-v3`
+## （见本文件 state.ruleset_version 的 4 处赋值）。
+## `resolve_round()` 与 `validate_play()` 中不带 v3 前缀的分支因此**不可达**，
+## 保留仅为源码框架完整性与历史对照，不应在其上继续叠加新逻辑。
 const RULESET_VERSION: StringName = &"godot-battle-rules-v1"
 const NORMAL_HAND_SIZE: int = 10
 const RETAINED_HAND_SIZE: int = 8
@@ -31,7 +37,7 @@ const STRATEGY_PROFILES: Dictionary = {
 	"ResourceButton": {"id":"ResourceButton", "label":"拖入消耗", "authorize_technique":true, "initiative_bonus":0, "incoming_damage_multiplier":0.96, "outgoing_damage_multiplier":1.0, "technique_cost_multiplier":1.0, "domain_cost_multiplier":1.0, "ce_regen_bonus":12.0, "modifiers":["ce_regen_bonus"], "tags":["resource"]},
 	"RiskButton": {"id":"RiskButton", "label":"赌命收割", "authorize_technique":true, "initiative_bonus":8, "incoming_damage_multiplier":1.18, "outgoing_damage_multiplier":1.28, "technique_cost_multiplier":0.95, "domain_cost_multiplier":1.10, "ce_regen_bonus":0.0, "modifiers":["initiative_bonus","outgoing_damage_multiplier","incoming_damage_multiplier"], "tags":["risk"]}
 }
-const StateScript: Script = preload("res://battle/core/BattleState.gd")
+const StateScript: Script = preload("res://battle/rules/BattleState.gd")
 const EligibilityScript: Script = preload("res://battle/data/BattleEligibility.gd")
 const ResourcesScript: Script = preload("res://battle/data/CharacterResources.gd")
 const ActionResolverScript: Script = preload("res://battle/core/CoreActionResolver.gd")
@@ -126,38 +132,6 @@ func start_story_offline(player_snapshot: Dictionary, opponent_id: String, battl
 		return deal_round(state.revision)
 	return result
 
-## Starts a room battle from the exact snapshots exchanged by both players.
-## This path intentionally does not consult the local character repository:
-## custom-card data may exist only on the remote client.
-func start_online_from_room_players(players: Array, battle_seed: int) -> Dictionary:
-	if players.size() != 2: return _failure("room_players_required")
-	var eligibility: RefCounted = EligibilityScript.new()
-	var candidate_builder: RefCounted = CandidateBuilderScript.new()
-	var profiles: Array[Dictionary] = []
-	var splits: Array[Dictionary] = []
-	var domains: Array[Array] = []
-	for raw_player: Variant in players:
-		if not raw_player is Dictionary: return _failure("room_player_invalid")
-		var player: Dictionary = raw_player as Dictionary
-		var snapshot: Dictionary = player.get("character_snapshot", {}) as Dictionary
-		if snapshot.is_empty(): return _failure("room_character_snapshot_missing")
-		var profile: Dictionary = LoginCardProjectorScript.project(snapshot)
-		var expected_id: String = str(player.get("character_id", "")).strip_edges()
-		if profile.is_empty() or str(profile.get("id", "")).strip_edges() != expected_id:
-			return _failure("room_character_snapshot_mismatch")
-		if not bool(profile.get("snapshot_valid", false)):
-			return {"ok":false, "error":"login_card_snapshot_invalid", "character_id":expected_id, "errors":profile.get("snapshot_errors", [])}
-		profiles.append(ResourcesScript.new().apply(profile))
-		splits.append(_split_pool(eligibility.eligible_cards(profile, "normal")))
-		var domain_cards: Array[Dictionary] = []
-		for card: Dictionary in eligibility.eligible_cards(profile, "domain"):
-			if candidate_builder.is_domain_expansion(card): domain_cards.append(card)
-		if _resolve_domain_id(profile).is_empty(): domain_cards.clear()
-		domains.append(domain_cards)
-	var result: Dictionary = start_battle_with_pools(profiles, splits[0].basic, splits[1].basic, splits[0].technique, splits[1].technique, domains[0], domains[1], battle_seed)
-	if result.ok: battle_loaded.emit(get_state_snapshot())
-	return result
-
 ## 联机权威状态在 bootstrap 返回前没有理由下载双方完整登录卡快照。
 ## 此占位会话只满足 Fight 的 UI 生命周期；下一步必定由 Worker 的过滤
 ## canonical 投影覆盖它，绝不用于发牌或本地结算。
@@ -197,14 +171,6 @@ func start_battle_with_pools(profiles: Array[Dictionary], left_normal: Array[Dic
 	_last_round_actions = [[], []]
 	_emit_event("battle_started", {"seed":battle_seed})
 	return _success()
-
-## 显式创建 V3 规则战斗；旧 start_battle() 保持 v1 兼容，避免页面迁移时
-## 同一状态同时被两套结算器接管。
-func start_battle_v3(profiles: Array[Dictionary], left_pool: Array[Dictionary], right_pool: Array[Dictionary], left_domains: Array[Dictionary], right_domains: Array[Dictionary], battle_seed: int) -> Dictionary:
-	var result: Dictionary = start_battle(profiles, left_pool, right_pool, left_domains, right_domains, battle_seed)
-	if bool(result.get("ok", false)) and state != null:
-		state.ruleset_version = &"battle-rules-v3"
-	return result
 
 func restore_online_round_checkpoint(snapshot: Dictionary) -> Dictionary:
 	if state == null or snapshot.is_empty(): return _failure("round_checkpoint_missing")
@@ -387,6 +353,8 @@ func submit_play(side: int, ids: Array, domain_ids: Array, revision: int) -> Dic
 	_emit_event("play_submitted", input)
 	return _success()
 
+## 【V1 分支 · 生产不可达】同上：ruleset_version 恒为 battle-rules-v3，
+## 因此 393-395 行的 V1 校验路径在生产中不会执行。
 func validate_play(input: Dictionary) -> Dictionary:
 	if state == null: return _failure("battle_not_started")
 	if String(state.ruleset_version) == "battle-rules-v3": return _validate_v3_play(input)
@@ -417,6 +385,13 @@ func _validate_v3_play(input: Dictionary) -> Dictionary:
 	return ActionResolverV3Script.new().preview_action(preview, intent)
 
 ## 实际结算与预演共用相同执行路径；调用方负责副本或失败恢复。
+##
+## 调用点（2 处，可达性不同）：
+##   - validate_play():395 —— **可达**，但仅在该函数的 V1 分支内（生产不可达，见上）
+##   - resolve_round():484 —— **不可达**，位于 V1 结算路径内
+##
+## 结论：本函数在生产路径中当前不可达，保留原因同 resolve_round 的 V1 注释。
+## 不要删除：它是 V1 预演/结算共用的唯一实现，删除会同时改动两条 V1 分支的语义。
 func _execute_input(target_state: RefCounted, input: Dictionary) -> Dictionary:
 	var side: int = int(input.get("actor_index", -1))
 	if side not in [0, 1]: return _failure("invalid_actor")
@@ -462,6 +437,15 @@ func _execute_input(target_state: RefCounted, input: Dictionary) -> Dictionary:
 		result.instance_ids.append_array(domain_ids)
 	return result
 
+## 【V1 分支 · 生产不可达】
+## 只有当 state.ruleset_version != "battle-rules-v3" 时才会走到下面这段。
+## 而所有 start_* 入口都固定写入 battle-rules-v3，全仓没有任何调用方
+## 会写入其它值，因此 467 行以下的 V1 结算路径在生产中永不执行。
+##
+## 保留原因：便于与源项目 fixture 对照，且 RULESET_VERSION 常量仍被
+## SourceFixtureAdapter 用于 fixture 校验。
+##
+## 维护约定：**不要在此分支新增逻辑**。所有规则演进走 _resolve_v3_pending_round。
 func resolve_round(revision: int) -> Dictionary:
 	if state != null and String(state.ruleset_version) == "battle-rules-v3": return _resolve_v3_pending_round(revision)
 	var gate: Dictionary = _validate_command(&"RESOLVE", revision, 0)
@@ -502,6 +486,7 @@ func resolve_round(revision: int) -> Dictionary:
 		"ruleset_version":String(RULESET_VERSION), "seed":state.seed, "round":round_number,
 		"strategy_snapshot":state.strategy_snapshot.duplicate(true), "initiative":state.initiative.duplicate(true),
 		"before_state_hash":before.state_hash, "round_history_before":_round_history_actor_summary(before.get("actors", []) as Array), "inputs":inputs, "validated_actions":validated,
+		"action_sources":_round_action_sources(before, inputs),
 		"modifier_trace":trace, "events":_events_since(event_start),
 		"after_state":after, "after_state_hash":after.state_hash,
 		"winner":String(get_winner()), "finish_reason":state.finish_reason
@@ -538,6 +523,7 @@ func _resolve_v3_pending_round(revision: int) -> Dictionary:
 		"ruleset_version":"battle-rules-v3", "seed":state.seed, "round":round_number,
 		"strategy_snapshot":state.strategy_snapshot.duplicate(true), "initiative":state.initiative.duplicate(true),
 		"before_state_hash":str(before.get("state_hash", "")), "round_history_before":_round_history_actor_summary(before.get("actors", []) as Array), "inputs":inputs,
+		"action_sources":_round_action_sources(before, inputs),
 		"actions":result.get("actions", []).duplicate(true), "events":_events_since(event_start),
 		"after_state":after, "after_state_hash":str(after.get("state_hash", "")),
 		"winner":String(get_winner()), "finish_reason":state.finish_reason
@@ -565,20 +551,6 @@ func _apply_v3_strategy_attributes() -> void:
 		actor["ce_regen"] = maxf(0.0, float(actor.get("ce_regen", 0.0)) + float(strategy.get("ce_regen_bonus", 0.0)))
 		state.actors[side] = actor
 
-## V3 联机/回放入口。默认旧流程保持不变，切换由上层在确认双方
-## ruleset_version 后显式调用，避免两套结算器在同一回合同时写状态。
-func resolve_v3_round(inputs: Array[Dictionary], order: Array[int] = [0, 1]) -> Dictionary:
-	if state == null: return _failure("battle_not_started")
-	if inputs.size() != 2: return _failure("round_inputs_required")
-	var intents: Array[ActionIntentV3] = []
-	for input: Dictionary in inputs:
-		intents.append(ActionIntentV3Script.from_dictionary(input))
-	var result: Dictionary = RoundResolverV3Script.new().resolve_round(state, intents, order)
-	if bool(result.get("ok", false)):
-		_publish_state()
-		turn_resolved.emit(result)
-	return result
-
 ## 回合纪要只需要展示资源与状态；不把手牌等私有战斗输入复制一份进 UI 专用字段。
 func _round_history_actor_summary(actors: Array) -> Array[Dictionary]:
 	var summaries: Array[Dictionary] = []
@@ -586,6 +558,27 @@ func _round_history_actor_summary(actors: Array) -> Array[Dictionary]:
 		var actor: Dictionary = raw_actor as Dictionary if raw_actor is Dictionary else {}
 		summaries.append({"hp":float(actor.get("hp", 0.0)), "ce":float(actor.get("ce", 0.0)), "guard":float(actor.get("guard", 0.0)), "statuses":(actor.get("statuses", {}) as Dictionary).duplicate(true)})
 	return summaries
+
+func _round_action_sources(before: Dictionary, inputs: Dictionary) -> Dictionary:
+	var result: Dictionary = {}
+	var actors: Array = before.get("actors", []) as Array
+	for side: int in 2:
+		var submitted: Dictionary = inputs.get(str(side), {}) as Dictionary
+		var ids: Array = submitted.get("card_instance_ids", []) as Array
+		var labels: Array[String] = []
+		var actor: Dictionary = actors[side] as Dictionary if side < actors.size() else {}
+		var hand: Array = (actor.get("zones", {}) as Dictionary).get("hand", []) as Array
+		for raw_id: Variant in ids:
+			var id := str(raw_id)
+			var label := id
+			for raw_card: Variant in hand:
+				if not raw_card is Dictionary or str((raw_card as Dictionary).get("instance_id", "")) != id: continue
+				var card: Dictionary = raw_card as Dictionary
+				label = str(card.get("displayName", card.get("name", card.get("id", id))))
+				break
+			labels.append(label)
+		if not labels.is_empty(): result[side] = "、".join(labels)
+	return result
 
 func _events_since(first_sequence: int) -> Array[Dictionary]:
 	var result: Array[Dictionary] = []
@@ -896,10 +889,21 @@ func _runtime_authorization_active(authorization: Dictionary) -> bool:
 
 func _instance_card(raw: Dictionary, side: int, zone: StringName, slot: int) -> Dictionary:
 	var card: Dictionary = raw.duplicate(true)
+	# Source cards may omit a special DSL payload for ordinary actions. Materialize
+	# one canonical shape at the hand boundary for preview, CPU choice, and commit.
+	var raw_effect: Variant = card.get("effect", {})
+	var effect: Dictionary = raw_effect as Dictionary if raw_effect is Dictionary else {}
+	var raw_special: Variant = effect.get("special", {})
+	var special: Dictionary = raw_special as Dictionary if raw_special is Dictionary else {}
+	if not special.has("atomicEffects"):
+		special["atomicEffects"] = []
+	effect["special"] = special
+	card["effect"] = effect
 	card["instance_id"] = "%s:%s:%s:%s:%s" % [state.seed, state.round, side, zone, slot]
 	card["zone"] = String(zone)
 	card["action_id"] = str(card.get("action_id", card.get("actionId", card.get("id", ""))))
-	var cost: Dictionary = card.get("cost", {})
+	var cost_raw: Variant = card.get("cost", {})
+	var cost: Dictionary = cost_raw as Dictionary if cost_raw is Dictionary else {}
 	cost.erase("ap")
 	card["cost"] = cost
 	card.erase("ap")

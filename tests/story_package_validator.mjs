@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { spawnSync } from 'node:child_process';
+import { resolve } from 'node:path';
+
+const cwd = resolve(process.cwd());
+const root = cwd.endsWith('backend') ? resolve(cwd, '..') : cwd;
+const build = spawnSync(process.execPath, ['tools/build_story_package.mjs'], { cwd: root, encoding: 'utf8' });
+assert.equal(build.status, 0, build.stderr || build.stdout);
+const pkg = JSON.parse(await readFile(resolve(root, 'data/story/story-package.json'), 'utf8'));
+assert.equal(pkg.schemaVersion, 'story-package.v1');
+assert.ok(Object.keys(pkg.nodes).length >= 50, 'canonical package should include the full first chapter');
+assert.ok(pkg.project.entryNodeId in pkg.nodes);
+assert.ok(Object.keys(pkg.characters).length >= 4);
+const validate = spawnSync(process.execPath, ['tools/validate_story_package.mjs'], { cwd: root, encoding: 'utf8' });
+assert.equal(validate.status, 0, validate.stderr || validate.stdout);
+const report = JSON.parse(validate.stdout);
+assert.equal(report.ok, true);
+assert.equal(report.counts.nodes, Object.keys(pkg.nodes).length);
+assert.equal(pkg.nodes.chapter1_battle.encounterId, 'river_low_grade_curse');
+assert.equal(pkg.encounters.river_low_grade_curse.enemyCharacterId, 'kechizu_origin_candidate');
+assert.equal(pkg.encounters.river_low_grade_curse.enemyHpScale, 0.35);
+console.log(`STORY_PACKAGE_VALIDATOR PASS nodes=${report.counts.nodes} reachable=${report.counts.reachable} assets=${report.counts.assets}`);

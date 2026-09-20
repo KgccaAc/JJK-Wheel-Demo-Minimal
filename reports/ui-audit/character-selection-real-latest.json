@@ -1,0 +1,10 @@
+{
+  "default_capture_ok": true,
+  "default_screenshot": "res://reports/ui-audit/screenshots/character-selection-real-default.png",
+  "failures": [],
+  "picker_capture_ok": true,
+  "picker_screenshot": "res://reports/ui-audit/screenshots/character-selection-real-picker.png",
+  "picker_visible": true,
+  "row_count": 84,
+  "schema": "character-selection-real-window-v1"
+}

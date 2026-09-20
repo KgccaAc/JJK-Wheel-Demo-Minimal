@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://depyd76ivuofi"]
 
-[ext_resource type="Script" uid="uid://ba4awdleoaxtj" path="res://ui/battle_cards/battle_card_view.gd" id="1_script"]
+[ext_resource type="Script" uid="uid://isqpus4rg5ul" path="res://ui/battle_cards/battle_card_view.gd" id="1_script"]
 [ext_resource type="Texture2D" uid="uid://dxmyx1cfpqmsu" path="res://art/fight/基本牌.png" id="2_face"]
 [ext_resource type="FontFile" uid="uid://cr5lypi77717m" path="res://art/fonts/NotoSerifSC-Variable.ttf" id="3_font"]
 [ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="4_bold"]

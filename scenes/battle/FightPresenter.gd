@@ -8,13 +8,14 @@ const MATCH_SEED: int = 20260902
 const DATA_REPOSITORY_SCRIPT: Script = preload("res://battle/data/BattleDataRepository.gd")
 const CARD_VIEW_MODEL_FACTORY_SCRIPT: Script = preload("res://battle/data/CardViewModelFactory.gd")
 const CARD_AVAILABILITY_SERVICE_SCRIPT: Script = preload("res://battle/data/CardAvailabilityService.gd")
-const BATTLE_STATE_SCRIPT: Script = preload("res://battle/core/BattleState.gd")
-const FLOW_COORDINATOR_SCRIPT: Script = preload("res://scenes/battle/BattleFlowCoordinator.gd")
+const BATTLE_STATE_SCRIPT: Script = preload("res://battle/rules/BattleState.gd")
+const FLOW_COORDINATOR_SCRIPT: Script = preload("res://battle/ui/BattleFlowCoordinator.gd")
 const ONLINE_BATTLE_CONTEXT_SCRIPT: Script = preload("res://battle/online/OnlineBattleContext.gd")
 const STORY_BATTLE_ADAPTER: Script = preload("res://story/StoryBattleAdapter.gd")
 const BASIC_CARD_FACE: Texture2D = preload("res://art/fight/基本牌.png")
 const TECHNIQUE_CARD_FACE: Texture2D = preload("res://art/fight/术式牌牌面.png")
 const DOMAIN_CARD_FACE: Texture2D = preload("res://art/fight/领域牌牌面.png")
+const RESPONSE_CARD_NAME_FONT: FontFile = preload("res://art/fonts/NotoSerifCJKsc-Bold.otf")
 const BASIC_CARD_SCENE: PackedScene = preload("res://ui/battle_cards/basic_card.tscn")
 const TECHNIQUE_CARD_SCENE: PackedScene = preload("res://ui/battle_cards/technique_card.tscn")
 const DOMAIN_CARD_SCENE: PackedScene = preload("res://ui/battle_cards/domain_card.tscn")
@@ -56,19 +57,47 @@ var _hand_cards: Array[TextureButton] = []
 var _selected_cards: Array[TextureButton] = []
 var _table_cards: Array[TextureButton] = []
 var _opponent_response_cards: Array[TextureRect] = []
-var _left_domain_home: Vector2 = Vector2.ZERO
-var _right_domain_home: Vector2 = Vector2.ZERO
+## 诊断字段：由生产流程写入，供验收助手读取。
 var _domain_panels_activated: bool = false
 var _hit_effect_triggered: bool = false
+var _initial_deal_started_offscreen: bool = false
+var _left_domain_home: Vector2 = Vector2.ZERO
+var _right_domain_home: Vector2 = Vector2.ZERO
 var _discard_in_progress_id: int = 0
 var _data: RefCounted = DATA_REPOSITORY_SCRIPT.new()
 var _card_view_models: RefCounted = CARD_VIEW_MODEL_FACTORY_SCRIPT.new()
 var _card_availability: RefCounted = CARD_AVAILABILITY_SERVICE_SCRIPT.new()
 var _hidden_card_diagnostics: Array[Dictionary] = []
-var _initial_deal_started_offscreen: bool = false
 var _hand_tween: Tween
 var _flow_panel: Control
 var _auto_advance_ticket: int = 0
+
+## ---------------------------------------------------------------------------
+## 验收表面只读访问器。
+##
+## 供 battle/ui/FightAcceptanceSurface.gd 读取页面状态。Presenter **不** preload
+## 那个文件，因此依赖方向仍是 scenes/battle → battle/ui，不存在回环。
+## 枚举无法通过反射读取，所以手牌阶段必须由 Presenter 自己转成名字/整数。
+## ---------------------------------------------------------------------------
+func acceptance_session() -> RefCounted:
+	return _session
+
+func acceptance_flow() -> RefCounted:
+	return _flow
+
+func acceptance_hand_phase() -> int:
+	return int(_phase)
+
+func acceptance_phase_name(phase: int) -> String:
+	return HandPhase.keys()[phase] if phase >= 0 and phase < HandPhase.size() else ""
+
+func acceptance_selected_cards() -> Array:
+	return _selected_cards
+
+## 验收助手专用：把手牌状态置为「已展开」。
+func _set_hand_phase_open_for_acceptance() -> void:
+	_phase = HandPhase.OPEN
+	_hand_open = true
 var _last_domain_active: Array[bool] = [false, false]
 var _rendered_domain_active: Array[bool] = [false, false]
 var _online_input_battle: bool = false
@@ -866,6 +895,24 @@ func _spawn_opponent_response_cards(cards: Array) -> void:
 		response.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		response.stretch_mode = TextureRect.STRETCH_SCALE
 		response.texture = _card_face(data)
+		var card_name: String = _opponent_card_display_name(data)
+		var name_label: Label = Label.new()
+		name_label.name = "NameLabel"
+		name_label.position = Vector2(4.0, 4.0)
+		name_label.size = Vector2(98.0, 28.0)
+		name_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		name_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		name_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+		name_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+		name_label.clip_text = true
+		name_label.text = card_name
+		name_label.tooltip_text = card_name
+		name_label.add_theme_font_override("font", RESPONSE_CARD_NAME_FONT)
+		name_label.add_theme_font_size_override("font_size", 13 if card_name.length() <= 6 else (11 if card_name.length() <= 10 else 9))
+		name_label.add_theme_color_override("font_color", Color(0.12, 0.10, 0.08, 1.0))
+		name_label.add_theme_color_override("font_outline_color", Color(0.92, 0.82, 0.65, 0.95))
+		name_label.add_theme_constant_override("outline_size", 2)
+		response.add_child(name_label)
 		response.global_position = Vector2(get_viewport_rect().size.x + 80.0, 425.0 + index * 74.0)
 		response.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		_opponent_layer.add_child(response)
@@ -873,13 +920,55 @@ func _spawn_opponent_response_cards(cards: Array) -> void:
 		var tween: Tween = create_tween()
 		tween.tween_property(response, "global_position", Vector2(930.0 + index * 74.0, 425.0 + index * 38.0), 0.38).set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_OUT)
 
+func _opponent_card_display_name(card: Dictionary) -> String:
+	var direct_name: String = _first_card_name(card)
+	if not direct_name.is_empty(): return direct_name
+	for key: String in ["card", "card_data", "cardData"]:
+		var nested: Variant = card.get(key, {})
+		if nested is Dictionary:
+			var nested_name: String = _first_card_name(nested as Dictionary)
+			if not nested_name.is_empty(): return nested_name
+	for key: String in ["action_id", "actionId", "card_id", "cardId", "id"]:
+		var fallback: String = str(card.get(key, "")).strip_edges()
+		if not fallback.is_empty(): return fallback
+	return "未知出牌"
+
+func _first_card_name(card: Dictionary) -> String:
+	for key: String in ["name", "display_name", "displayName", "card_name", "cardName", "title", "label"]:
+		var value: String = str(card.get(key, "")).strip_edges()
+		if not value.is_empty(): return value
+	return ""
+
 func _opponent_response_actions() -> Array:
 	var snapshot: Dictionary = _session.get_state_snapshot()
 	if _online_input_battle:
 		var actions: Array = snapshot.get("last_round_actions", []) as Array
 		var opponent_side: int = 1 - _online_local_side
-		return actions[opponent_side] as Array if actions.size() > opponent_side and actions[opponent_side] is Array else []
+		if actions.size() > opponent_side and actions[opponent_side] is Array and not (actions[opponent_side] as Array).is_empty():
+			return actions[opponent_side] as Array
+		return _opponent_response_event_cards(snapshot, opponent_side)
 	return snapshot.get("last_cpu_actions", []) as Array
+
+func _opponent_response_event_cards(snapshot: Dictionary, opponent_side: int) -> Array:
+	var result: Array = []
+	var events: Array = snapshot.get("battle_log", snapshot.get("events", [])) as Array
+	for raw_event: Variant in events:
+		if not raw_event is Dictionary: continue
+		var event: Dictionary = raw_event as Dictionary
+		var event_side: int = int(event.get("side", event.get("actor_index", -1)))
+		if event_side != opponent_side: continue
+		var raw_results: Variant = event.get("results", [])
+		if raw_results is Array:
+			for raw_result: Variant in raw_results:
+				if raw_result is Dictionary:
+					var card_result: Dictionary = raw_result as Dictionary
+					result.append({
+						"id":str(card_result.get("cardId", card_result.get("card_id", ""))),
+						"action_id":str(card_result.get("actionId", card_result.get("action_id", card_result.get("cardId", "")))),
+						"name":str(card_result.get("cardName", card_result.get("name", ""))),
+						"type":str(card_result.get("cardType", card_result.get("type", "basic")))
+					})
+	return result
 
 func _prepare_domain_panels() -> void:
 	_left_domain_home = _left_domain_panel.global_position
@@ -1106,148 +1195,6 @@ func _append_log(entry: String) -> void:
 func _on_battle_error(message: String) -> void:
 	_append_log("[color=#ff9090]行动失败：%s[/color]" % message)
 
-# Automated acceptance entry points use the same public flow as the UI.
-func get_hand_mode_for_acceptance() -> String:
-	return str(_current_mode)
-
-func is_hand_open_for_acceptance() -> bool:
-	return _hand_open
-
-func toggle_hand_for_acceptance(mode: String) -> void:
-	_request_hand_mode(StringName(mode))
-
-func visible_card_count_for_acceptance() -> int:
-	return _hand_cards.size()
-
-func selected_card_count_for_acceptance() -> int:
-	return _selected_cards.size()
-
-func queued_hand_action_for_acceptance() -> String:
-	if _queued_close_requested: return "close"
-	if not _queued_mode.is_empty(): return "open"
-	return "none"
-
-func select_first_card_for_acceptance() -> void:
-	if _session.get_phase() == &"OPENING_STRATEGY": _flow.confirm_strategy(&"default")
-	if _session.get_phase() == &"DEAL": _flow.continue_round()
-	if _session.get_phase() == &"INITIATIVE": _flow.confirm_initiative("Option01")
-	_current_mode = &"normal"
-	_sync_flow()
-	if _phase == HandPhase.OPEN: _refresh_open_hand()
-	if _phase == HandPhase.OPENING: _finish_open()
-	if not _hand_cards.is_empty() and _phase != HandPhase.OPEN:
-		_phase = HandPhase.OPEN
-		_hand_open = true
-	for card: TextureButton in _hand_cards:
-		if not card.disabled:
-			if _discard_phase:
-				_selected_cards.append(card)
-				return
-			_on_card_selected(card)
-			return
-
-func prepare_initial_hand_for_acceptance() -> void:
-	if _session.get_phase() == &"OPENING_STRATEGY": _flow.confirm_strategy(&"default")
-	_sync_flow()
-	if _phase == HandPhase.OPENING: _finish_open()
-
-func prepare_play_hand_for_acceptance() -> void:
-	prepare_initial_hand_for_acceptance()
-	if _session.get_phase() == &"DISCARD": discard_two_for_acceptance()
-	if _session.get_phase() == &"INITIATIVE": _flow.confirm_initiative("Option01")
-	_current_mode = &"normal"
-	_sync_flow()
-	if _phase == HandPhase.OPENING: _finish_open()
-
-func discard_selected_for_acceptance() -> void:
-	if not _selected_cards.is_empty(): _discard_card(_selected_cards[0])
-
-func discard_two_for_acceptance() -> void:
-	# 验收入口同样通过编排器，避免测试绕过页面正式命令链。
-	if _session.get_phase() == &"OPENING_STRATEGY":
-		_flow.confirm_strategy(&"default")
-	var snapshot: Dictionary = _session.get_state_snapshot()
-	var actors: Array = snapshot.get("actors", []) as Array
-	var local_side: int = _online_local_side if _online_input_battle else 0
-	var local_actor: Dictionary = _dictionary(actors[local_side]) if local_side >= 0 and actors.size() > local_side else {}
-	var remaining: Array = _array(_dictionary(local_actor.get("zones", {})).get("hand", []))
-	var ids: Array[String] = []
-	for index: int in mini(2, remaining.size()):
-		ids.append(str((remaining[index] as Dictionary).get("instance_id", "")))
-	if _session.get_phase() == &"DISCARD" and ids.size() == BattleFlowSession.DISCARD_COUNT:
-		_flow.submit_discard(ids)
-	if _session.get_phase() == &"INITIATIVE":
-		_flow.confirm_initiative("Option01")
-	_sync_flow()
-	if _session.get_phase() == &"PLAY":
-		_current_mode = &"combined"
-		if _phase == HandPhase.CLOSED: _begin_open()
-		elif _phase == HandPhase.OPEN: _refresh_open_hand()
-		_set_action_controls_enabled(true)
-	call_deferred("_set_acceptance_controls_ready")
-
-func _set_acceptance_controls_ready() -> void:
-	if _session != null and _session.get_phase() == &"PLAY":
-		_set_action_controls_enabled(true)
-
-func resolve_selected_for_acceptance() -> void:
-	_resolve_history()
-
-func opponent_response_count_for_acceptance() -> int:
-	return _opponent_response_cards.size()
-
-func domain_panels_activated_for_acceptance() -> bool:
-	return _domain_panels_activated
-
-func format_domain_state_for_acceptance(actor: Dictionary) -> String:
-	return _format_domain_text(actor, {})
-
-func hit_effect_triggered_for_acceptance() -> bool:
-	return _hit_effect_triggered
-
-func play_first_card_for_acceptance() -> bool:
-	var cards: Array = _session.get_state_snapshot().get("normal_hand", []) as Array
-	for card: Dictionary in cards:
-		if bool(_session.submit_card(0, card).get("ok", false)): return true
-	return false
-
-func hand_category_counts_for_acceptance() -> Dictionary:
-	var normal_hand: Array = _session.get_state_snapshot().get("normal_hand", []) as Array
-	return {
-		"basic": (_cards_by_mode.get(&"normal", []) as Array).size(),
-		"technique": (_cards_by_mode.get(&"technique", []) as Array).size(),
-		"domain": (_cards_by_mode.get(&"domain", []) as Array).size(),
-		"normal_total": normal_hand.size()
-	}
-
-func initial_deal_started_offscreen_for_acceptance() -> bool:
-	return _initial_deal_started_offscreen
-
-func normal_card_source_diagnostic_for_acceptance() -> Dictionary:
-	var normal_hand: Array = _session.get_state_snapshot().get("normal_hand", []) as Array
-	var pool: Dictionary = _session.get_state_snapshot().get("normal_card_pool_diagnostic", {}) as Dictionary
-	if pool.is_empty():
-		var actor: Dictionary = _local_actor(_session.get_state_snapshot().get("actors", []) as Array)
-		var hand: Array = (actor.get("zones", {}) as Dictionary).get("hand", []) as Array
-		var eligible := 0
-		for card: Dictionary in hand:
-			if _is_plain_basic_card(card): eligible += 1
-		pool = {"eligible_basic_count":eligible, "availability":"available" if eligible > 0 else "unavailable", "template_boundary":"public_template_materialized" if eligible > 0 else "unknown"}
-	var plain_ids: Array[String] = []
-	for card: Dictionary in normal_hand:
-		if _is_plain_basic_card(card): plain_ids.append(str(card.get("id", "")))
-	var result: Dictionary = {
-		"has_plain_basic": not plain_ids.is_empty(),
-		"dealt_plain_basic": not plain_ids.is_empty(),
-		"plain_basic_ids": plain_ids,
-		"normal_hand_ids": normal_hand.map(func(card: Dictionary) -> String: return str(card.get("id", ""))),
-		"eligible_basic_count": int(pool.get("eligible_basic_count", 0)),
-		"availability": str(pool.get("availability", "unknown")),
-		"template_boundary": str(pool.get("template_boundary", "unknown"))
-	}
-	print_verbose("普通牌数据源诊断：%s" % JSON.stringify(result))
-	return result
-
 func _is_plain_basic_card(card: Dictionary) -> bool:
 	if _card_view_models.classify(card, _player_profile()) != &"basic": return false
 	var tags: Array = card.get("tags", []) as Array
@@ -1260,6 +1207,8 @@ func _is_plain_basic_card(card: Dictionary) -> bool:
 func _sync_flow() -> void:
 	var strategy: Control = get_node("../StrategySelectionPreview")
 	strategy.visible = _session.get_phase() == &"OPENING_STRATEGY"
+	var strategy_panel: Control = get_node("../StrategySelectionPreview/StrategyPanel")
+	strategy_panel.visible = strategy.visible
 	strategy.z_index = 100
 	if strategy.visible: strategy.move_to_front()
 	if _session.get_phase() == &"INITIATIVE" and _phase != HandPhase.RESOLVING:

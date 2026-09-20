@@ -63,7 +63,7 @@ offset_right = 410.0
 offset_bottom = 86.0
 theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
 theme_override_font_sizes/font_size = 34
-text = "角色选择"
+text = "议题投票"
 
 [node name="Subtitle" type="Label" parent="Background/Header" unique_id=1130881475]
 layout_mode = 0
@@ -163,23 +163,23 @@ stretch_mode = 5
 clip_contents = true
 anchors_preset = 0
 offset_left = 33.0
-offset_top = 56.0
+offset_top = 82.0
 offset_right = 408.0
-offset_bottom = 105.0
+offset_bottom = 108.0
 mouse_filter = 2
 
 [node name="ProFill" type="ColorRect" parent="TopicList/Topic02/BarSlot" unique_id=2110577493]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.78, 0.08, 0.09, 1)
 
 [node name="ConFill" type="ColorRect" parent="TopicList/Topic02/BarSlot" unique_id=463586887]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.1, 0.33, 0.76, 1)
 
 [node name="Status" type="Label" parent="TopicList/Topic02" unique_id=1327120644]
@@ -205,11 +205,11 @@ text = "2.5条悟 VS 宿傩的宿难"
 [node name="Meta" type="Label" parent="TopicList/Topic02" unique_id=1583529521]
 layout_mode = 0
 offset_left = 73.0
-offset_top = 92.0
+offset_top = 109.0
 offset_right = 453.0
-offset_bottom = 118.0
+offset_bottom = 130.0
 theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "563 人参与              12 条评论"
 
 [node name="Topic01" type="TextureButton" parent="TopicList" unique_id=428439391]
@@ -226,23 +226,23 @@ stretch_mode = 5
 clip_contents = true
 anchors_preset = 0
 offset_left = 33.0
-offset_top = 56.0
+offset_top = 82.0
 offset_right = 408.0
-offset_bottom = 105.0
+offset_bottom = 108.0
 mouse_filter = 2
 
 [node name="ProFill" type="ColorRect" parent="TopicList/Topic01/BarSlot" unique_id=869694106]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.78, 0.08, 0.09, 1)
 
 [node name="ConFill" type="ColorRect" parent="TopicList/Topic01/BarSlot" unique_id=620981669]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.1, 0.33, 0.76, 1)
 
 [node name="Status" type="Label" parent="TopicList/Topic01" unique_id=1590202878]
@@ -268,11 +268,11 @@ text = "2.5条悟 VS 宿傩的宿难"
 [node name="Meta" type="Label" parent="TopicList/Topic01" unique_id=698490935]
 layout_mode = 0
 offset_left = 73.0
-offset_top = 92.0
+offset_top = 109.0
 offset_right = 453.0
-offset_bottom = 118.0
+offset_bottom = 130.0
 theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "563 人参与              12 条评论"
 
 [node name="Topic03" type="TextureButton" parent="TopicList" unique_id=943617687]
@@ -289,23 +289,23 @@ stretch_mode = 5
 clip_contents = true
 anchors_preset = 0
 offset_left = 33.0
-offset_top = 56.0
+offset_top = 82.0
 offset_right = 408.0
-offset_bottom = 105.0
+offset_bottom = 108.0
 mouse_filter = 2
 
 [node name="ProFill" type="ColorRect" parent="TopicList/Topic03/BarSlot" unique_id=918323523]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.78, 0.08, 0.09, 1)
 
 [node name="ConFill" type="ColorRect" parent="TopicList/Topic03/BarSlot" unique_id=11960523]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.1, 0.33, 0.76, 1)
 
 [node name="Status" type="Label" parent="TopicList/Topic03" unique_id=801881711]
@@ -331,11 +331,11 @@ text = "2.5条悟 VS 宿傩的宿难"
 [node name="Meta" type="Label" parent="TopicList/Topic03" unique_id=877171869]
 layout_mode = 0
 offset_left = 73.0
-offset_top = 92.0
+offset_top = 109.0
 offset_right = 453.0
-offset_bottom = 118.0
+offset_bottom = 130.0
 theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "563 人参与              12 条评论"
 
 [node name="Topic04" type="TextureButton" parent="TopicList" unique_id=2144057993]
@@ -352,23 +352,23 @@ stretch_mode = 5
 clip_contents = true
 anchors_preset = 0
 offset_left = 33.0
-offset_top = 56.0
+offset_top = 82.0
 offset_right = 408.0
-offset_bottom = 105.0
+offset_bottom = 108.0
 mouse_filter = 2
 
 [node name="ProFill" type="ColorRect" parent="TopicList/Topic04/BarSlot" unique_id=1499045146]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.78, 0.08, 0.09, 1)
 
 [node name="ConFill" type="ColorRect" parent="TopicList/Topic04/BarSlot" unique_id=1651011809]
 layout_mode = 0
 offset_left = 20.0
 offset_right = 337.0
-offset_bottom = 49.0
+offset_bottom = 26.0
 color = Color(0.1, 0.33, 0.76, 1)
 
 [node name="Status" type="Label" parent="TopicList/Topic04" unique_id=761648310]
@@ -394,11 +394,11 @@ text = "2.5条悟 VS 宿傩的宿难"
 [node name="Meta" type="Label" parent="TopicList/Topic04" unique_id=171448584]
 layout_mode = 0
 offset_left = 73.0
-offset_top = 92.0
+offset_top = 109.0
 offset_right = 453.0
-offset_bottom = 118.0
+offset_bottom = 130.0
 theme_override_colors/font_color = Color(0.3, 0.31, 0.31, 1)
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 12
 text = "563 人参与              12 条评论"
 
 [node name="FactionOverview" type="Control" parent="." unique_id=59472346]

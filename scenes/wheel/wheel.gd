@@ -1,6 +1,9 @@
 class_name WheelScreen
 extends Control
 
+const BACK_BUTTON_TEXTURE: Texture2D = preload("res://art/menu/菜单大按钮.png")
+const NAV_BUTTON_TEXTURE: Texture2D = preload("res://art/wheel/选择跳转按钮.png")
+
 const Run = preload("res://data/WheelRun.gd")
 const RankEvaluator = preload("res://data/WheelRankEvaluator.gd")
 const FlowSession = preload("res://data/wheel/WheelFlowSession.gd")
@@ -131,18 +134,40 @@ func previous_wheel() -> void:
 func _create_wheel_navigation() -> void:
 	var header: Control = get_node_or_null("Header") as Control
 	if header == null or get_node_or_null("Header/WheelPrev") != null: return
-	var prev: Button = Button.new()
+	var prev := TextureButton.new()
 	prev.name = "WheelPrev"
-	prev.text = "‹"
 	prev.position = Vector2(230, 112)
 	prev.size = Vector2(40, 40)
+	prev.texture_normal = NAV_BUTTON_TEXTURE
+	prev.ignore_texture_size = true
+	prev.stretch_mode = TextureButton.STRETCH_SCALE
+	prev.tooltip_text = "上一个转盘"
+	var prev_label := Label.new()
+	prev_label.name = "Label"
+	prev_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	prev_label.text = "‹"
+	prev_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	prev_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	prev_label.add_theme_font_size_override("font_size", 24)
+	prev.add_child(prev_label)
 	prev.pressed.connect(previous_wheel)
 	header.add_child(prev)
-	var next: Button = Button.new()
+	var next := TextureButton.new()
 	next.name = "WheelNext"
-	next.text = "›"
 	next.position = Vector2(285, 112)
 	next.size = Vector2(40, 40)
+	next.texture_normal = NAV_BUTTON_TEXTURE
+	next.ignore_texture_size = true
+	next.stretch_mode = TextureButton.STRETCH_SCALE
+	next.tooltip_text = "下一个转盘"
+	var next_label := Label.new()
+	next_label.name = "Label"
+	next_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	next_label.text = "›"
+	next_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	next_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	next_label.add_theme_font_size_override("font_size", 24)
+	next.add_child(next_label)
 	next.pressed.connect(next_wheel)
 	header.add_child(next)
 
@@ -302,14 +327,24 @@ func _weighted_index() -> int:
 func _setup_controls() -> void:
 	_ignore_decorative_mouse(self)
 	($Header as Control).z_index = 20
-	var more: Button = $Header/MoreButton
-	more.text = "更多    +"
+	var more: TextureButton = $Header/MoreButton as TextureButton
 	more.pressed.connect(func() -> void: UI.show_settings(self))
-	var back: Button = Button.new()
+	var back := TextureButton.new()
 	back.name = "BackButton"
-	back.text = "返回菜单"
 	back.position = Vector2(30.0, 132.0)
-	back.size = Vector2(130.0, 38.0)
+	back.size = Vector2(187.0, 82.0)
+	back.texture_normal = BACK_BUTTON_TEXTURE
+	back.ignore_texture_size = true
+	back.stretch_mode = TextureButton.STRETCH_SCALE
+	back.tooltip_text = "返回菜单"
+	var back_label := Label.new()
+	back_label.name = "Label"
+	back_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	back_label.text = "返回菜单"
+	back_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	back_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	back_label.add_theme_font_size_override("font_size", 20)
+	back.add_child(back_label)
 	back.pressed.connect(func() -> void:
 		_cancel_sequence()
 		get_tree().change_scene_to_file("res://scenes/home/home.tscn"))
@@ -426,12 +461,13 @@ func _technique_snapshot_bundle(answers: Dictionary) -> Dictionary:
 	if selected.is_empty() or selected in ["无", "否", "不会"]:
 		return {"techniques":[], "traits":["wheel_generated"], "cardTags":[], "specialHandTags":[], "techniqueFamilies":[], "techniqueRef":{"key":"", "name":"", "source":"builtin"}, "domainRef":{"id":"", "name":""}, "techniquePower":"B", "initialCounters":{}, "initialCounterLabels":{}}
 	if selected == "自定义": selected = "自定义术式"
-	var document: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(STRENGTH_DATA_PATH)) as Dictionary
-	var source: Dictionary = (document.get("techniqueProfiles", {}) as Dictionary).get(selected, {}) as Dictionary
-	var display_name: String = str(source.get("displayName", selected))
 	var resolved: Dictionary = WheelTechniqueRegistry.resolve(selected)
+	var source: Dictionary = resolved.get("sourceData", {}) as Dictionary
+	var display_name: String = str(source.get("displayName", resolved.get("displayName", selected)))
 	if not bool(resolved.get("ok", false)):
 		resolved = WheelTechniqueRegistry.resolve(display_name)
+		source = resolved.get("sourceData", {}) as Dictionary
+		display_name = str(source.get("displayName", resolved.get("displayName", selected)))
 	var stable_key: String = str(resolved.get("key", ""))
 	var technique_error: String = "" if bool(resolved.get("ok", false)) else str(resolved.get("error", "unknown_builtin_technique:%s" % selected))
 	var technique_power: String = str(resolved.get("techniquePower", "B"))

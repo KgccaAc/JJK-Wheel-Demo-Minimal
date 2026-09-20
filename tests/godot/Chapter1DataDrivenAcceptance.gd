@@ -17,8 +17,12 @@ func _initialize() -> void:
 	root.add_child(clue)
 	await process_frame
 	await process_frame
+	# chapter1_clue declares three choices in data/story/chapter1.json:
+	# pursue / prepare -> chapter1_battle, talk_to_junior -> chapter1_ai_contact.
+	# The earlier `size() == 2` assertion predated the junior-sorcerer branch; assert
+	# on the contract that actually matters instead of a hardcoded 2.
 	var choices: Array = clue.get("choices") as Array
-	var choice_ok := choices.size() == 2 and str((choices[0] as Dictionary).get("next", "")) == "chapter1_battle"
+	var choice_ok := choices.size() == 3 and str((choices[0] as Dictionary).get("next", "")) == "chapter1_battle"
 	clue.call("_choose_index", 0)
 	await create_timer(1.6).timeout
 	var pending: Dictionary = story.get("pending_result") as Dictionary

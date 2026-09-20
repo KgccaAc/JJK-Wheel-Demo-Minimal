@@ -1,11 +1,49 @@
 # CODEX_HANDOFF
 
+## 2026-09-20 Web App Shell 与上下文边界复核
+
+- 新增 `web-preview/index.html`、`web-preview/app-shell.mjs`、`web-preview/styles.css`、`web-preview/favicon.svg`：根路径现在是可运行的 Web Shell，提供首页、故事、转盘、基础战斗、联机模块路由；故事页实际消费 `StoryClient`，而不是复制一套页面状态机。
+- Web Shell 的故事流程支持版本化内容包、选择推进、战斗暂停/模拟结算、AI 对话入口、统一存档服务和错误边界；`?save=` 可选择独立存档槽，避免不同页面互相覆盖。
+- `backend/ai-dialogue-server.mjs` 的 `/api/ai/status` 补充 `enabled/modelAvailable/fallbackMode`，不返回密钥；Web Shell 根据状态显示 DeepSeek 或本地回退。
+- `backend/story-content-server.mjs` 支持 `STORY_RUNTIME_DATA_DIR`，浏览器验收使用临时存档目录，不污染项目运行目录。
+- 新增 `tests/web_app_shell.mjs` 与 `npm --prefix backend run test:web-shell`，真实无头浏览器覆盖根页、进入故事、完成首个选项和模块路由，控制台 0 错误。
+- `web-runtime/story-client.mjs` 现在只把服务器 `appliedEffects` 投影回故事状态；会话上限导致的被拒绝 XP/关系提案不会在客户端再次生效；结束 AI 会话会沿 `completionRoutes.normal` 离开 AI 节点。
+- 新增 `tests/backend/ai_context_acceptance.mjs` 与 `test:ai-context`：捕获真实 DeepSeek 请求体，确认当前节点/NPC/关系/最近6轮进入上下文，未来节点和完整包不泄漏。
+
+## 2026-09-20 Web 故事架构与 DeepSeek 首期切片
+
+- 新增 `tools/build_story_package.mjs`，从现有 Godot 故事源生成 `data/story/story-package.json` 和编辑器副本 `web-editor/story-package.json`；当前 57 节点、10 encounter、4 NPC，其中 `chapter1_ai_contact` 是可达的受控 NPC 互动节点。
+- 新增 `tools/validate_story_package.mjs` 和 `tests/story_package_validator.mjs`。断链/入口/战斗配置/AI 配置错误会失败；核心时间线按旗标进入的预留节点仅报告 unreachable 警告。
+- `data/story/ai-effect-policies.json` 是可审阅的 AI 效果策略源，构建器把策略放入内容包；后端仍强制执行相同的服务器上限。
+- 新增 `web-runtime/content-loader.mjs`、`web-runtime/story-runtime.mjs`；运行时只产生可序列化事件，不直接读取 DOM/Godot 节点。
+- 新增 `web-editor/index.html`、`app.js`、`styles.css`；通过本地预览服务 `/story-editor` 访问，支持节点搜索、结构化草稿编辑、实时预览、校验和 JSON 导出。
+- `backend/ai-dialogue-server.mjs` 已接通 DeepSeek `deepseek-flash`、JSON 解析、超时/限流/错误回退、saveRevision 409、事件账本。服务器只接受当前 NPC 关系、临时情绪、记忆标签/软旗标和 0–2 XP；资源、核心成长、物品、战斗及路由修改会被拒绝。
+- `backend/local-preview-server.mjs` 仅新增 `/api/ai/*`、`/story-editor`、`/web-runtime` 白名单路由，保留 `/preview-room-api` 官方预览房间代理路径。
+- `backend/story-content-server.mjs` 新增版本化故事包、章节、校验/预览与 `expectedRevision` 存档事件 API；数据落在本地 `.runtime-story`，不接管正式联机服务。
+- 新增 `tests/backend/local_worker_acceptance.mjs`、`tests/backend/story_content_acceptance.mjs`，修复原 `test:local-worker` 脚本缺失测试文件的问题。
+- 验证：`node tests/story_package_validator.mjs`、`node tests/web_story_runtime.mjs`、`npm --prefix backend run test:ai-dialogue` 通过；用 `KEY.txt` 实际调用一次 DeepSeek，结果 `source=deepseek/fallback=false`。Key 未进入 Git、前端包或日志。
+
+## 2026-09-19 故事首牌与转盘术式适配修复
+
+- 故事模式首牌崩溃根因：`cards.json` 中部分敌方牌的 `effect.special` 为 `null`，V3 `_action_priority()` 将其强制转换为 `Dictionary`；发牌实例化现在统一补齐 `special.atomicEffects=[]`，优先级读取也对非字典边界值安全返回0。
+- 转盘术式注册现在复用 `data/wheel/source/strength-v0.2-candidate.json` 的 `specialHandTags`，并对无标签的特殊术式使用现有战斗牌族兜底；同时修正 `curse_spirit_manipulation` 与 `contract_recreation` 两个源标签别名。72个源术式均可解析，不再写入 `techniqueMatchError`。
+- 新增验收：`tests/godot/StoryBattleFirstCardAcceptance.gd`、`tests/godot/WheelTechniqueRegistryCoverageAcceptance.gd`、`tests/godot/WheelTechniqueBattleCompatibilityAcceptance.gd`。
+- 最新证据：故事首牌 PASS；轮盘注册覆盖 `profiles=72 unresolved=`；轮盘投影/牌池兼容 PASS；完整故事 `visited=32 history=32 battles=2`；轮盘角色发牌 `hand=10 tagged=3`。
+- 已知边界：10个源术式当前没有同族 Godot `matchTags` 牌，5个已有牌族受角色专属、领域前置或咒具持有条件门控；这些现在作为显式设计边界报告，不再误报为“术式未匹配”。
+
 ## Project Goal
 - 保持本地与官方服务器各自的权威状态机，完成 Web 兼容的双端在线战斗：匹配/房间、角色锁定、策略、弃牌、先手、出牌、胜负和结算全程同步。
 
 ## Current Phase
 - Phase: 第一章攻略型NPC垂直切片
 - Status: NPC数据、关系状态、路线阶段、第一章时间行动、真实战斗援护和统一结算展示已接通。
+
+## 2026-09-18 Core Battle Readability Update
+- 基础战斗首回合的真实 V3 `round_package` 已完成数据流复核：`actions[*].result` 才是当前主要行动来源，旧 `actions_resolved` 事件并不覆盖 V3。
+- `battle/core/BattleFlowSession.gd` 与 `battle/presentation/RoundHistoryFormatter.gd` 现在兼容 V3 与旧事件封包，优先保存并显示玩家可读牌名，再显示我方/对方意图、命中状态、伤害来源、实际 HP 伤害与护盾吸收；旧封包才回退提交卡牌实例。
+- `scenes/battle/round_summary_panel.tscn` 复用 `art/fight/回合纪要.png` 纹理扩展纪要面板，没有新增普通 Button。
+- 真实窗口证据：`reports/ui-audit/screenshots/battle-round-summary-real.png`。
+- 召唤预览真实宿主证据：`tests/godot/BattleSummonRealWindowAcceptance.gd`、`reports/ui-audit/screenshots/battle-summon-real.png`；`FightIntro._render_summons()` 到 `SummonedPreview.bind_summon()` 链路可显示实际名称/HP，独立场景占位文字不作为页面缺陷。
 
 ## Latest Completed Work
 - 文件1节点交互链补强：`StoryState.node_contract()` 为 JSON 节点生成统一运行时契约，区分手动、隐式转盘、四时段、本地战斗、地图、结算和终止节点；`begin_node()` 拒绝未知节点、待结算重复进入和终止存档继续推进。
@@ -61,6 +99,11 @@
 - `tests/godot/NpcCompanionStateAcceptance.gd`
 - `story/StoryBattleAdapter.gd`
 - `scenes/battle/FightPresenter.gd`
+- `battle/presentation/RoundHistoryFormatter.gd`
+- `scenes/battle/round_summary_panel.tscn`
+- `tests/godot/BattleIntentDamageReadabilityAcceptance.gd`
+- `tests/godot/BattleRoundSummaryRealWindowAcceptance.gd`
+- `tests/godot/BattleSummonRealWindowAcceptance.gd`
 - `battle/core/BattleFlowSession.gd`
 - `battle/v3/ActionResolverV3.gd`
 - `account/LoginCardCharacterProjector.gd`
@@ -161,6 +204,34 @@
 ## Next Safest Task
 - 补齐涩谷结果节点对应的真实战斗表现、伤势对后续死灭回游的条件影响；再接入普通节点的AI可选接口与商人库存，并制作初级术师第2章个人事件。
 
+## 2026-09-19 工作区恢复与手牌 AP 历史残留清理
+
+- 工作区已重新获取：项目路径、GitHub remote、Godot 4.6.2、现有插件目录和交接文件均可读；保留全部既有未提交改动，未执行 reset/checkout/清理。
+- 修正旧 AP 验收夹具，改为检查真实 `start_fixed_offline()` 流程中不再物化 `ap/apCost`。
+- AP 源数据、模板、手牌注入和活动预算校验均已移除；旧客户端字段只在实例化边界丢弃。
+- 验证：`HAND_BALANCE_AP_REMOVAL_ACCEPTANCE PASS`、`node tests/ap_cleanup_acceptance.mjs` 通过；本轮没有批量改卡牌数值，也未访问正式服务器。
+- 当前边界：AI 仍是逐张贪心选牌，下一步改为枚举最多三张合法组合并做两回合价值评分。
+
+## 2026-09-18 联机弹窗本轮交接
+
+- 用户反馈联机服务器选择弹窗存在灰框；根因是 Godot `PopupPanel` 默认主题。
+- `scenes/online/OnlineRoom.gd` 已为服务器、角色选择和预览弹窗统一设置 `StyleBoxTexture`，使用 `art/onlineroom/房间页面/服务器选择.png`；服务器弹窗增加“选择联机服务器”标题。
+- 动态按钮全部由 `_make_texture_popup_button()` 创建为 `TextureButton`，使用 `按钮1.png`/`按钮2.png`；禁止回退为普通 `Button`。
+- 真实窗口证据：`reports/ui-audit/screenshots/online-popup-real-open.png`、`online-popup-real.png`；`reports/ui-audit/online-popup-real-latest.json`；`ONLINE_POPUP_REAL_WINDOW_ACCEPTANCE PASS`。
+- 预览后端证据：`/preview/` 200；`/preview-room-api/health` `battleAuthority=true`；HTTP/Node WebSocket/Godot 双端到 `FINISHED`；本地匹配回归 PASS。未访问正式根地址，未部署或重启服务。
+- 完整自我改进报告已刷新：`reports/self-improve/self-improve-latest.json` 为 total=3、passed=3、failed=0；`reports/full-flow/full-flow-latest.json` status=passed；P0=0、P1=0、P2=6。
+- 玩家审核结论与后续 P2 已写入 `reports/ui-audit/core-flow-audit-2026-09-18.md`、`findings.md`、`progress.md`。下一个安全目标是先为在线静态 `OptionButton` 灰色主题建立红灯，再决定是否用 art 纹理替换；同时补 720p/1080p/超长屏和 Web 双标签页验收。
+
+## 2026-09-18 严格美术复核交接
+
+- 角色选择页已完成红灯→绿灯：`CharacterSelectionStrictVisualAcceptance.gd` 与 `CharacterSelectionRealWindowAcceptance.gd` 均 PASS。
+- 本轮变更：`scenes/battle/CharacterSelection.gd`、`scenes/battle/character_selection.tscn`、两份角色选择验收脚本；新增两张真实窗口截图与诊断 JSON。
+- 视觉边界：静态/动态按钮均为 `TextureButton` + `res://art/`；隐藏重复乱码姓名层；“选择我方/选择对方”文字居中在加号右侧纹理正文区域；未新增普通灰色 Button。
+- 最新证据：`reports/ui-audit/screenshots/character-selection-real-default.png`、`character-selection-real-picker.png`、`reports/ui-audit/character-selection-real-latest.json`。
+- 最新回归：`ONLINE_STATIC_CONTROLS_REAL_WINDOW_ACCEPTANCE PASS`、`ONLINE_POPUP_TEXTURE_CONTROL_ACCEPTANCE PASS buttons=87 invalid=`、`ONLINE_POPUP_REAL_WINDOW_ACCEPTANCE PASS`；预览后端仍仅使用 `/preview/` 链路。
+- `AllPagesVisualCapture.gd` 的 dummy 渲染器空纹理问题已记录为捕获器边界，不作为视觉通过依据；真实窗口截图使用 OpenGL Compatibility。
+- 下一最安全任务：建立在线静态 `OptionButton` 纹理主题的红灯，随后补角色/核心战斗多分辨率与中英日韩最长文案矩阵；社区仍暂缓。
+
 ## 2026-09-17 内容包更新
 - 新增 `data/story/chapter1_background_plan.json`：第一章20个背景位的分类、路径、节点用途、现有/待制作状态和美术 brief。
 - 新增 `docs/story/chapter1-content-design.md`：第一章故事节拍、Galgame式攻略型 NPC 关系设计、NPC 分工、对话分配、AI 边界和结算/小说规则。
@@ -209,3 +280,68 @@
 - 结果：11 张截图、失败项 0；证据在 `reports/full-flow/full-flow-latest.json` 与 `reports/full-flow/screenshots/`。
 - 独立子 agent 审计见 `reports/full-flow/subagent-audit.md`。没有复现 P0 卡死，但发现四项 P1：真实玩家输入尚未覆盖完整战斗回合；首次结算长回顾可被底部区域遮挡；章节完成态 CTA 语义冲突；战斗首屏阶段/确认反馈不足。
 - 下一轮先扩展 `StoryRealWindowFlowAcceptance.gd`，用玩家输入完成战斗倾向、发牌、出牌和回合结算；随后修复 Settlement 溢出与章节完成 CTA。
+
+## 2026-09-18 转盘与战斗角色属性卡视觉修复
+
+- 以真实窗口复现：转盘恢复上次结果后 `WheelSegments.rotation` 为非零值，左右扇区文字的最终屏幕角度超过 90°，出现上下颠倒；角色属性卡的“实值”仍嵌在 RichTextLabel 第二行，与大号评级层重合。
+- `scenes/wheel/wheel_segments.gd` 现在按“扇区角度 + 节点旋转”计算最终可读角，再返回局部补偿角；转盘旋转或停留在已恢复结果时文字均保持正向。
+- `scenes/battle/CharacterSelection.gd` 将“实值”从 RichTextLabel 拆出为独立的值行，评级与值行使用明确的横向边界、字体和溢出策略，玩家/对手六项属性均不相交且保持在卡片内。
+- 新增真实窗口验收：`tests/godot/WheelDirectionLabelVisualAcceptance.gd`、`tests/godot/CharacterStatValueVisualAcceptance.gd`；红灯阶段分别复现倒置标签与内联“实值”重叠，绿灯截图为 `reports/ui-audit/screenshots/wheel-direction-real.png`、`character-selection-stat-value-real.png`。
+- 回归通过：两个新增视觉验收、`CharacterSelectionStrictVisualAcceptance`、`CharacterSelectionRealWindowAcceptance`、`WheelTextureControlAcceptance`、`WheelAutoRankAcceptance`；Godot editor headless 解析退出码 0（仅保留既有 invalid UID 警告）。
+
+## 2026-09-18 严格对齐回归补充
+
+- 红灯阶段补充检查评级/实值的视觉中心、文本字号、父格边界和实际矩形相交；原有验收确实捕获到 SSS 高度回弹及实值越界。
+- `scenes/battle/CharacterSelection.gd` 现将 28px 评级与“实值：数值”固定为属性格内的上下两行，并在 `RichTextLabel` 布局完成后延迟重套几何，避免下一帧恢复旧高度；22px 会被 `grade_too_small` 红灯拒绝。
+- 最新真实截图：`reports/ui-audit/screenshots/character-selection-stat-value-real.png`；评级和实值均居中、无重合、无越界。
+- 最新聚焦回归：转盘方向、角色实值、角色选择严格视觉、角色选择真实窗口、转盘纹理控件、自动评级全部 PASS；`EDITOR_EXIT=0`；`tools/self_improve_check.ps1` 的 acceptance=3/3、full_flow=passed、P0=0、P1=0、P2=6。
+
+## 2026-09-18 预览联机端到端验收
+
+- 新鲜验收报告：`reports/online-preview-acceptance-2026-09-18.md`。
+- 预览 `/preview/`、房间健康、CORS 预检均可达；官方预览匹配队列、自建房、角色锁定、HTTP 战斗、WebSocket 战斗、Godot 双端同步均通过。
+- 两场并行 WebSocket 战斗均到达 `FINISHED` 且 winner 一致；4 条并发房间流程 20 个请求错误 0，平均 61 ms、最大 131 ms。
+- Web 导出 Port 8098 双页 Host 建房/Guest 入房均 HTTP 200，console/page error 为 0；仅记录导出加载器的 wasm/pck `ERR_ABORTED`，未阻断流程。
+- 预览 `/metrics` 仍是累计应用计数器，不能替代正式容量压测；当前可见的 409 为 stale revision/清理请求保护性冲突，未发现 5xx 计数。
+
+## 2026-09-19 AP 清理与平衡工作恢复
+
+- 用户确认 AP 键不是当前战斗机制；它是旧数据/旧显示残留，不恢复为资源。
+- 已清理 `cards.json`、runtime card templates、hand injections、rules/hand-rules 中的 AP 字段和 AP 显示标记。
+- 已移除 `BattleFlowSession` 的 AP 预算校验/计算；旧输入字段仍在实例化边界被丢弃，避免脏数据进入运行时。
+- 新增 `tests/ap_cleanup_acceptance.mjs`：先红（捕获 351 张卡与模板中的旧 AP 字段及活动校验），清理后绿。
+- 平衡工作不再使用 AP 指标，改测真实限制：每回合最多选 3 张、CE 瓶颈、前置条件、命中率、组合有效率、实际 HP 伤害、护盾/治疗/状态价值和领域节奏。
+- `StoryBattleFirstCardAcceptance.gd`、`CoreBattleProfilesAcceptance.gd` 均已在清理后通过；预览服务器与正式服协议未改动。
+- 真实平衡测量已完成：普通基线 20 固定种子，8/8 单牌可出、三牌有效率 100%、正常 CE 拒绝率 0%、有效伤害均值 32.02；25% CE 时约 7/8 可出。领域角色单独即时伤害为 0，必须进入后续两回合窗口测量。
+- 新增 `reports/balance/balance-findings-2026-09-19.md`、`reports/balance/card-balance-inventory-2026-09-19.md`、`reports/balance/hand-balance-measurement-2026-09-19.json` 和领域场景报告。
+- 下一安全任务：对十类基准牌做同 CE 配对的两回合 TTK、护盾/治疗/状态兑现和领域负荷测量；在此之前不批量改 351 张牌。
+
+## 2026-09-20 DeepSeek 上下文边界验收
+
+- 新增 `tests/backend/ai_context_acceptance.mjs`，通过 mock fetch 捕获真实 DeepSeek 请求体，验证当前节点、NPC 角色卡、权威关系状态均进入上下文。
+- 验证历史对话窗口最多携带最近 6 轮；未来节点、世界书未命中内容和完整故事包哨兵均不会进入请求体。
+- 新增 `npm --prefix backend run test:ai-context`；`node --check backend/story-ai-context.mjs`、`node --check backend/ai-dialogue-server.mjs`、`test:ai-context` 和 `test:ai-dialogue` 均通过。
+
+## 2026-09-20 Web 故事垂直切片第二轮
+
+- Web 故事运行时已补齐旧 `rpgLines`、四时段行动结果、条件权重结果、资源/成长/关系/物品/旗标效果；故事战斗使用既有 V3 resolver、真实牌库、CE 和阶段协议，不再模拟胜负。
+- AI 会话现在由服务端绑定真实 `ai_dialogue` 节点、NPC、fallback、effect policy 与 `maxTurns`；客户端上下文不能覆盖节点或 NPC。AI 会话可随故事快照恢复，成长只投影服务端 `appliedEffects`。
+- DeepSeek `GET /models` 健康探测和真实 `deepseek-flash` 对话均通过；无 Key、网络失败、解析失败时使用内容包回退。Key 仅从环境或开发机私密文件读取，未写入前端/报告/Git。
+- 初级术师回退文本新增 greeting/followup/refusal/friendly/hostile/player_end/api_unavailable/cannot_understand 八类，构建器保留各 NPC 原有对白路线分类。
+- `/story-editor` 支持 `rpgLines` 编辑与真实预览、上游/出口反向引用、全文搜索、50 步撤销重做、浏览器草稿和服务端完整校验；仍未实现多人审核、不可变发布版本库与节点图画布。
+- 存档提交使用串行队列；409 后拉取最新 revision 并重试。AI session 创建事件也会立即触发快照保存。
+- `local-preview-server` 已使用 `path.relative` 防目录穿越；内容 API 和 CLI 共用同一完整 validator。
+- 全套 Node/浏览器回归通过：`ai-context`、`ai-dialogue`、`story-api`、`story-web`、`story-editor`、`story-battle`、`web-shell`、`preview-security`、`local-worker`、`preview-room`。正式联机服务器未写入、未部署、未重启。
+- 当前未完成：独立 Web 转盘页、独立基础战斗入口、Web 联机大厅/双端页面、工作台审核发布流、旧存档版本迁移器、AI 固定质量评测集、移动端/多分辨率视觉验收。不能把本轮描述为完整 Web 产品交付。
+
+## 2026-09-20 Web 转盘数据链路
+
+- 新增 `web-runtime/wheel-runtime.mjs`，移植 `WheelFlowSession.gd` 的数据职责：主流程、条件/旗标、加权抽取、多抽取、时间线队列、效果账本、固定 seed 和等级计算。
+- 新增 `backend/wheel-content-server.mjs` 与 `GET /api/wheel/config`，只读提供 flow、strength、option-effects 和全部 157 个 wheel 项，不把源文件暴露为任意路径。
+- Web Shell 的转盘入口已改为真实运行页，支持旋转、确认结果、结构化选择、等级计算、存档快照和完成后进入故事/基础战斗。
+- 验收：`WHEEL_CONTENT_ACCEPTANCE PASS flow=72 wheels=157`、`WEB_WHEEL_RUNTIME PASS steps=23 grade=二级 answers=29`、`WEB_WHEEL_BROWSER PASS complete=true console_errors=0`。
+- 当前仍未完成：独立基础战斗入口、Web 联机大厅/双端页面、工作台审核发布流、旧存档版本迁移器、AI 固定质量评测集、移动端/多分辨率视觉验收。
+
+## Next Safest Task
+
+- 先把 `WheelFlowSession.gd` 的纯数据流程移植为平台无关 Web runtime 并用固定 seed 与 Godot 输出对照；随后让 Web 转盘生成的角色快照进入现有 V3 战斗，再接预览房间协议。发布工作台需要先设计本地开发权限与不可变版本存储，避免直接暴露无鉴权写接口。

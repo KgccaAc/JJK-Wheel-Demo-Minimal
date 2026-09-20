@@ -1,0 +1,11 @@
+{
+  "schema": "story-ai-effect-policy-v1",
+  "policies": {
+    "dialogue_only": {
+      "allowed": ["relationship.affection", "relationship.trust", "relationship.alertness", "relationship.respect", "emotion", "memoryTags", "softFlags", "growth.xp"],
+      "perTurn": { "affection": 3, "trust": 3, "alertness": 2, "respect": 3, "growthXp": 2 },
+      "perSession": { "growthXp": 5, "relationship": 12, "memoryTags": 5, "softFlags": 5 },
+      "forbidden": ["resources", "coreGrowth", "inventory", "battleOutcome", "nodeJump", "currency", "cardStats"]
+    }
+  }
+}

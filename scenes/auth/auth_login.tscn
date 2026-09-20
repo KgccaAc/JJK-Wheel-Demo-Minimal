@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://brgoepysgwfoq" path="res://art/login/公告图标.png" id="4_notice"]
 [ext_resource type="Texture2D" uid="uid://c1vg8gad10qvt" path="res://art/login/客服图标.png" id="5_support"]
 [ext_resource type="Texture2D" uid="uid://du2xy615hcan2" path="res://art/login/选中标签.png" id="6_selected"]
-[ext_resource type="Script" uid="uid://hekwli054qhh" path="res://scenes/auth/AuthLogin.gd" id="7_script"]
-[ext_resource type="Script" uid="uid://d3w17khby1cpo" path="res://scenes/auth/AuthLoginResponsive.gd" id="8_responsive"]
+[ext_resource type="Script" uid="uid://bp2yypo8cbt6w" path="res://scenes/auth/AuthLogin.gd" id="7_script"]
+[ext_resource type="Script" uid="uid://cm73qgcov7t7m" path="res://scenes/auth/AuthLoginResponsive.gd" id="8_responsive"]
 
 [sub_resource type="Animation" id="Animation_login_reset"]
 resource_name = "RESET"
@@ -243,6 +243,3 @@ theme_override_colors/font_color = Color(0.5, 0.53, 0.6, 1)
 text = "咒术转盘 · 登录界面"
 
 [connection signal="pressed" from="LoginContent/ResponsiveContent/StartButton" to="." method="_on_start_pressed"]
-
-
-

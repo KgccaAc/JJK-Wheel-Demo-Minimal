@@ -103,20 +103,33 @@ theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
 theme_override_font_sizes/font_size = 12
 text = "暂未登录 · 点击登录"
 
-[node name="MoreButton" type="Button" parent="Header" unique_id=1237374307]
+[node name="MoreButton" type="TextureButton" parent="Header" unique_id=1237374307]
 layout_mode = 0
 offset_left = 1409.0
 offset_top = 2.0
 offset_right = 1596.0
 offset_bottom = 102.0
 mouse_default_cursor_shape = 2
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("2_button_1")
+texture_hover = ExtResource("3_button_2")
+texture_pressed = ExtResource("3_button_2")
+tooltip_text = "更多设置"
+
+[node name="Label" type="Label" parent="Header/MoreButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
-theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
-theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
-theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
 theme_override_font_sizes/font_size = 20
 text = "更多    +"
-flat = true
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ReferenceLayout" type="TextureRect" parent="." unique_id=1917474442]
 visible = false

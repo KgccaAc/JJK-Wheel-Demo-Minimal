@@ -5,7 +5,7 @@ const RulesScript: Script = preload("res://battle/v3/BattleRulesV3.gd")
 const AdapterScript: Script = preload("res://battle/v3/ActionDefinitionAdapterV3.gd")
 const DefenseScript: Script = preload("res://battle/v3/DefenseResolverV3.gd")
 const DslScript: Script = preload("res://battle/v3/DslRuntimeV3.gd")
-const StateScript: Script = preload("res://battle/core/BattleState.gd")
+const StateScript: Script = preload("res://battle/rules/BattleState.gd")
 
 var _rules: RefCounted = RulesScript.new()
 var _defense: RefCounted = DefenseScript.new()
@@ -276,12 +276,17 @@ func _find_card(actor: Dictionary, card_id: String) -> Dictionary:
 	return {}
 
 func _action_priority(card: Dictionary) -> int:
-	var special: Dictionary = ((card.get("effect", {}) as Dictionary).get("special", {}) as Dictionary)
+	var raw_effect: Variant = card.get("effect", {})
+	var effect: Dictionary = raw_effect as Dictionary if raw_effect is Dictionary else {}
+	var raw_special: Variant = effect.get("special", {})
+	var special: Dictionary = raw_special as Dictionary if raw_special is Dictionary else {}
 	var raw_effects: Variant = special.get("atomicEffects", [])
 	if not raw_effects is Array: return 0
-	for raw_effect: Variant in raw_effects as Array:
-		if raw_effect is Dictionary and str((raw_effect as Dictionary).get("tool", "")) == "set_action_order":
-			return int(((raw_effect as Dictionary).get("params", {}) as Dictionary).get("priority", 0))
+	for raw_action_effect: Variant in raw_effects as Array:
+		if not raw_action_effect is Dictionary or str((raw_action_effect as Dictionary).get("tool", "")) != "set_action_order": continue
+		var raw_params: Variant = (raw_action_effect as Dictionary).get("params", {})
+		var params: Dictionary = raw_params as Dictionary if raw_params is Dictionary else {}
+		return int(params.get("priority", 0))
 	return 0
 
 func _failure(reason: String) -> Dictionary:

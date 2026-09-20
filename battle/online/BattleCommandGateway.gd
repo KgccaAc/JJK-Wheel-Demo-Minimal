@@ -4,8 +4,11 @@ extends RefCounted
 ## UI 与网络之间的稳定边界。
 ##
 ## 线上实现需要保持同名方法、信号和返回格式，并把服务器返回的 update 原样交给 Presenter；
-## 页面不能从 socket 或 HTTP 回调里改战斗数据。LocalBattleCommandGateway 是同一契约的
-## 离线权威适配器，因此本地战斗和联机战斗共享命令格式、重试和重同步语义。
+## 页面不能从 socket 或 HTTP 回调里改战斗数据。
+##
+## 注意：离线权威适配器 LocalBattleCommandGateway 已归档到 `_archive/legacy-online/`。
+## 当前离线战斗不经过本契约，而由 `battle/ui/BattleFlowCoordinator.gd` 直接调用
+## `BattleFlowSession`；本基类目前仅服务于联机侧的 RemoteBattleCommandGateway。
 
 signal connection_changed(status: StringName)
 signal authoritative_update_received(update: Dictionary)

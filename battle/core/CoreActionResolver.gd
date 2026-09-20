@@ -8,7 +8,7 @@ const SUPPORTED_TOOLS: Array[String] = [
 	"add_computed_status", "adjust_action_resource", "emit_battle_event", "grant_temporary_technique_tag", "modify_damage", "modify_weight", "pay_hp_cost", "recall_summon", "update_summon", "destroy_summon", "remove_status", "require_status", "require_summon", "require_value", "selection_rule", "set_action_order", "set_damage_policy", "summon_unit", "unlock_card_pool"
 ]
 const RngScript: Script = preload("res://battle/core/SourceCompatibleRng.gd")
-const CostResolverScript: Script = preload("res://battle/core/ActionCostResolver.gd")
+const CostResolverScript: Script = preload("res://battle/rules/ActionCostResolver.gd")
 const BATTLE_RANK_SCORES: Dictionary = {"E-": 0.0, "E": 1.0, "D": 2.0, "C": 3.0, "B": 4.0, "A": 5.0, "S": 6.0, "SS": 7.0, "SSS": 8.0, "EX-": 9.0, "EX": 10.0}
 
 ## 给 UI 可用性层使用：不支持的 DSL 卡不进入可选状态，也不把内部错误码暴露给玩家。

@@ -4,10 +4,23 @@
   "type": "module",
   "scripts": {
     "test:local-worker": "node ../tests/backend/local_worker_acceptance.mjs",
-    "test:preview-room": "node ../tests/backend/online_room_v2_acceptance.mjs"
-    ,"worker": "node scripts/worker.mjs"
-    ,"worker:start": "node scripts/worker.mjs start"
-    ,"worker:health": "node scripts/worker.mjs health"
+    "test:preview-room": "node ../tests/backend/online_room_v2_acceptance.mjs",
+    "test:ai-dialogue": "node ../tests/backend/ai_dialogue_acceptance.mjs",
+    "test:ai-context": "node ../tests/backend/ai_context_acceptance.mjs",
+    "test:story-api": "node ../tests/backend/story_content_acceptance.mjs",
+    "test:story-battle": "node ../tests/backend/story_battle_acceptance.mjs && node ../tests/web_battle_client.mjs",
+    "test:preview-security": "node ../tests/backend/local_preview_security_acceptance.mjs",
+    "test:story-web": "node ../tests/story_package_validator.mjs && node ../tests/web_story_runtime.mjs && node ../tests/web_story_client.mjs",
+    "test:web-shell": "node ../tests/web_app_shell.mjs",
+    "test:story-editor": "node ../tests/web_story_editor.mjs",
+    "test:wheel-runtime": "node ../tests/web_wheel_runtime.mjs",
+    "test:wheel-content": "node ../tests/backend/wheel_content_acceptance.mjs",
+    "test:wheel-browser": "node ../tests/web_wheel_browser.mjs",
+    "test:web-online": "node ../tests/web_online_client.mjs",
+    "test:web-online-browser": "node ../tests/web_online_browser.mjs",
+    "worker": "node scripts/worker.mjs",
+    "worker:start": "node scripts/worker.mjs start",
+    "worker:health": "node scripts/worker.mjs health"
   }
 }
 

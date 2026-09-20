@@ -35,6 +35,9 @@ func _ready() -> void:
 	for child: Node in _choices.get_children():
 		if child is Button:
 			(child as Button).pressed.connect(_on_option_pressed.bind(child as Button))
+			(child as Button).set_meta("base_scale", (child as Button).scale)
+			(child as Button).set_meta("base_position", (child as Button).position)
+			(child as Button).pivot_offset = (child as Button).size * 0.5
 			_set_option_texture(child as Button, false)
 			_set_option_label_color(child as Button, false)
 			(child.get_node("Label") as Label).text = "投入%d体势" % BID_VALUES[choice_index]
@@ -59,13 +62,17 @@ func _on_option_pressed(button: Button) -> void:
 	selected_option = button.name
 	for child: Node in _choices.get_children():
 		if child is Button:
-			(child as Button).modulate = Color(1.0, 1.0, 1.0, 0.65)
-			_set_option_texture(child as Button, false)
-			_set_option_label_color(child as Button, false)
+			var option := child as Button
+			option.modulate = Color(1.0, 1.0, 1.0, 0.65)
+			_set_option_texture(option, false)
+			_set_option_label_color(option, false)
+			option.scale = option.get_meta("base_scale", Vector2.ONE)
+			option.position = option.get_meta("base_position", option.position)
+			option.z_index = 0
 	button.modulate = Color.WHITE
 	_set_option_texture(button, true)
 	_set_option_label_color(button, true)
-	_play_button_animation(button)
+	_animate_option(button, true)
 
 func _set_option_texture(button: Button, selected: bool) -> void:
 	var art := button.get_node_or_null("Buttom") as TextureRect
@@ -78,14 +85,19 @@ func _set_option_label_color(button: Button, selected: bool) -> void:
 	if label != null:
 		label.add_theme_color_override("font_color", SELECTED_LABEL_COLOR if selected else DEFAULT_LABEL_COLOR)
 
-func _play_button_animation(button: Button) -> void:
-	button.pivot_offset = button.size * 0.5
+func _animate_option(button: Button, selected: bool) -> void:
+	var base_scale: Vector2 = button.get_meta("base_scale", Vector2.ONE)
+	var base_position: Vector2 = button.get_meta("base_position", button.position)
+	var target_scale := base_scale * (1.08 if selected else 1.0)
+	var target_position := base_position + (Vector2(0.0, -10.0) if selected else Vector2.ZERO)
+	button.z_index = 2 if selected else 0
 	if _choice_tween != null and _choice_tween.is_valid(): _choice_tween.kill()
 	var tween: Tween = create_tween()
 	_choice_tween = tween
 	tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-	tween.tween_property(button, "scale", Vector2(1.08, 1.08), 0.10)
-	tween.tween_property(button, "scale", Vector2.ONE, 0.16)
+	tween.set_parallel(true)
+	tween.tween_property(button, "scale", target_scale, 0.16)
+	tween.tween_property(button, "position", target_position, 0.16)
 
 func _confirm_selected_option() -> void:
 	if not _confirmed and selected_option != "":

@@ -80,6 +80,8 @@ WARNING: res://scenes/roster/roster_picker.tscn:8 - ext_resource, invalid UID: u
    at: load (scene/resources/resource_format_text.cpp:500)
    GDScript backtrace (most recent call first):
        [0] _run (res://tests/godot/PageButtonWiringAudit.gd:31)
-PAGE_BUTTON_WIRING_AUDIT PASS pages=17 buttons=372 load_errors=0 unbound=0
+PAGE_BUTTON_WIRING_AUDIT PASS pages=17 buttons=368 load_errors=0 unbound=0
 WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
    at: cleanup (core/object/object.cpp:2641)
+ERROR: 1 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:810)

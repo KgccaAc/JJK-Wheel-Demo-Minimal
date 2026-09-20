@@ -1,0 +1,17 @@
+{
+  "local_found": true,
+  "local_label": "本地 Mock · V3 8789",
+  "local_texture": true,
+  "official_found": true,
+  "official_label": "官方联机服务器 · HTTPS",
+  "official_texture": true,
+  "open_screenshot_ok": true,
+  "picker_member": true,
+  "popup_child_names": [
+    "Options"
+  ],
+  "popup_found": true,
+  "popup_visible_after_click": false,
+  "screenshot_ok": true,
+  "server_index": 1
+}

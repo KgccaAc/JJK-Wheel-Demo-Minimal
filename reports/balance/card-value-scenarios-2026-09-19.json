@@ -1,0 +1,245 @@
+{
+  "failures": [],
+  "generated_at": "2026-09-20T02:07:56",
+  "missing_observations": {
+    "defense_pair": 2,
+    "domain_window": 0,
+    "healing_pair": 3,
+    "status_pair": 2,
+    "technique_pair": 1
+  },
+  "opponent": "nanami_kento_shibuya",
+  "player": "shoko_ieiri_support_candidate",
+  "rows": {
+    "defense_pair": [
+      {
+        "attack_id": "card_basic_cursed_energy_strike",
+        "avoided_hp_damage": 14.0,
+        "baseline_hp_damage": 14.0,
+        "card_id": "card_shoko_battlefield_first_aid",
+        "ce_cost": 4.179328,
+        "guard_gain": 4.0,
+        "guarded_hp_damage": 0.0,
+        "seed": 2026092101
+      },
+      {
+        "attack_id": "card_basic_cursed_energy_strike",
+        "avoided_hp_damage": 14.0,
+        "baseline_hp_damage": 14.0,
+        "card_id": "card_shoko_battlefield_first_aid",
+        "ce_cost": 4.179328,
+        "guard_gain": 4.0,
+        "guarded_hp_damage": 0.0,
+        "seed": 2026092104
+      },
+      {
+        "attack_id": "card_basic_cursed_energy_strike",
+        "avoided_hp_damage": 14.0,
+        "baseline_hp_damage": 14.0,
+        "card_id": "card_shoko_battlefield_first_aid",
+        "ce_cost": 4.179328,
+        "guard_gain": 4.0,
+        "guarded_hp_damage": 0.0,
+        "seed": 2026092105
+      }
+    ],
+    "domain_window": [
+      {
+        "ce_cost": 21.8,
+        "domain_active_after_first": true,
+        "domain_id": "card_domain_expand",
+        "domain_load": 24.12,
+        "immediate_damage": 0.0,
+        "second_turn_damage": 25.0771604938272,
+        "seed": 2026092101,
+        "two_turn_damage": 25.0771604938272
+      },
+      {
+        "ce_cost": 38.290928,
+        "domain_active_after_first": true,
+        "domain_id": "card_domain_expand",
+        "domain_load": 24.12,
+        "immediate_damage": 0.0,
+        "second_turn_damage": 56.2587514567902,
+        "seed": 2026092102,
+        "two_turn_damage": 56.2587514567902
+      },
+      {
+        "ce_cost": 40.921592,
+        "domain_active_after_first": true,
+        "domain_id": "card_domain_expand",
+        "domain_load": 24.12,
+        "immediate_damage": 0.0,
+        "second_turn_damage": 52.9494131358025,
+        "seed": 2026092103,
+        "two_turn_damage": 52.9494131358025
+      },
+      {
+        "ce_cost": 21.8,
+        "domain_active_after_first": true,
+        "domain_id": "card_domain_expand",
+        "domain_load": 24.12,
+        "immediate_damage": 0.0,
+        "second_turn_damage": 25.0771604938272,
+        "seed": 2026092104,
+        "two_turn_damage": 25.0771604938272
+      },
+      {
+        "ce_cost": 21.8,
+        "domain_active_after_first": true,
+        "domain_id": "card_domain_expand",
+        "domain_load": 24.12,
+        "immediate_damage": 0.0,
+        "second_turn_damage": 25.0771604938272,
+        "seed": 2026092105,
+        "two_turn_damage": 25.0771604938272
+      }
+    ],
+    "healing_pair": [
+      {
+        "actual_healing": 3.55500000000001,
+        "automatic_recovery_control": 0.0,
+        "card_id": "card_shoko_stable_treatment",
+        "ce_cost": 5.34985599999999,
+        "control_hp_after_hit": 170.0,
+        "control_hp_after_second": 170.0,
+        "hp_after_hit": 170.0,
+        "max_hp": 186.0,
+        "net_recovery_vs_control": 3.55500000000001,
+        "seed": 2026092103,
+        "stability_after": 100.0,
+        "treated_hp_after_second": 173.555
+      },
+      {
+        "actual_healing": 3.55500000000001,
+        "automatic_recovery_control": 0.0,
+        "card_id": "card_shoko_stable_treatment",
+        "ce_cost": 5.34985599999999,
+        "control_hp_after_hit": 172.0,
+        "control_hp_after_second": 172.0,
+        "hp_after_hit": 172.0,
+        "max_hp": 186.0,
+        "net_recovery_vs_control": 3.55500000000001,
+        "seed": 2026092104,
+        "stability_after": 100.0,
+        "treated_hp_after_second": 175.555
+      }
+    ],
+    "status_pair": [
+      {
+        "avoided_hp_damage": 1.34078212290501,
+        "baseline_opponent_hp_damage": 11.1731843575419,
+        "card_id": "card_spatial_blue_resource",
+        "ce_cost": 3.72,
+        "seed": 2026092102,
+        "status_opponent_hp_damage": 9.8324022346369
+      },
+      {
+        "avoided_hp_damage": 1.17318435754186,
+        "baseline_opponent_hp_damage": 9.77653631284915,
+        "card_id": "card_spatial_blue_resource",
+        "ce_cost": 3.72,
+        "seed": 2026092104,
+        "status_opponent_hp_damage": 8.60335195530729
+      },
+      {
+        "avoided_hp_damage": 1.17318435754186,
+        "baseline_opponent_hp_damage": 9.77653631284915,
+        "card_id": "card_spatial_blue_resource",
+        "ce_cost": 3.72,
+        "seed": 2026092105,
+        "status_opponent_hp_damage": 8.60335195530729
+      }
+    ],
+    "technique_pair": [
+      {
+        "basic_ce": 0.0,
+        "basic_damage": 10.8024691358025,
+        "basic_damage_per_ce": 10.8024691358025,
+        "basic_id": "card_basic_cursed_energy_strike",
+        "seed": 2026092102,
+        "technique_ce": 30.84,
+        "technique_damage": 69.4444444444445,
+        "technique_damage_per_ce": 2.2517653840611,
+        "technique_id": "card_spatial_red_reversal"
+      },
+      {
+        "basic_ce": 0.0,
+        "basic_damage": 10.8024691358025,
+        "basic_damage_per_ce": 10.8024691358025,
+        "basic_id": "card_basic_cursed_energy_strike",
+        "seed": 2026092103,
+        "technique_ce": 30.84,
+        "technique_damage": 69.4444444444445,
+        "technique_damage_per_ce": 2.2517653840611,
+        "technique_id": "card_spatial_red_reversal"
+      },
+      {
+        "basic_ce": 0.0,
+        "basic_damage": 12.3456790123457,
+        "basic_damage_per_ce": 12.3456790123457,
+        "basic_id": "card_basic_physical_strike",
+        "seed": 2026092104,
+        "technique_ce": 30.84,
+        "technique_damage": 69.4444444444445,
+        "technique_damage_per_ce": 2.2517653840611,
+        "technique_id": "card_spatial_red_reversal"
+      },
+      {
+        "basic_ce": 0.0,
+        "basic_damage": 10.8024691358025,
+        "basic_damage_per_ce": 10.8024691358025,
+        "basic_id": "card_basic_cursed_energy_strike",
+        "seed": 2026092105,
+        "technique_ce": 30.84,
+        "technique_damage": 69.4444444444445,
+        "technique_damage_per_ce": 2.2517653840611,
+        "technique_id": "card_spatial_red_reversal"
+      }
+    ]
+  },
+  "schema": "jjk-card-value-scenarios-v1",
+  "seed_count": 5,
+  "summary": {
+    "defense_pair": {
+      "avg_avoided_hp_damage": 14.0,
+      "avg_baseline_hp_damage": 14.0,
+      "avg_ce_cost": 4.179328,
+      "avg_guard_gain": 4.0,
+      "avg_guarded_hp_damage": 0.0,
+      "observations": 3
+    },
+    "domain_window": {
+      "avg_ce_cost": 28.922504,
+      "avg_domain_load": 24.12,
+      "avg_immediate_damage": 0.0,
+      "avg_second_turn_damage": 36.8879292148148,
+      "avg_two_turn_damage": 36.8879292148148,
+      "observations": 5
+    },
+    "healing_pair": {
+      "avg_actual_healing": 3.55500000000001,
+      "avg_automatic_recovery_control": 0.0,
+      "avg_ce_cost": 5.34985599999999,
+      "avg_hp_after_hit": 171.0,
+      "avg_net_recovery_vs_control": 3.55500000000001,
+      "observations": 2
+    },
+    "status_pair": {
+      "avg_avoided_hp_damage": 1.22905027932957,
+      "avg_baseline_opponent_hp_damage": 10.2420856610801,
+      "avg_ce_cost": 3.72,
+      "avg_status_opponent_hp_damage": 9.01303538175049,
+      "observations": 3
+    },
+    "technique_pair": {
+      "avg_basic_ce": 0.0,
+      "avg_basic_damage": 11.1882716049383,
+      "avg_basic_damage_per_ce": 11.1882716049383,
+      "avg_technique_ce": 30.84,
+      "avg_technique_damage": 69.4444444444445,
+      "avg_technique_damage_per_ce": 2.2517653840611,
+      "observations": 4
+    }
+  }
+}

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwv8rqsopixh3"]
 
 [ext_resource type="Texture2D" uid="uid://bmjd3txibmuyv" path="res://art/fight/特殊效果标记.png" id="1_face"]
-[ext_resource type="Script" uid="uid://bew21ejp4qiut" path="res://ui/battle_status/special_effect_badge.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://dnerd1r0p7di0" path="res://ui/battle_status/special_effect_badge.gd" id="2_script"]
 [ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="3_font"]
 
 [node name="SpecialEffectBadge" type="TextureRect" unique_id=1640132670]

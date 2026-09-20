@@ -6,7 +6,7 @@ extends RefCounted
 ## BattleFlowSession 是唯一调用者。Presenter、Gateway 和 fixture 不得绕过本类直接组合费用规则。
 
 const ActionResolverScript: Script = preload("res://battle/core/CoreActionResolver.gd")
-const CostResolverScript: Script = preload("res://battle/core/ActionCostResolver.gd")
+const CostResolverScript: Script = preload("res://battle/rules/ActionCostResolver.gd")
 const ModifierPipelineScript: Script = preload("res://battle/core/ModifierPipeline.gd")
 
 var _action_resolver: RefCounted = ActionResolverScript.new()

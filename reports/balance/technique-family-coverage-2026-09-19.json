@@ -1,0 +1,1236 @@
+{
+  "schema": "jjk-technique-family-coverage-v1",
+  "generatedAt": "2026-09-20T01:36:53.660Z",
+  "sourceProfileCount": 72,
+  "matchTagCount": 87,
+  "families": [
+    {
+      "key": "ten_shadows",
+      "displayName": "十种影法术",
+      "sourceProfiles": [
+        "十种影法术"
+      ],
+      "cardIds": [
+        "card_ten_shadows_divine_dog_totality",
+        "card_ten_shadows_nue",
+        "card_ten_shadows_max_elephant",
+        "card_ten_shadows_rabbit_escape",
+        "card_ten_shadows_round_deer",
+        "card_ten_shadows_piercing_ox",
+        "card_ten_shadows_mahoraga_tuning_ritual",
+        "card_shikigami_intercept",
+        "card_shadow_storage",
+        "card_incomplete_domain_shadow_support"
+      ],
+      "characterIds": [
+        "megumi_fushiguro_shibuya",
+        "megumi_fushiguro_culling",
+        "sukuna_heian_shinjuku",
+        "douna_sukuna_boss"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "limitless",
+      "displayName": "无下限术式",
+      "sourceProfiles": [
+        "无下限"
+      ],
+      "cardIds": [
+        "card_spatial_blue_resource",
+        "card_spatial_red_reversal",
+        "card_spatial_inviolable",
+        "card_spatial_hollow_purple",
+        "card_spatial_blue_attachment"
+      ],
+      "characterIds": [
+        "gojo_satoru_shinjuku"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "blood_manipulation",
+      "displayName": "赤血操术",
+      "sourceProfiles": [
+        "赤血操术"
+      ],
+      "cardIds": [
+        "card_blood_manipulation_007",
+        "card_blood_manipulation_008",
+        "card_blood_manipulation_009",
+        "card_blood_manipulation_010",
+        "card_blood_manipulation_011"
+      ],
+      "characterIds": [
+        "yuji_itadori_after68",
+        "choso_shibuya_culling",
+        "kamo_noritoshi_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "curse_spirit_manipulation",
+      "displayName": "咒灵操术",
+      "sourceProfiles": [
+        "咒灵操术"
+      ],
+      "cardIds": [
+        "card_curse_spirit_manipulation_010",
+        "card_geto_low_centipede_curse",
+        "card_geto_fly_head_swarm",
+        "card_geto_low_worm_curse",
+        "card_geto_shell_curse_cluster",
+        "card_geto_eye_scout_curse",
+        "card_geto_lantern_fish_curse",
+        "card_geto_slime_curse",
+        "card_geto_bat_curse_flock",
+        "card_geto_rainbow_dragon",
+        "card_geto_kuchisake_onna",
+        "card_geto_tamamo_no_mae",
+        "card_geto_maximum_uzumaki",
+        "card_geto_needle_mouth_curse_swarm",
+        "card_geto_hair_binding_curse",
+        "card_geto_ground_bound_minor_curse",
+        "card_geto_paper_scrap_curse_swarm",
+        "card_curse_spirit_manipulation_011",
+        "card_geto_bone_shield_curse",
+        "card_geto_curtain_wall_curse",
+        "card_geto_barbed_wall_curse_swarm",
+        "card_geto_scale_shell_curse",
+        "card_curse_spirit_manipulation_012"
+      ],
+      "characterIds": [
+        "geto_suguru_volume0",
+        "kenjaku_geto_body"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "idle_transfiguration",
+      "displayName": "无为转变 —— 真人",
+      "sourceProfiles": [
+        "无为转变"
+      ],
+      "cardIds": [
+        "card_idle_transfiguration_013",
+        "card_idle_transfiguration_014",
+        "card_idle_transfiguration_015",
+        "card_force_soul_touch",
+        "card_soul_touch_pressure",
+        "card_body_morph_guard",
+        "card_self_embodiment_pressure",
+        "card_curse_miasma",
+        "card_residue_distortion",
+        "card_domain_instinct_resistance",
+        "card_curse_regen_candidate"
+      ],
+      "characterIds": [
+        "mahito_shibuya"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "shibuya_transfigured_human_swarm",
+      "displayName": "无为转变 —— 真人",
+      "sourceProfiles": [
+        "无为转变"
+      ],
+      "cardIds": [
+        "card_transfigured_swarm"
+      ],
+      "characterIds": [],
+      "category": "expanded"
+    },
+    {
+      "key": "ratio_technique",
+      "displayName": "十划咒法（七海）",
+      "sourceProfiles": [
+        "十划咒法（七海）"
+      ],
+      "cardIds": [
+        "card_ratio_technique_016",
+        "card_ratio_technique_017",
+        "card_ratio_technique_018",
+        "card_nanami_ratio_chain",
+        "card_nanami_overtime_execution"
+      ],
+      "characterIds": [
+        "nanami_kento_shibuya"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "cursed_speech",
+      "displayName": "咒言",
+      "sourceProfiles": [
+        "咒言"
+      ],
+      "cardIds": [
+        "card_cursed_speech_019",
+        "card_cursed_speech_020",
+        "card_cursed_speech_021",
+        "card_inumaki_crush_command",
+        "card_inumaki_throat_care"
+      ],
+      "characterIds": [
+        "inumaki_toge_volume0"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "boogie_woogie",
+      "displayName": "不义游戏",
+      "sourceProfiles": [
+        "不义游戏"
+      ],
+      "cardIds": [
+        "card_boogie_woogie_022",
+        "card_boogie_woogie_023",
+        "card_boogie_woogie_024",
+        "card_todo_rhythm_setup",
+        "card_todo_ally_rescue_swap",
+        "card_todo_black_flash_position"
+      ],
+      "characterIds": [
+        "todo_aoi_shibuya"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "black_bird_manipulation",
+      "displayName": "黑鸟操术",
+      "sourceProfiles": [
+        "黑鸟操术"
+      ],
+      "cardIds": [
+        "card_black_bird_command",
+        "card_black_bird_summon",
+        "card_black_bird_raid_three",
+        "card_black_bird_raid_five",
+        "card_black_bird_blood_one",
+        "card_black_bird_guard_two",
+        "card_black_bird_guard_four",
+        "card_black_bird_blood_guard_zero",
+        "card_black_bird_boost_one"
+      ],
+      "characterIds": [
+        "mei_mei_shibuya"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "projection_sorcery",
+      "displayName": "投射咒法",
+      "sourceProfiles": [
+        "投射咒法"
+      ],
+      "cardIds": [
+        "card_projection_sorcery_028",
+        "card_projection_sorcery_029",
+        "card_projection_sorcery_030",
+        "card_projection_sorcery_031",
+        "card_projection_sorcery_032",
+        "card_projection_sorcery_033",
+        "card_projection_sorcery_034"
+      ],
+      "characterIds": [
+        "naoya_cursed_spirit_sakurajima",
+        "naobito_zenin_shibuya_candidate",
+        "naoya_zenin_human_perfect_preparation_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "construction",
+      "displayName": "构筑术式",
+      "sourceProfiles": [
+        "构筑术式"
+      ],
+      "cardIds": [
+        "card_construction_031",
+        "card_construction_032",
+        "card_construction_033",
+        "card_yorozu_liquid_metal_pool",
+        "card_yorozu_insect_armor",
+        "card_yorozu_domain_perfect_sphere"
+      ],
+      "characterIds": [
+        "yorozu_heian_vessel",
+        "mai_zenin_kyoto_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "puppet_manipulation",
+      "displayName": "傀儡操术",
+      "sourceProfiles": [
+        "傀儡操术"
+      ],
+      "cardIds": [
+        "card_puppet_remote_barrage",
+        "card_puppet_armor_guard"
+      ],
+      "characterIds": [
+        "kokichi_muta_mechamaru_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "tool_manipulation",
+      "displayName": "付丧操术",
+      "sourceProfiles": [
+        "付丧操术"
+      ],
+      "cardIds": [
+        "card_nishimiya_momo_kyoto_broom_aerial_feint",
+        "card_nishimiya_momo_kyoto_broom_evasive_cover"
+      ],
+      "characterIds": [
+        "nishimiya_momo_kyoto_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "seance_technique",
+      "displayName": "降灵术（参拜婆）",
+      "sourceProfiles": [
+        "降灵术（参拜婆）"
+      ],
+      "cardIds": [
+        "card_seance_body_channel",
+        "card_seance_target_trace"
+      ],
+      "characterIds": [
+        "ogami_granny_shibuya_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "straw_doll_technique",
+      "displayName": "刍灵咒法（野蔷薇）",
+      "sourceProfiles": [
+        "刍灵咒法（野蔷薇）"
+      ],
+      "cardIds": [
+        "card_straw_doll_technique_043",
+        "card_straw_doll_technique_044",
+        "card_straw_doll_technique_045",
+        "card_nobara_nail_barrage",
+        "card_nobara_resonance_guard"
+      ],
+      "characterIds": [
+        "nobara_kugisaki_main_start"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "star_rage",
+      "displayName": "星之怒（九十九）",
+      "sourceProfiles": [
+        "星之怒（九十九）"
+      ],
+      "cardIds": [
+        "card_star_rage_046",
+        "card_star_rage_047",
+        "card_star_rage_048",
+        "card_star_rage_049",
+        "card_star_rage_050"
+      ],
+      "characterIds": [
+        "yuki_tsukumo_culling"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "ice_formation",
+      "displayName": "冰凝咒法",
+      "sourceProfiles": [
+        "冰凝咒法"
+      ],
+      "cardIds": [
+        "card_ice_formation_049",
+        "card_ice_formation_050",
+        "card_uraume_ice_layering",
+        "card_uraume_frost_armor",
+        "card_uraume_absolute_freeze"
+      ],
+      "characterIds": [
+        "uraume_shinjuku"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "immortality_tengen",
+      "displayName": "不死（天元）",
+      "sourceProfiles": [
+        "不死（天元）"
+      ],
+      "cardIds": [
+        "card_tengen_barrier_maintenance",
+        "card_tengen_assimilation_delay"
+      ],
+      "characterIds": [
+        "tengen_barrier_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "miracles",
+      "displayName": "奇迹",
+      "sourceProfiles": [
+        "奇迹（重面春太）"
+      ],
+      "cardIds": [
+        "card_miracle_stockpile",
+        "card_miracle_lucky_escape"
+      ],
+      "characterIds": [
+        "haruta_shigemo_shibuya_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "disaster_flames",
+      "displayName": "熔灾火藏 —— 漏瑚",
+      "sourceProfiles": [
+        "漏壶"
+      ],
+      "cardIds": [
+        "card_disaster_flames_058",
+        "card_disaster_flames_059",
+        "card_disaster_flames_060",
+        "card_jogo_heat_accumulation",
+        "card_jogo_lava_field",
+        "card_jogo_coffin_heat_sustain"
+      ],
+      "characterIds": [
+        "jogo_shibuya"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "disaster_plants",
+      "displayName": "咒植幻生 —— 花御",
+      "sourceProfiles": [
+        "花御"
+      ],
+      "cardIds": [
+        "card_disaster_plants_061",
+        "card_disaster_plants_062",
+        "card_disaster_plants_063",
+        "card_hanami_curse_bud_guard",
+        "card_hanami_life_drain",
+        "card_hanami_flower_sea_sustain"
+      ],
+      "characterIds": [
+        "hanami_exchange_event"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "disaster_tides",
+      "displayName": "潮灾式海 —— 陀艮",
+      "sourceProfiles": [
+        "陀艮"
+      ],
+      "cardIds": [
+        "card_disaster_tides_064",
+        "card_disaster_tides_065",
+        "card_disaster_tides_066",
+        "card_dagon_sea_spread",
+        "card_dagon_shikigami_hunt",
+        "card_dagon_domain_fish_surehit"
+      ],
+      "characterIds": [
+        "dagon_shibuya_domain"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "gakuganji_music",
+      "displayName": "咒力音波（乐岩寺）",
+      "sourceProfiles": [
+        "乐岩寺"
+      ],
+      "cardIds": [
+        "card_gakuganji_sound_wave",
+        "card_gakuganji_amp_feedback"
+      ],
+      "characterIds": [
+        "gakuganji_yoshinobu_kyoto_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "solo_forbidden_area",
+      "displayName": "单独禁区（庵歌姬）",
+      "sourceProfiles": [
+        "单独禁区"
+      ],
+      "cardIds": [
+        "card_solo_forbidden_area_ritual",
+        "card_solo_forbidden_area_output_boost"
+      ],
+      "characterIds": [
+        "utahime_iori_kyoto_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "prayer_song",
+      "displayName": "祈祷之歌（米格尔）",
+      "sourceProfiles": [
+        "祈祷之歌"
+      ],
+      "cardIds": [],
+      "characterIds": [
+        "utahime_iori_kyoto_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "cockroach_swarm",
+      "displayName": "腐蠊胎巢 —— 黑沐死",
+      "sourceProfiles": [
+        "黑沐死蟑螂操控"
+      ],
+      "cardIds": [
+        "card_cockroach_swarm_bite",
+        "card_cockroach_swarm_oviposition"
+      ],
+      "characterIds": [
+        "kurourushi_sendai_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "rot_technique",
+      "displayName": "蚀烂术式",
+      "sourceProfiles": [
+        "蚀烂术式（坏相、血涂）"
+      ],
+      "cardIds": [
+        "card_rot_technique_decay_blood",
+        "card_rot_technique_wing_king"
+      ],
+      "characterIds": [
+        "eso_origin_candidate",
+        "kechizu_origin_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "ganesha_obstacle_removal",
+      "displayName": "象神开障 —— 伽内什",
+      "sourceProfiles": [
+        "伽尼萨障碍移除"
+      ],
+      "cardIds": [
+        "card_ganesha_obstacle_removal_169",
+        "card_ganesha_obstacle_removal_170",
+        "card_ganesha_obstacle_removal_171"
+      ],
+      "characterIds": [
+        "kenjaku_geto_body"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "body_hopping",
+      "displayName": "夺舍（羂索）",
+      "sourceProfiles": [
+        "夺舍（羂索）"
+      ],
+      "cardIds": [
+        "card_body_hopping_073",
+        "card_body_hopping_074",
+        "card_body_hopping_075"
+      ],
+      "characterIds": [
+        "kenjaku_geto_body"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "idle_death_gamble",
+      "displayName": "坐杀搏徒",
+      "sourceProfiles": [
+        "坐杀搏徒"
+      ],
+      "cardIds": [
+        "card_idle_death_gamble_076",
+        "card_idle_death_gamble_077",
+        "card_idle_death_gamble_078",
+        "card_advance_jackpot",
+        "card_raise_probability",
+        "card_risk_spin",
+        "card_stabilize_cycle",
+        "card_claim_jackpot",
+        "card_accelerate_reach",
+        "card_stabilize_probability",
+        "card_risky_reach_loop",
+        "card_jackpot_pressure"
+      ],
+      "characterIds": [
+        "hakari_kinji_jackpot"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "higuruma_trial_owner",
+      "displayName": "诛伏赐死",
+      "sourceProfiles": [
+        "诛伏赐死"
+      ],
+      "cardIds": [
+        "card_press_contradiction",
+        "card_lock_charge",
+        "card_organize_evidence_chain",
+        "card_enforce_confiscation",
+        "card_present_evidence",
+        "card_press_charge",
+        "card_advance_trial",
+        "card_rule_pressure",
+        "card_request_verdict",
+        "card_controller_redirect",
+        "card_summon_suppression",
+        "card_object_confiscation",
+        "card_wielder_liability",
+        "card_tool_function_lock"
+      ],
+      "characterIds": [
+        "higuruma_hiromi_culling"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "comedian",
+      "displayName": "超人（高羽）",
+      "sourceProfiles": [
+        "超人（高羽）"
+      ],
+      "cardIds": [
+        "card_comedian_082",
+        "card_comedian_083",
+        "card_comedian_084",
+        "card_comedian_setup_bit",
+        "card_comedian_absurd_recovery",
+        "card_comedian_audience_roar"
+      ],
+      "characterIds": [
+        "takaba_fumihiko_culling"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "copy",
+      "displayName": "模仿",
+      "sourceProfiles": [
+        "模仿"
+      ],
+      "cardIds": [
+        "card_copy_085",
+        "card_copy_086"
+      ],
+      "characterIds": [
+        "yuta_okkotsu_volume0_true_rika",
+        "okkotsu_tsurugi_modulo",
+        "yuta_okkotsu_shinjuku",
+        "yuka_okkotsu_modulo_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "sky_manipulation",
+      "displayName": "天空术式（乌鹭）",
+      "sourceProfiles": [
+        "天空术式（乌鹭）"
+      ],
+      "cardIds": [
+        "card_sky_manipulation_088",
+        "card_sky_manipulation_089",
+        "card_sky_manipulation_090",
+        "card_uro_sky_fold_stock",
+        "card_uro_damage_refraction",
+        "card_uro_sendai_domain_fold"
+      ],
+      "characterIds": [
+        "uro_takako_sendai"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "granite_blast",
+      "displayName": "咒力放出（石流龙）",
+      "sourceProfiles": [
+        "石流龙"
+      ],
+      "cardIds": [
+        "card_granite_blast_091",
+        "card_granite_blast_092",
+        "card_granite_blast_093",
+        "card_ryu_output_charge",
+        "card_ryu_point_blank_granite",
+        "card_ryu_sendai_domain_barrage"
+      ],
+      "characterIds": [
+        "ryu_ishigori_sendai"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "manga_artist",
+      "displayName": "G 战杖/未来画面（漫画家）",
+      "sourceProfiles": [
+        "漫画家"
+      ],
+      "cardIds": [
+        "card_manga_future_panel",
+        "card_manga_panel_cut"
+      ],
+      "characterIds": [
+        "charles_bernard_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "anti_gravity_system",
+      "displayName": "反重力机构",
+      "sourceProfiles": [
+        "反重力"
+      ],
+      "cardIds": [
+        "card_anti_gravity_system_094",
+        "card_anti_gravity_system_095",
+        "card_anti_gravity_system_096"
+      ],
+      "characterIds": [
+        "kenjaku_geto_body"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "mythical_beast_amber",
+      "displayName": "幻兽琥珀（鹿紫云一）",
+      "sourceProfiles": [
+        "鹿紫云一"
+      ],
+      "cardIds": [
+        "card_kashimo_charge_cursed_energy",
+        "card_kashimo_thunder_charge_build",
+        "card_kashimo_lightning_flash_movement",
+        "card_kashimo_emp_released",
+        "card_kashimo_lightning_body_overload",
+        "card_kashimo_electromagnetic_annihilation",
+        "card_kashimo_mythical_beast_release"
+      ],
+      "characterIds": [
+        "kashimo_hajime_ancient"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "embodied_killing_intent_light",
+      "displayName": "光/杀意具现（达布拉）",
+      "sourceProfiles": [
+        "达布拉",
+        "光 / 具象化杀意"
+      ],
+      "cardIds": [
+        "card_embodied_killing_intent_light_103",
+        "card_embodied_killing_intent_light_104",
+        "card_embodied_killing_intent_light_105",
+        "card_modulo_embodied_light_109",
+        "card_modulo_embodied_light_110"
+      ],
+      "characterIds": [
+        "dabra_modulo"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "chaos_and_harmony",
+      "displayName": "混沌与调和",
+      "sourceProfiles": [
+        "混沌与调和"
+      ],
+      "cardIds": [
+        "card_chaos_and_harmony_201",
+        "card_chaos_and_harmony_202",
+        "card_chaos_and_harmony_203",
+        "card_chaos_and_harmony_204",
+        "card_chaos_and_harmony_205",
+        "card_chaos_and_harmony_206",
+        "card_chaos_and_harmony_207",
+        "card_chaos_and_harmony_208"
+      ],
+      "characterIds": [
+        "maru_modulo",
+        "cross_modulo"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "explosive_body",
+      "displayName": "爆炸肉体（黄栌折）",
+      "sourceProfiles": [
+        "黄栌折"
+      ],
+      "cardIds": [
+        "card_hazel_explosive_tooth",
+        "card_hazel_eye_bomb"
+      ],
+      "characterIds": [
+        "hazeno_ki_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "inverse",
+      "displayName": "强弱颠倒",
+      "sourceProfiles": [
+        "强弱颠倒"
+      ],
+      "cardIds": [
+        "card_inverse_damage_flip",
+        "card_inverse_counter_window"
+      ],
+      "characterIds": [
+        "awasaka_jiro_shibuya_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "shrine",
+      "displayName": "御厨子（宿傩）",
+      "sourceProfiles": [
+        "御厨子（宿傩）"
+      ],
+      "cardIds": [
+        "card_shrine_dismantle",
+        "card_shrine_cleave",
+        "card_shrine_furnace_open",
+        "card_shrine_blade_tuning",
+        "card_shrine_slash_guard",
+        "card_shrine_furnace_prepare"
+      ],
+      "characterIds": [
+        "yuji_itadori_after68",
+        "dabra_modulo",
+        "sukuna_shibuya",
+        "sukuna_heian_shinjuku",
+        "douna_sukuna_boss",
+        "sukuna_heian_or_shinjuku"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "star_travel",
+      "displayName": "星间飞行",
+      "sourceProfiles": [
+        "星间飞行"
+      ],
+      "cardIds": [
+        "card_star_travel_marking",
+        "card_star_travel_orbit_cross"
+      ],
+      "characterIds": [
+        "kirara_hoshi_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "hanyu_jet_hair",
+      "displayName": "喷气头发（羽生）",
+      "sourceProfiles": [
+        "羽生（喷气背包头发）"
+      ],
+      "cardIds": [
+        "card_hanyu_jet_hair_dash",
+        "card_hanyu_jet_hair_evasion"
+      ],
+      "characterIds": [
+        "hanyu_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "haba_helicopter_hair",
+      "displayName": "直升机头发（羽场）",
+      "sourceProfiles": [
+        "羽场（直升机头发）"
+      ],
+      "cardIds": [
+        "card_haba_rotor_lift",
+        "card_haba_rotor_crash"
+      ],
+      "characterIds": [
+        "haba_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "jinichi_fist",
+      "displayName": "巨大咒力拳（禅院甚一）",
+      "sourceProfiles": [
+        "禅院甚一"
+      ],
+      "cardIds": [
+        "card_jinichi_giant_ce_fist",
+        "card_jinichi_ce_fist_guard"
+      ],
+      "characterIds": [
+        "jinichi_zenin_perfect_preparation_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "ranta_eye_bind",
+      "displayName": "视线拘束（禅院兰太）",
+      "sourceProfiles": [
+        "禅院兰太"
+      ],
+      "cardIds": [
+        "card_ranta_eye_bind_stare",
+        "card_ranta_eye_bind_focus"
+      ],
+      "characterIds": [
+        "ranta_zenin_perfect_preparation_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "auspicious_beasts",
+      "displayName": "来访瑞兽（猪野）",
+      "sourceProfiles": [
+        "降灵术来访瑞兽（猪也）"
+      ],
+      "cardIds": [
+        "card_auspicious_beast_kaichi",
+        "card_auspicious_beast_reiki"
+      ],
+      "characterIds": [
+        "ino_takuma_shibuya_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "remi_hair",
+      "displayName": "蝎尾头发（丽美）",
+      "sourceProfiles": [
+        "丽美（拿头发扎人，没别的）"
+      ],
+      "cardIds": [
+        "card_remi_scorpion_tail_sting",
+        "card_remi_hair_lure_bind"
+      ],
+      "characterIds": [
+        "remi_culling_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "photo_manipulation",
+      "displayName": "照片操控（枷场菜菜子）",
+      "sourceProfiles": [
+        "照片操控"
+      ],
+      "cardIds": [
+        "card_photo_manipulation_frame_shift",
+        "card_photo_manipulation_image_lock"
+      ],
+      "characterIds": [
+        "nanako_hasaba_volume0_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "mimiko_doll",
+      "displayName": "美美子玩偶术式",
+      "sourceProfiles": [
+        "美美子玩偶术式"
+      ],
+      "cardIds": [
+        "card_mimiko_doll_curse_link",
+        "card_mimiko_doll_gallows_pull"
+      ],
+      "characterIds": [
+        "mimiko_hasaba_volume0_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "dhruv_shikigami",
+      "displayName": "式神轨迹领域（杜鲁布）",
+      "sourceProfiles": [
+        "杜鲁布"
+      ],
+      "cardIds": [
+        "card_dhruv_lakdawalla_sendai_shikigami_orbit_domain",
+        "card_dhruv_lakdawalla_sendai_shikigami_tracking_screen"
+      ],
+      "characterIds": [
+        "dhruv_lakdawalla_sendai_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "moon_dregs",
+      "displayName": "淀月（顺平）",
+      "sourceProfiles": [
+        "淀月（顺平）"
+      ],
+      "cardIds": [
+        "card_moon_dregs_jellyfish_guard",
+        "card_moon_dregs_poison_sting"
+      ],
+      "characterIds": [
+        "junpei_yoshino_main_start_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "rika_ring",
+      "displayName": "rika_ring",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_yuta_rika_modern_full_manifestation",
+        "card_copy_087",
+        "card_rika_cursed_spirit_bite"
+      ],
+      "characterIds": [],
+      "category": "expanded"
+    },
+    {
+      "key": "jacobs_ladder",
+      "displayName": "jacobs_ladder",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_angel_purifying_ray",
+        "card_angel_jacobs_ladder",
+        "card_angel_technique_extinguishment",
+        "card_angel_barrier_break",
+        "card_angel_wing_retreat"
+      ],
+      "characterIds": [
+        "angel_hana_culling"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "contract_recreation",
+      "displayName": "contract_recreation",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_recontract_santana_sedan",
+        "card_recontract_excavator",
+        "card_recontract_kitchen_knife",
+        "card_recontract_detached_house",
+        "card_recontract_five_star_resort_week",
+        "card_recontract_receipt_stock"
+      ],
+      "characterIds": [
+        "reggie_star_culling"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "smallpox_deity_countdown",
+      "displayName": "smallpox_deity_countdown",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_smallpox_coffin_lock",
+        "card_smallpox_countdown_advance",
+        "card_smallpox_gravestone_crush",
+        "card_smallpox_three_count_settle",
+        "card_smallpox_domain_three_count"
+      ],
+      "characterIds": [],
+      "category": "registered"
+    },
+    {
+      "key": "modulo_copy_lightweight",
+      "displayName": "modulo_copy_lightweight",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_modulo_copy_lightweight_109",
+        "card_modulo_copy_lightweight_110",
+        "card_yuka_okkotsu_modulo_modulo_copy_probe"
+      ],
+      "characterIds": [],
+      "category": "expanded"
+    },
+    {
+      "key": "ogi_flame_blade",
+      "displayName": "ogi_flame_blade",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_ogi_flame_blade_focus",
+        "card_ogi_flame_blade_slash"
+      ],
+      "characterIds": [
+        "ogi_zenin_perfect_preparation_candidate"
+      ],
+      "category": "registered"
+    },
+    {
+      "key": "jabaloma",
+      "displayName": "jabaloma",
+      "sourceProfiles": [],
+      "cardIds": [
+        "card_jabaloma_modulo_modulo_adaptive_strike",
+        "card_jabaloma_modulo_modulo_adaptive_guard"
+      ],
+      "characterIds": [],
+      "category": "expanded"
+    },
+    {
+      "key": "profile_灵魂打击",
+      "displayName": "灵魂打击",
+      "sourceProfiles": [],
+      "cardIds": [],
+      "characterIds": [
+        "yuji_itadori_after68",
+        "yuji_itadori_shinjuku"
+      ],
+      "category": "registered"
+    }
+  ],
+  "excludedTags": [
+    {
+      "tag": "yuji_soul_melee",
+      "cardCount": 4,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "yuji_after68_black_flash",
+      "cardCount": 3,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "high_level_anti_domain",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "domain_access",
+      "cardCount": 5,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "simple_domain",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "hollow_wicker_basket",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "falling_blossom_emotion",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "zero_ce_heavenly_restriction",
+      "cardCount": 8,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "trial_defender_common",
+      "cardCount": 12,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "inverted_spear_of_heaven",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "chain_of_thousand_miles",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "soul_split_katana",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "playful_cloud",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "weapon_inventory_curse",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "black_rope",
+      "cardCount": 2,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "miguel_evasion",
+      "cardCount": 2,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "simple_domain_sword",
+      "cardCount": 5,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "rct_support",
+      "cardCount": 5,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "public_baseline",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "assistant_supervisor",
+      "cardCount": 2,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "special_constitution_physical_tyrant",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "special_constitution_super_vessel",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "special_constitution_half_curse",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "special_constitution_curse_body",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "panda_core_shift",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    },
+    {
+      "tag": "cursed_tool_user",
+      "cardCount": 1,
+      "reason": "support_system_or_constraint_not_an_innate_technique_family"
+    }
+  ],
+  "notes": [
+    "Registered families are preserved.",
+    "Expanded families come from source technique profiles and real matchTags.",
+    "Excluded tags remain visible for support/constraint scoring but are not counted as innate technique families."
+  ]
+}

@@ -1,7 +1,7 @@
 class_name RoundResolverV3
 extends RefCounted
 
-const StateScript: Script = preload("res://battle/core/BattleState.gd")
+const StateScript: Script = preload("res://battle/rules/BattleState.gd")
 const ActionResolverScript: Script = preload("res://battle/v3/ActionResolverV3.gd")
 const DomainRuntimeScript: Script = preload("res://battle/v3/DomainRuntimeV3.gd")
 

@@ -170,7 +170,11 @@ func _choose(choice: String) -> void:
 
 func _choose_index(choice_index: int) -> void:
 	if resolving_choice: return
-	if choice_index < 0 or choice_index > 1 or choice_index >= choices.size(): return
+	# The original two-button layout hardcoded `choice_index > 1`, which silently
+	# rejected every third-or-later option. Chapter 1 declares three choices on
+	# chapter1_clue and the core Shibuya nodes declare up to six, so bound the
+	# index by the real choice count instead.
+	if choice_index < 0 or choice_index >= choices.size(): return
 	resolving_choice = true
 	_set_choice_buttons_enabled(false)
 	var choice := "accept" if choice_index == 0 else ("hide" if choice_index == 1 else "option_%d" % choice_index)

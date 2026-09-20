@@ -25,6 +25,43 @@ own deployment directory and port and does not replace the existing battle servi
 `PUT` uses `expectedRevision` and returns 409 on conflict, so stale clients cannot
 silently overwrite a newer card.
 
+The local preview server also exposes the optional story dialogue bridge:
+
+- `GET /api/ai/status` reports whether `DEEPSEEK_API_KEY` is configured.
+- `POST /api/ai/dialogue/session` opens a persisted dialogue session.
+- `POST /api/ai/dialogue/turn` generates a structured DeepSeek turn when configured,
+  otherwise uses deterministic local text. The request must include the current
+  `saveRevision`; concurrent stale writes return 409.
+- `POST /api/ai/dialogue/end` closes the session and appends the final ledger event.
+
+Set `DEEPSEEK_API_KEY` (or `DEEPSEEK_KEY_FILE`; local Windows development also checks the user's Desktop `KEY.txt`), `DEEPSEEK_BASE_URL` (default `https://api.deepseek.com`),
+and `DEEPSEEK_MODEL` (default `deepseek-flash`) in the process environment. The
+provider is instructed to return JSON, then the server strips unknown fields and
+allows only 0..2 XP, small current-NPC affection/trust/alertness/respect changes,
+temporary emotion, and bounded memory tags/soft flags. Resource, core-growth,
+inventory, battle, and routing effects are rejected and recorded in
+`rejectedEffects` before the event ledger is persisted. The key is never written
+to session data or logs.
+
+The same local preview server exposes the story/content boundary:
+
+- `GET /api/story/packages/latest` and `GET /api/story/packages/:version` return the immutable canonical package.
+- `GET /api/story/chapters/:id`, `POST /api/story/validate`, and `POST /api/story/preview` support editor preview and checks.
+- `GET /api/saves/:id` and `POST /api/saves/:id/events` append revisioned local save events; stale `expectedRevision` writes return 409.
+
+These routes are preview-only storage adapters. They do not replace or write to the official `/preview-room-api` battle authority.
+
+## Web story shell
+
+Start `node backend/local-preview-server.mjs`, then open `http://127.0.0.1:8089/`.
+The root is the Web App Shell (`web-preview/`); `/story-editor/` remains the
+content workbench and `/web-runtime/` serves the platform-neutral runtime modules.
+The shell's story page uses `StoryClient`, the same `story-package.v1` loaded by
+the editor. Use `/?save=<save-id>` to select an isolated preview save slot. The
+turn-wheel, battle, and online routes intentionally expose integration status
+until their Web presentation modules replace the Godot screens; they do not
+claim authority over combat or the official room service.
+
 ## Error and log contract
 
 Worker failures include an `error_record` using the `jjk-error-v1` schema. The record

@@ -1,0 +1,699 @@
+{
+  "category_baselines": {
+    "basic_attack": {
+      "ce_sum": 366.0,
+      "playable": 44,
+      "playable_rate": 1.0,
+      "representative_ids": [
+        "card_basic_cursed_energy_strike",
+        "card_basic_physical_strike",
+        "card_high_output_cursed_energy_blast",
+        "card_basic_physical_strike",
+        "card_high_output_cursed_energy_blast"
+      ],
+      "seen": 44,
+      "static_damage_sum": 830.0,
+      "utility_sum": 640.432098765432
+    },
+    "defense_shield": {
+      "ce_sum": 292.0,
+      "playable": 31,
+      "playable_rate": 1.0,
+      "representative_ids": [
+        "card_douna_counter_cursed_energy_guard",
+        "card_full_guard",
+        "card_full_guard",
+        "card_avoid_edge",
+        "card_avoid_edge"
+      ],
+      "seen": 31,
+      "static_damage_sum": 0.0,
+      "utility_sum": 426.0
+    },
+    "high_risk_attack": {
+      "ce_sum": 0.0,
+      "playable": 25,
+      "playable_rate": 1.0,
+      "representative_ids": [
+        "card_desperate_burst",
+        "card_loaned_shot",
+        "card_loaned_shot",
+        "card_desperate_burst",
+        "card_loaned_shot"
+      ],
+      "seen": 25,
+      "static_damage_sum": 0.0,
+      "utility_sum": 0.0
+    },
+    "status": {
+      "ce_sum": 1931.2,
+      "playable": 60,
+      "playable_rate": 1.0,
+      "representative_ids": [
+        "card_cursed_energy_focus",
+        "card_loaned_next_shot",
+        "card_douna_counter_fly_head_interference",
+        "card_range_adjustment",
+        "card_loaned_next_shot"
+      ],
+      "seen": 60,
+      "static_damage_sum": 0.0,
+      "utility_sum": 0.0
+    }
+  },
+  "failed_runs": [],
+  "generated_at": "2026-09-20T02:19:43",
+  "measurement_notes": [
+    "Single-card availability is measured after the real two-card discard phase.",
+    "Three-card validity enumerates all post-discard combinations and calls the real V3 preview validator.",
+    "Round damage uses the highest-preview-valid player combination against the real CPU action, then commits a real round.",
+    "CE failures are counted from single-card validation reasons; other prerequisite failures remain separate in category baselines.",
+    "Domain cards are observed separately because their hand is independent from the normal hand."
+  ],
+  "metrics": {
+    "ce_block_rate": 0.0,
+    "domain_observations": [
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      },
+      {
+        "best_preview_damage": 0.0,
+        "hand_size": 0,
+        "valid_count": 0,
+        "valid_rate": 0.0
+      }
+    ],
+    "effective_hp_damage_avg": 32.0216049382716,
+    "effective_hp_damage_p50": 32.4074074074074,
+    "effective_hp_damage_p90": 43.2098765432099,
+    "initial_hand_size_avg": 10.0,
+    "post_discard_hand_size_avg": 8.0,
+    "resource_state_observations": [
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091901
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091902
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091903
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091904
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091905
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091906
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091907
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091908
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091909
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091910
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091911
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091912
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091913
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091914
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091915
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091916
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091917
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091918
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091919
+      },
+      {
+        "high": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "low": {
+          "ce_blocked": 1,
+          "hand_size": 8,
+          "playable": 7,
+          "playable_rate": 0.875,
+          "prerequisite_blocked": 0
+        },
+        "normal": {
+          "ce_blocked": 0,
+          "hand_size": 8,
+          "playable": 8,
+          "playable_rate": 1.0,
+          "prerequisite_blocked": 0
+        },
+        "seed": 2026091920
+      }
+    ],
+    "single_playable_avg": 8.0,
+    "single_playable_p50": 8.0,
+    "single_playable_rate": 1.0,
+    "three_card_valid_rate": 1.0
+  },
+  "opponent": "nanami_kento_shibuya",
+  "player": "yuji_itadori_shibuya",
+  "ruleset": "battle-rules-v3",
+  "schema": "jjk-hand-balance-measurement-v1",
+  "seed_count": 20,
+  "started_runs": 20,
+  "value_model": {
+    "formula": "immediate_damage + 0.5*guard + 0.6*healing + 10*new_statuses - ce_cost - prerequisite_discount - hit_risk_discount",
+    "note": "This is a comparison index, not a final balance value. Status value is deliberately a transparent first-pass proxy and must be playtested before tuning."
+  }
+}

@@ -1,5 +1,30 @@
 # DEBUG_HANDOFF
 
+## 2026-09-19 故事首牌崩溃 / 转盘术式未匹配
+
+### 根因
+
+- `data/battle/source/cards.json` 的 `card_rot_technique_decay_blood`（以及部分同类牌）使用 `effect.special: null`。
+- `battle/v3/ActionResolverV3.gd::_action_priority()` 直接把 `effect.special` 强制转换为 `Dictionary`，故事敌方 AI 在首牌预演时崩溃。
+- `scenes/wheel/WheelTechniqueRegistry.gd` 只登记了少量内置术式，未复用轮盘源表的 `specialHandTags`，导致源表已有术式被错误标记为未匹配。
+
+### 修复
+
+- `BattleFlowSession._instance_card()` 在发牌边界建立统一的 `effect.special.atomicEffects` 空数组。
+- `ActionResolverV3._action_priority()` 对 `effect`、`special`、`params` 做 Variant 类型防护。
+- `WheelTechniqueRegistry.resolve()` 先查内置别名，再从权威轮盘源表解析术式族；对源表中无特殊标签的条目使用现有战斗族兜底，并修正 `ganesh_obstacle_removal`、`curse_manipulation`、`recontract_icon` 到实际牌池标签。
+
+### 验证
+
+- `STORY_BATTLE_FIRST_CARD_ACCEPTANCE PASS failures=`：故事双方发牌、弃牌、先手、敌方首牌预演、出牌和回合结算通过。
+- `WHEEL_TECHNIQUE_REGISTRY_COVERAGE PASS profiles=72 unresolved=`。
+- `WHEEL_TECHNIQUE_BATTLE_COMPATIBILITY PASS profiles=72`：角色投影和已有牌族门控通过。
+- `FULL_STORY_RUN_ACCEPTANCE PASS visited=32 history=32 battles=2 scenes=true`。
+
+### 后续风险
+
+- 兼容验收输出的 `unbacked` 是当前 Godot 牌源尚无同族 `matchTags` 的源术式；`gated` 是已有牌但受角色专属、领域或咒具前置限制。不要通过删除 `exclusive` 或强行放行来掩盖这些规则；若要补齐，需要新增权威牌面/内容设计后再接入。
+
 ## 错误现象
 Godot 客户端与官方房间服务建立 WebSocket 后状态显示 OPEN，但收不到订阅确认、阶段结果和结算广播；HTTP 提交仍能成功。
 

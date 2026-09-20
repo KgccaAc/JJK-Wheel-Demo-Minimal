@@ -54,6 +54,9 @@ const SERVERS: Array[String] = ["本地 Mock", "官方联机服务器"]
 # modes that would require a different room/battle contract and then turn a
 # normal player click into an unsupported network request.
 const ROOM_MODES: Array[String] = ["1v1"]
+const POPUP_BUTTON_TEXTURE: Texture2D = preload("res://art/onlineroom/房间页面/按钮1.png")
+const POPUP_BUTTON_HOVER_TEXTURE: Texture2D = preload("res://art/onlineroom/房间页面/按钮2.png")
+const POPUP_PANEL_TEXTURE: Texture2D = preload("res://art/onlineroom/房间页面/服务器选择.png")
 
 func _ready() -> void:
 	UI.ignore_decorations(self)
@@ -321,20 +324,24 @@ func _show_server_picker() -> void:
 		return
 	_server_picker = PopupPanel.new()
 	_server_picker.name = "OnlineServerPicker"
-	_server_picker.size = Vector2i(360, 150)
+	_server_picker.size = Vector2i(430, 238)
+	_apply_popup_panel_style(_server_picker)
 	var options := VBoxContainer.new()
 	options.name = "Options"
-	options.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_MINSIZE, 12)
-	var local := Button.new()
-	local.name = "LocalMock"
-	local.text = "本地 Mock · V3 8789"
-	local.custom_minimum_size = Vector2(320, 52)
+	options.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_MINSIZE, 24)
+	var title := Label.new()
+	title.name = "Title"
+	title.text = "选择联机服务器"
+	title.custom_minimum_size = Vector2(0, 34)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	title.add_theme_color_override("font_color", Color("2b211b"))
+	title.add_theme_font_size_override("font_size", 20)
+	options.add_child(title)
+	var local: TextureButton = _make_texture_popup_button("LocalMock", "本地 Mock · V3 8789", Vector2(320, 52))
 	local.pressed.connect(_select_server.bind(0))
 	options.add_child(local)
-	var official := Button.new()
-	official.name = "Official"
-	official.text = "官方联机服务器 · HTTPS"
-	official.custom_minimum_size = Vector2(320, 52)
+	var official: TextureButton = _make_texture_popup_button("Official", "官方联机服务器 · HTTPS", Vector2(320, 52))
 	official.pressed.connect(_select_server.bind(1))
 	options.add_child(official)
 	_server_picker.add_child(options)
@@ -489,6 +496,7 @@ func _show_room_character_picker() -> void:
 	_room_character_picker = PopupPanel.new()
 	_room_character_picker.name = "RoomCharacterPicker"
 	_room_character_picker.size = Vector2i(650, 540)
+	_apply_popup_panel_style(_room_character_picker)
 	var list := VBoxContainer.new()
 	list.name = "CharacterPickerList"
 	var scroll := ScrollContainer.new()
@@ -516,10 +524,7 @@ func _show_room_character_picker() -> void:
 		seen[character_id] = true
 		official_entries.append({"id":character_id, "name":str(entry.get("name", entry.get("displayName", character_id))), "kind":"官方角色"})
 	for entry: Dictionary in custom_entries + official_entries:
-		var button := Button.new()
-		button.name = "Character_" + str(entry.id)
-		button.text = "%s  ·  %s" % [str(entry.name), str(entry.kind)]
-		button.custom_minimum_size = Vector2(580, 44)
+		var button: TextureButton = _make_texture_popup_button("Character_" + str(entry.id), "%s  ·  %s" % [str(entry.name), str(entry.kind)], Vector2(580, 44))
 		button.pressed.connect(_choose_room_character.bind(str(entry.id)))
 		list.add_child(button)
 	add_child(_room_character_picker)
@@ -532,6 +537,7 @@ func _show_character_picker() -> void:
 	_picker = PopupPanel.new()
 	_picker.name = "OnlineCharacterPicker"
 	_picker.size = Vector2i(650, 540)
+	_apply_popup_panel_style(_picker)
 	var list := VBoxContainer.new()
 	list.name = "CharacterPickerList"
 	list.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_MINSIZE, 18)
@@ -545,14 +551,48 @@ func _show_character_picker() -> void:
 		var entry: Dictionary = raw as Dictionary
 		var id: String = str(entry.get("id", entry.get("characterId", "")))
 		if id.is_empty(): continue
-		var button := Button.new()
-		button.name = "Character_" + id
-		button.text = "%s  ·  %s" % [str(entry.get("name", entry.get("displayName", id))), str(entry.get("visibleGrade", ""))]
-		button.custom_minimum_size = Vector2(580, 44)
+		var button: TextureButton = _make_texture_popup_button("Character_" + id, "%s  ·  %s" % [str(entry.get("name", entry.get("displayName", id))), str(entry.get("visibleGrade", ""))], Vector2(580, 44))
 		button.pressed.connect(_choose_room_character.bind(id))
 		list.add_child(button)
 	add_child(_picker)
 	_picker.popup_centered_ratio(0.65)
+
+func _make_texture_popup_button(button_name: String, label_text: String, minimum_size: Vector2) -> TextureButton:
+	var button: TextureButton = TextureButton.new()
+	button.name = button_name
+	button.custom_minimum_size = minimum_size
+	button.ignore_texture_size = true
+	button.stretch_mode = TextureButton.STRETCH_SCALE
+	button.texture_normal = POPUP_BUTTON_TEXTURE
+	button.texture_hover = POPUP_BUTTON_HOVER_TEXTURE
+	button.texture_pressed = POPUP_BUTTON_HOVER_TEXTURE
+	button.tooltip_text = label_text
+	var label: Label = Label.new()
+	label.name = "Label"
+	label.text = label_text
+	label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT, Control.PRESET_MODE_MINSIZE, 8)
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	label.add_theme_color_override("font_color", Color("2b211b"))
+	label.add_theme_font_size_override("font_size", 16)
+	button.add_child(label)
+	return button
+
+func _apply_popup_panel_style(popup: PopupPanel) -> void:
+	if popup == null: return
+	var panel := StyleBoxTexture.new()
+	panel.texture = POPUP_PANEL_TEXTURE
+	panel.texture_margin_left = 44.0
+	panel.texture_margin_top = 24.0
+	panel.texture_margin_right = 44.0
+	panel.texture_margin_bottom = 24.0
+	panel.expand_margin_left = 3.0
+	panel.expand_margin_top = 3.0
+	panel.expand_margin_right = 3.0
+	panel.expand_margin_bottom = 3.0
+	popup.add_theme_stylebox_override("panel", panel)
 
 func _choose_room_character(character_id: String) -> void:
 	_room_character_id = character_id
@@ -579,6 +619,7 @@ func _show_character_preview() -> void:
 	var popup := PopupPanel.new()
 	popup.name = "OnlineCharacterPreview"
 	popup.size = Vector2i(1020, 560)
+	_apply_popup_panel_style(popup)
 	# 直接复用角色选择页的 CharacterContent，而非重画一份近似面板。
 	var selection: Control = CHARACTER_SELECTION_SCENE.instantiate() as Control
 	var player_card: Control = selection.get_node("CharacterContent/PlayerCharacterSlots/PlayerCharacter") as Control

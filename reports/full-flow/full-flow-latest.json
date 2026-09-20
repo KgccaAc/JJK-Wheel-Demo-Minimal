@@ -1,9 +1,6 @@
 {
-  "failures": [
-    "rpg_text_hit_area_too_small",
-    "map_completed_overlay_missing"
-  ],
-  "generated_at": "2026-09-18T03:59:43",
+  "failures": [],
+  "generated_at": "2026-09-20T02:21:49",
   "input": "rendered-window mouse events",
   "journey": [
     "Identity",
@@ -20,6 +17,18 @@
   ],
   "reason": "completed",
   "schema": "godot-full-flow-v2",
-  "screenshots": [],
-  "status": "failed"
+  "screenshots": [
+    "reports/full-flow/screenshots/01_identity.png",
+    "reports/full-flow/screenshots/02_select.png",
+    "reports/full-flow/screenshots/03_story_home.png",
+    "reports/full-flow/screenshots/04_rpg.png",
+    "reports/full-flow/screenshots/05_selection.png",
+    "reports/full-flow/screenshots/06_selection_result.png",
+    "reports/full-flow/screenshots/07_settlement.png",
+    "reports/full-flow/screenshots/08_map.png",
+    "reports/full-flow/screenshots/09_battle.png",
+    "reports/full-flow/screenshots/07_final_settlement.png",
+    "reports/full-flow/screenshots/08_final_map.png"
+  ],
+  "status": "passed"
 }

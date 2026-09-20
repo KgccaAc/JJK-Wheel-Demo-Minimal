@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jjk-wheel.local/schema/story-package.v1.json",
+  "title": "JJK Wheel Story Package",
+  "type": "object",
+  "required": ["schemaVersion", "contentVersion", "project", "chapters", "nodes", "characters", "encounters", "assets", "fallbackDialogues", "effectPolicies"],
+  "properties": {
+    "schemaVersion": { "const": "story-package.v1" },
+    "contentVersion": { "type": "string", "minLength": 1 },
+    "project": {
+      "type": "object",
+      "required": ["id", "title", "entryNodeId"],
+      "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "entryNodeId": { "type": "string" } },
+      "additionalProperties": true
+    },
+    "chapters": { "type": "array", "items": { "$ref": "#/$defs/chapter" }, "minItems": 1 },
+    "nodes": { "type": "object", "additionalProperties": { "$ref": "#/$defs/node" } },
+    "characters": { "type": "object", "additionalProperties": { "$ref": "#/$defs/character" } },
+    "encounters": { "type": "object", "additionalProperties": { "type": "object" } },
+    "assets": { "type": "object", "additionalProperties": { "$ref": "#/$defs/asset" } },
+    "fallbackDialogues": { "type": "object", "additionalProperties": { "type": "object" } },
+    "effectPolicies": { "type": "object", "additionalProperties": { "type": "object" } }
+  },
+  "$defs": {
+    "chapter": {
+      "type": "object",
+      "required": ["id", "title", "entryNodeId", "nodeIds"],
+      "properties": { "id": { "type": "string" }, "title": { "type": "string" }, "entryNodeId": { "type": "string" }, "nodeIds": { "type": "array", "items": { "type": "string" } } },
+      "additionalProperties": true
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "type", "title"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "enum": ["dialogue", "choice", "condition", "command", "presentation", "battle", "ai_dialogue", "checkpoint", "jump", "end"] },
+        "title": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "next": { "type": "string" },
+        "choices": { "type": "array", "items": { "type": "object" } },
+        "conditions": { "type": "array", "items": { "type": "object" } }
+      },
+      "additionalProperties": true
+    },
+    "character": {
+      "type": "object",
+      "required": ["id", "displayName"],
+      "properties": { "id": { "type": "string" }, "displayName": { "type": "string" }, "personality": { "type": "array" } },
+      "additionalProperties": true
+    },
+    "asset": {
+      "type": "object",
+      "required": ["id", "path", "kind"],
+      "properties": { "id": { "type": "string" }, "path": { "type": "string" }, "kind": { "type": "string" } },
+      "additionalProperties": true
+    }
+  }
+}

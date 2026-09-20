@@ -1,0 +1,7020 @@
+{
+  "coverage": {
+    "attemptedCardCount": 4,
+    "inventoryCardCount": 351,
+    "measuredCardCount": 4,
+    "missingCardCount": 0,
+    "techniqueCardCount": 289
+  },
+  "generatedAt": "2026-09-20T02:27:28",
+  "missingSamples": [],
+  "rows": [
+    {
+      "block": 66.8548821371851,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 52.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 14.8548821371851,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 14.8548821371851,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 135.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 135.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 14.8548821371851,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value"
+        ]
+      }
+    },
+    {
+      "block": 14.8548821371851,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 135.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 135.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 14.8548821371851,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 78.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 78.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 78.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 26.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "adjust_counter",
+              "register_counter_modifier",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "adjust_counter",
+          "register_counter_modifier",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "adjust_counter",
+              "register_counter_modifier",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "set_action_mode",
+              "base_action",
+              "add_status",
+              "set_counter",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "adjust_counter",
+          "register_counter_modifier",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "set_action_mode",
+          "add_status",
+          "set_counter"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_blue_resource",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "adjust_counter",
+              "register_counter_modifier",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "set_action_mode",
+              "base_action",
+              "add_status",
+              "set_counter",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "adjust_counter",
+          "register_counter_modifier",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "set_action_mode",
+          "add_status",
+          "set_counter"
+        ]
+      }
+    },
+    {
+      "block": 66.8548821371851,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 52.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 14.8548821371851,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 66.8548821371851,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 52.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 14.8548821371851,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 66.8548821371851,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 52.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 14.8548821371851,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+
+      },
+      "failureReason": "咒力不足",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": null,
+      "measurementWindow": {
+        "completedRounds": 0,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [],
+      "roundsObserved": 0,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+
+      },
+      "summonBeforeState": {
+
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 142.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 142.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 0.0,
+      "domain": {
+
+      },
+      "failureReason": "咒力不足",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": null,
+      "measurementWindow": {
+        "completedRounds": 0,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [],
+      "roundsObserved": 0,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+
+      },
+      "summonBeforeState": {
+
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 116.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_red_reversal",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 116.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "initiative_modifier"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 5.5686026714814,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "pay_hp_cost",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 5.5686026714814,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "pay_hp_cost",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "add_status",
+          "modify_scale",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 5.5686026714814,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "pay_hp_cost",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 5.5686026714814,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "pay_hp_cost",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "add_status",
+          "modify_scale",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 5.5686026714814,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "pay_hp_cost",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 5.5686026714814,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "pay_hp_cost",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "add_status",
+          "modify_scale",
+          "action"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 78.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 78.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 78.0,
+      "domain": {
+        "active": true,
+        "barrier_type": "closed_barrier",
+        "counterplay": [
+          "domain_clash",
+          "simple_domain_guard",
+          "hollow_wicker_basket_guard",
+          "falling_blossom_emotion",
+          "zero_ce_domain_bypass",
+          "domain_survival_guard"
+        ],
+        "effect_profile": {
+          "ce_cost_multiplier": 1.1,
+          "incoming_damage_multiplier": 0.8,
+          "outgoing_damage_multiplier": 1.5
+        },
+        "end_reason": "",
+        "id": "gojo_unlimited_void",
+        "load": 42.0,
+        "load_growth": 8.0,
+        "name": "无量空处",
+        "owner_index": 0,
+        "stability_pressure": 0.04,
+        "sure_hit_enabled": true,
+        "sure_hit_type": "information_overload",
+        "threshold": 58.0,
+        "turns_active": 3
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 26.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 1
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "domain_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 34.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 2
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 39.0,
+          "domain": {
+            "active": true,
+            "barrier_type": "closed_barrier",
+            "counterplay": [
+              "domain_clash",
+              "simple_domain_guard",
+              "hollow_wicker_basket_guard",
+              "falling_blossom_emotion",
+              "zero_ce_domain_bypass",
+              "domain_survival_guard"
+            ],
+            "effect_profile": {
+              "ce_cost_multiplier": 1.1,
+              "incoming_damage_multiplier": 0.8,
+              "outgoing_damage_multiplier": 1.5
+            },
+            "end_reason": "",
+            "id": "gojo_unlimited_void",
+            "load": 42.0,
+            "load_growth": 8.0,
+            "name": "无量空处",
+            "owner_index": 0,
+            "stability_pressure": 0.04,
+            "sure_hit_enabled": true,
+            "sure_hit_type": "information_overload",
+            "threshold": 58.0,
+            "turns_active": 3
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "domain_modifier",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "domain_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "pay_hp_cost",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "pay_hp_cost",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "pay_hp_cost",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "pay_hp_cost",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_inviolable",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "pay_hp_cost",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "modify_scale",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "pay_hp_cost",
+          "compute_action_value",
+          "base_action",
+          "cost",
+          "modifier",
+          "initiative_modifier",
+          "modify_scale",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 5.5686026714814,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 5.5686026714814,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value"
+        ]
+      }
+    },
+    {
+      "block": 5.5686026714814,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 5.5686026714814,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value"
+        ]
+      }
+    },
+    {
+      "block": 5.5686026714814,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "add_status",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 5.5686026714814,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale",
+              "add_status"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091901,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "add_status",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 52.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 52.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 52.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 1,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 26.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091902,
+      "shield": 0.0,
+      "statusDelta": 1,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "low",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "normal",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value",
+          "add_status"
+        ]
+      }
+    },
+    {
+      "block": 0.0,
+      "cardId": "card_spatial_hollow_purple",
+      "ceBand": "high",
+      "characterId": "gojo_satoru_shinjuku",
+      "damage": 90.0,
+      "domain": {
+
+      },
+      "failureReason": "",
+      "familyKey": "limitless",
+      "healing": 0.0,
+      "hit": true,
+      "measurementWindow": {
+        "completedRounds": 3,
+        "earlyFinish": false,
+        "requestedRounds": 3
+      },
+      "requirementsChecked": true,
+      "resolvedCost": {
+
+      },
+      "roundSummaries": [
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 1,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "initiative_modifier",
+              "base_action",
+              "modify_scale",
+              "cost",
+              "modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 90.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 2,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "card_scaling",
+              "evasion",
+              "compute_action_value",
+              "base_action",
+              "cost",
+              "modifier",
+              "initiative_modifier",
+              "action"
+            ]
+          }
+        },
+        {
+          "block": 0.0,
+          "damage": 0.0,
+          "domain": {
+
+          },
+          "healing": 0.0,
+          "round": 3,
+          "shield": 0.0,
+          "statusDelta": 0,
+          "summonAfterState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "summonBeforeState": {
+            "count": 0,
+            "totalHp": 0.0,
+            "units": []
+          },
+          "traceSummary": {
+            "summonAppliedDamage": 0.0,
+            "summonSpawnEvents": 0,
+            "summonTargetHits": 0,
+            "tools": [
+              "evasion",
+              "base_action",
+              "cost",
+              "modifier",
+              "action",
+              "card_scaling",
+              "initiative_modifier",
+              "add_status",
+              "modify_scale"
+            ]
+          }
+        }
+      ],
+      "roundsObserved": 3,
+      "seed": 2026091903,
+      "shield": 0.0,
+      "statusDelta": 0,
+      "summonAfterState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonBeforeState": {
+        "count": 0,
+        "totalHp": 0.0,
+        "units": []
+      },
+      "summonDelta": 0,
+      "traceSummary": {
+        "summonAppliedDamage": 0.0,
+        "summonSpawnEvents": 0,
+        "summonTargetHits": 0,
+        "tools": [
+          "card_scaling",
+          "evasion",
+          "initiative_modifier",
+          "base_action",
+          "modify_scale",
+          "cost",
+          "modifier",
+          "action",
+          "compute_action_value",
+          "add_status"
+        ]
+      }
+    }
+  ],
+  "ruleset": "battle-rules-v3",
+  "schema": "jjk-technique-audit-measurement-v1",
+  "seedSet": [
+    2026091901,
+    2026091902,
+    2026091903
+  ]
+}

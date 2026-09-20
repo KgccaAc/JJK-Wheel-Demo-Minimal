@@ -6,6 +6,9 @@ const SETTINGS_PATH: String = "user://client.cfg"
 const USER_SCENE_PATH: String = "res://scenes/profile/profile_page.tscn"
 const MENU_SCENE_PATH: String = "res://scenes/home/home.tscn"
 const USER_PANEL_SCENE: PackedScene = preload("res://scenes/profile/profile_page.tscn")
+const NOTICE_PANEL_TEXTURE: Texture2D = preload("res://art/onlineroom/房间页面/服务器选择.png")
+const NOTICE_BUTTON_TEXTURE: Texture2D = preload("res://art/onlineroom/房间页面/按钮1.png")
+const NOTICE_BUTTON_HOVER_TEXTURE: Texture2D = preload("res://art/onlineroom/房间页面/按钮2.png")
 
 static func settings() -> ConfigFile:
 	var config: ConfigFile = ConfigFile.new()
@@ -79,9 +82,50 @@ static func notice(page: Node, heading: String, text: String) -> void:
 		dialog.exclusive = true
 		dialog.dialog_autowrap = true
 		page.add_child(dialog)
+	_apply_notice_style(dialog)
 	dialog.title = heading
 	dialog.dialog_text = text
 	if dialog.is_inside_tree(): dialog.popup_centered_clamped(Vector2i(560, 260))
+
+static func _apply_notice_style(dialog: AcceptDialog) -> void:
+	if dialog == null:
+		return
+	var panel := StyleBoxTexture.new()
+	panel.texture = NOTICE_PANEL_TEXTURE
+	panel.texture_margin_left = 44.0
+	panel.texture_margin_top = 24.0
+	panel.texture_margin_right = 44.0
+	panel.texture_margin_bottom = 24.0
+	panel.expand_margin_left = 3.0
+	panel.expand_margin_top = 3.0
+	panel.expand_margin_right = 3.0
+	panel.expand_margin_bottom = 3.0
+	dialog.add_theme_stylebox_override("panel", panel)
+	dialog.add_theme_color_override("font_color", Color("2b211b"))
+	dialog.add_theme_font_size_override("title_font_size", 20)
+	var ok_button: Button = dialog.get_ok_button()
+	if ok_button == null:
+		return
+	var normal := StyleBoxTexture.new()
+	normal.texture = NOTICE_BUTTON_TEXTURE
+	normal.texture_margin_left = 18.0
+	normal.texture_margin_top = 12.0
+	normal.texture_margin_right = 18.0
+	normal.texture_margin_bottom = 12.0
+	var hover := StyleBoxTexture.new()
+	hover.texture = NOTICE_BUTTON_HOVER_TEXTURE
+	hover.texture_margin_left = 18.0
+	hover.texture_margin_top = 12.0
+	hover.texture_margin_right = 18.0
+	hover.texture_margin_bottom = 12.0
+	ok_button.add_theme_stylebox_override("normal", normal)
+	ok_button.add_theme_stylebox_override("hover", hover)
+	ok_button.add_theme_stylebox_override("pressed", hover)
+	ok_button.add_theme_stylebox_override("focus", hover)
+	ok_button.add_theme_color_override("font_color", Color("2b211b"))
+	ok_button.add_theme_color_override("font_hover_color", Color("2b211b"))
+	ok_button.add_theme_font_size_override("font_size", 18)
+	ok_button.custom_minimum_size = Vector2(132, 48)
 
 static func show_settings(page: Node, on_return_to_login: Callable = Callable()) -> void:
 	var dialog: AcceptDialog = page.get_node_or_null("ClientSettings") as AcceptDialog

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>故事内容工作台</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><strong>JJK 故事内容工作台</strong><span id="package-meta">加载中…</span></div>
+    <div class="top-actions"><button id="undo" disabled>撤销</button><button id="redo" disabled>重做</button><button id="validate">服务端校验</button><button id="download">导出 JSON</button></div>
+  </header>
+  <main class="workspace">
+    <aside class="panel tree-panel">
+      <div class="panel-title">章节与节点</div>
+      <input id="search" class="search" placeholder="搜索标题、ID、类型…" autocomplete="off">
+      <div id="node-list" class="node-list"></div>
+    </aside>
+    <section class="panel editor-panel">
+      <div class="panel-title">节点编辑</div>
+      <div id="empty-state" class="empty-state">从左侧选择节点开始编辑。</div>
+      <form id="node-form" hidden>
+        <div class="field-row"><label>ID<input id="node-id" readonly></label><label>类型<input id="node-type" readonly></label></div>
+        <label>标题<input id="node-title"></label>
+        <div class="field-row"><label>说话角色 ID<input id="node-speaker" placeholder="可选，例如 junior_sorcerer"></label><label>下一节点 ID<input id="node-next" placeholder="可选"></label></div>
+        <label>对白 / 旁白<textarea id="node-dialogue" rows="7"></textarea></label>
+        <label>连续剧本台词（每行“角色：台词”）<textarea id="node-rpg-lines" rows="7" placeholder="旁白：河岸的残秽仍未散去。"></textarea></label>
+        <label>背景资源（每行一个 res:// 路径）<textarea id="node-background" rows="3"></textarea></label>
+        <label>选项（JSON）<textarea id="node-choices" rows="10" spellcheck="false"></textarea></label>
+        <label>条件（JSON）<textarea id="node-conditions" rows="4" spellcheck="false"></textarea></label>
+        <label>效果 / 奖励（JSON）<textarea id="node-effects" rows="4" spellcheck="false"></textarea></label>
+        <div class="field-row"><label>战斗入口 encounterId<input id="node-encounter" placeholder="battle 节点使用"></label><label>AI 回退集 / 效果策略<input id="node-ai-policy" placeholder="fallbackSetId · effectPolicyId"></label></div>
+        <label>编辑备注<textarea id="node-notes" rows="3"></textarea></label>
+        <div class="form-actions"><button type="submit">保存节点草稿</button><button id="preview-node" type="button" class="secondary">预览节点</button></div>
+        <div id="form-message" class="form-message"></div>
+      </form>
+    </section>
+    <aside class="panel preview-panel">
+      <div class="panel-title">实时预览与校验</div>
+      <div id="preview" class="preview-card"><div class="preview-kicker">PREVIEW</div><h2>未选择节点</h2><p>选择节点后这里显示玩家看到的标题、对白和分支。</p></div>
+      <div class="panel-title diagnostics-title">节点关系</div>
+      <div id="references" class="references">选择节点后显示上游引用和出口。</div>
+      <div class="panel-title diagnostics-title">校验结果</div>
+      <div id="diagnostics" class="diagnostics"><div class="diagnostic neutral">尚未运行校验。</div></div>
+    </aside>
+  </main>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

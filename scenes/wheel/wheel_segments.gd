@@ -52,6 +52,10 @@ func set_items(next_items: Array[Dictionary]) -> void:
 	queue_redraw()
 
 func _ready() -> void:
+	# Rotation is animated by the owning wheel page. Ask CanvasItem for transform
+	# notifications so radial text is redrawn with the current compensation while
+	# the wheel settles, instead of keeping the angle from the first frame.
+	set_notify_transform(true)
 	_sync_pivot_to_center()
 	if items.is_empty():
 		set_items([
@@ -64,6 +68,8 @@ func _ready() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_RESIZED:
 		_sync_pivot_to_center()
+	elif what == NOTIFICATION_TRANSFORM_CHANGED:
+		queue_redraw()
 
 func _sync_pivot_to_center() -> void:
 	pivot_offset = size * 0.5
@@ -83,12 +89,16 @@ func calculate_label_font_size(label_text: String, sector_ratio: float, radius: 
 	return clampi(floori(float(base_size) * scale_factor), min_label_font_size, max_label_font_size)
 
 func calculate_label_rotation(middle_angle: float) -> float:
-	var readable_angle: float = wrapf(middle_angle, -PI, PI)
+	# Labels are drawn in this node's local canvas, while the wheel itself can
+	# remain rotated after a settled result is restored. Normalize the final
+	# screen angle first, then return the local compensation so text never turns
+	# upside down on the left/right sectors.
+	var readable_angle: float = wrapf(middle_angle + rotation, -PI, PI)
 	if readable_angle > PI * 0.5:
 		readable_angle -= PI
 	elif readable_angle < -PI * 0.5:
 		readable_angle += PI
-	return readable_angle
+	return readable_angle - rotation
 
 func draw_radial_text(font: Font, label_text: String, font_size: int, color: Color) -> void:
 	var label_width: float = font.get_string_size(label_text, HORIZONTAL_ALIGNMENT_LEFT, -1.0, font_size).x

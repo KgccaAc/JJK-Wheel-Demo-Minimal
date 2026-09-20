@@ -9,6 +9,28 @@ const DATA_DIR = process.env.PREVIEW_LOGIN_CARD_DATA_DIR || join(process.cwd(), 
 const CARD_DIR = join(DATA_DIR, 'cards');
 const SCHEMA = 'jjk-preview-login-card-v1';
 
+// Origin allow-list. This service exposes a writable (PUT) card endpoint, so a
+// wildcard `access-control-allow-origin: *` would let any page on the web read
+// and overwrite cards. Default to loopback only, matching the pattern already
+// used by preview-room-server.mjs.
+const ALLOWED_ORIGINS = new Set(
+  (process.env.PREVIEW_LOGIN_CARD_ALLOWED_ORIGIN || 'http://127.0.0.1:8088,http://localhost:8088')
+    .split(',').map((entry) => entry.trim()).filter(Boolean),
+);
+
+function corsHeaders(req) {
+  const origin = text(req?.headers?.origin, '');
+  if (!origin) return {};                       // non-browser client (Godot, curl, tests)
+  return ALLOWED_ORIGINS.has(origin)
+    ? { 'access-control-allow-origin': origin, vary: 'Origin' }
+    : {};
+}
+
+function originAllowed(req) {
+  const origin = text(req?.headers?.origin, '');
+  return !origin || ALLOWED_ORIGINS.has(origin);
+}
+
 const text = (value, fallback = '', max = 180) => String(value ?? fallback).trim().slice(0, max);
 const clone = (value) => structuredClone(value);
 const snapshotHash = (value) => `sha256:${createHash('sha256').update(JSON.stringify(value)).digest('hex')}`;
@@ -58,8 +80,8 @@ async function writeCard(card) {
   await rename(temp, target);
 }
 
-function send(res, status, body) {
-  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', 'access-control-allow-origin': '*' });
+function send(req, res, status, body) {
+  res.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...corsHeaders(req) });
   res.end(JSON.stringify(body));
 }
 
@@ -72,31 +94,32 @@ async function body(req) {
 await mkdir(dirname(CARD_DIR), { recursive: true });
 const server = createServer(async (req, res) => {
   try {
-    if (req.method === 'OPTIONS') { res.writeHead(204, { 'access-control-allow-origin': '*', 'access-control-allow-methods': 'GET,PUT,OPTIONS', 'access-control-allow-headers': 'Content-Type' }); res.end(); return; }
-    if (req.method === 'GET' && req.url === '/health') { send(res, 200, { ok: true, service: 'jjk-preview-login-card', schema: SCHEMA }); return; }
+    if (!originAllowed(req)) { send(req, res, 403, { ok: false, error: 'origin_not_allowed' }); return; }
+    if (req.method === 'OPTIONS') { res.writeHead(204, { 'access-control-allow-methods': 'GET,PUT,OPTIONS', 'access-control-allow-headers': 'Content-Type', ...corsHeaders(req) }); res.end(); return; }
+    if (req.method === 'GET' && req.url === '/health') { send(req, res, 200, { ok: true, service: 'jjk-preview-login-card', schema: SCHEMA }); return; }
     const match = req.url?.match(/^\/api\/login-cards\/([^/]+)$/);
-    if (!match) { send(res, 404, { ok: false, error: 'route_not_found' }); return; }
+    if (!match) { send(req, res, 404, { ok: false, error: 'route_not_found' }); return; }
     const cardId = decodeURIComponent(match[1]);
     if (req.method === 'GET') {
       const card = await readCard(cardId);
-      if (!card) { send(res, 404, { ok: false, error: 'card_not_found', cardId }); return; }
-      send(res, 200, { ok: true, card: clone(card) }); return;
+      if (!card) { send(req, res, 404, { ok: false, error: 'card_not_found', cardId }); return; }
+      send(req, res, 200, { ok: true, card: clone(card) }); return;
     }
     if (req.method === 'PUT') {
       const incoming = await body(req);
       const existing = await readCard(cardId);
       const expectedRevision = incoming.expectedRevision === undefined ? null : Number(incoming.expectedRevision);
       if (existing && expectedRevision !== null && expectedRevision !== Number(existing.revision)) {
-        send(res, 409, { ok: false, error: 'card_revision_conflict', cardId, revision: existing.revision, card: clone(existing) }); return;
+        send(req, res, 409, { ok: false, error: 'card_revision_conflict', cardId, revision: existing.revision, card: clone(existing) }); return;
       }
       const card = normalizeCard({ ...incoming, cardId }, existing);
-      if (!card || card.characters.some((entry) => !entry.canonicalV3 || typeof entry.canonicalV3 !== 'object')) { send(res, 422, { ok: false, error: 'card_snapshot_invalid' }); return; }
+      if (!card || card.characters.some((entry) => !entry.canonicalV3 || typeof entry.canonicalV3 !== 'object')) { send(req, res, 422, { ok: false, error: 'card_snapshot_invalid' }); return; }
       card.revision = existing ? Number(existing.revision) + 1 : 1;
       await writeCard(card);
-      send(res, 200, { ok: true, card: clone(card) }); return;
+      send(req, res, 200, { ok: true, card: clone(card) }); return;
     }
-    send(res, 405, { ok: false, error: 'method_not_allowed' });
-  } catch (error) { send(res, error.message === 'request_too_large' ? 413 : 400, { ok: false, error: error.message === 'request_too_large' ? error.message : 'invalid_request' }); }
+    send(req, res, 405, { ok: false, error: 'method_not_allowed' });
+  } catch (error) { send(req, res, error.message === 'request_too_large' ? 413 : 400, { ok: false, error: error.message === 'request_too_large' ? error.message : 'invalid_request' }); }
 });
 server.listen(PORT, HOST, () => console.log(`[preview-login-card] listening on http://${HOST}:${PORT}`));
 

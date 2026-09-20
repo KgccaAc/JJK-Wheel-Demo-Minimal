@@ -1,0 +1,57 @@
+{
+	"failures": [],
+	"room_content": [
+		{
+			"alpha": 1.0,
+			"exists": true,
+			"height": 941.0,
+			"path": "RoomPage",
+			"visible": true,
+			"width": 1672.0,
+			"x": 0.0,
+			"y": 0.0
+		},
+		{
+			"alpha": 1.0,
+			"exists": true,
+			"height": 941.0,
+			"path": "RoomPage/InteractiveLayer",
+			"visible": false,
+			"width": 1672.0,
+			"x": 0.0,
+			"y": 0.0
+		},
+		{
+			"alpha": 1.0,
+			"exists": true,
+			"height": 93.0,
+			"path": "RoomPage/ServeChoose",
+			"visible": true,
+			"width": 1255.0,
+			"x": 223.0,
+			"y": 132.0
+		},
+		{
+			"alpha": 1.0,
+			"exists": true,
+			"height": 456.0,
+			"path": "RoomPage/RoomSeeting",
+			"visible": true,
+			"width": 1603.0,
+			"x": 49.0,
+			"y": 246.0
+		},
+		{
+			"alpha": 1.0,
+			"exists": true,
+			"height": 77.0,
+			"path": "RoomPage/Join",
+			"visible": true,
+			"width": 1525.0,
+			"x": 94.0,
+			"y": 733.0
+		}
+	],
+	"room_page_entrance_settle_seconds": 1.5,
+	"schema": "online-static-real-window-v2"
+}

@@ -19,7 +19,13 @@ var _socket: RefCounted
 
 func _init(base_url: String = DEFAULT_BASE_URL, identity: Dictionary = {}, force_production_endpoint: bool = false) -> void:
 	_force_production_endpoint = force_production_endpoint
-	_base_url = DEFAULT_BASE_URL if force_production_endpoint and base_url == DEFAULT_BASE_URL else (_local_browser_endpoint() if base_url == DEFAULT_BASE_URL else base_url.rstrip("/"))
+	# A local Web acceptance build still selects the official authority, but it
+	# must reach it through the same-origin preview proxy. Published Web builds
+	# keep the HTTPS endpoint because their origin is already allowlisted.
+	if base_url == DEFAULT_BASE_URL and OS.has_feature("web"):
+		_base_url = _local_browser_endpoint()
+	else:
+		_base_url = DEFAULT_BASE_URL if force_production_endpoint and base_url == DEFAULT_BASE_URL else base_url.rstrip("/")
 	_identity = identity.duplicate(true)
 	_socket = SOCKET_SCRIPT.new()
 
@@ -119,7 +125,9 @@ func _request_web(request_packet: Dictionary, room_id: String) -> Dictionary:
 	var script: String = """(() => {
   try {
     const xhr = new XMLHttpRequest();
-    xhr.timeout = 3500;
+    // Synchronous XHR cannot set `timeout` in Chromium; doing so throws
+    // InvalidAccessError before the request is sent. The preview proxy and
+    // authority already enforce bounded upstream request timeouts.
     xhr.open('POST', %s, false);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Accept', 'application/json');

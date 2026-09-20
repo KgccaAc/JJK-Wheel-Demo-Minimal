@@ -10,7 +10,7 @@
     "drawPerTurn": 5,
     "overflowDiscardMode": "auto_low_priority_candidate",
     "discardFromRemainingAndNew": true,
-    "selectionMode": "multi_action_ap_beta",
+    "selectionMode": "multi_action_beta",
     "allowMultipleSelectionsPerTurn": true,
     "maxSelectionsPerTurn": 3,
     "disableSelectedCandidate": true,
@@ -24,11 +24,6 @@
     "specialDomainWeightBonus": 2,
     "domainAccessWeightBonus": 1,
     "notes": "Domain / anti-domain / domain-maintenance cards use independent control slots and do not count toward the normal 8-card hand limit."
-  },
-  "ap": {
-    "basePerTurn": 2,
-    "maxPerTurn": 3,
-    "carryOver": false
   },
   "cpuDifficulty": {
     "default": "normal",
@@ -55,11 +50,10 @@
   },
   "cardLikeDisplay": {
     "enabled": true,
-    "showApCost": true,
+    "showActionCost": true,
     "showCeCost": true,
     "showRisk": true,
     "showTags": true
   },
   "notes": "1.399 hand prototype: normal hand candidates persist lightly across turns. Unplayed normal cards remain, each turn draws 5 new normal candidates, and overflow is discarded from remaining + new cards until hand size is <= 8. Domain control cards are now separated into an independent 3-slot domain hand that refreshes each round and does not count toward the 8-card normal hand limit. Manual discard choice UI is not yet implemented."
 }
-

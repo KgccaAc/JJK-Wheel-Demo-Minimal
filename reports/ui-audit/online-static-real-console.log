@@ -1,0 +1,24 @@
+Godot Engine v4.6.2.stable.official.71f334935 - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 595.97 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 5060 Laptop GPU
+
+WARNING: res://scenes/online/room_page.tscn:15 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/OnlineStaticControlsRealWindowAcceptance.gd:19)
+WARNING: res://scenes/online/matchmaking_page.tscn:6 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/OnlineStaticControlsRealWindowAcceptance.gd:19)
+WARNING: res://scenes/online/online_room.tscn:5 - ext_resource, invalid UID: uid://b7l1d3hjgnusl - using text path instead: res://scenes/online/OnlineRoom.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/OnlineStaticControlsRealWindowAcceptance.gd:19)
+WARNING: res://scenes/roster/roster_picker.tscn:4 - ext_resource, invalid UID: uid://p7wcj44lk2bg - using text path instead: res://scenes/roster/RosterPicker.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/OnlineStaticControlsRealWindowAcceptance.gd:19)
+WARNING: res://scenes/roster/roster_picker.tscn:8 - ext_resource, invalid UID: uid://c06dxfqi22d6u - using text path instead: res://ui/navigation/BottomNav.gd
+   at: load (scene/resources/resource_format_text.cpp:500)
+   GDScript backtrace (most recent call first):
+       [0] _run (res://tests/godot/OnlineStaticControlsRealWindowAcceptance.gd:19)
+ONLINE_STATIC_CONTROLS_REAL_WINDOW_ACCEPTANCE PASS failures=[]

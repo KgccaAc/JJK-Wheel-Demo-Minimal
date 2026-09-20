@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-20",
+  "test": "tests/web_app_shell.mjs",
+  "status": "passed",
+  "root": 200,
+  "storyChoice": true,
+  "aiFallbackDialogue": true,
+  "aiCompletionRoute": true,
+  "moduleRoute": true,
+  "consoleErrors": 0,
+  "saveDirectory": "temporary"
+}

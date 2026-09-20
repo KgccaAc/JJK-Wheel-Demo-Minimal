@@ -2,12 +2,12 @@ class_name CardAvailabilityService
 extends RefCounted
 
 const RESULT_SCRIPT: Script = preload("res://battle/data/CardAvailabilityResult.gd")
-const ATOMIC_EFFECT_INTERPRETER_SCRIPT: Script = preload("res://battle/runtime/AtomicEffectInterpreter.gd")
+const ATOMIC_EFFECT_INTERPRETER_SCRIPT: Script = preload("res://battle/rules/AtomicEffectInterpreter.gd")
 const CORE_ACTION_RESOLVER_SCRIPT: Script = preload("res://battle/core/CoreActionResolver.gd")
-const COST_RESOLVER_SCRIPT: Script = preload("res://battle/core/ActionCostResolver.gd")
+const COST_RESOLVER_SCRIPT: Script = preload("res://battle/rules/ActionCostResolver.gd")
 const V3_INTENT_SCRIPT: Script = preload("res://battle/v3/ActionIntentV3.gd")
 const V3_RESOLVER_SCRIPT: Script = preload("res://battle/v3/ActionResolverV3.gd")
-const STATE_SCRIPT: Script = preload("res://battle/core/BattleState.gd")
+const STATE_SCRIPT: Script = preload("res://battle/rules/BattleState.gd")
 
 ## V3 只读可用性入口。传入 BattleState 对象时，预览、费用和动态值都来自
 ## 同一个 ActionResolverV3 结果；旧 evaluate() 仅保留给尚未迁移的联机兼容会话。

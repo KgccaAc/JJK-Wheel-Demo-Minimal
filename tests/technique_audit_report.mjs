@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const root = new URL('..', import.meta.url).pathname.replace(/^\//, '').replaceAll('/', '\\');
+execFileSync(process.execPath, ['tools/build_technique_audit_report.mjs'], { cwd: root, stdio: 'inherit' });
+const report = JSON.parse(fs.readFileSync(`${root}reports\\balance\\technique-audit-2026-09-19.json`, 'utf8'));
+assert.equal(report.coverage.inventoryCards, 351);
+assert.equal(report.cards.length, 351);
+assert.equal(report.families.length, report.coverage.registeredFamilies);
+assert.ok(report.cards.every((card) => Object.hasOwn(card, 'diagnosis') && Object.hasOwn(card, 'adjustmentProposal')));
+assert.ok(report.cards.filter((card) => card.familyKeys.length).every((card) => card.sampleCount > 0 || card.diagnosis.type === 'missing_sample'));
+assert.ok(report.method.specialEffects.includes('after-state'));
+console.log(`TECHNIQUE_AUDIT_REPORT_TEST PASS families=${report.families.length} cards=${report.cards.length}`);

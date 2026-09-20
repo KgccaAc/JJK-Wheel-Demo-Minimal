@@ -1,14 +1,16 @@
 import assert from 'node:assert/strict';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 import { spawn } from 'node:child_process';
 
+const cwd = resolve(process.cwd());
+const root = cwd.endsWith('backend') ? resolve(cwd, '..') : cwd;
 const port = 18889;
 const dataDir = await mkdtemp(join(tmpdir(), 'jjk-room-acceptance-'));
 const endpoint = `http://127.0.0.1:${port}/api/rooms`;
 const server = spawn(process.execPath, ['backend/preview-room-server.mjs'], {
-  cwd: process.cwd(),
+  cwd: root,
   env: { ...process.env, PREVIEW_ROOM_PORT: String(port), PREVIEW_ROOM_DATA_DIR: dataDir },
   stdio: ['ignore', 'pipe', 'pipe'],
 });

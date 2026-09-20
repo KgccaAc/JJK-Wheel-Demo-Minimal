@@ -158,9 +158,11 @@ func _update_chapter_status() -> void:
 	var current_title := get_node_or_null("Chapter/ChapterNow/Title") as Label
 	var current_status := get_node_or_null("Chapter/ChapterNow/Status") as Label
 	var done_status := get_node_or_null("Chapter/ChapterDone/Status") as Label
+	var completed_overlay := get_node_or_null("Chapter/ChapterNow/CompletedGrayOverlay") as ColorRect
 	if current_title != null: current_title.text = "第一章·仙台的异乡人"
 	if current_status != null: current_status.text = "已完成" if finished else ("进行中" if not history.is_empty() else "未开始")
 	if done_status != null: done_status.text = "已完成" if finished else "序章"
+	if completed_overlay != null: completed_overlay.visible = finished
 	var enter_title := get_node_or_null("Enter/Title") as Label
 	if enter_title != null and finished: enter_title.text = "查看第一章结局"
 

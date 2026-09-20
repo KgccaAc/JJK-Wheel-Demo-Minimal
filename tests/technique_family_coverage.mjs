@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const root = new URL('..', import.meta.url).pathname.replace(/^\//, '').replaceAll('/', '\\');
+execFileSync(process.execPath, ['tools/build_technique_family_coverage.mjs'], { cwd: root, stdio: 'inherit' });
+const report = JSON.parse(fs.readFileSync(`${root}reports\\balance\\technique-family-coverage-2026-09-19.json`, 'utf8'));
+assert.equal(report.sourceProfileCount, 72);
+assert.ok(report.families.length > 12);
+assert.ok(report.families.some((family) => family.key === 'idle_transfiguration'));
+assert.ok(report.families.some((family) => family.key === 'shrine'));
+assert.ok(report.families.some((family) => family.key === 'ratio_technique'));
+assert.ok(report.excludedTags.some((tag) => tag.tag === 'domain_access'));
+assert.ok(report.excludedTags.some((tag) => tag.tag === 'zero_ce_heavenly_restriction'));
+assert.ok(report.families.every((family) => Array.isArray(family.cardIds) && Array.isArray(family.characterIds)));
+console.log(`TECHNIQUE_FAMILY_COVERAGE PASS profiles=${report.sourceProfileCount} families=${report.families.length} excluded=${report.excludedTags.length}`);

@@ -1,21 +1,23 @@
 [gd_scene format=3]
 
-[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/涓昏彍鍗曡儗鏅?png" id="3_4deho"]
-[ext_resource type="Script" uid="uid://p7wcj44lk2bg" path="res://scenes/battle/CharacterSelection.gd" id="3_script"]
-[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/鐢ㄦ埛.png" id="4_cmb4g"]
-[ext_resource type="Texture2D" uid="uid://lyk16p6133l5" path="res://art/fight/瑙掕壊閫夋嫨/灞曞紑琛簳.png" id="5_1my11"]
-[ext_resource type="Texture2D" uid="uid://bbb83lgxtlep" path="res://art/fight/瑙掕壊閫夋嫨/鎴戞柟闈㈡澘.png" id="5_61b1b"]
-[ext_resource type="Script" uid="uid://c06dxfqi22d6u" path="res://ui/navigation/BottomNav.gd" id="5_xbpvj"]
-[ext_resource type="Texture2D" uid="uid://db8uvkw3yegeo" path="res://art/fight/瑙掕壊閫夋嫨/瑙掕壊閫夋嫨鏈€変腑.png" id="6_2rn3p"]
-[ext_resource type="Texture2D" uid="uid://b7va8t3okofmt" path="res://art/fight/瑙掕壊閫夋嫨/瑙掕壊閫変腑鎴戞柟.png" id="6_7vlk7"]
-[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/閫変腑鐘舵€佷富椤靛皬鏍?png" id="6_61b1b"]
-[ext_resource type="Texture2D" uid="uid://cqwgypxo4yixc" path="res://art/fight/瑙掕壊閫夋嫨/鏁屾柟闈㈡澘.png" id="6_bqetg"]
-[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/鏈€変腑鐘舵€佽鑹插皬鏍?png" id="7_bqetg"]
-[ext_resource type="Texture2D" uid="uid://dxm0xh02xeeid" path="res://art/fight/瑙掕壊閫夋嫨/瑙掕壊閫変腑鏁屾柟.png" id="8_1my11"]
-[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/鏈€変腑鐘舵€佹垬鏂楀皬鏍?png" id="8_7vlk7"]
-[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/鏈€変腑鐘舵€佽鍧涘皬鏍?png" id="9_1my11"]
-[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/鏈€変腑鐘舵€丱C灏忔爣.png" id="10_2rn3p"]
+[ext_resource type="Texture2D" uid="uid://cc85ncxdsx537" path="res://art/menu/主菜单背景.png" id="3_4deho"]
+[ext_resource type="Script" uid="uid://by5u3vok4fobp" path="res://scenes/battle/CharacterSelection.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://di8vs4ld2qwmm" path="res://art/menu/用户.png" id="4_cmb4g"]
+[ext_resource type="Texture2D" uid="uid://lyk16p6133l5" path="res://art/fight/角色选择/展开衬底.png" id="5_1my11"]
+[ext_resource type="Texture2D" uid="uid://bbb83lgxtlep" path="res://art/fight/角色选择/我方面板.png" id="5_61b1b"]
+[ext_resource type="Script" uid="uid://bg0uykylnxhuj" path="res://ui/navigation/BottomNav.gd" id="5_xbpvj"]
+[ext_resource type="Texture2D" uid="uid://db8uvkw3yegeo" path="res://art/fight/角色选择/角色选择未选中.png" id="6_2rn3p"]
+[ext_resource type="Texture2D" uid="uid://b7va8t3okofmt" path="res://art/fight/角色选择/角色选中我方.png" id="6_7vlk7"]
+[ext_resource type="Texture2D" uid="uid://kegh0pkh44tp" path="res://art/menu/选中状态主页小标.png" id="6_61b1b"]
+[ext_resource type="Texture2D" uid="uid://cqwgypxo4yixc" path="res://art/fight/角色选择/敌方面板.png" id="6_bqetg"]
+[ext_resource type="Texture2D" uid="uid://wrtndyyxpsp2" path="res://art/menu/未选中状态角色小标.png" id="7_bqetg"]
+[ext_resource type="Texture2D" uid="uid://dxm0xh02xeeid" path="res://art/fight/角色选择/角色选中敌方.png" id="8_1my11"]
+[ext_resource type="Texture2D" uid="uid://dpy2qqoeo5bx1" path="res://art/menu/未选中状态战斗小标.png" id="8_7vlk7"]
+[ext_resource type="Texture2D" uid="uid://1qcdsxo0f1dq" path="res://art/menu/未选中状态论坛小标.png" id="9_1my11"]
+[ext_resource type="Texture2D" uid="uid://d1cfnqt4v5m0o" path="res://art/menu/未选中状态OC小标.png" id="10_2rn3p"]
 [ext_resource type="Script" path="res://scenes/battle/CharacterDetail.gd" id="11_detail"]
+[ext_resource type="Texture2D" path="res://art/community/更多操作按钮.png" id="12_more_button"]
+[ext_resource type="Texture2D" path="res://art/community/小按钮3.png" id="13_picker_button"]
 
 [node name="CharacterSelection" type="Control" unique_id=1186122561]
 custom_minimum_size = Vector2(1672, 941)
@@ -67,7 +69,7 @@ offset_right = 410.0
 offset_bottom = 86.0
 theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
 theme_override_font_sizes/font_size = 34
-text = "瑙掕壊閫夋嫨"
+text = "战斗角色选择"
 
 [node name="Subtitle" type="Label" parent="Background/Header" unique_id=210867042]
 layout_mode = 0
@@ -77,7 +79,7 @@ offset_right = 500.0
 offset_bottom = 120.0
 theme_override_colors/font_color = Color(0.22, 0.2, 0.19, 1)
 theme_override_font_sizes/font_size = 16
-text = "棰嗗煙灞曞紑 路 鍜掓湳甯堢殑缁堟瀬瀵瑰喅"
+text = "选择我方与对方角色，确认后进入基础战斗"
 
 [node name="UserButton" type="TextureButton" parent="Background/Header" unique_id=299662088]
 layout_mode = 0
@@ -98,7 +100,7 @@ offset_right = 230.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0.15, 0.14, 0.14, 1)
 theme_override_font_sizes/font_size = 18
-text = "娓稿"
+text = "游客"
 
 [node name="UserStatus" type="Label" parent="Background/Header/UserButton" unique_id=2113144111]
 layout_mode = 0
@@ -108,22 +110,35 @@ offset_right = 240.0
 offset_bottom = 82.0
 theme_override_colors/font_color = Color(0.35, 0.33, 0.3, 1)
 theme_override_font_sizes/font_size = 12
-text = "鏆傛湭鐧诲綍 路 鐐瑰嚮鐧诲綍"
+text = "暂未登录 · 点击登录"
 
-[node name="MoreButton" type="Button" parent="Background/Header" unique_id=916048634]
+[node name="MoreButton" type="TextureButton" parent="Background/Header" unique_id=916048634]
 layout_mode = 0
 offset_left = 1448.0
 offset_top = 28.0
 offset_right = 1635.0
 offset_bottom = 128.0
 mouse_default_cursor_shape = 2
+texture_normal = ExtResource("12_more_button")
+texture_hover = ExtResource("12_more_button")
+texture_pressed = ExtResource("12_more_button")
+ignore_texture_size = true
+stretch_mode = 5
+tooltip_text = "更多设置"
+
+[node name="Label" type="Label" parent="Background/Header/MoreButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
-theme_override_colors/font_focus_color = Color(0.1, 0.45, 0.85, 1)
-theme_override_colors/font_pressed_color = Color(0.05, 0.3, 0.7, 1)
-theme_override_colors/font_hover_color = Color(0.1, 0.45, 0.85, 1)
 theme_override_font_sizes/font_size = 20
-text = "鏇村    +"
-flat = true
+text = "更多  +"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CharacterBackground" type="TextureRect" parent="." unique_id=110242566]
 z_index = 20
@@ -537,6 +552,7 @@ offset_left = 195.0
 offset_top = 55.0
 offset_right = 573.0
 offset_bottom = 111.0
+visible = false
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "浜旀潯鎮燂紙鏂板鍐虫垬锛?"
@@ -622,15 +638,32 @@ script = ExtResource("11_detail")
 detail_line_separation = 9.0
 detail_paragraph_separation = 6.0
 
-[node name="PlayerCharacterButtonPlayerCharacterButton" type="Button" parent="CharacterContent/PlayerCharacterSlots" unique_id=625590457]
+[node name="PlayerCharacterButtonPlayerCharacterButton" type="TextureButton" parent="CharacterContent/PlayerCharacterSlots" unique_id=625590457]
 layout_mode = 0
 offset_left = 350.0
 offset_top = -125.0
 offset_right = 964.0
 offset_bottom = -45.0
-tooltip_text = "鎴戞柟瑙掕壊閫夋嫨"
+texture_normal = ExtResource("13_picker_button")
+texture_hover = ExtResource("13_picker_button")
+texture_pressed = ExtResource("13_picker_button")
+ignore_texture_size = true
+stretch_mode = 5
+tooltip_text = "选择我方角色"
 mouse_default_cursor_shape = 2
-flat = true
+
+[node name="Label" type="Label" parent="CharacterContent/PlayerCharacterSlots/PlayerCharacterButtonPlayerCharacterButton"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 0.0
+offset_right = 614.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "选择我方"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="OpponentCharacterSlots" type="Control" parent="CharacterContent" unique_id=1726777237]
 anchors_preset = 0
@@ -872,6 +905,7 @@ offset_left = 87.0
 offset_top = 50.0
 offset_right = 465.0
 offset_bottom = 106.0
+visible = false
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "浜旀潯鎮燂紙鏂板鍐虫垬锛?"
@@ -956,15 +990,32 @@ script = ExtResource("11_detail")
 detail_line_separation = 9.0
 detail_paragraph_separation = 6.0
 
-[node name="OpponentCharacterButton" type="Button" parent="CharacterContent/OpponentCharacterSlots" unique_id=125526942]
+[node name="OpponentCharacterButton" type="TextureButton" parent="CharacterContent/OpponentCharacterSlots" unique_id=125526942]
 layout_mode = 0
 offset_left = -389.0
 offset_top = 589.0
 offset_right = 248.0
 offset_bottom = 669.0
-tooltip_text = "瀵规墜瑙掕壊閫夋嫨"
+texture_normal = ExtResource("13_picker_button")
+texture_hover = ExtResource("13_picker_button")
+texture_pressed = ExtResource("13_picker_button")
+ignore_texture_size = true
+stretch_mode = 5
+tooltip_text = "选择对方角色"
 mouse_default_cursor_shape = 2
-flat = true
+
+[node name="Label" type="Label" parent="CharacterContent/OpponentCharacterSlots/OpponentCharacterButton"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 0.0
+offset_right = 637.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
+theme_override_font_sizes/font_size = 20
+text = "选择对方"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BottomNav" type="HBoxContainer" parent="." unique_id=73235477]
 layout_mode = 1

@@ -3,7 +3,11 @@ backend/.runtime/
 .godot/
 .godot-user/
 %SystemDrive%/
-Godot/
+# Anchored with a leading slash on purpose: an unanchored `Godot/` also matches
+# any nested directory whose name differs only by case. On Windows (case-insensitive
+# matching) it silently swallowed `tests/godot/`, leaving 29 acceptance tests
+# untracked. Keep the leading slash.
+/Godot/
 card/
 backend/.preview-login-card-data/
 *.orig
@@ -17,3 +21,68 @@ tools/godot-web-audit/Godot_v*-stable_export_templates.tpz
 # Generated Web audit/export output.
 web-audit/
 web-preview-localcheck/
+
+# Dependencies (never commit; 8k+ files, ~320 MB)
+node_modules/
+*/node_modules/
+
+# Temporary debug output
+.tmp-debug-*/
+.superpowers/
+
+# Transient Godot .import scratch files (aborted import writes these).
+# Pattern is deliberately loose: they carry a PID suffix, e.g.
+# `foo.png.import340471409.tmp`, so an anchored suffix rule would miss them.
+*.import*.tmp
+*.import~RF*.TMP
+
+# Preview/runtime data directories
+backend/.preview-room-data/
+backend/.preview-room-data-local/
+backend/.runtime-local-debug/
+backend/.runtime-story/
+backend/.runtime-ai/
+
+# Generated acceptance artifacts.
+# Only curated summaries (*-latest.json, *.md) and the small, frequently
+# consulted dirs (full-flow, ui-audit, self-improve, structure,
+# production-entry) are tracked. Bulk per-run output is archived outside
+# the repository -- see reports/README.md.
+reports/bundles/
+reports/errors/
+reports/all-pages/
+reports/story_screens/
+reports/web-acceptance/
+reports/final_capture.log
+reports/final_parse.log
+reports/self-improve-runner-latest.txt
+reports/*.png
+reports/*.png.import
+
+# reports/balance/ holds a MIXED set: regenerable analysis output AND input
+# fixtures that several tests read directly. Do NOT ignore the whole dir --
+# doing so lets the fixtures be pruned as "disposable", which silently breaks
+# tests/technique_*.mjs. Ignore only the bulk/derived artifacts below and keep
+# the two fixtures tracked:
+#
+#   INPUT FIXTURES (required by tests -- must stay on disk):
+#     reports/balance/technique-audit-inventory-2026-09-19.json
+#     reports/balance/technique-audit-measurement-2026-09-19.json
+#
+#   REGENERABLE (produced by tools/build_technique_audit_report.mjs,
+#   tools/score_technique_families.mjs, tools/build_technique_balance_workbook.mjs):
+reports/balance/technique-audit-2026-09-19.json
+reports/balance/technique-audit-2026-09-19.md
+reports/balance/technique-family-strength-2026-09-19.json
+reports/balance/technique-family-strength-2026-09-19.md
+reports/balance/technique-family-strength-run*.log
+reports/balance/technique-adjustment-proposals-2026-09-19.md
+reports/balance/*.xlsx
+reports/balance/~$*.xlsx
+reports/balance/*.xlsx.inspect.ndjson
+reports/balance/*.png
+reports/balance/*.png.import
+reports/balance/verification-renders/
+# Explicitly re-include the fixtures (the patterns above must never match them).
+!reports/balance/technique-audit-inventory-2026-09-19.json
+!reports/balance/technique-audit-measurement-2026-09-19.json

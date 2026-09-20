@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddl1c4vrthlfb"]
 
 [ext_resource type="Texture2D" uid="uid://bhna1ny3jstcf" path="res://art/fight/资源计数牌牌面.png" id="1_face"]
-[ext_resource type="Script" uid="uid://bs4xqrg8p8ddu" path="res://ui/battle_status/resource_counter_card.gd" id="2_script"]
+[ext_resource type="Script" uid="uid://bbrx2utji6kcb" path="res://ui/battle_status/resource_counter_card.gd" id="2_script"]
 [ext_resource type="FontFile" uid="uid://21fd3q5ggaso" path="res://art/fonts/NotoSerifCJKsc-Bold.otf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://br246jmc3cn8e" path="res://art/menu/战斗标.png" id="3_ny7an"]
 

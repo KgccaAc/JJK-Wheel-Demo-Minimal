@@ -22,6 +22,8 @@ func _ready() -> void:
 		var button := art.get_child(0) as Button
 		if button != null:
 			art.set_meta("base_scale", art.scale)
+			art.set_meta("base_position", art.position)
+			art.pivot_offset = art.size * 0.5
 			button.pressed.connect(_on_strategy_pressed.bind(button.name))
 	PAGE_ENTRANCE.play(self)
 
@@ -33,14 +35,20 @@ func _on_strategy_pressed(strategy_name: String) -> void:
 		armed_strategy = strategy_name
 		for option: Node in _options.get_children():
 			if option is Control:
+				var option_control := option as Control
 				var base_scale: Vector2 = option.get_meta("base_scale", Vector2.ONE)
+				var base_position: Vector2 = option.get_meta("base_position", option_control.position)
 				var target_scale: Vector2 = base_scale * (1.08 if option == art else 1.0)
+				var target_position: Vector2 = base_position + (Vector2(0.0, -12.0) if option == art else Vector2.ZERO)
+				option_control.z_index = 2 if option == art else 0
 				if _option_tweens.has(option) and _option_tweens[option].is_valid(): _option_tweens[option].kill()
 				var tween: Tween = create_tween()
 				_option_tweens[option] = tween
 				tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-				tween.tween_property(option, "scale", target_scale, 0.16)
-			return
+				tween.set_parallel(true)
+				tween.tween_property(option_control, "scale", target_scale, 0.16)
+				tween.tween_property(option_control, "position", target_position, 0.16)
+		return
 	selected_strategy = strategy_name
 	_confirm_strategy()
 

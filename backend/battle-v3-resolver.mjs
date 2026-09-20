@@ -479,7 +479,12 @@ function resolveCards(state, side, ids) {
 		target.ce = clamp(Number(target.ce) - Math.max(0, Number(values.ceDamage ?? 0)), 0, Number(target.maxCe));
 		target.stability = clamp(Number(target.stability) - Math.max(0, Number(values.stabilityDamage ?? 0)), 0, 100);
 		commitDslEffects(dsl.effects, actorState, target, state);
-		results.push({ cardId: String(card.id), hpDamage, guardAbsorbed, shieldAbsorbed, cost, damageMultiplier });
+		results.push({
+			cardId: String(card.id),
+			cardName: String(card.name || card.displayName || card.actionId || card.id || ''),
+			cardType: String(card.type || card.cardType || 'basic'),
+			hpDamage, guardAbsorbed, shieldAbsorbed, cost, damageMultiplier,
+		});
 	}
 	actorState.ce = clamp(Number(actorState.ce) - spent, 0, Number(actorState.maxCe));
 	actorState.hand = actorState.hand.filter((card) => !ids.includes(String(card.instance_id)));

@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+const root = new URL('..', import.meta.url).pathname.replace(/^\//, '').replaceAll('/', '\\');
+execFileSync(process.execPath, ['tools/score_technique_families.mjs'], { cwd: root, stdio: 'inherit' });
+const report = JSON.parse(fs.readFileSync(`${root}reports\\balance\\technique-family-strength-2026-09-19.json`, 'utf8'));
+const measurement = JSON.parse(fs.readFileSync(`${root}reports\\balance\\technique-audit-measurement-2026-09-19.json`, 'utf8'));
+assert.ok(report.families.length >= 60);
+assert.ok(report.families.some((family) => family.familyKey === 'idle_transfiguration'));
+assert.ok(report.families.some((family) => family.familyKey === 'ratio_technique'));
+assert.ok(report.families.some((family) => family.familyKey === 'boogie_woogie'));
+assert.equal(report.coverage.sourceProfileCount, 72);
+for (const family of report.families) {
+  for (const key of ['overall', 'attack', 'defense', 'sustain', 'difficulty', 'reliability']) assert.ok(family.scores[key] >= 0 && family.scores[key] <= 100, `${family.familyKey}:${key}`);
+  assert.ok(typeof family.classification === 'string' && family.classification.length > 0);
+  assert.ok(Array.isArray(family.sourceProfiles));
+  assert.ok(family.cardComposition.cardIds.length >= 0);
+  assert.ok(Object.hasOwn(family.diagnostics, 'failureReasons'));
+}
+assert.ok(report.families.some((family) => family.cardComposition.cardIds.length === 0));
+const curseSpirit = report.families.find((family) => family.familyKey === 'curse_spirit_manipulation');
+const tenShadows = report.families.find((family) => family.familyKey === 'ten_shadows');
+assert.ok(curseSpirit?.summonMetrics, 'summon metrics must be exposed');
+assert.ok(curseSpirit.summonMetrics.interceptCount > 0, 'curse spirit interception must be counted from card.summon');
+assert.ok(curseSpirit.summonMetrics.projectedDefenseValue > 0, 'summon mitigation must contribute to defense evidence');
+assert.ok(curseSpirit.dslMetrics?.effectCount > 0, 'DSL metrics must be exposed');
+assert.ok(tenShadows?.summonMetrics?.count > 0, 'ten shadows summons must be represented even without runtime rows');
+assert.equal(report.popularity.status, 'missing_usage_data');
+assert.ok(measurement.rows.some((row) => Object.hasOwn(row, 'summonAfterState')), 'measurement must expose summon after-state');
+assert.ok(measurement.rows.some((row) => Object.hasOwn(row, 'traceSummary')), 'measurement must expose runtime trace summary');
+assert.ok(measurement.rows.some((row) => Number(row.roundsObserved ?? 0) >= 3), 'measurement must include a three-round window');
+assert.ok(measurement.rows.every((row) => Array.isArray(row.roundSummaries)), 'measurement must expose per-round summaries');
+console.log(`TECHNIQUE_FAMILY_SCORING_TEST PASS families=${report.families.length}`);

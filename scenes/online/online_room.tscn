@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://c6ae3usxmuw7d" path="res://scenes/online/room_page.tscn" id="1_room"]
 [ext_resource type="PackedScene" uid="uid://cpjris1ltlgr5" path="res://scenes/online/matchmaking_page.tscn" id="2_match"]
 [ext_resource type="Script" uid="uid://b7l1d3hjgnusl" path="res://scenes/online/OnlineRoom.gd" id="3_script"]
+[ext_resource type="Texture2D" path="res://art/onlineroom/房间页面/按钮1.png" id="4_online_button_1"]
+[ext_resource type="Texture2D" path="res://art/onlineroom/房间页面/按钮2.png" id="5_online_button_2"]
 
 [node name="OnlineRoom" type="Control" unique_id=1784598923]
 layout_mode = 3
@@ -27,17 +29,55 @@ offset_right = 1034.0
 offset_bottom = 114.0
 theme_override_constants/separation = 16
 
-[node name="RoomTab" type="Button" parent="TopBar" unique_id=413677189]
+[node name="RoomTab" type="TextureButton" parent="TopBar" unique_id=413677189]
 custom_minimum_size = Vector2(176, 50)
 layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("4_online_button_1")
+texture_hover = ExtResource("5_online_button_2")
+texture_pressed = ExtResource("5_online_button_2")
+texture_disabled = ExtResource("5_online_button_2")
+tooltip_text = "切换到自建联机房间"
+
+[node name="Label" type="Label" parent="TopBar/RoomTab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
 theme_override_font_sizes/font_size = 19
 text = "自建联机房间"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="MatchTab" type="Button" parent="TopBar" unique_id=1221688861]
+[node name="MatchTab" type="TextureButton" parent="TopBar" unique_id=1221688861]
 custom_minimum_size = Vector2(176, 50)
 layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 0
+texture_normal = ExtResource("4_online_button_1")
+texture_hover = ExtResource("5_online_button_2")
+texture_pressed = ExtResource("5_online_button_2")
+texture_disabled = ExtResource("5_online_button_2")
+tooltip_text = "切换到匹配赛"
+
+[node name="Label" type="Label" parent="TopBar/MatchTab"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.12, 0.14, 1)
 theme_override_font_sizes/font_size = 19
 text = "匹配赛"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="BackgroundLayer" type="Control" parent="."]
 layout_mode = 1

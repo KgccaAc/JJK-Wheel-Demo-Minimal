@@ -1,0 +1,82 @@
+{
+  "ok": true,
+  "package": "C:\\Users\\KgccaAc\\Desktop\\Public\\JJK-Wheel-Demo-Minimal\\data\\story\\story-package.json",
+  "schemaVersion": "story-package.v1",
+  "contentVersion": "chapter1-v1",
+  "counts": {
+    "chapters": 1,
+    "nodes": 57,
+    "reachable": 45,
+    "characters": 4,
+    "encounters": 10,
+    "assets": 12
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "code": "unreachable_node",
+      "id": "chapter1_optional_event",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "chapter1_branch",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "chapter1_danger",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "chapter1_settlement",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_sukuna",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_dagon",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_choso",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_hanami_jogo",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_mahito",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_kenjaku_choso",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_smallpox",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "unreachable_node",
+      "id": "core_battle_shibuya_haruta",
+      "message": "node is not reachable from project entry"
+    },
+    {
+      "code": "missing_asset",
+      "id": "art_story_rpg_png",
+      "message": "asset does not exist on disk: res://art/Story/RPG/第一章/河岸桥下.png"
+    }
+  ]
+}

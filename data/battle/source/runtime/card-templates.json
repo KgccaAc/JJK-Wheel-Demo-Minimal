@@ -43,7 +43,6 @@
       "actionId": "defensive_frame",
       "name": "防御构筑",
       "cardType": "defense",
-      "apCost": 1,
       "ceCostMode": "from_action",
       "tags": [
         "防御",
@@ -74,7 +73,6 @@
       "actionId": "douna_counter_cursed_energy_guard",
       "name": "咒力防御",
       "cardType": "defense",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 12,
       "tags": [
@@ -116,7 +114,6 @@
       "actionId": "residue_reading",
       "name": "咒力流淌",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "from_action",
       "tags": [
         "咒力",
@@ -146,7 +143,6 @@
       "actionId": "basic_physical_strike",
       "name": "体术打击",
       "cardType": "basic",
-      "apCost": 1,
       "ceCostMode": "none",
       "ceCost": 0,
       "tags": [
@@ -186,7 +182,6 @@
       "actionId": "basic_cursed_energy_strike",
       "name": "简单咒力打击",
       "cardType": "basic",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 8,
       "tags": [
@@ -222,7 +217,6 @@
       "actionId": "high_output_cursed_energy_blast",
       "name": "大功率咒力输出",
       "cardType": "basic",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 18,
       "tags": [
@@ -259,7 +253,6 @@
       "actionId": "cursed_energy_focus",
       "name": "咒力凝聚",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 80,
       "tags": [
@@ -292,7 +285,6 @@
       "actionId": "desperate_burst",
       "name": "竭力爆发",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "none",
       "ceCost": 0,
       "tags": [
@@ -326,7 +318,6 @@
       "actionId": "loaned_shot",
       "name": "贷款一发",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "none",
       "ceCost": 0,
       "tags": [
@@ -369,7 +360,6 @@
       "actionId": "loaned_next_shot",
       "name": "贷款下一发",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "none",
       "ceCost": 0,
       "tags": [
@@ -420,7 +410,6 @@
       "actionId": "full_guard",
       "name": "全力防御",
       "cardType": "defense",
-      "apCost": 2,
       "ceCostMode": "fixed",
       "ceCost": 12,
       "tags": [
@@ -454,7 +443,6 @@
       "actionId": "range_adjustment",
       "name": "范围调整",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 32.4,
       "tags": [
@@ -495,7 +483,6 @@
       "actionId": "avoid_edge",
       "name": "避其锋芒",
       "cardType": "defense",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 4,
       "tags": [
@@ -529,7 +516,6 @@
       "actionId": "douna_counter_fly_head_interference",
       "name": "蝇头干扰",
       "cardType": "support",
-      "apCost": 1,
       "ceCostMode": "fixed",
       "ceCost": 10,
       "tags": [
@@ -569,4 +555,3 @@
   "migratedRestrictedCardCount": 72,
   "archivedTemplateCardCount": 20
 }
-

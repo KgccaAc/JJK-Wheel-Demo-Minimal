@@ -35,6 +35,36 @@ offset_bottom = 940.0
 texture = ExtResource("2_osx7l")
 expand_mode = 1
 
+[node name="TextureButton" type="TextureButton" parent="Text" unique_id=1977095445]
+layout_mode = 0
+offset_right = 1203.4084
+offset_bottom = 333.0
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("2_osx7l")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Arrow" type="TextureRect" parent="Text/TextureButton"]
+layout_mode = 0
+offset_left = 1108.0
+offset_top = 260.0
+offset_right = 1152.9056
+offset_bottom = 295.0
+mouse_filter = 2
+texture = ExtResource("5_osx7l")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Text/TextureButton" unique_id=1604774740]
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 226.0
+offset_right = 1187.0
+offset_bottom = 261.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "点击对话框继续"
+
 [node name="Speaker" type="TextureRect" parent="Text" unique_id=1081060173]
 layout_mode = 0
 offset_left = 70.0
@@ -160,26 +190,6 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 25
 text = "    咒术回战作者签名会。
     等待作者签名的长队，终于有了尽头。"
-
-[node name="TextureButton" type="TextureButton" parent="Text" unique_id=1977095445]
-layout_mode = 0
-offset_left = 1108.0
-offset_top = 260.0
-offset_right = 1152.9056
-offset_bottom = 295.0
-texture_normal = ExtResource("5_osx7l")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="Label" type="Label" parent="Text/TextureButton" unique_id=1604774740]
-layout_mode = 0
-offset_left = -28.0
-offset_top = -34.0
-offset_right = 79.0
-offset_bottom = 1.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-text = "点击继续"
 
 [node name="Section" type="TextureRect" parent="." unique_id=1769618581]
 layout_mode = 0
